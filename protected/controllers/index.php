@@ -5,15 +5,22 @@ class IndexController {
 
         $db = new db_config();
 
-        if($activationcode == 0){
+        if(strlen($activationcode) < 0){
 
             $sql = $db->mquery("EXEC dbo.login
                     @email = '".$email."',
                     @Password = '".$password."'",$connect);
+ 		}else{
 
-            $num = $db->numhasrows($sql);
+            // with activation 
+			$sql = $db->mquery("EXEC dbo.codeUpdate 
+					@userid = '".$email."', 
+					@code = '".$activationcode."', 
+					@newpwd = '".$password."'",$connect);			
+        }
+		
+		    $num = $db->numhasrows($sql);
             $row = $db->fetchobject($sql);
-
 
             if($num == 0){
                 $data = '<span class="error">No Record Found.</span>';
@@ -38,10 +45,6 @@ class IndexController {
 				session_write_close();
 				header("Location: ../mobilyser-beta/accounts.php");
             }
-
-        }else{
-            // with activation 
-        }
 
         return $data;
     }

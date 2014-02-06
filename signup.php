@@ -146,7 +146,5 @@ $plantype_data = array(
 <?php include 'components/footer.php'; ?>
 <script src="js/jquery.jCombo.min.js"></script>
 <script type="text/javascript">
-	//$('#country').append('<option value="Select country" selected="selected">Select country</option>');
-	//$("#country option:first").after("<option selected='selected'>Select country</option>");
 	$("#country option:first").text("Select country");
 </script>

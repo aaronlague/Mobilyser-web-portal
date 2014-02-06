@@ -13,8 +13,6 @@ $indexController = new IndexController();
 
 $connect = $db->connect();
 
-$activationcodeURL = '';
-
 $emailFlag['class'] = '';
 $pwordFlag['class'] = '';
 
@@ -36,21 +34,14 @@ $passwordFlag['class'] = '';
 $cpasswordFlag['class'] = '';
 
 if(isset($_POST['btn-create'])){
-    
+
+	$userIdFlag = $db->escape($_GET['userid']);
     $activationFlag = $validationlib->isEmpty($_POST['activationCode'], '', 2);
-    $passwordFlag = $validationlib->isEmpty($_POST['password'], '', 2);
-    $cpasswordFlag = $validationlib->isEmail($_POST['confirmPassword'], '', 5, 'y');
+    $passwordFlag = $validationlib->isCompare($_POST['lpassword'], $_POST['confirmPassword'], '', 3);
 
-    if($activationFlag['message'] == "" and $passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
+    if($activationFlag['message'] == "" and $passwordFlag['message'] == ""){
 
-      $data['@password'] = '';
-      $data['@firstname'] = $_POST['firstname'];
-      $data['@lastname'] = $_POST['lastname'];
-      $data['@email'] = $_POST['email'];
-      
-      $db->mquery_insert("dbo.createAccount", $data, $connect);
-
-      header("Location: confirmation.php");
+      $indexController->indexPage($userIdFlag, $_POST['lpassword'], $_POST['activationCode'], $connect);
 
     }
 
@@ -76,15 +67,15 @@ if(isset($_POST['btn-create'])){
           <fieldset>
             <!-- Text input-->
             <div class="form-group">
-              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'activationCode','name'=>'activationCode','placeholder'=>'Activation code','class'=>'form-control input-md '.$fnameFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
+              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'activationCode','name'=>'activationCode','placeholder'=>'Activation code','class'=>'form-control input-md ','required'=>'')); ?><span class="required">*</span></div>
             </div>
             <!-- Text input-->
             <div class="form-group">
-              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'password','name'=>'lpassword','placeholder'=>'Password','class'=>'form-control input-md '.$lnameFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
+              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'password','name'=>'lpassword','placeholder'=>'Password','class'=>'form-control input-md','required'=>'')); ?><span class="required">*</span></div>
             </div>
             <!-- Text input-->
             <div class="form-group">
-              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'confirmPassword','name'=>'confirmPassword','placeholder'=>'Confirm password','class'=>'form-control input-md '.$emailFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
+              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'confirmPassword','name'=>'confirmPassword','placeholder'=>'Confirm password','class'=>'form-control input-md ','required'=>'')); ?><span class="required">*</span></div>
             </div>
             <!-- Button -->
             <div class="form-group" style="text-align:center;">

@@ -36,50 +36,39 @@ if(isset($_POST['btn-login'])){
 $fnameFlag['class'] = '';
 $lnameFlag['class'] = '';
 $emailFlag['class'] = '';
-$mobileFlag['class'] = '';
 
 if(isset($_POST['btn-register'])){
     
-    $fnameFlag = $validationlib->isEmpty($_POST['firstname'], '', 2);
-    $lnameFlag = $validationlib->isEmpty($_POST['lastname'], '', 2);
-    $emailFlag = $validationlib->isEmail($_POST['email'], '', 5, 'y');
-    $mobileFlag = $validationlib->isEmpty($_POST['mobileNumber'], '', 5);
+    $fnameFlag = $validationlib->isEmpty($_POST['firstname'], 'First name', 2);
+    $lnameFlag = $validationlib->isEmpty($_POST['lastname'], 'Last name', 2);
+    $emailFlag = $validationlib->isEmail($_POST['email'], 'Email entered is', 5, 'y');
+	
+	$fname = $_POST['firstname'];
+	$lname = $_POST['lastname'];
+	$email = $_POST['email'];
 
-    if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
-
-      $data['@password'] = '';
-      $data['@firstname'] = $_POST['firstname'];
-      $data['@lastname'] = $_POST['lastname'];
-      $data['@email'] = $_POST['email'];
-      //$data['@country'] = $_POST['country'];
-      //$data['@company'] = $_POST['companyname'];
-      //$data['@mobilephone'] = '09226885956';
-      //$data['@acct_no'] = $_POST['accountNumber'];
-      //$data['@telecom'] = $_POST['telco'];
+    //if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
+	
+      //$data['@firstname'] = $_POST['firstname'];
+//      $data['@lastname'] = $_POST['lastname'];
+//      $data['@email'] = $_POST['email'];
       
-      $db->mquery_insert("dbo.createAccount", $data, $connect);
+      //$db->mquery_insert("dbo.createAccount", $data, $connect);
 
-      header("Location: confirmation.php");
+      //header("Location: confirmation.php");
 
-    }
+    //}
 
 }
 
-//$country_data = $lookupmodel->getCountry($connect);
-
-//$plantype_data = array(
-//  '1'=>'Plan A',
-//  '2'=>'Plan B',
-//  '3'=>'Plan C'
-//);
 ?>
 <?php include 'components/header.php'; ?>
 
 <div class="container">
   <div class="row">
     <div class="col-lg-12" style="text-align:center;">
-      <h2 class="">Register Your Interest</h2>
-      <sup><i class="fa fa-asterisk" style="color:red;"></i></sup> <span><strong> - Mandatory Field</strong></span></div>
+      <h2 class="">Register your interest</h2>
+      <sup><i class="fa fa-asterisk" style="color:red;"></i></sup> <span><strong> - Mandatory field</strong></span></div>
   </div>
   <hr />
   <div class="row">
@@ -90,19 +79,22 @@ if(isset($_POST['btn-register'])){
       <fieldset>
         <!-- Text input-->
         <div class="form-group">
-          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name','class'=>'form-control input-md '.$fnameFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
+          <?php	echo $fnameFlag['message']; ?>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?><span class="required">*</span></div>
         </div>
         <!-- Text input-->
         <div class="form-group">
-          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name','class'=>'form-control input-md '.$lnameFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
+		  <?php echo $lnameFlag['message']; ?>
+          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?><span class="required">*</span></div>
         </div>
         <!-- Text input-->
         <div class="form-group">
-          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email address','class'=>'form-control input-md '.$emailFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
+		  <?php echo $emailFlag['message']; ?>
+          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'', 'value'=>$email)); ?><span class="required">*</span></div>
         </div>
         <!-- Button -->
         <div class="form-group" style="text-align:center;">
-          <div class="col-md-12"> <?php echo $formelem->button(array('id'=>'btn-register','name'=>'btn-register','class'=>'btn btn-primary registerBtn', 'value'=>'Register Your Interest')); ?> </div>
+          <div class="col-md-12"> <?php echo $formelem->button(array('id'=>'btn-register','name'=>'btn-register','class'=>'btn btn-primary registerBtn', 'value'=>'Register your interest')); ?> </div>
         </div>
       </fieldset>
       <?php echo $formelem->close(); ?> </div>

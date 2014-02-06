@@ -4,7 +4,7 @@ class validationLibrary {
 	# if empty
 	public function isEmpty($string, $message, $numlength){
 		if ($string == NULL){
-			$flag['message'] = '<br /><span class="error">'.$message.' * required.</span>';
+			$flag['message'] = '<span class="errorMsg">'.$message.' required.</span><br />';
 			$flag['class'] = 'error';
 		} else {
 			$isResult = $this->isLength($string, $message, $numlength);
@@ -17,7 +17,7 @@ class validationLibrary {
 	# check string lenght
 	public function isLength($string, $message, $numlength){
 		if (strlen($string) < $numlength){
-			$flag['message'] = '<br /><span class="error">Must have '.$numlength.' character.</span>';
+			$flag['message'] = '<span class="errorMsg">' .$message. ' must have at least '.$numlength.' character.</span><br />';
 			$flag['class'] = 'error';
 		} else {
 			$flag['message'] = '';
@@ -37,7 +37,7 @@ class validationLibrary {
 		if($isResult['message'] == ""){
 			// start the validation for email validity.
 			if(!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $string)){
-				$flag['message'] = '<br /><span class="error">'.$message.' * invalid.</span>';
+				$flag['message'] = '<span class="errorMsg">'.$message.' invalid.</span>';
 				$flag['class'] = 'error';
 			}else{
 				if($isdatabase == 'y'){

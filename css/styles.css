@@ -45,18 +45,9 @@ nav .container .row .loginSection .form-horizontal fieldset .form-group label { 
    float:left;
 }
 
-.regFormSection fieldset .form-group div span.required {
-color: red; float: right; position: absolute; top: 0; right: 0; line-height: 40px; font-weight:bold; font-size:25px;
-}
+.regFormSection fieldset .form-group div span.required, .signUpFormSection fieldset .form-group div span.required, .forgotPasswordSection fieldset .form-group div span.required { color: red; float: right; position: absolute; top: 0; right: 0; line-height: 40px; font-weight:bold; font-size:25px; }
 
-.regFormSection fieldset input[type="text"] {
-text-align:center;
-}
-
-.signUpFormSection fieldset .form-group div span.required {
-color: red; float: right; position: absolute; top: 0; right: 0; line-height: 40px; font-weight:bold; font-size:25px;
-}
-
-.signUpFormSection fieldset input[type="text"],  .signUpFormSection fieldset select {
-text-align:center;
-}
+.regFormSection fieldset input[type="text"] { text-align:center; }
+.regFormSection fieldset .form-group .error { border:1px solid red; }
+.regFormSection fieldset .form-group span.errorMsg { padding-left:15px; font-size:11px!important; }
+.signUpFormSection fieldset input[type="text"], .forgotPasswordSection fieldset input[type="text"] { text-align:center; }
