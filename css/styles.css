@@ -1,0 +1,62 @@
+/*@media (max-width: 992px) {
+	body {
+		padding-top: 200px;
+	}
+}
+
+@media (max-width: 768px) {
+	body {
+		padding-top: 200px;
+	}
+}*/
+
+sub,
+sup {
+  position: relative;
+  font-size: 60%!important;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+nav .container .row .loginSection { margin-top:10px; margin-left:35px; }
+nav .container .row .loginSection .form-horizontal fieldset .form-group label { color:#FFFFFF; }
+.topContent { background-color:#CCCCCC; }
+.container .accountsTab { margin-top:60px; }
+.container .accountsTab #errMsg i { font-size:1.35em;}
+.container .accountsTab #errMsg i { font-family: FontAwesome, arial; font-weight: bold; margin-left: 15px; margin-bottom: 15px; color: red; /*border: 1px solid #ccc;*/ padding: 10px; }
+.container .filterSection { background-color: #ccc; padding-bottom: 20px; padding-top: 10px; padding-left: 15px; margin-right: 0px; }
+.table-bordered tr:nth-child(even) { background-color:#ccc; }
+.callListSection .callList .callHistoryDetails{ background-color: #ccc; overflow: hidden; margin-left: 15px; margin-right: 15px; padding-top: 10px; padding-bottom: 10px; }
+.callList table th.callerTag { width:110px; }
+.callList table th.callDate { width:110px; }
+.callList table tbody tr td.callTag { text-align:center; }
+.callList table tbody tr td.callDate { text-align:center; }
+
+.circle { 
+   width: 50px;
+   height: 50px;
+   background: #ccc; 
+   -moz-border-radius: 70px; 
+   -webkit-border-radius: 70px; 
+   border-radius: 70px;
+   display:block;
+   line-height:10em;
+   text-align:center;
+   float:left;
+}
+
+.regFormSection fieldset .form-group div span.required {
+color: red; float: right; position: absolute; top: 0; right: 0; line-height: 40px; font-weight:bold; font-size:25px;
+}
+
+.regFormSection fieldset input[type="text"] {
+text-align:center;
+}
+
+.signUpFormSection fieldset .form-group div span.required {
+color: red; float: right; position: absolute; top: 0; right: 0; line-height: 40px; font-weight:bold; font-size:25px;
+}
+
+.signUpFormSection fieldset input[type="text"],  .signUpFormSection fieldset select {
+text-align:center;
+}
