@@ -36,49 +36,56 @@ $cpasswordFlag['class'] = '';
 if(isset($_POST['btn-create'])){
 
 	$userIdFlag = $db->escape($_GET['userid']);
-    $activationFlag = $validationlib->isEmpty($_POST['activationCode'], '', 2);
-    $passwordFlag = $validationlib->isCompare($_POST['lpassword'], $_POST['confirmPassword'], '', 3);
+    $activationFlag = $validationlib->isEmpty($_POST['activationCode'], 'Activation code', 2);
+	$checkPasswordFlag = $validationlib->isEmpty($_POST['lpassword'], 'Password', 2);
+	$reTypePasswordFlag = $validationlib->isEmpty($_POST['confirmPassword'], 'Password confirmation', 2);
+    $passwordFlag = $validationlib->isCompare($_POST['lpassword'], $_POST['confirmPassword'], 'Passwords', 3);
 
-    if($activationFlag['message'] == "" and $passwordFlag['message'] == ""){
-
-      $indexController->indexPage($userIdFlag, $_POST['lpassword'], $_POST['activationCode'], $connect);
-
-    }
+    //if($activationFlag['message'] == "" and $passwordFlag['message'] == ""){
+//
+//      $indexController->indexPage($userIdFlag, $_POST['lpassword'], $_POST['activationCode'], $connect);
+//
+//    }
 
 }
 
 ?>
 <?php include 'components/header.php'; ?>
 
-<div class="container">
+<div class="createPasswordContainer container">
   <div class="row">
-    <div class="col-lg-12" style="text-align:center;">
-      <h2 class="">Create Password</h2>
-	  <sup><i class="fa fa-asterisk" style="color:red;"></i></sup> <span><strong> - Mandatory Field</strong></span>
+    <div class="headLine col-lg-12">
+      <h2>Create Password</h2>
+	  <sup><i class="fa fa-asterisk"></i></sup> <span><strong> - Mandatory Field</strong></span>
     </div>
   </div>
   <hr />
   <div class="row">
-    <div class="col-lg-8 col-lg-push-2">
-      <h3 style="text-align:center">Password Details</h3>
-      <p style="background-color: #ccc; padding: 15px; margin-bottom: 20px;">To start the password creation process please provide the Activation code you received and your desired password.</p>
+    <div class="createPasswordSection col-lg-8 col-lg-push-2">
+      <h3>Password Details</h3>
+      <p>To start the password creation process please provide the Activation code you received and your desired password.</p>
       <div class="row">
-        <div class="col-lg-12 regFormSection"> <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal')); ?>
+        <div class="col-lg-12 regFormSection"><?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal')); ?>
           <fieldset>
             <!-- Text input-->
             <div class="form-group">
-              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'activationCode','name'=>'activationCode','placeholder'=>'Activation code','class'=>'form-control input-md ','required'=>'')); ?><span class="required">*</span></div>
+			<?php echo $activationFlag['message']; ?>
+              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'activationCode','name'=>'activationCode','placeholder'=>'Activation code','class'=>'form-control input-md '.$activationFlag['class'].'', 'value'=>$activationCode)); ?><span class="required">*</span></div>
             </div>
             <!-- Text input-->
             <div class="form-group">
-              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'password','name'=>'lpassword','placeholder'=>'Password','class'=>'form-control input-md','required'=>'')); ?><span class="required">*</span></div>
+			<?php echo $passwordFlag['message']; ?>
+			<?php echo $checkPasswordFlag['message']; ?>
+              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'password','name'=>'lpassword','placeholder'=>'Password','class'=>'form-control input-md '.$checkPasswordFlag['class'].'', 'value'=>$password)); ?><span class="required">*</span></div>
             </div>
             <!-- Text input-->
             <div class="form-group">
-              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'confirmPassword','name'=>'confirmPassword','placeholder'=>'Confirm password','class'=>'form-control input-md ','required'=>'')); ?><span class="required">*</span></div>
+			<?php echo $passwordFlag['message']; ?>
+			<?php echo $reTypePasswordFlag['message']; ?>
+              <div class="col-md-12"><?php echo $formelem->text(array('id'=>'confirmPassword','name'=>'confirmPassword','placeholder'=>'Confirm password','class'=>'form-control input-md '.$reTypePasswordFlag['class'].'', 'value'=>$rePassword)); ?><span class="required">*</span></div>
             </div>
             <!-- Button -->
-            <div class="form-group" style="text-align:center;">
+            <div class="submitContainer form-group">
               <div class="col-md-12"> <?php echo $formelem->button(array('id'=>'btn-create','name'=>'btn-create','class'=>'btn btn-primary registerBtn', 'value'=>'Create password')); ?> </div>
             </div>
           </fieldset>

@@ -64,17 +64,17 @@ if(isset($_POST['btn-register'])){
 ?>
 <?php include 'components/header.php'; ?>
 
-<div class="container">
+<div class="registerContainer container">
   <div class="row">
-    <div class="col-lg-12" style="text-align:center;">
+    <div class="headLine col-lg-12">
       <h2 class="">Register your interest</h2>
-      <sup><i class="fa fa-asterisk" style="color:red;"></i></sup> <span><strong> - Mandatory field</strong></span></div>
+      <sup><i class="fa fa-asterisk"></i></sup> <span><strong> - Mandatory field</strong></span></div>
   </div>
   <hr />
   <div class="row">
-    <div class="col-lg-8 col-lg-push-2">
-      <h3 style="text-align:center">Personal Details</h3>
-      <p style="background-color: #ccc; padding: 15px; margin-bottom: 20px;">To start the registration process please provide some basic personal information so that we can verify your identity and create your account. You can update your contact details within your profile.</p>
+    <div class="registerSections col-lg-8 col-lg-push-2">
+      <h3>Personal Details</h3>
+      <p>To start the registration process please provide some basic personal information so that we can verify your identity and create your account. You can update your contact details within your profile.</p>
       <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal regFormSection')); ?>
       <fieldset>
         <!-- Text input-->
@@ -93,7 +93,7 @@ if(isset($_POST['btn-register'])){
           <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'', 'value'=>$email)); ?><span class="required">*</span></div>
         </div>
         <!-- Button -->
-        <div class="form-group" style="text-align:center;">
+        <div class="submitContainer form-group">
           <div class="col-md-12"> <?php echo $formelem->button(array('id'=>'btn-register','name'=>'btn-register','class'=>'btn btn-primary registerBtn', 'value'=>'Register your interest')); ?> </div>
         </div>
       </fieldset>

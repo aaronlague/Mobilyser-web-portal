@@ -18,7 +18,7 @@
 <!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">-->
 <nav class="navbar navbar-inverse" role="navigation">
   <div class="container">
-    <div class="row" style="height:149px;">
+    <div class="row">
       <div class="navbar-header col-md-5"><i class="fa fa-mobile fa-5x" style="font-size: 9em!important; float:left; color:#fff;"></i> 
         <a class="navbar-brand" style="margin-top:30px; margin-left:0px; color:#fff;" href="index.php">Mobilyser<br />
         <span style="font-size:12px; font-weight:bold; color:#FFFFFF;">Mobile | Tracking | Analysis</span></a> 

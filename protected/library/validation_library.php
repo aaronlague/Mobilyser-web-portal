@@ -77,8 +77,8 @@ class validationLibrary {
 				$flag['message'] = '';
 				$flag['class'] = '';
 			}else{
-				$flag['message'] = '<span class="error">'.$message.' not match.</span>';
-				$flag['class'] = 'error';
+				$flag['message'] = '<span class="errorMsg">'.$message.' not match.</span>';
+				$flag['class'] = $isResult['class'];
 			}
 		}
 		

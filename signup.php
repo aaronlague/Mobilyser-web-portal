@@ -84,18 +84,19 @@ $plantype_data = array(
 ?>
 <?php include 'components/header.php'; ?>
 
-<div class="container">
+<div class="signUpContainer container">
   <div class="row">
-    <div class="col-lg-12" style="text-align:center;">
-      <h2 class="">Create your account</h2>
-      <sup><i class="fa fa-asterisk" style="color:red;"></i></sup> <span><strong> - Mandatory Field</strong></span></div>
+    <div class="headLine col-lg-12">
+      <h2>Create your account</h2>
+      <sup><i class="fa fa-asterisk"></i></sup> <span><strong> - Mandatory Field</strong></span>
+	</div>
   </div>
   <hr />
   <div class="row">
-    <div class="col-lg-8 col-lg-push-2">
-      <h3 style="text-align:center">Personal Details</h3>
-      <p style="background-color: #ccc; padding: 15px; margin-bottom: 20px;">To start the registration process please provide some basic personal information so that we can verify your identity and create your account. You can update your contact details within your profile.</p>
-      <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal signUpFormSection')); ?>
+    <div class="signUpSections col-lg-8 col-lg-push-2">
+      <h3>Personal Details</h3>
+      <p>To start the registration process please provide some basic personal information so that we can verify your identity and create your account. You can update your contact details within your profile.</p>
+      <?php echo $formelem->create(array('method'=>'post','class'=>'signUpFormSection form-horizontal')); ?>
       <fieldset>
         <!-- Text input-->
         <div class="form-group">
@@ -124,8 +125,8 @@ $plantype_data = array(
           <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'country','name'=>'country','class'=>'form-control','data'=>$country_data)); ?><span class="required">*</span></div>
         </div>
         <hr / >
-        <h3 style="text-align:center">Telecom Provider Information</h3>
-        <p style="background-color: #ccc; padding: 15px; margin-bottom: 20px;">Please provide some basic information about your telco plan. We use this information to calculate estimated costs for each call you make. You can provide this information later through your profile.<br />
+        <h3>Telecom Provider Information</h3>
+        <p>Please provide some basic information about your telco plan. We use this information to calculate estimated costs for each call you make. You can provide this information later through your profile.<br />
           <br />
           Most telcos provide call cost information on their websites. Call costs vary between different mobile plans, with the same provider.</p>
         <!-- Text input-->
@@ -151,8 +152,5 @@ $plantype_data = array(
 </div>
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
+<script src="js/core.js"></script>
 <?php include 'components/footer.php'; ?>
-<script src="js/jquery.jCombo.min.js"></script>
-<script type="text/javascript">
-	$("#country option:first").text("Select country");
-</script>

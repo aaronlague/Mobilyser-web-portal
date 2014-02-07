@@ -26,10 +26,18 @@ nav .container .row .loginSection .form-horizontal fieldset .form-group label { 
 
 .circle { width: 50px; height: 50px; background: #ccc; -moz-border-radius: 70px; -webkit-border-radius: 70px; border-radius: 70px; display:block; line-height:10em; text-align:center; float:left; }
 
-.regFormSection fieldset .form-group div span.required, .signUpFormSection fieldset .form-group div span.required, .forgotPasswordSection fieldset .form-group div span.required { color: red; float: right; position: absolute; top: 0; right: 0; line-height: 40px; font-weight:bold; font-size:25px; }
+.regFormSection fieldset .form-group div span.required, .signUpFormSection fieldset .form-group div span.required, .forgotPasswordFormSection fieldset .form-group div span.required { color: red; float: right; position: absolute; top: 0; right: 0; line-height: 40px; font-weight:bold; font-size:25px; }
 
-.regFormSection fieldset input[type="text"] { text-align:center; }
+.regFormSection fieldset input[type="text"], .signUpFormSection fieldset input[type="text"], .forgotPasswordSection fieldset input[type="text"] { text-align:center; }
 .regFormSection fieldset .form-group .error, .signUpFormSection fieldset .form-group .error { border:1px solid red; }
 .regFormSection fieldset .form-group span.errorMsg, .signUpFormSection fieldset .form-group span.errorMsg { padding-left:15px; font-size:11px!important; }
 
-.signUpFormSection fieldset input[type="text"], .forgotPasswordSection fieldset input[type="text"] { text-align:center; }
+.regFormSection .submitContainer, .signUpFormSection .submitContainer, .forgotPasswordSection .submitContainer { text-align:center; }
+
+.signUpContainer .headLine, .registerContainer .headLine, .createPasswordContainer .headLine { text-align:center; }
+.signUpContainer .headLine sup i, .registerContainer .headLine sup i, .createPasswordContainer .headLine sup i { color:red; }
+.signUpSections h3, .registerSections h3, .createPasswordSection h3, .forgotPasswordSection h2 { text-align:center; }
+.signUpSections p, .registerSections p, .createPasswordSection p, .forgotPasswordSection p { background-color: #ccc; padding: 15px; margin-bottom: 20px; }
+
+.forgotPasswordSection { margin-top:50px; }
+

@@ -75,25 +75,20 @@ $country_data = $lookupmodel->getCountry($connect);
 ?>
 <?php include 'components/header.php'; ?>
 
-<div class="container">
+<div class="forgotPasswordContainer container">
   <div class="row">
-    <div class="col-lg-12">
-      
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-8 col-lg-push-2" style="margin-top: 50px;">
-	<h2 style="text-align:center">Forgot your password?</h2>
-	<p style="background-color: #ccc; padding: 15px; margin-bottom: 20px;">Please enter your email address below to recieve a password reset message</p>
-	<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal forgotPasswordSection')); ?>
+    <div class="forgotPasswordSection col-lg-8 col-lg-push-2">
+	<h2>Forgot your password?</h2>
+	<p>Please enter your email address below to recieve a password reset message</p>
+	<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal forgotPasswordFormSection')); ?>
       <fieldset>
         <!-- Text input-->
         <div class="form-group">
           <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$fnameFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
         </div>
 		<!-- Button -->
-        <div class="form-group">
-          <div class="col-md-4 col-md-push-5"> <?php echo $formelem->button(array('id'=>'btn-sendPass','name'=>'btn-sendPass','class'=>'btn btn-primary registerBtn', 'value'=>'Email password')); ?> </div>
+        <div class="submitContainer form-group">
+          <div class="col-md-12"> <?php echo $formelem->button(array('id'=>'btn-sendPass','name'=>'btn-sendPass','class'=>'btn btn-primary registerBtn', 'value'=>'Email password')); ?> </div>
         </div>
       </fieldset>
       <?php echo $formelem->close(); ?> </div>
