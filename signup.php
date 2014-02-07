@@ -54,23 +54,23 @@ if(isset($_POST['btn-signup'])){
 	$acctNo = $_POST['accountNumber'];
 	$mobile = $_POST['mobileNumber'];
 
-    //if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
-//
-//      $data['@password'] = '';
-//      $data['@firstname'] = $_POST['firstname'];
-//      $data['@lastname'] = $_POST['lastname'];
-//      $data['@email'] = $_POST['email'];
-//      $data['@country'] = $_POST['country'];
-//      $data['@company'] = $_POST['companyname'];
-//      $data['@mobilephone'] = $_POST['mobileNumber'];
-//      $data['@acct_no'] = $_POST['accountNumber'];
-//      
-//      $db->mquery_insert("dbo.createAccount", $data, $connect);
-//	  $emailmodel->signupMail($db->escape($_POST['email']), $db->escape($_POST['mobileNumber']));
-//	  
-//      header("Location: confirmation.php");
-//
-//    }
+    if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
+
+      $data['@password'] = '';
+      $data['@firstname'] = $_POST['firstname'];
+      $data['@lastname'] = $_POST['lastname'];
+      $data['@email'] = $_POST['email'];
+      $data['@country'] = $_POST['country'];
+      $data['@company'] = $_POST['companyname'];
+      $data['@mobilephone'] = $_POST['mobileNumber'];
+      $data['@acct_no'] = $_POST['accountNumber'];
+      
+      $db->mquery_insert("dbo.createAccount", $data, $connect);
+	  $emailmodel->signupMail($db->escape($_POST['email']), $db->escape($_POST['mobileNumber']));
+	  
+      header("Location: confirmation.php");
+
+    }
 
 }
 
