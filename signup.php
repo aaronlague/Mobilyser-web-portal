@@ -42,29 +42,35 @@ $mobileFlag['class'] = '';
 
 if(isset($_POST['btn-signup'])){
 	
-    $fnameFlag = $validationlib->isEmpty($_POST['firstname'], '', 2);
-    $lnameFlag = $validationlib->isEmpty($_POST['lastname'], '', 2);
-    $emailFlag = $validationlib->isEmail($_POST['email'], '', 5, 'y');
-    $mobileFlag = $validationlib->isEmpty($_POST['mobileNumber'], '', 5);
+    $fnameFlag = $validationlib->isEmpty($_POST['firstname'], 'First name', 2);
+    $lnameFlag = $validationlib->isEmpty($_POST['lastname'], 'Last name', 2);
+    $emailFlag = $validationlib->isEmail($_POST['email'], 'Email', 5, 'y');
+	$acctNoFlag = $validationlib->isEmpty($_POST['accountNumber'], 'Account number', 5, 'y');
+    $mobileFlag = $validationlib->isEmpty($_POST['mobileNumber'], 'Mobile number', 5);
+	
+	$fname = $_POST['firstname'];
+	$lname = $_POST['lastname'];
+	$email = $_POST['email'];
+	$acctNo = $_POST['accountNumber'];
+	$mobile = $_POST['mobileNumber'];
 
-    if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
-
-      $data['@password'] = '';
-      $data['@firstname'] = $_POST['firstname'];
-      $data['@lastname'] = $_POST['lastname'];
-      $data['@email'] = $_POST['email'];
-      $data['@country'] = $_POST['country'];
-      $data['@company'] = $_POST['companyname'];
-      $data['@mobilephone'] = $_POST['mobileNumber'];
-      $data['@acct_no'] = $_POST['accountNumber'];
-      //$data['@telecom'] = $_POST['telco'];
-      
-      $db->mquery_insert("dbo.createAccount", $data, $connect);
-	  $emailmodel->signupMail($db->escape($_POST['email']), $db->escape($_POST['mobileNumber']));
-	  
-      header("Location: confirmation.php");
-
-    }
+    //if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
+//
+//      $data['@password'] = '';
+//      $data['@firstname'] = $_POST['firstname'];
+//      $data['@lastname'] = $_POST['lastname'];
+//      $data['@email'] = $_POST['email'];
+//      $data['@country'] = $_POST['country'];
+//      $data['@company'] = $_POST['companyname'];
+//      $data['@mobilephone'] = $_POST['mobileNumber'];
+//      $data['@acct_no'] = $_POST['accountNumber'];
+//      
+//      $db->mquery_insert("dbo.createAccount", $data, $connect);
+//	  $emailmodel->signupMail($db->escape($_POST['email']), $db->escape($_POST['mobileNumber']));
+//	  
+//      header("Location: confirmation.php");
+//
+//    }
 
 }
 
@@ -93,23 +99,25 @@ $plantype_data = array(
       <fieldset>
         <!-- Text input-->
         <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name','class'=>'form-control input-md '.$fnameFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
+          <?php	echo $fnameFlag['message']; ?>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?><span class="required">*</span></div>
         </div>
         <!-- Text input-->
         <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name','class'=>'form-control input-md '.$lnameFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
+          <?php	echo $lnameFlag['message']; ?>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?><span class="required">*</span></div>
         </div>
         <!-- Text input-->
-        <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
+        <div class="form-group"> <?php echo $emailFlag['message']; ?>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'', 'value'=>$email)); ?><span class="required">*</span></div>
         </div>
         <!-- Text input-->
-        <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'accountNumber','name'=>'accountNumber','placeholder'=>'Account number','class'=>'form-control input-md'));?><span class="required">*</span></div>
+        <div class="form-group"> <?php echo $acctNoFlag['message']; ?>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'accountNumber','name'=>'accountNumber','placeholder'=>'Account number','class'=>'form-control input-md '.$acctNoFlag['class'].'', 'value'=>$acctNo));?><span class="required">*</span></div>
         </div>
         <!-- Text input-->
-        <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'mobileNumber','name'=>'mobileNumber','placeholder'=>'Mobile number','class'=>'form-control input-md '.$mobileFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
+        <div class="form-group"> <?php echo $mobileFlag['message']; ?>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'mobileNumber','name'=>'mobileNumber','placeholder'=>'Mobile number','class'=>'form-control input-md '.$mobileFlag['class'].'', 'value'=>$mobile)); ?><span class="required">*</span></div>
         </div>
         <!-- Select Basic -->
         <div class="form-group">

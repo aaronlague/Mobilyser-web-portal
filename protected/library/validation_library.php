@@ -9,7 +9,7 @@ class validationLibrary {
 		} else {
 			$isResult = $this->isLength($string, $message, $numlength);
 			$flag['message'] = $isResult['message'];
-			$flag['class'] = '';
+			$flag['class'] = $isResult['class'];
 		}	
 		return $flag;
 	}

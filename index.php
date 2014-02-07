@@ -76,7 +76,7 @@ if(isset($_POST['btn-login'])){
               <div class="row">
                 <div class="col-md-10 col-md-push-1">
                   <div class="col-md-6 col-md-push-3">
-                    <a href="forgot-password.php">Forgot your password?</a>
+                    <a href="forgotpassword.php">Forgot your password?</a>
                   </div>
                 <div class="col-md-5 col-md-push-1"><?php echo $formelem->button(array('id'=>'btn-login','name'=>'btn-login','class'=>'btn btn-primary', 'style'=>'width:100%', 'value'=>'Login')); ?></div>
               </div>
