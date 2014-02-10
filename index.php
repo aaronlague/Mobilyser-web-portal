@@ -45,6 +45,7 @@ if(isset($_POST['btn-login'])){
 <link href="css/bootstrap.css" rel="stylesheet">
 <!-- Add custom CSS here -->
 <link href="css/modern-business.css" rel="stylesheet">
+<link href="css/flat-ui.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -53,96 +54,58 @@ if(isset($_POST['btn-login'])){
 <nav class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="row">
-      <div class="navbar-header col-md-5"><i class="fa fa-mobile fa-5x"></i> <a class="navbar-brand" href="index.php">Mobilyser<br />
-        <span>Mobile | Tracking | Analysis</span></a> </div>
+      <div class="navbar-header col-lg-5">
+	  	<img src="images/image-logo.png" border="0" />
+	  </div>
       <!--login form goes here-->
-      <div class="loginSection col-md-6 col-md-push-1">
-		<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection')); ?>
-          <fieldset>
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="Email">Email</label>
-              <div class="col-md-8">
-			    <?php echo $emailFlag['message']; ?>
-				<?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-sm '.$emailFlag['class'].'', 'value'=>$email)); ?>
-              </div>
-            </div>
-            <!-- Text input-->
-            <div class="form-group">
-              <label class="col-md-3 control-label" for="password">Password</label>
-              <div class="col-md-8">
-			    <?php echo $pwordFlag['message']; ?>
-				<?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'')); ?>
-              </div>
-            </div>
-            <!-- Button -->
-            <div class="form-group">
-              <div class="row">
-                <div class="col-md-10 col-md-push-1">
-                  <div class="col-md-6 col-md-push-3">
-                    <a href="forgotpassword.php">Forgot your password?</a>
-                  </div>
-                <div class="col-md-5 col-md-push-1"><?php echo $formelem->button(array('id'=>'btn-login','name'=>'btn-login','class'=>'btn btn-primary', 'style'=>'width:100%', 'value'=>'Login')); ?></div>
-              </div>
-              </div>
-            </div>
-          </fieldset>
-		  <?php echo $formelem->close(); ?>
-        <!--</form>-->
-      </div>
-    </div>
+      <div class="loginSection col-lg-3 col-lg-offset-3">
+	  	<div class="form-group">
+            <input type="text" placeholder="Username" class="form-control input-sm">
+            <span class="input-icon fui-lock"></span>
+        </div>
+		<div class="form-group">
+			<input type="text" placeholder="Password" class="form-control input-sm">
+            <span class="input-icon fui-lock"></span>
+		</div>
+	  </div>
+	  <div class="col-lg-1" style="margin-top:45px;">
+	  	<a href="#">Lost your password</a>
+	  </div>
     <!--login form ends here-->
   </div>
   <!-- /.container -->
 </nav>
 <div class="section topContent">
   <div class="container">
-    <h1>Need to analyse your mobile calls to claim an expense or prepare your tax return?</h1>
-    <p>Mobilyser provides an efficient mechanism for scaning your mobile phone bills and matching this information to contacts you have tagged as being related to work. We can provide an accurate figure to support an employee expense claim or your tax return. </p>
+    <h1>Analyse your mobile calls to claim an expense or prepare your tax return.</h1>
     <a class="btn btn-lg btn-primary" href="register.php">Sign Up Now!</a> </div>
 </div>
 <div class="section">
   <div class="splashColumn container">
     <div class="row">
-      <div class="col-lg-4 col-md-4"> <img src="images/img-mobile.png" border="0" />
-        <h3>Mobile</h3>
-      </div>
-      <div class="col-lg-4 col-md-4"> <img src="images/img-tracking.png" border="0" />
-        <h3>Tracking</h3>
-      </div>
-      <div class="col-lg-4 col-md-4"> <img src="images/img-data.png" border="0" />
-        <h3>Analysis</h3>
-      </div>
+      <div class="splashContent col-lg-5">
+		<h2>Save time and money!</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
+	  </div>
+	  <div class="col-lg-6 col-lg-push-1">
+	  <div class="row">
+	  	<div class="col-lg-2" style="width:170px;">
+			<img src="images/image-mobile-hp.png" border="0" />
+		</div>
+		<div class="col-lg-2" style="width:170px;">
+			<img src="images/image-tracking-hp.png" border="0" />
+		</div>
+		<div class="col-lg-2" style="width:170px;">
+			<img src="images/image-tracking-hp.png" border="0" />
+		</div>
+	  </div>
+	  </div>
     </div>
     <!-- /.row -->
   </div>
   <!-- /.container -->
 </div>
 <!-- /.section -->
-<div class="section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-7">
-        <h1>Heading 1</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
-      </div>
-	  <div class="col-lg-4 col-lg-push-1">
-	  <img src="http://placehold.it/300x300">
-	  </div>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row well">
-    <div class="col-lg-8 col-md-8">
-      <h4>Mobilyser Mobile App is a ready-to-use!</h4>
-      <p>Aenean interdum eros et mauris rhoncus elementum. Nunc blandit libero non quam scelerisque, at feugiat purus tincidunt. Nulla neque nibh, blandit quis aliquam a, laoreet sed nisi. Donec porta elit id justo suscipit, sed dapibus arcu molestie.</p>
-    </div>
-    <div class="col-lg-4 col-md-4"> <a class="btn btn-lg btn-primary pull-right" href="register.php">Sign Up Now!</a> </div>
-  </div>
-  <!-- /.row -->
-</div>
-<!-- /.container -->
 <div class="container">
   <hr>
   <footer>
