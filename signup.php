@@ -60,10 +60,11 @@ if(isset($_POST['btn-signup'])){
       $data['@firstname'] = $_POST['firstname'];
       $data['@lastname'] = $_POST['lastname'];
       $data['@email'] = $_POST['email'];
-      $data['@country'] = $_POST['country'];
-      $data['@company'] = $_POST['companyname'];
+	  $data['@acct_no'] = $_POST['accountNumber'];
       $data['@mobilephone'] = $_POST['mobileNumber'];
-      $data['@acct_no'] = $_POST['accountNumber'];
+	  $data['@country'] = $_POST['country'];
+	  $data['@company'] = '';
+	  $data['@telecom'] = '';
       
       $db->mquery_insert("dbo.createAccount", $data, $connect);
 	  $emailmodel->signupMail($db->escape($_POST['email']), $db->escape($_POST['mobileNumber']));
@@ -140,10 +141,10 @@ $plantype_data = array(
         <div class="form-group">
           <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'plancap','name'=>'plancap','placeholder'=>'Plan cap','class'=>'form-control input-md')); ?> </div>
         </div>
-        <p><strong>Please note:</strong> Due to the complex billing arrangements most Telcos have in place for international calls we are unable to estimate the cost of these calls.</p>
+        <span class="note"><strong>Please note:</strong> Due to the complex billing arrangements most Telcos have in place for international calls we are unable to estimate the cost of these calls.</span>
         <!-- Button -->
         <div class="form-group">
-          <div class="col-md-4 col-md-push-5"> <?php echo $formelem->button(array('id'=>'btn-signup','name'=>'btn-signup','class'=>'btn btn-primary registerBtn', 'value'=>'Create Account')); ?> </div>
+          <div class="col-md-4 col-md-push-5"> <?php echo $formelem->button(array('id'=>'btn-signup','name'=>'btn-signup','class'=>'btn btn-primary registerBtn', 'value'=>'Create account')); ?> </div>
         </div>
       </fieldset>
       <?php echo $formelem->close(); ?> </div>
@@ -152,5 +153,6 @@ $plantype_data = array(
 </div>
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
+<script src="js/field-validator.js"></script>
 <script src="js/core.js"></script>
 <?php include 'components/footer.php'; ?>

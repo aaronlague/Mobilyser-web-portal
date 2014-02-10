@@ -23,9 +23,11 @@ if(isset($_POST['btn-login'])){
     $email = $db->escape($_POST['email']);
     $password = $db->escape($_POST['password']);
     
-    $emailFlag = $validationlib->isEmail($email, '', 3, 'n');
-    $pwordFlag = $validationlib->isEmpty($password, '', 1);
-    if($emailFlag['message'] == "" and $pwordFlag['message'] == ""){
+    $emailFlag = $validationlib->isEmail($email, 'Email entered is', 3, 'n');
+    $pwordFlag = $validationlib->isEmpty($password, 'Password', 1);
+	
+    
+	if($emailFlag['message'] == "" and $pwordFlag['message'] == ""){
       $indexController->indexPage($email, $password, $activationcodeURL, $connect);
     }
 
@@ -51,24 +53,26 @@ if(isset($_POST['btn-login'])){
 <nav class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="row">
-      <div class="navbar-header col-md-5"><i class="fa fa-mobile fa-5x" style="font-size: 9em!important; float:left; color:#fff;"></i> <a class="navbar-brand" style="margin-top:30px; margin-left:0px; color:#fff;" href="index.php">Mobilyser<br />
-        <span style="font-size:12px; font-weight:bold; color:#FFFFFF;">Mobile | Tracking | Analysis</span></a> </div>
+      <div class="navbar-header col-md-5"><i class="fa fa-mobile fa-5x"></i> <a class="navbar-brand" href="index.php">Mobilyser<br />
+        <span>Mobile | Tracking | Analysis</span></a> </div>
       <!--login form goes here-->
-      <div class="col-md-6 col-md-push-1 loginSection">
-		<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal')); ?>
+      <div class="loginSection col-md-6 col-md-push-1">
+		<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection')); ?>
           <fieldset>
             <!-- Text input-->
             <div class="form-group">
               <label class="col-md-3 control-label" for="Email">Email</label>
               <div class="col-md-8">
-				<?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-sm '.$emailFlag['class'].'','required'=>'')); ?>
+			    <?php echo $emailFlag['message']; ?>
+				<?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-sm '.$emailFlag['class'].'', 'value'=>$email)); ?>
               </div>
             </div>
             <!-- Text input-->
             <div class="form-group">
               <label class="col-md-3 control-label" for="password">Password</label>
               <div class="col-md-8">
-				<?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'','required'=>'')); ?>
+			    <?php echo $pwordFlag['message']; ?>
+				<?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'')); ?>
               </div>
             </div>
             <!-- Button -->
@@ -98,15 +102,15 @@ if(isset($_POST['btn-login'])){
     <a class="btn btn-lg btn-primary" href="register.php">Sign Up Now!</a> </div>
 </div>
 <div class="section">
-  <div class="container">
+  <div class="splashColumn container">
     <div class="row">
-      <div class="col-lg-4 col-md-4" style="text-align:center;"> <img src="images/img-mobile.png" border="0" />
+      <div class="col-lg-4 col-md-4"> <img src="images/img-mobile.png" border="0" />
         <h3>Mobile</h3>
       </div>
-      <div class="col-lg-4 col-md-4" style="text-align:center;"> <img src="images/img-tracking.png" border="0" />
+      <div class="col-lg-4 col-md-4"> <img src="images/img-tracking.png" border="0" />
         <h3>Tracking</h3>
       </div>
-      <div class="col-lg-4 col-md-4" style="text-align:center;"> <img src="images/img-data.png" border="0" />
+      <div class="col-lg-4 col-md-4"> <img src="images/img-data.png" border="0" />
         <h3>Analysis</h3>
       </div>
     </div>
@@ -153,6 +157,5 @@ if(isset($_POST['btn-login'])){
 <!-- JavaScript -->
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/bootstrap.js"></script>
-<script src="js/modern-business.js"></script>
 </body>
 </html>

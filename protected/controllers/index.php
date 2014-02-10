@@ -5,7 +5,7 @@ class IndexController {
 
         $db = new db_config();
 
-        if(strlen($activationcode) < 0){
+        if(strlen($activationcode) == 0){
 
             $sql = $db->mquery("EXEC dbo.login
                     @email = '".$email."',

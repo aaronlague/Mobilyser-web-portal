@@ -1,19 +1,19 @@
 <?php
 session_start();
 
-include 'protected/config/db_config.php';
+//include 'protected/config/db_config.php';
 include 'protected/config/html_config.php';
 include 'protected/library/validation_library.php';
 include 'protected/models/lookup.php';
 include 'protected/controllers/index.php';
 
-$db = new db_config();
+//$db = new db_config();
 $formelem = new FormElem();
 $validationlib = new validationLibrary();
 $lookupmodel = new LookupModel();
 $indexController = new IndexController();
 
-$connect = $db->connect();
+//$connect = $db->connect();
 
 $activationcodeURL = '';
 
@@ -47,17 +47,17 @@ if(isset($_POST['btn-register'])){
 	$lname = $_POST['lastname'];
 	$email = $_POST['email'];
 
-    //if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
+    if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
 	
       //$data['@firstname'] = $_POST['firstname'];
 //      $data['@lastname'] = $_POST['lastname'];
 //      $data['@email'] = $_POST['email'];
-      
-      //$db->mquery_insert("dbo.createAccount", $data, $connect);
+//      
+//      $db->mquery_insert("dbo.createAccount", $data, $connect);
 
-      //header("Location: confirmation.php");
+      header("Location: confirmation.php");
 
-    //}
+    }
 
 }
 
@@ -102,4 +102,6 @@ if(isset($_POST['btn-register'])){
 </div>
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
+<script src="js/field-validator.js"></script>
+<script src="js/core.js"></script>
 <?php include 'components/footer.php'; ?>

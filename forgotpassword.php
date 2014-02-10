@@ -33,45 +33,17 @@ $pwordFlag['class'] = '';
 //
 //}
 
-$fnameFlag['class'] = '';
-$lnameFlag['class'] = '';
-$emailFlag['class'] = '';
-$mobileFlag['class'] = '';
 
-//if(isset($_POST['btn-register'])){
-//    
-//    $fnameFlag = $validationlib->isEmpty($_POST['firstname'], '', 2);
-//    $lnameFlag = $validationlib->isEmpty($_POST['lastname'], '', 2);
-//    $emailFlag = $validationlib->isEmail($_POST['email'], '', 5, 'y');
-//    $mobileFlag = $validationlib->isEmpty($_POST['mobileNumber'], '', 5);
-//
-//    if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
-//
-//      $data['@password'] = '';
-//      $data['@firstname'] = $_POST['firstname'];
-//      $data['@lastname'] = $_POST['lastname'];
-//      $data['@email'] = $_POST['email'];
-//      $data['@country'] = $_POST['country'];
-//      //$data['@company'] = $_POST['companyname'];
-//      $data['@mobilephone'] = '09226885956';
-//      $data['@acct_no'] = $_POST['accountNumber'];
-//      //$data['@telecom'] = $_POST['telco'];
-//      
-//      $db->mquery_insert("dbo.createAccount", $data, $connect);
-//
-//      header("Location: confirmation.php");
-//
-//    }
-//
-//}
+$emailFlag['class'] = '';
+
+if(isset($_POST['btn-sendPass'])){
+
+	$emailFlag = $validationlib->isEmail($_POST['email'], 'Email is', 5, 'y');
+
+}
 
 $country_data = $lookupmodel->getCountry($connect);
 
-//$plantype_data = array(
-//  '1'=>'Plan A',
-//  '2'=>'Plan B',
-//  '3'=>'Plan C'
-//);
 ?>
 <?php include 'components/header.php'; ?>
 
@@ -84,7 +56,8 @@ $country_data = $lookupmodel->getCountry($connect);
       <fieldset>
         <!-- Text input-->
         <div class="form-group">
-          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$fnameFlag['class'].'','required'=>'')); ?><span class="required">*</span></div>
+		  <?php echo $emailFlag['message']; ?>	
+          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'')); ?><span class="required">*</span></div>
         </div>
 		<!-- Button -->
         <div class="submitContainer form-group">
@@ -96,4 +69,6 @@ $country_data = $lookupmodel->getCountry($connect);
 </div>
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
+<script src="js/field-validator.js"></script>
+<script src="js/core.js"></script>
 <?php include 'components/footer.php'; ?>

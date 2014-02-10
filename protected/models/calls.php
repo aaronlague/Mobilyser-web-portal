@@ -17,6 +17,15 @@ class CallsModel {
 		while($row = $db->fetchobject($sql)){
 
 			$caller_tag = $db->strip($row->caller_tag);
+			
+				if ($caller_tag == 'P') {
+					$caller_tag_image = "images/personal.png";
+				} elseif ($caller_tag == 'W') {
+					$caller_tag_image = "images/work.png";
+				} else {
+					$caller_tag_image = "images/untagged.png";
+				}
+			
 			$call_date = $db->strip($row->call_date);
 			$time = $db->strip($row->time);
 			$phone_number = $db->strip($row->phone_number);
@@ -26,7 +35,8 @@ class CallsModel {
 			$bill_issued = $db->strip($row->bill_issued);
 
 	        $data .= "<tr>";
-			$data .= "<td class='callTag'>" . $caller_tag . "</td>";
+			//$data .= "<td class='callTag'>" . $caller_tag . "</td>";
+			$data .= '<td class="callTag"><img src="' . $caller_tag_image . '"></td>';
 			$data .= "<td class='callDate'>" . $call_date . "</td>";
 			$data .= "<td>" . $time . "</td>";
 			$data .= "<td class='phoneNo'><a href='#'>" . $phone_number . "</a></td>";
