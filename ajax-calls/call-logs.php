@@ -30,9 +30,10 @@ echo '<table class="table table-striped table-bordered calls-table dataTable" id
 echo '<thead>';
 echo '<tr>';
 echo '<th class="callerTag"><img src="images/mobilyser-logo.png"></th>';
-echo '<th class="callDate">Call Date</th>';
+echo '<th class="callDate">Date</th>';
 echo '<th>Time</th>';
-echo '<th>Number</th>';
+//echo '<th>Contact name</th>';
+echo '<th>Contact</th>';
 echo '<th>Duration</th>';
 echo '<th>Est. Cost</th>';
 echo '<th>Act. Cost</th>';

@@ -1,16 +1,18 @@
-    <div class="container">
-
-      <hr>
-
+    <section class="footerSection">
+  <div class="container">
+    <div class="footerContainer col-lg-10 col-lg-push-1">
       <footer>
-        <div class="row">
-          <div class="col-lg-12">
-            <p>Mobilyser &copy; 2013</p>
-          </div>
-        </div>
+        <div class="copyrightNote col-lg-5"> <span>&copy; Copyright 2014 Mobilyser.  All rights reserved.</span> </div>
+        <div class="footerNavs col-lg-1"> <img src="images/image-footer-logo-hp.png" border="0"> </div>
+        <div class="footerNavs col-lg-1"> <a href="#">Home</a> </div>
+        <div class="footerNavs col-lg-1"> <a href="#">Privacy</a> </div>
+        <div class="footerNavs col-lg-1"> <a href="#">Terms</a> </div>
+        <div class="footerNavs col-lg-2"> <a href="#">Follow Us</a> </div>
+        <div class="footerNavs col-lg-1"> <span class="fui-facebook"></span> <span class="fui-twitter"></span> </div>
       </footer>
-
-    </div><!-- /.container -->
+    </div>
+  </div>
+</section>
 
     <!-- JavaScript -->
     <!--<script src="js/jquery-1.10.2.js"></script>-->

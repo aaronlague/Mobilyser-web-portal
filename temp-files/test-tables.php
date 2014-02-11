@@ -61,10 +61,9 @@ $connect = $db->connect();
 
 		$sql = $db->mquery("SELECT * FROM  users", $connect);
 		while($row = $db->fetcharray($sql, SQLSRV_FETCH_ASSOC)){
-			echo "<ul>";
-			echo "<li>" . $row['email'] . "</li>";
-			echo "</ul>";
-			
+			echo "<pre>";
+			print_r ($row);
+			echo "</pre>";
 		}
 		
 		//$sql = $db->mquery("EXEC dbo.getbill_upload @account_number = '7050789440'", $connect);

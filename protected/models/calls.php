@@ -28,18 +28,26 @@ class CallsModel {
 			
 			$call_date = $db->strip($row->call_date);
 			$time = $db->strip($row->time);
+			$contact_name = $db->strip($row->contact_name);
 			$phone_number = $db->strip($row->phone_number);
 			$duration = $db->strip($row->duration);
 			$estimated_cost = $db->strip($row->estimated_cost);
 			$actual_cost = $db->strip($row->actual_cost);
 			$bill_issued = $db->strip($row->bill_issued);
+			
+			if ($contact_name == ""){
+				$procContactName = '<span id="contacPlaceHolder" value="'.$phone_number.'">'.$phone_number.'</span>';
+			} else {
+				$procContactName = '<span id="contacPlaceHolder" value="'.$phone_number.'">'.$contact_name.'</span>';
+			}
 
 	        $data .= "<tr>";
 			//$data .= "<td class='callTag'>" . $caller_tag . "</td>";
 			$data .= '<td class="callTag"><img src="' . $caller_tag_image . '"></td>';
 			$data .= "<td class='callDate'>" . $call_date . "</td>";
 			$data .= "<td>" . $time . "</td>";
-			$data .= "<td class='phoneNo'><a href='#'>" . $phone_number . "</a></td>";
+			//$data .= "<td>" . $contact_name . "</td>";
+			$data .= "<td class='phoneNo'><a href='#'>" . $procContactName . "</a></td>";
 			$data .= "<td>" . $duration . "</td>";
 			$data .= "<td>" . "$" . number_format($estimated_cost, 2) . "</td>";
 			$data .= "<td>". "$" .  number_format($actual_cost, 2) . "</td>";
