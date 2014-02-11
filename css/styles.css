@@ -4,9 +4,9 @@
 sub, sup { position: relative; font-size: 60%!important; line-height: 0; vertical-align: baseline; }
 .navbar-header { padding-top: 42px; padding-left: 0px; padding-bottom:28px; }
 .navbar-header i { font-size: 9em!important; float:left; color:#fff; }
-.navbar-header a.navbar-brand { margin-top:30px!important; margin-left:0px!important; color:#fff; }
 .navbar-header span { font-size:12px; font-weight:bold; color:#FFFFFF; }
 nav .container .row .loginSection { padding-top:45px; }
+nav .container .row .loginSection .form-group input[type=text], nav .container .row .loginSection .form-group .input-icon{ background-color: #ecf0f1; }
 .topContent { background-color:#34495e; text-align:center; color:#FFFFFF; }
 .topContent h1 { font-size:40px; }
 .splashColumn .row .splashContent h2 { font-size:39px; text-align:left;  }
