@@ -58,30 +58,29 @@ if(isset($_POST['btn-login'])){
   <div class="loginSection col-lg-3 col-lg-offset-3">
   <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection')); ?>
   <fieldset>
-    <div class="form-group"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-sm '.$emailFlag['class'].'', 'value'=>$email)); ?>
-      <!--<input type="text" placeholder="Username" class="form-control input-sm">-->
+    <div class="form-group <?php echo $emailFlag['class'] ?> "><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Username','class'=>'form-control input-sm '.$emailFlag['class'].'', 'value'=>$email)); ?>
       <span class="input-icon fui-user"></span>
 	</div>
-    <div class="form-group"><?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'')); ?>
-      <!--<input type="text" placeholder="Password" class="form-control input-sm">-->
+    <div class="form-group <?php echo $pwordFlag['class'] ?>"><?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'')); ?>
       <span class="input-icon fui-lock"></span>
 	</div>
     </div>
     <div class="submitContainer col-lg-1">
-      <p><a href="#fakelink">Lost your password?</a></p>
+      <p><a href="forgotpassword.php">Lost your password?</a></p>
       <?php echo $formelem->button(array('id'=>'btn-login','name'=>'btn-login','class'=>'btn btn-sm btn-primary btn-login', 'value'=>'Login')); ?>
-      <!--<a href="#" class="btn btn-sm btn-primary btn-login" id="btn-login">Login</a>-->
     </div>
   </fieldset>
   <?php echo $formelem->close(); ?>
-  <!--login form ends here-->
 </div>
 <!-- /.container -->
 </nav>
 <div class="section topContent">
   <div class="container">
+  	<div class="col-lg-8 col-lg-offset-2">
     <h1>Analyse your mobile calls to claim an expense or prepare your tax return.</h1>
-    <a class="btn btn-lg btn-primary" href="register.php">Sign up today</a> </div>
+    <a class="btn btn-lg btn-primary" href="register.php">Sign up today</a>
+	</div>
+  </div>
 </div>
 <div class="section">
   <div class="splashColumn container">

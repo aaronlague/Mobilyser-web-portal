@@ -10,6 +10,7 @@
 <link href="css/bootstrap.css" rel="stylesheet">
 <!-- Add custom CSS here -->
 <link href="css/modern-business.css" rel="stylesheet">
+<link href="css/flat-ui.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
 <link href="css/demo_table.css" rel="stylesheet">
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -19,10 +20,7 @@
 <nav class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="row">
-      <div class="navbar-header col-md-5"><i class="fa fa-mobile fa-5x" style="font-size: 9em!important; float:left; color:#fff;"></i> 
-        <a class="navbar-brand" style="margin-top:30px; margin-left:0px; color:#fff;" href="index.php">Mobilyser<br />
-        <span style="font-size:12px; font-weight:bold; color:#FFFFFF;">Mobile | Tracking | Analysis</span></a> 
-      </div>
+      <div class="navbar-header col-lg-5"><img src="images/image-logo.png" border="0" /></div>
         <?php  
         if(!isset($_SESSION['sess_user_id'])) { 
           include 'components/header-public.php';

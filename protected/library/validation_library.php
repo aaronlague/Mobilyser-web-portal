@@ -5,7 +5,7 @@ class validationLibrary {
 	public function isEmpty($string, $message, $numlength){
 		if ($string == NULL){
 			$flag['message'] = '<span class="errorMsg">'.$message.' required.</span><br />';
-			$flag['class'] = 'error';
+			$flag['class'] = 'has-error';
 		} else {
 			$isResult = $this->isLength($string, $message, $numlength);
 			$flag['message'] = $isResult['message'];
