@@ -1,17 +1,17 @@
 <?php
 session_start();
 
-//include 'protected/config/db_config.php';
+include 'protected/config/db_config.php';
 include 'protected/config/html_config.php';
 include 'protected/library/validation_library.php';
 include 'protected/controllers/index.php';
 
-//$db = new db_config();
+$db = new db_config();
 $formelem = new FormElem();
 $validationlib = new validationLibrary();
 $indexController = new IndexController();
 
-//$connect = $db->connect();
+$connect = $db->connect();
 
 $activationcodeURL = '';
 
@@ -53,21 +53,27 @@ if(isset($_POST['btn-login'])){
 <nav class="navbar navbar-inverse" role="navigation">
 <div class="container">
 <div class="row">
-  <div class="navbar-header col-lg-5"> <img src="images/image-logo.png" border="0" /> </div>
+  <div class="navbar-header col-lg-5"><img src="images/image-logo.png" border="0" /></div>
   <!--login form goes here-->
   <div class="loginSection col-lg-3 col-lg-offset-3">
-    <div class="form-group" style="margin-bottom:5px!important;">
-      <input type="text" placeholder="Username" class="form-control input-sm">
-	  <span class="input-icon fui-user">
-    </div>
-    <div class="form-group">
-      <input type="text" placeholder="Password" class="form-control input-sm">
+  <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection')); ?>
+  <fieldset>
+    <div class="form-group"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-sm '.$emailFlag['class'].'', 'value'=>$email)); ?>
+      <!--<input type="text" placeholder="Username" class="form-control input-sm">-->
+      <span class="input-icon fui-user"></span>
+	</div>
+    <div class="form-group"><?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'')); ?>
+      <!--<input type="text" placeholder="Password" class="form-control input-sm">-->
       <span class="input-icon fui-lock"></span>
 	</div>
-  </div>
-  <div class="col-lg-1" style="margin-top:45px;">
-    <p style="line-height:1!important; font-size:12px;"><a href="#fakelink">Lost your password?</a></p>
-    <a href="#fakelink" class="btn btn-sm btn-primary">Login</a> </div>
+    </div>
+    <div class="submitContainer col-lg-1">
+      <p><a href="#fakelink">Lost your password?</a></p>
+      <?php echo $formelem->button(array('id'=>'btn-login','name'=>'btn-login','class'=>'btn btn-sm btn-primary btn-login', 'value'=>'Login')); ?>
+      <!--<a href="#" class="btn btn-sm btn-primary btn-login" id="btn-login">Login</a>-->
+    </div>
+  </fieldset>
+  <?php echo $formelem->close(); ?>
   <!--login form ends here-->
 </div>
 <!-- /.container -->
@@ -75,7 +81,7 @@ if(isset($_POST['btn-login'])){
 <div class="section topContent">
   <div class="container">
     <h1>Analyse your mobile calls to claim an expense or prepare your tax return.</h1>
-    <a class="btn btn-lg btn-primary" href="register.php">Sign Up Now!</a> </div>
+    <a class="btn btn-lg btn-primary" href="register.php">Sign up today</a> </div>
 </div>
 <div class="section">
   <div class="splashColumn container">
@@ -97,54 +103,42 @@ if(isset($_POST['btn-login'])){
   <!-- /.container -->
 </div>
 <!-- /.section -->
-<section class="bottomContent" style="background-color:#ecf0f1; border-bottom:1px solid #dee1e4;">
+<section class="bottomContent">
   <div class="bottomContentContainer container" style="text-align:center;">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
         <h2>The process</h2>
         <br />
-        <!--<img src="images/image-bottom-slider-hp.png" border="0">-->
-		<div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false"><div class="ui-slider-segment" style="margin-left: 25%;"></div><div class="ui-slider-segment" style="margin-left: 25%;"></div><div class="ui-slider-segment" style="margin-left: 25%;"></div><div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 50%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a></div>
-		<br />
-		<br />
+        <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
+          <div class="ui-slider-segment" style="margin-left: 25%;"></div>
+          <div class="ui-slider-segment" style="margin-left: 25%;"></div>
+          <div class="ui-slider-segment" style="margin-left: 25%;"></div>
+          <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 50%;"></div>
+          <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a></div>
+        <br />
+        <br />
         <img src="images/image-caller-tags-hp.png" border="0">
-		<h3>Tag a phone call</h3>
-	   <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-	   </div>
+        <h3>Tag a phone call</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      </div>
     </div>
-    <div class="row">
-	</div>
+    <div class="row"> </div>
   </div>
 </section>
-<section>
-<div class="container">
-<div class="col-lg-10 col-lg-push-1" style="padding-right:0!important; padding-left:0!important; margin-bottom:20px;">
-	<footer style="margin-top:20px!important;">
-		<div class="col-lg-5">
-			<span style="font-size:12px; color:#c0c5ca;">© Copyright 2014 Mobilyser.  All rights reserved.</span>
-		</div>
-		<div class="col-lg-1">
-			<img src="images/image-footer-logo-hp.png" border="0">
-		</div>
-		<div class="col-lg-1">
-			<a style="font-size:12px; color:#c0c5ca;" href="#">Home</a>
-		</div>
-		<div class="col-lg-1">
-			<a style="font-size:12px; color:#c0c5ca;" href="#">Privacy</a>
-		</div>
-		<div class="col-lg-1">
-			<a style="font-size:12px; color:#c0c5ca;" href="#">Terms</a>
-		</div>
-		<div class="col-lg-2">
-			<a style="font-size:12px; color:#c0c5ca;" href="#">Follow Us</a> 
-		</div>
-		<div class="col-lg-1" style="color:#c0c5ca;">
-			<span style="padding-right:10px;" class="fui-facebook"></span>
-			<span class="fui-twitter"></span>
-		</div>
-	</footer>
-</div>
-</div>
+<section class="footerSection">
+  <div class="container">
+    <div class="footerContainer col-lg-10 col-lg-push-1">
+      <footer>
+        <div class="copyrightNote col-lg-5"> <span>© Copyright 2014 Mobilyser.  All rights reserved.</span> </div>
+        <div class="footerNavs col-lg-1"> <img src="images/image-footer-logo-hp.png" border="0"> </div>
+        <div class="footerNavs col-lg-1"> <a href="#">Home</a> </div>
+        <div class="footerNavs col-lg-1"> <a href="#">Privacy</a> </div>
+        <div class="footerNavs col-lg-1"> <a href="#">Terms</a> </div>
+        <div class="footerNavs col-lg-2"> <a href="#">Follow Us</a> </div>
+        <div class="footerNavs col-lg-1"> <span class="fui-facebook"></span> <span class="fui-twitter"></span> </div>
+      </footer>
+    </div>
+  </div>
 </section>
 <!-- /.container -->
 <!-- JavaScript -->
