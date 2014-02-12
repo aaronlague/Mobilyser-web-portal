@@ -116,11 +116,15 @@ class LookupModel {
 		$sql = $db->mquery("EXEC dbo.getbill_upload @account_number = '" . $accountNum . "'", $connect);
 		$num = $db->numhasrows($sql);
 		$uploadedbills = array();
+		$i = 0;
 		while($row = $db->fetchobject($sql)){
+			
+			$ctr = $i++;
+
 			$bill_id = $db->strip($row->id);
 			$bill_date = $db->strip($row->bill_date);
 			
-			$data .= '<li id="btype_'.$bill_id.'" onclick="btype_data(\''.$bill_id.'\', \''.$bill_date.'\');" rel="0" class="btype">';
+			$data .= '<li id="btype_'.$ctr.'" onclick="btype_data(\''.$ctr.'\', \''.$bill_date.'\');" rel="'.$ctr.'" class="btype">';
 			$data .= '<a tabindex="-1" href="#" class="opt"><span class="pull-left">'.$bill_date.'</span></a>';
 			$data .= '</li>';
 

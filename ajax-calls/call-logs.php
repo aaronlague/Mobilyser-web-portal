@@ -47,10 +47,6 @@ echo '</table>';
 ?>
 <script src="js/history-table.js"></script>
 <script>
-//$(document).ready(function(){
-//$('#dvData').dataTable({"sPaginationType": "full_numbers"});
-//});
-
 $(document).ready(function() {
 	var rowCount = $('#dvData tr').length;
 	console.log (rowCount);
@@ -66,5 +62,4 @@ $(document).ready(function() {
         "bAutoWidth": true
     } );
 } );
-
 </script>

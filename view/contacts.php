@@ -4,12 +4,12 @@ $contactsModel = new ContactsModel();
 ?>
 <div class="container" style="padding-left:30px;">
   <div class="row">
-    <table class="table table-striped table-bordered">
-      <thead>
+    <table class="table table-striped table-bordered" id="dvData">
+      <!--<thead>
         <tr>
           <th colspan="2"> Contact List </th>
-          <th colspan="1" style="text-align:right;"> <?php echo $contactsModel->getContacts($_SESSION['account_num'], 'y', $connect); ?> Contacts </th>
-        </tr>
+          <th colspan="1" style="text-align:right;"> <?php //echo $contactsModel->getContacts($_SESSION['account_num'], 'y', $connect); ?> Contacts </th>
+        </tr>-->
       </thead>
       <thead>
         <tr>
@@ -24,3 +24,20 @@ $contactsModel = new ContactsModel();
     </table>
   </div>
 </div>
+<script>
+$(document).ready(function() {
+	var rowCount = $('#dvData tr').length;
+	console.log (rowCount);
+	var varArgs = "true";
+	console.log (varArgs);
+    $('#dvData').dataTable( {
+		"sPaginationType": "full_numbers",
+        "bPaginate": varArgs,
+        "bLengthChange": true,
+        "bFilter": true,
+        "bSort": true,
+        "bInfo": true,
+        "bAutoWidth": true
+    } );
+} );
+</script>

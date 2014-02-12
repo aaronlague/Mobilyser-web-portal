@@ -7,10 +7,10 @@ var loadHistory = function(phoneNumberCellValue, callerTagValue){
 
 
 $(document).ready(function () {
-	$("td.phoneNo").on('click', function() { 
+	$("td.phoneNo a").on('click', function() { 
 		console.log ("History Data Active");
-		var strCheck = $("td.phoneNo a input").val().replace(/([-~!@#$%^&*()_+=`{}\[\]\|\\:;'<>,.\/? ])+/g, '');
-		//alert (strCheck);
+		var strCheck = $(this).children('input#valueContainer').val().replace(/([-~!@#$%^&*()_+=`{}\[\]\|\\:;'<>,.\/? ])+/g, '');
+		console.log (strCheck);
 		var phoneNumberCellValue = strCheck;
 		var callerTagValue = $(this).closest('tr').children('td.callTag').text(); // get the value of the call tag col related to phone number col
 		loadHistory(phoneNumberCellValue, callerTagValue);
