@@ -2076,11 +2076,13 @@
 			var sSearchStr = oSettings.oLanguage.sSearch;
 			sSearchStr = (sSearchStr.indexOf('_INPUT_') !== -1) ?
 			  sSearchStr.replace('_INPUT_', '<input type="text" />') :
-			  sSearchStr==="" ? '<input type="text" />' : sSearchStr+' <input type="text" />';
+			  //sSearchStr==="" ? '<input type="text" />' : sSearchStr+' <input type="text" class="sss" />';\
+			  sSearchStr==="" ? '<input type="text" class="form-control input-sm" placeholder="Search" />' : sSearchStr+' <input type="text" class="form-control input-sm" placeholder="Search" />';
 			
 			var nFilter = document.createElement( 'div' );
 			nFilter.className = oSettings.oClasses.sFilter;
-			nFilter.innerHTML = '<label>'+sSearchStr+'</label>';
+			//nFilter.innerHTML = '<label>'+sSearchStr+'</label>';
+			nFilter.innerHTML = '<div class="row"><div class="col-lg-6 col-lg-offset-6"><div class="form-group">'+sSearchStr+'<span class="input-icon fui-search"></span></div></div></div>';
 			if ( !oSettings.aanFeatures.f )
 			{
 				nFilter.id = oSettings.sTableId+'_filter';
@@ -9481,8 +9483,8 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
-		
+			//"sSearch": "Search:",
+			"sSearch": "",
 		
 			/**
 			 * All of the language information can be stored in a file on the

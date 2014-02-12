@@ -13,7 +13,7 @@ var dom = {
 dom.signupTextFieldsToValidate.limitkeypress({rexp: /^[A-Za-z_-\s]+$/}); 		//text only
 dom.signupIntFieldsToValidate.limitkeypress({rexp: /^[0-9]+$/}); 			//integers
 dom.signupFloatFieldsToValidate.limitkeypress({rexp: /^[+]?\d*\.?\d*$/}); 	//float
-dom.emailFieldsToValidate.limitkeypress({rexp: /^([A-Za-z0-9_\-\.\s])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/}); //email
+//dom.emailFieldsToValidate.limitkeypress({rexp: /^([A-Za-z0-9_\-\.\s])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/}); //email
 
 
 

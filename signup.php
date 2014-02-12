@@ -37,37 +37,37 @@ if(isset($_POST['btn-login'])){
 
 $fnameFlag['class'] = '';
 $lnameFlag['class'] = '';
-$emailFlag['class'] = '';
+$emailaddressFlag['class'] = '';
 $mobileFlag['class'] = '';
 
 if(isset($_POST['btn-signup'])){
 	
     $fnameFlag = $validationlib->isEmpty($_POST['firstname'], 'First name', 2);
     $lnameFlag = $validationlib->isEmpty($_POST['lastname'], 'Last name', 2);
-    $emailFlag = $validationlib->isEmail($_POST['email'], 'Email', 5, 'y');
-	$acctNoFlag = $validationlib->isEmpty($_POST['accountNumber'], 'Account number', 5, 'y');
+    $emailaddressFlag = $validationlib->isEmail($_POST['emailaddress'], 'Email', 5, 'y');
+	  $acctNoFlag = $validationlib->isEmpty($_POST['accountNumber'], 'Account number', 5, 'y');
     $mobileFlag = $validationlib->isEmpty($_POST['mobileNumber'], 'Mobile number', 5);
 	
 	$fname = $_POST['firstname'];
 	$lname = $_POST['lastname'];
-	$email = $_POST['email'];
+	$emailaddress = $_POST['emailaddress'];
 	$acctNo = $_POST['accountNumber'];
 	$mobile = $_POST['mobileNumber'];
 
-    if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
+    if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailaddressFlag['message'] == "" and $mobileFlag['message'] == "" ){
 
       $data['@password'] = '';
       $data['@firstname'] = $_POST['firstname'];
       $data['@lastname'] = $_POST['lastname'];
-      $data['@email'] = $_POST['email'];
-	  $data['@acct_no'] = $_POST['accountNumber'];
+      $data['@email'] = $_POST['emailaddress'];
+	    $data['@acct_no'] = $_POST['accountNumber'];
       $data['@mobilephone'] = $_POST['mobileNumber'];
-	  $data['@country'] = $_POST['country'];
-	  $data['@company'] = '';
-	  $data['@telecom'] = '';
+	    $data['@country'] = $_POST['country'];
+	    $data['@company'] = '';
+	    $data['@telecom'] = '';
       
       $db->mquery_insert("dbo.createAccount", $data, $connect);
-	  $emailmodel->signupMail($db->escape($_POST['email']), $db->escape($_POST['mobileNumber']));
+	    //$emailmodel->signupMail($db->escape($_POST['email']), $db->escape($_POST['mobileNumber']));
 	  
       header("Location: confirmation.php");
 
@@ -111,7 +111,7 @@ $plantype_data = array(
         </div>
         <!-- Text input-->
         <div class="form-group"> <?php echo $emailFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'', 'value'=>$email)); ?><span class="required">*</span></div>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'emailaddress','name'=>'emailaddress','placeholder'=>'Email','class'=>'form-control input-md '.$emailaddressFlag['class'].'', 'value'=>$email)); ?><span class="required">*</span></div>
         </div>
         <!-- Text input-->
         <div class="form-group"> <?php echo $acctNoFlag['message']; ?>

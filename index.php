@@ -37,7 +37,7 @@ if(isset($_POST['btn-login'])){
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Mobilyser</title>
@@ -53,7 +53,7 @@ if(isset($_POST['btn-login'])){
 <nav class="navbar navbar-inverse" role="navigation">
 <div class="container">
 <div class="row">
-  <div class="navbar-header col-lg-5"><img src="images/image-logo.png" border="0" /></div>
+  <div class="navbar-header col-lg-5"><a href="index.php"><img src="images/image-logo.png" border="0" /></a></div>
   <!--login form goes here-->
   <div class="loginSection col-lg-3 col-lg-offset-3">
   <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection')); ?>
@@ -90,11 +90,13 @@ if(isset($_POST['btn-login'])){
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
       </div>
       <div class="col-lg-6 col-lg-offset-1">
-        <div class="row" style="padding-left: 75px;">
-          <div class="col-lg-2" style="width:170px; text-align:center;"> <img src="images/image-mobile-hp.png" border="0" /> </div>
-          <div class="col-lg-2" style="width:170px;"> <img src="images/image-tracking-hp.png" border="0" /> </div>
-          <div class="col-lg-2" style="width:170px;"> <img src="images/image-tracking-hp.png" border="0" /> </div>
+        <div class="container">
+		<div class="row" style="text-align:center;">
+          <div class="col-lg-2" style=""><img src="images/image-mobile-hp.png" border="0" /> </div>
+          <div class="col-lg-2" style=""><img src="images/image-tracking-hp.png" border="0" /> </div>
+          <div class="col-lg-2" style=""><img src="images/image-tracking-hp.png" border="0" /> </div>
         </div>
+		</div>
       </div>
     </div>
     <!-- /.row -->

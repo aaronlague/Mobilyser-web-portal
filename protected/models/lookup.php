@@ -120,13 +120,11 @@ class LookupModel {
 			$bill_id = $db->strip($row->id);
 			$bill_date = $db->strip($row->bill_date);
 			
-			$data[] .= $bill_date;
-			//$option = array("id" => $bill_id, "value" => "".$bill_date."");
-			//$uploadedbills[] = $option;
+			$data .= '<li id="btype_'.$bill_id.'" onclick="btype_data(\''.$bill_id.'\', \''.$bill_date.'\');" rel="0" class="btype">';
+			$data .= '<a tabindex="-1" href="#" class="opt"><span class="pull-left">'.$bill_date.'</span></a>';
+			$data .= '</li>';
 
 		}
-		//$data = json_encode($uploadedbills);
-		//$response = isset($_GET['callback'])?$_GET['callback']."(".$data.")":$data;
 		return $data; 
 
     }

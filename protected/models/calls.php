@@ -36,9 +36,9 @@ class CallsModel {
 			$bill_issued = $db->strip($row->bill_issued);
 			
 			if ($contact_name == ""){
-				$procContactName = '<span id="contacPlaceHolder" value="'.$phone_number.'">'.$phone_number.'</span>';
+				$procContactName = '<input type=hidden id="valueContainer" value="'.$phone_number.'">' .$phone_number;
 			} else {
-				$procContactName = '<span id="contacPlaceHolder" value="'.$phone_number.'">'.$contact_name.'</span>';
+				$procContactName = '<input type=hidden id="valueContainer" value="'.$phone_number.'">' .$contact_name ;
 			}
 
 	        $data .= "<tr>";
