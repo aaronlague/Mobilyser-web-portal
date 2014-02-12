@@ -62,8 +62,8 @@ $connect = $db->connect();
 		$sql = $db->mquery("SELECT * FROM  users", $connect);
 		while($row = $db->fetcharray($sql, SQLSRV_FETCH_ASSOC)){
 			echo "<pre>";
-			echo $row['firstname'];
-			//print_r ($row);
+			//echo $row['firstname'];
+			print_r ($row);
 			echo "</pre>";
 		}
 		

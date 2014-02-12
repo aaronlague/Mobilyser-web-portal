@@ -1,8 +1,7 @@
 <div class="container" style="padding-left:30px;">
   <div class="row filterSection" id="filterControls">
-    <h4>Filter Calls</h4>
+    <div class="col-lg-2"><span>Filter Calls</span></div>
     <div class="col-lg-2">
-      <!--<span>Call Types</span>-->
   	  <div class="btn-group select select-block mbl">
   		<button class="btn dropdown-toggle clearfix btn-sm btn-warning" data-toggle="dropdown">
   		<span class="filter-option pull-left"><div id="ctype-selected">Select call type</div></span>&nbsp;<span class="caret"></span></button>

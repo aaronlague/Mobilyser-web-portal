@@ -90,13 +90,11 @@ if(isset($_POST['btn-login'])){
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
       </div>
       <div class="col-lg-6 col-lg-offset-1">
-        <div class="container">
 		<div class="row" style="">
-          <div class="col-xs-4 col-md-2 col-lg-2" style=""><img src="images/image-mobile-hp.png" border="0" /> </div>
-          <div class="col-xs-4 col-md-2 col-lg-2" style=""><img src="images/image-tracking-hp.png" border="0" /> </div>
-          <div class="col-xs-4 col-md-2 col-lg-2" style=""><img src="images/image-tracking-hp.png" border="0" /> </div>
+          <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-mobile-hp.png" border="0" /> </div>
+          <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-tracking-hp.png" border="0" /> </div>
+          <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-tracking-hp.png" border="0" /> </div>
         </div>
-		</div>
       </div>
     </div>
     <!-- /.row -->

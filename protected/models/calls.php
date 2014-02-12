@@ -19,11 +19,14 @@ class CallsModel {
 			$caller_tag = $db->strip($row->caller_tag);
 			
 				if ($caller_tag == 'P') {
-					$caller_tag_image = "images/personal.png";
+					$caller_tag_image = 'images/personal.png';
+					$caller_tag_text = '<input type=hidden id="callTagValue" value="images/image-personal-tag-hp.png">';
 				} elseif ($caller_tag == 'W') {
-					$caller_tag_image = "images/work.png";
+					$caller_tag_image = 'images/work.png';
+					$caller_tag_text = '<input type=hidden id="callTagValue" value="images/image-work-tag-hp.png">';
 				} else {
-					$caller_tag_image = "images/untagged.png";
+					$caller_tag_image = 'images/untagged.png';
+					$caller_tag_text = '<input type=hidden id="callTagValue" value="images/image-untagged-tag-hp.png">';
 				}
 			
 			$call_date = $db->strip($row->call_date);
@@ -43,7 +46,7 @@ class CallsModel {
 
 	        $data .= "<tr>";
 			//$data .= "<td class='callTag'>" . $caller_tag . "</td>";
-			$data .= '<td class="callTag"><img src="' . $caller_tag_image . '"></td>';
+			$data .= '<td class="callTag"><img src="' . $caller_tag_image . '">' .$caller_tag_text. '</td>';
 			$data .= "<td class='callDate'>" . $call_date . "</td>";
 			$data .= "<td>" . $time . "</td>";
 			//$data .= "<td>" . $contact_name . "</td>";

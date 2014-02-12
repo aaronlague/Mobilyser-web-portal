@@ -17,7 +17,7 @@ $calltype_data = array(
 
 <div class="row">
 <div class="callHistoryDetails" style="">
-  <div class="col-lg-7"><a id="callList"><i class="fa fa-chevron-circle-left fa-2x"></i></a><span style="font-family: helvetica; font-size: 25px; margin-left: 5px;">Tait Brown</span>
+  <div class="col-lg-7"><a id="returnToList"><i class="fa fa-chevron-circle-left fa-2x"></i></a><span style="font-family: helvetica; font-size: 25px; margin-left: 5px;"><?php echo $_SESSION['storedata']; ?></span>
   </div>
   <div class="col-lg-5">
     <div class="form-group">
@@ -28,12 +28,18 @@ $calltype_data = array(
 </div>
 </div>
 <div class="row">
-  <div class="col-lg-3" style="margin-top:15px;">
-    <span class="circle"><h1 style="margin-top: 0px; padding-top:5px;"><?php echo $_GET['callerTagValue'] ?></h1></span>
-	 <ul style="float:right; padding-left:0px!important; padding-right: 40px; list-style:none;">
-		<li><strong>Total Actual Cost:</strong></li>
-		<li><strong>Total Estimated Cost:</strong></li>
-	</ul>
+  <div class="col-lg-8" style="margin-top:15px;">
+  <div class="row">
+	  <div class="col-lg-2">
+	  <img src="<?php echo $_GET['callerTagValue'] ?>" border="0" />
+	  </div>
+	  <div class="col-lg-6 col-lg-pull-1" style="padding-top:5px;">
+	    <ul style="padding-left:0px!important; list-style:none; font-size:14px;">
+			<li><strong>Total Actual Cost:</strong></li>
+			<li><strong>Total Estimated Cost:</strong></li>
+		</ul>
+	  </div>
+  </div>
   </div>
 </div>
 <hr />
@@ -42,6 +48,8 @@ echo '<h4>Call History</h4>';
 echo '<table class="table table-striped table-bordered calls-history-table" id="dvData">';
 echo '<thead>';
 echo '<tr>';
+//echo '<th>Contact id</th>';
+//echo '<th>Contact</th>';
 echo '<th>Call Date</th>';
 echo '<th>Time</th>';
 echo '<th>Duration</th>';
@@ -84,7 +92,7 @@ $(document).ready(function(){
 	
 	}
 	
-	$("#callList").click(function(){
+	$("#returnToList").click(function(){
 		$("#tabSection").find("ul li #calltabs").trigger("click");
 		$('#call-logs').fadeOut().fadeIn(500);
 	});
