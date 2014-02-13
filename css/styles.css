@@ -65,6 +65,12 @@ nav .container .row .submitContainer .btn-login { background-color:#2fac66!impor
 .callList table tbody tr td.callTag { text-align:center; }
 .callList table tbody tr td.callDate { text-align:center; }
 
+
+.paging_full_numbers a.paginate_button:hover { background-color: #2fac66!important; text-decoration: none !important; }
+.paging_full_numbers a.paginate_button, .paging_full_numbers a.paginate_active { border: 0px solid #aaa!important; -webkit-border-radius: 0px!important; -moz-border-radius: 0px!important; padding: 2px 5px!important; margin: 0px 0px!important; cursor: pointer; color: #333 !important; font-size: 18px!important; }
+.dataTables_info { width: 60%; float: left; font-size: 18px!important; }
+.paging_full_numbers a.paginate_active { background-color: #2fac66!important; }
+
 .regFormSection fieldset .form-group div span.required, .signUpFormSection fieldset .form-group div span.required, .forgotPasswordFormSection fieldset .form-group div span.required { color: red; float: right; position: absolute; top: 0; right: 0; line-height: 40px; font-weight:bold; font-size:25px; }
 
 .regFormSection fieldset input[type="text"], .signUpFormSection fieldset input[type="text"], .forgotPasswordSection fieldset input[type="text"] { text-align:center; }
@@ -77,8 +83,8 @@ nav .container .row .submitContainer .btn-login { background-color:#2fac66!impor
 
 .signUpContainer .headLine, .registerContainer .headLine, .createPasswordContainer .headLine { text-align:center; }
 .signUpContainer .headLine sup i, .registerContainer .headLine sup i, .createPasswordContainer .headLine sup i { color:red; }
-.signUpSections h3, .registerSections h3, .createPasswordSection h3, .forgotPasswordSection h2 { text-align:center; }
-.signUpSections p, .registerSections p, .createPasswordSection p, .forgotPasswordSection p { background-color: #ccc; padding: 15px; margin-bottom: 20px; }
+.signUpSections h3, .registerSections h4, .createPasswordSection h3, .forgotPasswordSection h2 { text-align:center; }
+.signUpSections p, .registerSections p, .createPasswordSection p, .forgotPasswordSection p { background-color: #f9fafb; padding: 15px; margin-bottom: 20px; border-radius:6px; border:2px solid #ecf0f1; }
 .signUpFormSection fieldset .note { background-color:none!important;}
 .forgotPasswordSection { margin-top:50px; }
 

@@ -9,7 +9,12 @@ $connect = $db->connect();
 
 $data = '';
 
-$ctype = $_GET['ctype'];
-$btype = $_GET['btype'];
+$mobile = $db->escape($_POST['mobile']);
+$ctags = $db->escape($_POST['tag']);
 
+
+$db->mquery("exec update_Tag @phone_number = '".$mobile."', 
+	@caller_tag = '".$ctags."'", $connect);
+	
+//echo $_POST['tag'];
 ?>

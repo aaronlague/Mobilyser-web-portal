@@ -53,6 +53,14 @@ function ctype_data(elemid, elemvalue){
 
   loadcalls(elemid, btype); 
 }
+function ctype_data_only(elemid, elemvalue){
+
+  $("#ctype-selected-only").html(elemvalue);
+  $("#calltype-only").val(elemid);
+  $(".ctype").attr("class", "ctype");
+  $("#ctype_"+elemid+"").attr("class", "ctype selected");
+
+}
 function btype_data(elemid, elemvalue){
   var ctype = $('#ctype-input').val();
 

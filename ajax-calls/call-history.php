@@ -17,7 +17,6 @@ $calltype_data = array(
   'U'=>'Untagged'
 );
 ?>
-
 <div class="row">
   <div class="callHistoryDetails">
     <div class="col-lg-7"> <a id="returnToList"><span class="fui-arrow-left"></span></a> <span style="font-family: helvetica; font-size: 25px; margin-left: 5px;"> <?php echo $contacthistory->getContactHistory($_GET['phoneNumberCellValue'], 'n', $connect); ?></span> </div>
@@ -29,23 +28,23 @@ $calltype_data = array(
         <div class="col-lg-5 col-lg-push-1">
           <div class="btn-group select select-block mbl">
             <button class="btn dropdown-toggle clearfix btn-sm btn-warning" data-toggle="dropdown"> <span class="filter-option pull-left">
-            <div id="ctype-selected">Select call type</div>
+            <div id="ctype-selected-only">Select call type</div>
             </span>&nbsp;<span class="caret"></span></button>
             <span class="dropdown-arrow"></span>
-            <input type="hidden" name="calltype" id="calltype" value="A" />
+            <input type="hidden" name="contact-number" id="contact-number" value="<?php echo $_GET['phoneNumberCellValue']; ?>" />
+            <input type="hidden" name="calltype-only" id="calltype-only" value="A" />
             <ul class="dropdown-menu" role="menu" style="max-height: 200px; overflow-y: auto; min-height: 108px;">
               <li id="ctype_0" onClick="" rel="A" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Select call type</span></a></li>
-              <li id="ctype_A" onClick="ctype_data('A', 'All calls');" rel="A" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">All calls</span></a></li>
-              <li id="ctype_P" onClick="ctype_data('P', 'Personal');" rel="P" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Personal</span></a></li>
-              <li id="ctype_W" onClick="ctype_data('W', 'Work');" rel="W" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Work</span></a></li>
-              <li id="ctype_U" onClick="ctype_data('U', 'Untagged');" rel="U" class="ctype"><a tabindex="-1" href="#" class="opt "><span class="pull-left">Untagged</span></a></li>
+              <li id="ctype_A" onClick="ctype_data_only('A', 'All calls');" rel="A" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">All calls</span></a></li>
+              <li id="ctype_P" onClick="ctype_data_only('P', 'Personal');" rel="P" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Personal</span></a></li>
+              <li id="ctype_W" onClick="ctype_data_only('W', 'Work');" rel="W" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Work</span></a></li>
+              <li id="ctype_U" onClick="ctype_data_only('U', 'Untagged');" rel="U" class="ctype"><a tabindex="-1" href="#" class="opt "><span class="pull-left">Untagged</span></a></li>
             </ul>
           </div>
         </div>
         <!--end select-->
         <!--begin submit-->
-        <div class="col-lg-4 col-lg-push-1">
-          <button class="btn btn-sm btn-primary" id="update-primary">Update&nbsp;&nbsp;<span class="fui-check-inverted"></span></button>
+          <button class="btn btn-sm btn-primary" id="update-primary" data-toggle="modal" data-target=".bs-modal-sm">Update&nbsp;&nbsp;<span class="fui-check-inverted"></span></button>
         </div>
         <!--end submit-->
       </div>
@@ -120,13 +119,16 @@ $(document).ready(function(){
 	});
 
 	$("#update-primary").click(function(event){
+	      console.log("saving...");
           $.post( 
-             "/ajax-call/tag-contacts.php",
-             { name: "Zara" },
+             "../mobilyser-beta/ajax-calls/tag-contacts.php",
+             {
+              mobile: $('#contact-number').val(),
+              tag: $('#calltype-only').val()
+             },
              function(data) {
                 $('#stage').html(data);
              }
-
           );
       });
 
