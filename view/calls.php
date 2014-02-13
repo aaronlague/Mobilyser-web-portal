@@ -33,7 +33,8 @@
   <div class="row">
     <div class="col-lg-12 callListSection" style="padding-left:0;">
       <div class="callList" id="call-logs"></div>
-      <a href="#" class="btn btn-primary export" id="btn-export" style="margin-top: 15px;">Export to file</a> </div>
+      <button class="btn btn-primary export" id="btn-export" style="margin-top: 15px;"><span class="fui-export"></span> Export to file</a>
+	</div>
   </div>
 </div>
 <script src="js/jquery-1.10.2.js"></script>

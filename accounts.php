@@ -70,6 +70,7 @@ $bill_upload_data = $lookupmodel->getBills($_SESSION['account_num'], $connect);
 <!-- /.container -->
 <?php include 'components/footer.php'; ?>
 <script src="js/accounts.js"></script>
+<script src="js/bill-history.js"></script>
 <script>
 $(document).ready(function () {
 console.log("Bills tab active");

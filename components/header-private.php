@@ -7,7 +7,7 @@
 			</div>
 			<div class="col-lg-2" style="font-size:12px;">
 			<?php echo $formelem->create(array('method'=>'post', 'action'=>'logout.php')); ?>
-			<button class="btn btn-primary btn-wide mll">Log out<span class="fui-exit"></span></button>
+			<button class="btn btn-primary btn-wide mll">Log out <span class="fui-exit"></span></button>
 			<?php echo $formelem->close(); ?>
 			</div>
 		</div>

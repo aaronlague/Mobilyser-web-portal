@@ -36,15 +36,15 @@ echo $count;
         $("#submitBtn").click(function () { 
 		//$("#errMsg", parent.document.body).empty();
 		//$("#errMsg", parent.document.body).append($("<i class='fa fa-exclamation-triangle'></i>").append(" - " + $("#msg").val())) 
-		
-		$(".testTxt").append("test");
 		//parent.location.reload(true);
-		$("#tabSection", parent.document.body).find("ul li.active").trigger("click");
+		
+		//$("#bills", parent.document.body).find("#bills-history").load('http://124.107.13.62:8080/myod/mobilyser-beta/ajax-calls/bill-history.php');
+			$("#bills", parent.document.body).find("#bills-history").fadeOut(500, function(){	
+				console.log(this);
+				$(this).fadeIn(500);
+			});
+		
 		});
-		
-		//$('#dvData').dataTable();
-		
-		
 		
     });
 </script>
