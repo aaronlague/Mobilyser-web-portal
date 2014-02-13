@@ -59,7 +59,7 @@ $db = new db_config();
 $connect = $db->connect();
 		$data = '';
 
-		$sql = $db->mquery("SELECT * FROM  users", $connect);
+		$sql = $db->mquery("EXEC dbo.show_ContactName @phone_number = '09112223344'", $connect);
 		while($row = $db->fetcharray($sql, SQLSRV_FETCH_ASSOC)){
 			echo "<pre>";
 			//echo $row['firstname'];

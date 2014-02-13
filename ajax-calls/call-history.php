@@ -3,8 +3,11 @@ session_start();
 include '../protected/config/db_config.php';
 include '../protected/config/html_config.php';
 include '../protected/models/history.php';
+include '../protected/models/contact-history.php';
 $db = new db_config();
 $historymodel = new HistoryModel();
+$contacthistory = new ContactHistoryModel();
+
 $formelem = new FormElem();
 
 $connect = $db->connect();
@@ -17,7 +20,7 @@ $calltype_data = array(
 
 <div class="row">
 <div class="callHistoryDetails" style="">
-  <div class="col-lg-7"><a id="returnToList"><i class="fa fa-chevron-circle-left fa-2x"></i></a><span style="font-family: helvetica; font-size: 25px; margin-left: 5px;"><?php echo $_SESSION['storedata']; ?></span>
+  <div class="col-lg-7"><a id="returnToList"><i class="fa fa-chevron-circle-left fa-2x"></i></a><span style="font-family: helvetica; font-size: 25px; margin-left: 5px;"><?php echo $contacthistory->getContactHistory($_GET['phoneNumberCellValue'], 'n', $connect); ?></span>
   </div>
   <div class="col-lg-5">
     <div class="form-group">
@@ -31,7 +34,7 @@ $calltype_data = array(
   <div class="col-lg-8" style="margin-top:15px;">
   <div class="row">
 	  <div class="col-lg-2">
-	  <img src="<?php echo $_GET['callerTagValue'] ?>" border="0" />
+	  <img src="<?php echo $contacthistory->getContactHistory($_GET['phoneNumberCellValue'], 'y', $connect); ?>" border="0" />
 	  </div>
 	  <div class="col-lg-6 col-lg-pull-1" style="padding-top:5px;">
 	    <ul style="padding-left:0px!important; list-style:none; font-size:14px;">

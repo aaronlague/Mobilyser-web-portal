@@ -93,7 +93,7 @@ if(isset($_POST['btn-login'])){
 		<div class="row" style="">
           <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-mobile-hp.png" border="0" /> </div>
           <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-tracking-hp.png" border="0" /> </div>
-          <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-tracking-hp.png" border="0" /> </div>
+          <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-analysis-hp.png" border="0" /> </div>
         </div>
       </div>
     </div>

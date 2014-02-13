@@ -3,6 +3,7 @@ include 'protected/models/bills.php';
 $db = new db_config();
 $connect = $db->connect();
 $sql = $db->mquery("EXEC getTelco @userID = '" . $_SESSION['idx'] . "'", $connect);
+//$sql = $db->mquery("EXEC getTelco @accountnumber = '" . $_SESSION['account_num'] . "'", $connect);
 while($row = $db->fetchobject($sql)){
 	$telco = $db->strip($row->name); // get telco for the iframe parameter
 }

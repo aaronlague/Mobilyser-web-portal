@@ -25,7 +25,7 @@ if($data != ''){
 }else{
 	$filterFields = '';
 }
-
+//echo $_SESSION['account_num'];
 echo '<h4>Call List</h4>';
 echo '<table class="table table-striped table-bordered calls-table dataTable" id="dvData">';
 echo '<thead>';

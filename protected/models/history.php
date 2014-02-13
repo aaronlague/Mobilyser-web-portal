@@ -22,15 +22,8 @@ class HistoryModel {
 			$caller_tag = $db->strip($row->caller_tag);
 			$bill_issued = $db->strip($row->bill_issued);
 			
-			if ($contact_name == '') {
-				$_SESSION['storedata'] = $phone_number;
-			} else {
-				$_SESSION['storedata'] = $contact_name;
-			}
 			
-			$data .= "<tr>";
-			//$data .= "<td>" . $call_id . "</td>";
-			//$data .= "<td>" . $contact_name . "</td>";
+			$data .= "<tr>";			
 			$data .= "<td>" . $call_date . "</td>";
 			$data .= "<td>" . $time . "</td>";
 			$data .= "<td>" . $duration . "</td>";
