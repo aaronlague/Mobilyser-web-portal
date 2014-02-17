@@ -4509,14 +4509,14 @@ a.list-group-item.active > .badge,
     border-radius: 4px;
   }
 }
-.tab-content {
+/*.tab-content {
   border: 2px solid #ddd;
   border-radius: 6px;
   margin-bottom: 20px;
   padding: 20px 20px 5px;
   position: relative;
   z-index: 1;
-}
+}*/
 .nav-list {
   padding-left: 13px;
   padding-right: 13px;

@@ -59,13 +59,33 @@ $db = new db_config();
 $connect = $db->connect();
 		$data = '';
 
-		$sql = $db->mquery("EXEC dbo.show_ContactName @phone_number = '09112223344'", $connect);
-		while($row = $db->fetcharray($sql, SQLSRV_FETCH_ASSOC)){
-			echo "<pre>";
-			//echo $row['firstname'];
-			print_r ($row);
-			echo "</pre>";
+	$FileName = "_export.csv";
+	$file = fopen($FileName,"w");
+
+	$HeadingsArray = array('Column 1', 'Column 2');
+	
+	foreach($row as $name => $value){
+		$HeadingsArray[] = $name;
+	}
+	
+	fputcsv($file,$HeadingsArray); 
+
+		$sql = $db->mquery("EXEC dbo.getCalls @account_number = '696001582', @caller_tag = 'A'", $connect);
+		while($row = $db->fetchobject($sql)){
+		
+			$valuesArray = array();
+			
+			foreach($row as $name => $value){
+				$valuesArray[]=$value;
+			}
+			
+		fputcsv($file,$valuesArray);
 		}
+fclose($file);
+
+header("Location: $FileName");
+ 
+//echo "Complete Record saves as CSV in file: <b style=\"color:red;\">$FileName</b>";
 		
 		//$sql = $db->mquery("EXEC dbo.getbill_upload @account_number = '7050789440'", $connect);
 //		while($row = $db->fetcharray($sql, SQLSRV_FETCH_ASSOC)){

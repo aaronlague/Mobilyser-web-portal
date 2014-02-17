@@ -67,8 +67,8 @@ nav .container .row .submitContainer .btn-login { background-color:#2fac66!impor
 
 
 .paging_full_numbers a.paginate_button:hover { background-color: #2fac66!important; text-decoration: none !important; }
-.paging_full_numbers a.paginate_button, .paging_full_numbers a.paginate_active { border: 0px solid #aaa!important; -webkit-border-radius: 0px!important; -moz-border-radius: 0px!important; padding: 2px 5px!important; margin: 0px 0px!important; cursor: pointer; color: #333 !important; font-size: 18px!important; }
-.dataTables_info { width: 60%; float: left; font-size: 18px!important; }
+.paging_full_numbers a.paginate_button, .paging_full_numbers a.paginate_active { border: 0px solid #aaa!important; -webkit-border-radius: 0px!important; -moz-border-radius: 0px!important; padding: 2px 9px!important; margin: 0px 0px!important; cursor: pointer; color: #333 !important; font-size: 18px!important; }
+.dataTables_info { /*width: 60%;*/ width: auto!important; float: left; font-size: 18px!important; }
 .paging_full_numbers a.paginate_active { background-color: #2fac66!important; }
 
 .regFormSection fieldset .form-group div span.required, .signUpFormSection fieldset .form-group div span.required, .forgotPasswordFormSection fieldset .form-group div span.required { color: red; float: right; position: absolute; top: 0; right: 0; line-height: 40px; font-weight:bold; font-size:25px; }

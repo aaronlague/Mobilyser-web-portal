@@ -6,16 +6,6 @@ var loadbills = function() {
 
 
 $(document).ready(function () {
-	//$("td.phoneNo a").on('click', function() { 
-//		console.log ("History Data Active");
-//		var strCheck = $(this).children('input#valueContainer').val().replace(/([-~!@#$%^&*()_+=`{}\[\]\|\\:;'<>,.\/? ])+/g, '');
-//		console.log (strCheck);
-//		var phoneNumberCellValue = strCheck;
-//		loadHistory(phoneNumberCellValue);
-//		
-//		$('#filterControls').hide();
-//		$('#filterControls').next().hide();
-//		
-//	});
 loadbills();
+//setInterval(loadbills(), 5000);	
 });

@@ -49,18 +49,32 @@ echo '</table>';
 <script src="js/history-table.js"></script>
 <script>
 $(document).ready(function() {
+	
 	var rowCount = $('#dvData tr').length;
 	console.log (rowCount);
-	var varArgs = "true";
-	console.log (varArgs);
-    $('#dvData').dataTable( {
-		"sPaginationType": "full_numbers",
-        "bPaginate": varArgs,
-        "bLengthChange": true,
-        "bFilter": true,
-        "bSort": true,
-        "bInfo": true,
-        "bAutoWidth": true
-    } );
+	if (rowCount <= 10) {
+		 console.log("disable pagination...");
+		 $('#dvData').dataTable( {
+			"sPaginationType": "full_numbers",
+			"bPaginate": false,
+			"bLengthChange": false,
+			"bFilter": false,
+			"bSort": false,
+			"bInfo": false,
+			"bAutoWidth": false
+    	} );
+		
+	} else {
+		console.log("display pagination...");
+		$('#dvData').dataTable( {
+			"sPaginationType": "full_numbers",
+			"bPaginate": true,
+			"bLengthChange": true,
+			"bFilter": true,
+			"bSort": true,
+			"bInfo": true,
+			"bAutoWidth": true
+    	} );
+	}
 } );
 </script>

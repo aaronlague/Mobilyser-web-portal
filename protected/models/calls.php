@@ -30,12 +30,14 @@ class CallsModel {
 			$time = $db->strip($row->time);
 			$contact_name = $db->strip($row->contact_name);
 			$phone_number = $db->strip($row->phone_number);
-			$duration = $db->strip($row->duration);
+			$date = new DateTime('2000-01-01');
+			$date->add(new DateInterval('P0Y0M0DT0H0M'.$row->duration.'S'));
+			$duration = $date->format('H:i:s');	
 			$estimated_cost = $db->strip($row->estimated_cost);
 			$actual_cost = $db->strip($row->actual_cost);
 			$bill_issued = $db->strip($row->bill_issued);
 			
-			if ($contact_name == ""){
+			if ($contact_name == " "){
 				$procContactName = '<input type=hidden id="valueContainer" value="'.$phone_number.'">' .$phone_number;
 			} else {
 				$procContactName = '<input type=hidden id="valueContainer" value="'.$phone_number.'">' .$contact_name ;

@@ -44,6 +44,7 @@ $calltype_data = array(
         </div>
         <!--end select-->
         <!--begin submit-->
+		<div class="col-lg-4 col-lg-push-1">
           <button class="btn btn-sm btn-primary" id="update-primary" data-toggle="modal" data-target=".bs-modal-sm">Update&nbsp;&nbsp;<span class="fui-check-inverted"></span></button>
         </div>
         <!--end submit-->

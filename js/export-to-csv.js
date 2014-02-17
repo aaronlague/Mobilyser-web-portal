@@ -44,6 +44,7 @@ $(document).ready(function () {
 
     // This must be a hyperlink
     $("#btn-export").click(function (){
+		console.log("export...");
         // CSV
         //exportTableToCSV.apply(this, [$('#call-logs>table'), 'export.csv']); //this is the old table wrapper
 		exportTableToCSV.apply(this, [$('#dvData_wrapper>table'), 'export.csv']);

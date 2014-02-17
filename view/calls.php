@@ -33,7 +33,7 @@
   <div class="row">
     <div class="col-lg-12 callListSection" style="padding-left:0;">
       <div class="callList" id="call-logs"></div>
-      <button class="btn btn-primary export" id="btn-export" style="margin-top: 15px;"><span class="fui-export"></span> Export to file</a>
+      <a class="btn btn-primary export" id="btn-export" style="margin-top: 15px;"><span class="fui-export"></span> Export to file</a>
 	</div>
   </div>
 </div>
