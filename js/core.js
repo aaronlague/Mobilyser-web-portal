@@ -17,7 +17,11 @@ dom.signupFloatFieldsToValidate.limitkeypress({rexp: /^[+]?\d*\.?\d*$/}); 	//flo
 
 
 
+$("#telco :first-child").attr("value", "");
+$("#telco option:first").text("Select Telco");
+
 $("#country :first-child").attr("value", "");
 $("#country option:first").text("Select country");
+
 
 });

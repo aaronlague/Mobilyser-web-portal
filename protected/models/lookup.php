@@ -20,7 +20,8 @@ class LookupModel {
 
     }
 	
-	public function getTelecoms($type, $connect){
+	//public function getTelecoms($type, $connect){
+	public function getTelecoms($connect){
     	
     	$db = new db_config();
 
@@ -28,17 +29,18 @@ class LookupModel {
 
 		$sql = $db->mquery("SELECT * FROM  telecoms", $connect);
 		$num = $db->numhasrows($sql);
-		$telecoms = array();
+		//$telecoms = array();
 		while($row = $db->fetchobject($sql)){
 			$telecom_id = $db->strip($row->telecom_id);
-			$name = $db->strip($row->name);
-			$option = array("id" => $telecom_id, "value" => "".$name."");
-			$telecoms[] = $option;
+			$data[] .= $db->strip($row->name);
+			//$name = $db->strip($row->name);
+			//$option = array("id" => $telecom_id, "value" => "".$name."");
+			//$telecoms[] = $option;
 
 		}
-		$data = json_encode($telecoms);
-		$response = isset($_GET['callback'])?$_GET['callback']."(".$data.")":$data;
-		return $response; 
+		//$data = json_encode($telecoms);
+		//$response = isset($_GET['callback'])?$_GET['callback']."(".$data.")":$data;
+		return $data;
 
     }
 

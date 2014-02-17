@@ -76,6 +76,7 @@ if(isset($_POST['btn-signup'])){
 }
 
 $country_data = $lookupmodel->getCountry($connect);
+$telco = $lookupmodel->getTelecoms($connect);
 
 $plantype_data = array(
   '1'=>'Plan A',
@@ -116,6 +117,10 @@ $plantype_data = array(
         <!-- Text input-->
         <div class="form-group"> <?php echo $acctNoFlag['message']; ?>
           <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'accountNumber','name'=>'accountNumber','placeholder'=>'Account number','class'=>'form-control input-md '.$acctNoFlag['class'].'', 'value'=>$acctNo));?><span class="required">*</span></div>
+        </div>
+		<!-- Select Basic -->
+        <div class="form-group">
+          <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'telco','name'=>'telco','class'=>'form-control','data'=>$telco)); ?><span class="required">*</span></div>
         </div>
         <!-- Text input-->
         <div class="form-group"> <?php echo $mobileFlag['message']; ?>
