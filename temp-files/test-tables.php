@@ -59,10 +59,10 @@ $db = new db_config();
 $connect = $db->connect();
 		$data = '';
 
-	$FileName = "_export.csv";
+	$FileName = date("Y-m-d") ."_export.csv";
 	$file = fopen($FileName,"w");
 
-	$HeadingsArray = array('Column 1', 'Column 2');
+	$HeadingsArray = array('ID', 'Date', 'Time', 'Phone number', 'Duration', 'Estimated cost', 'Actual cost', 'Caller tag', 'Bill issued', 'Contact name');
 	
 	foreach($row as $name => $value){
 		$HeadingsArray[] = $name;
@@ -77,6 +77,9 @@ $connect = $db->connect();
 			
 			foreach($row as $name => $value){
 				$valuesArray[]=$value;
+				//echo "<pre>";
+//				print_r($row);
+//				echo "</pre>";
 			}
 			
 		fputcsv($file,$valuesArray);
@@ -113,7 +116,19 @@ header("Location: $FileName");
 //			print_r ($row);
 //			echo "</pre>";
 //		}
-		
+
+
 		
 
 ?>
+
+<?php 
+//session_start();
+//include '../protected/config/db_config.php';
+//include '../protected/models/calls.php';
+//$db = new db_config();
+//$callsmodel = new CallsModel();
+//$connect = $db->connect();
+?>
+
+<?php //$callsmodel->generateCSVData($_SESSION['account_num'], 'A', 'n', $connect); ?>
