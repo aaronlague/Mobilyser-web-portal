@@ -29,7 +29,7 @@ if(isset($_POST['btn-login'])){
     
 	if($emailFlag['message'] == "" and $pwordFlag['message'] == ""){
       $indexController->indexPage($email, $password, $activationcodeURL, $connect);
-    }
+	}
 
 }
 ?>
@@ -64,6 +64,7 @@ if(isset($_POST['btn-login'])){
     <div class="form-group <?php echo $pwordFlag['class'] ?>"><?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'')); ?>
       <span class="input-icon fui-lock"></span>
 	</div>
+	<?php if(isset($_POST['btn-login'])){ echo $indexController->indexPage($email, $password, $activationcodeURL, $connect); } ?>
     </div>
     <div class="submitContainer col-lg-1">
       <p><a href="forgotpassword.php">Lost your password?</a></p>
@@ -108,17 +109,22 @@ if(isset($_POST['btn-login'])){
       <div class="col-lg-8 col-lg-offset-2">
         <h2>The process</h2>
         <br />
-        <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
-          <div class="ui-slider-segment" style="margin-left: 25%;"></div>
-          <div class="ui-slider-segment" style="margin-left: 25%;"></div>
-          <div class="ui-slider-segment" style="margin-left: 25%;"></div>
-          <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" style="width: 50%;"></div>
-          <a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 50%;"></a></div>
+        <div id="slider" class="ui-slider"></div>
+		<input type="hidden" id="amount" style="border:0; color:#f6931f; font-weight:bold;" />
+ 		<ul id="imageHolder" style="list-style:none; list-style: none; margin-left: 0; list-style-position: outside;">
+			<li style="display:block;" class="active">
+			<img src="images/image-slide-setup.png" border="0">
+        	<h3>Tag a phone call</h3>
+        	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+			</li>
+			<li style="display:none;"><div><img src="images/image-slide-call.png"></div></li>
+			<li style="display:none;"><div><img src="images/image-slide-tagging.png"></div></li>
+			<li style="display:none;"><div><img src="images/image-slide-upload.png"></div></li>
+			<li style="display:none;"><div><img src="images/image-slide-reporting.png"></div></li>
+			<!--<li style="display:none;"><div><img src="images/image-slide-claim.png"></div></li>-->
+		</ul>
         <br />
         <br />
-        <img src="images/image-caller-tags-hp.png" border="0">
-        <h3>Tag a phone call</h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
       </div>
     </div>
   </div>
@@ -141,7 +147,81 @@ if(isset($_POST['btn-login'])){
 <!-- /.container -->
 <!-- JavaScript -->
 <script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/bootstrap-switch.js"></script>
+<script src="js/application.js"></script>
+<script>
+$(document).ready(function(){
+	var dom = {
+		imageToHideFirst: $( "#imageHolder li:nth-child(2), #imageHolder li:nth-child(3), #imageHolder li:nth-child(4), #imageHolder li:nth-child(5)" ),
+		imageToHideSecond: $( "#imageHolder li:nth-child(1), #imageHolder li:nth-child(3), #imageHolder li:nth-child(4), #imageHolder li:nth-child(5)" ),
+		imageToHideThird: $( "#imageHolder li:nth-child(1), #imageHolder li:nth-child(2), #imageHolder li:nth-child(4), #imageHolder li:nth-child(5)" ),
+		imageToHideFourth: $( "#imageHolder li:nth-child(1), #imageHolder li:nth-child(2), #imageHolder li:nth-child(3), #imageHolder li:nth-child(5)" ),
+		imageToHideFifth: $( "#imageHolder li:nth-child(1), #imageHolder li:nth-child(2), #imageHolder li:nth-child(3), #imageHolder li:nth-child(4)" )
+	};
+	
+	$(function() {
+		$( "#slider" ).slider({
+			value:100,
+			min: 100,
+			max: 500,
+			step: 100,
+			slide: function( event, ui ) {
+				$( "#amount" ).val( ui.value );
+				console.log($("#amount").val());
+				
+				
+				if ($( "#amount" ).val() == "100") { 
+					$("#imageHolder li:nth-child(1)").addClass("active");
+					$("#imageHolder li:nth-child(1)").fadeIn(500);
+					$("#imageHolder li:nth-child(1)").css("display", "block");
+					
+					dom.imageToHideFirst.removeClass("active");
+					dom.imageToHideFirst.css("display","none");
+					
+				} else if ($( "#amount" ).val() == "200") {
+					$("#imageHolder li:nth-child(2)").addClass("active");
+					$("#imageHolder li:nth-child(2)").fadeIn(500);
+					$("#imageHolder li:nth-child(2)").css("display", "block");
+					
+					dom.imageToHideSecond.removeClass("active");
+					dom.imageToHideSecond.css("display","none");
+					
+					
+				} else if ($( "#amount" ).val() == "300") {
+					$("#imageHolder li:nth-child(3)").addClass("active");
+					$("#imageHolder li:nth-child(3)").fadeIn(500);
+					$("#imageHolder li:nth-child(3)").css("display", "block");
+					
+					dom.imageToHideThird.removeClass("active");
+					dom.imageToHideThird.css("display","none");
+					
+				} else if ($( "#amount" ).val() == "400") {
+					$("#imageHolder li:nth-child(4)").addClass("active");
+					$("#imageHolder li:nth-child(4)").fadeIn(500);
+					$("#imageHolder li:nth-child(4)").css("display", "block");
+					
+					dom.imageToHideFourth.removeClass("active");
+					dom.imageToHideFourth.css("display","none");
+					
+					
+				} else if ($( "#amount" ).val() == "500") {
+					$("#imageHolder li:nth-child(5)").addClass("active");
+					$("#imageHolder li:nth-child(5)").fadeIn(500);
+					$("#imageHolder li:nth-child(5)").css("display", "block");
+					
+					dom.imageToHideFifth.removeClass("active");
+					dom.imageToHideFifth.css("display","none");
+				}
+			}
+		}); 
+		
+		$( "#amount" ).val($( "#slider" ).slider( "value" ) );
+		
+		
+	}); 
+});
+</script>
 </body>
 </html>

@@ -9226,7 +9226,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "&gt;",
 			
 			
 				/**
@@ -9247,7 +9247,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "&lt;"
 			},
 		
 			/**

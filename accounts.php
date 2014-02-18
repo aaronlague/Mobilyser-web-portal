@@ -50,22 +50,19 @@ $bill_upload_data = $lookupmodel->getBills($_SESSION['account_num'], $connect);
 	</div>
 	<div class="tab-content">
 		<!--<div class="tab-pane" id="generator">
-        	<?php //include ('../mobilyser-beta/view/generator.php'); ?>
+        	<?php //include ('view/generator.php'); ?>
     	</div>-->
-		<div class="tab-pane" id="generator">
-        	<?php include ('../mobilyser-beta/view/generator-x.php'); ?>
-    	</div>
 		<div class="tab-pane active" id="bills">
-        	<?php include ('../mobilyser-beta/view/bills-framed.php'); ?>
+        	<?php include ('view/bills-framed.php'); ?>
       	</div>
 		<div class="tab-pane" id="calls">
-        	<?php include ('../mobilyser-beta/view/calls.php'); ?>
+        	<?php include ('view/calls.php'); ?>
       	</div>
 		<div class="tab-pane" id="contacts">
-        	<?php include ('../mobilyser-beta/view/contacts.php'); ?>
+        	<?php include ('view/contacts.php'); ?>
       	</div>
 		<div class="tab-pane" id="reports">
-        	<?php include ('../mobilyser-beta/view/reports.php'); ?>
+        	<?php include ('view/reports.php'); ?>
     	</div>
 	</div>
 </div>

@@ -21,10 +21,13 @@ class IndexController {
 		
 		    $num = $db->numhasrows($sql);
             $row = $db->fetchobject($sql);
+			
+			
 
             if($num == 0){
-                $data = '<span class="error">No Record Found.</span>';
+                $data = '<span class="error">Incorrect username or password</span>';
             }else{
+				$data = '';
                 $idxRec = $db->strip($row->ID);
                 $firstnameRec = $db->strip($row->firstname);
                 $lastnameRec = $db->strip($row->lastname);
@@ -43,7 +46,8 @@ class IndexController {
 				$_SESSION['email']         = $emailRec;
                 $_SESSION['account_num']   = $accountNumRec;
 				session_write_close();
-				header("Location: ../mobilyser-beta/accounts.php");
+				//header("Location: accounts.php");
+				header("Location: accounts.php");
             }
 
         return $data;

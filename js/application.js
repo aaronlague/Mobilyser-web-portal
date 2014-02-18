@@ -18,7 +18,7 @@ String.prototype.repeat = function(num) {
         $(this).prepend(output);
       } else {
         var segmentGap = 100 / (amount - 1) + "%"
-          , segment = '<div class="ui-slider-segment" style="margin-left: ' + segmentGap + ';"></div>';
+          , segment = '<div class="ui-slider-segment" id="ui-segment" style="margin-left: ' + segmentGap + ';"></div>';
         $(this).prepend(segment.repeat(amount - 2));
       }
     });
@@ -27,10 +27,10 @@ String.prototype.repeat = function(num) {
   $(function() {
 
     // Custom Selects
-    $("select[name='huge']").selectpicker({style: 'btn-hg btn-primary', menuStyle: 'dropdown-inverse'});
-    $("select[name='large']").selectpicker({style: 'btn-lg btn-danger'});
-    $("select[name='info']").selectpicker({style: 'btn-info'});
-    $("select[name='small']").selectpicker({style: 'btn-sm btn-warning'});
+    //$("select[name='huge']").selectpicker({style: 'btn-hg btn-primary', menuStyle: 'dropdown-inverse'});
+    //$("select[name='large']").selectpicker({style: 'btn-lg btn-danger'});
+    //$("select[name='info']").selectpicker({style: 'btn-info'});
+    //$("select[name='small']").selectpicker({style: 'btn-sm btn-warning'});
 
     // Tabs
     $(".nav-tabs a").on('click', function (e) {
@@ -42,7 +42,7 @@ String.prototype.repeat = function(num) {
     $("[data-toggle=tooltip]").tooltip("show");
 
     // Tags Input
-    $(".tagsinput").tagsInput();
+    //$(".tagsinput").tagsInput();
 
     // jQuery UI Sliders
     var $slider = $("#slider");
@@ -115,7 +115,7 @@ String.prototype.repeat = function(num) {
     });
 
     // Placeholders for input/textarea
-    $(":text, textarea").placeholder();
+    //$(":text, textarea").placeholder();
 
     // Make pagination demo work
     $(".pagination").on('click', "a", function() {

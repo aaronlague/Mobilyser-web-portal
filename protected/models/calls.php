@@ -74,7 +74,7 @@ class CallsModel {
     	$sql = $db->mquery("EXEC dbo.getCalls @caller_tag = 'A', @account_number = '". $accountNum ."'" ,$connect);
 		$num = $db->numrows($sql);
 		
-		$HeadingsArray = array('ID', 'Date', 'Time', 'Phone number', 'Duration', 'Estimated cost', 'Actual cost', 'Caller tag', 'Bill issued', 'Contact name');
+		$HeadingsArray = array('id', 'Date', 'Time', 'Phone number', 'Duration', 'Estimated cost', 'Actual cost', 'Caller tag', 'Bill issued', 'Contact name');
 		$csvContent	   = implode(",",$HeadingsArray)."\n";
 				
 		while($row = $db->fetchobject($sql))
@@ -84,20 +84,19 @@ class CallsModel {
 				$valuesArray[]=$value;
 			}
 			
-			$csvContent .= implode(",", $valuesArray) ."\n";
+			$csvContent .= implode(",", $valuesArray) ."\r\n";
 			unset($valuesArray);
 						
 		}
 		
 		$fileName = date("Y-m-d") ."_export.csv";
 		
-		header('Content-Type: application/csv'); 
-		header('Content-Type: application/force-download');
-		header('Content-Disposition: attachment; filename="' . $fileName . '"');
+		header('Content-Type: text/csv');
+		header("Content-length: " . filesize($fileName));
+		header('Content-Disposition: inline; filename="' . $fileName . '"');
 		
 		echo $csvContent;
 		
     }
  
 }
-?>

@@ -50,21 +50,10 @@ $(document).ready(function() {
 	
 	var rowCount = $('#dvData tr').length;
 	console.log (rowCount);
-	if (rowCount <= 10) {
-		 console.log("disable pagination...");
+	if (rowCount > 10) {
+		 console.log("display pagination...");
 		 $('#dvData').dataTable( {
-			"sPaginationType": "full_numbers",
-			"bPaginate": false,
-			"bLengthChange": false,
-			"bFilter": false,
-			"bSort": false,
-			"bInfo": false,
-			"bAutoWidth": false
-    	} );
-		
-	} else {
-		console.log("display pagination...");
-		$('#dvData').dataTable( {
+		 	"aaSorting": [[ 1, "desc" ], [ 2, "desc" ]],
 			"sPaginationType": "full_numbers",
 			"bPaginate": true,
 			"bLengthChange": true,
@@ -72,6 +61,19 @@ $(document).ready(function() {
 			"bSort": true,
 			"bInfo": true,
 			"bAutoWidth": true
+    	} );
+		
+	} else if (rowCount < 10) {
+		console.log("disable pagination...");
+		$('#dvData').dataTable( {
+			"aaSorting": [[ 1, "desc" ], [ 2, "desc" ]],
+			"sPaginationType": "full_numbers",
+			"bPaginate": false,
+			"bLengthChange": false,
+			"bFilter": false,
+			"bSort": false,
+			"bInfo": false,
+			"bAutoWidth": false
     	} );
 	}
 } );

@@ -87,22 +87,10 @@ echo '</table>';
 <script>
 $(document).ready(function(){
 	var rowCount = $('#dvData tr').length;
-	console.log (rowCount);
-	if (rowCount <= 10) {
-		
+	if (rowCount > 10) {
+		console.log("display pagination...");
 		 $('#dvData').dataTable( {
-			"sPaginationType": "full_numbers",
-			"bPaginate": false,
-			"bLengthChange": false,
-			"bFilter": false,
-			"bSort": false,
-			"bInfo": false,
-			"bAutoWidth": false
-    	} );
-		
-	} else {
-	
-		$('#dvData').dataTable( {
+		 	"aaSorting": [[ 0, "desc" ], [ 1, "desc" ]],
 			"sPaginationType": "full_numbers",
 			"bPaginate": true,
 			"bLengthChange": true,
@@ -110,6 +98,18 @@ $(document).ready(function(){
 			"bSort": true,
 			"bInfo": true,
 			"bAutoWidth": true
+    	} );
+		
+	} else if (rowCount < 10){
+		$('#dvData').dataTable( {
+			"aaSorting": [[ 0, "desc" ], [ 1, "desc" ]],
+			"sPaginationType": "full_numbers",
+			"bPaginate": false,
+			"bLengthChange": false,
+			"bFilter": false,
+			"bSort": false,
+			"bInfo": false,
+			"bAutoWidth": false
     	} );
 	
 	}
@@ -122,7 +122,7 @@ $(document).ready(function(){
 	$("#update-primary").click(function(event){
 	      console.log("saving...");
           $.post( 
-             "../mobilyser-beta/ajax-calls/tag-contacts.php",
+             "ajax-calls/tag-contacts.php",
              {
               mobile: $('#contact-number').val(),
               tag: $('#calltype-only').val()

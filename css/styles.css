@@ -11,7 +11,7 @@ nav .container .row .submitContainer .btn-login { background-color:#2fac66!impor
 
 .topContent { background-color:#34495e; text-align:center; color:#FFFFFF; }
 .topContent .container h1 { font-size:40px; font-weight:normal!important; margin-bottom:35px!important; }
-.topContent .btn-primary { background-color: #2fac66!important; }
+.topContent .btn-primary, .userSection .btn-primary, .callListSection a.btn-primary { background-color: #2fac66!important; }
 
 .splashColumn .row .splashContent h2 { font-size:39px; font-weight:normal!important; text-align:left;  }
 
@@ -57,17 +57,23 @@ nav .container .row .submitContainer .btn-login { background-color:#2fac66!impor
 .container .callHistoryDetails div > .dropdown-menu li.selected > a:hover { background-color: #2fac66; }
 .container .callHistoryDetails .dropdown-arrow { border-color: transparent transparent #34495e transparent; }
 .container .callHistoryDetails div > .mbl { margin-bottom:0px!important; }
-
-.table-bordered tr:nth-child(even) { background-color:#ccc; }
+.table-bordered { font-size:13px!important; }
+.table-bordered tr:nth-child(even) { background-color:#ccc;  }
 .callListSection .callList .callHistoryDetails{ background-color: #f9fafb; border-radius: 6px 6px 6px 6px; border: 2px #edf1f2 solid; padding-bottom: 10px; padding-top: 10px; padding-left: 15px; margin-left: 15px; margin-right: 15px; /*overflow: hidden;*/ min-height:65px; }
 .callList table th.callerTag { width:70px;text-align:center; }
-.callList table th.callDate { width:110px; }
+.callList table th.callDate { width: 125px; text-align: center; }
 .callList table tbody tr td.callTag { text-align:center; }
 .callList table tbody tr td.callDate { text-align:center; }
 
 
 .paging_full_numbers a.paginate_button:hover { background-color: #2fac66!important; text-decoration: none !important; }
-.paging_full_numbers a.paginate_button, .paging_full_numbers a.paginate_active { border: 0px solid #aaa!important; -webkit-border-radius: 0px!important; -moz-border-radius: 0px!important; padding: 2px 9px!important; margin: 0px 0px!important; cursor: pointer; color: #333 !important; font-size: 18px!important; }
+.paging_full_numbers a.paginate_button, .paging_full_numbers a.paginate_active { border: 0px solid #aaa!important; -webkit-border-radius: 0px!important; -moz-border-radius: 0px!important; padding: 10px 15px!important; margin: 0px 0px!important; cursor: pointer; color: #333 !important; font-size: 14px!important; font-weight:bold!important; color:#FFFFFF; }
+
+.paging_full_numbers .first { display:none!important; }
+.paging_full_numbers .last { display:none!important; }
+.paging_full_numbers a.previous { border-bottom-left-radius: 6px!important; border-top-left-radius: 6px!important; }
+.paging_full_numbers a.next { border-bottom-right-radius: 6px!important; border-top-right-radius: 6px!important; }
+
 .dataTables_info { /*width: 60%;*/ width: auto!important; float: left; font-size: 18px!important; }
 .paging_full_numbers a.paginate_active { background-color: #2fac66!important; }
 

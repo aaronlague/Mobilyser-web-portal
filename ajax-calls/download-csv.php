@@ -1,4 +1,4 @@
-<?php
+<?php /*?><?php
 session_start();
 
 include '../protected/config/db_config.php';
@@ -9,6 +9,4 @@ $callsmodel = new CallsModel();
 
 $connect = $db->connect();
 
-$callsmodel->generateCSVData($_SESSION['account_num'],$connect);
-
-?>
+$callsmodel->generateCSVData($_SESSION['account_num'],$connect);<?php */?>
