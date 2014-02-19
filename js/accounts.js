@@ -4,13 +4,6 @@ var loadcalls = function(ctype, btype){
 	return returnResult;
 };
 
-//var loadbills = function() {
-//	var showResult = $('#bills-history').html('<img src="images/299.gif" alt="loading details" style="padding:10px 10px;" />');
-//	var showResult = $('#bills-history').load('ajax-calls/bill-history.php');
-//	return showResult;
-//};
-
-
 $(document).ready(function(){
 	$('#myTabs a').click(function (e) {
 	e.preventDefault();
@@ -26,7 +19,6 @@ $(document).ready(function(){
 	// load first tab content
 	$('#bills').load($('.active a').attr("data-url"),function(result){
 	  $('.active a').tab('show');
-	  //loadbills();
 	});
 	
 	//call tab ajax filter function 
@@ -43,5 +35,4 @@ $(document).ready(function(){
 		var btype = $('#billtype').val();			
  		loadcalls(ctype, btype);
  	});
-
 });

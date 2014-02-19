@@ -7,5 +7,4 @@ var loadbills = function() {
 
 $(document).ready(function () {
 loadbills();
-//setInterval(loadbills(), 5000);	
 });

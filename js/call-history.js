@@ -2,7 +2,7 @@ $(document).ready(function(){
 $("#returnToList").click(function(){
 		$("#tabSection").find("ul li #calltabs").trigger("click");
 		$('#call-logs').fadeOut().fadeIn(500);
-	});
+});
 
 	$("#ctype_0, #ctype_A, #ctype_P, #ctype_W, #ctype_U").click(function(event){
 	      console.log("saving...");
@@ -24,5 +24,8 @@ $("#returnToList").click(function(){
                 $('#stage').html(data);
              }
           );
+		  
+		  loadcontacts();
+		  
       });
 });

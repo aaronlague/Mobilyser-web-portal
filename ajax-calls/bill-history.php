@@ -2,7 +2,6 @@
 session_start();
 include '../protected/config/db_config.php';
 include '../protected/config/html_config.php';
-
 include '../protected/models/bills.php';
 $db = new db_config();
 $connect = $db->connect();

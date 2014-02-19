@@ -27,12 +27,14 @@ class CallsModel {
 				}
 			
 			$call_date = $db->strip($row->call_date);
+			$call_date_format = date('d M', strtotime($call_date));
 			$time = $db->strip($row->time);
 			$contact_name = $db->strip($row->contact_name);
 			$phone_number = $db->strip($row->phone_number);
 			$date = new DateTime('2000-01-01');
 			$date->add(new DateInterval('P0Y0M0DT0H0M'.$row->duration.'S'));
-			$duration = $date->format('H:i:s');	
+			//$duration = $date->format('H:i:s');	
+			$duration = $date->format('i\m s\s');
 			$estimated_cost = $db->strip($row->estimated_cost);
 			$actual_cost = $db->strip($row->actual_cost);
 			$bill_issued = $db->strip($row->bill_issued);
@@ -45,7 +47,7 @@ class CallsModel {
 
 	        $data .= "<tr>";
 			$data .= '<td class="callTag"><img src="' . $caller_tag_image . '">' .$caller_tag_text. '</td>';
-			$data .= "<td class='callDate'>" . $call_date . "</td>";
+			$data .= "<td class='callDate'>" . $call_date_format . "</td>";
 			$data .= "<td>" . $time . "</td>";
 			$data .= "<td class='phoneNo'><a href='#'>" . $procContactName . "</a></td>";
 			$data .= "<td>" . $duration . "</td>";

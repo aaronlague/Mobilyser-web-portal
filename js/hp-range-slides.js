@@ -16,7 +16,7 @@ $(document).ready(function(){
 			step: 10,
 			slide: function( event, ui ) {
 				$( "#amount" ).val( ui.value );
-				console.log($("#amount").val());
+				//console.log($("#amount").val());
 				
 				
 				if ($( "#amount" ).val() == "10") { 

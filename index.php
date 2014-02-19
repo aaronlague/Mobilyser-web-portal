@@ -79,16 +79,12 @@ if(isset($_POST['btn-login'])){
 <div class="section">
   <div class="splashColumn container">
     <div class="row">
-      <div class="splashContent col-lg-5">
-        <h2>Why use Mobilyser</h2>
-		<h6>Tax</h6>
-        <p>Call related data collected by Mobilyser can be used at the ends of the tax year to support your tax return. Mobilyser reduces your tax liability, whilst providing vital evidence should your tax affairs be audited by the Australian Tax Office.</p>
-		<h6>Expenses</h6>
-        <p>Mobilyser provides an accuratre way of capturing the exact amount you spend each month on work related calls. You can use this data to submit a valid expense claim to your employer.</p>
-		<h6>Costs</h6>
-        <p>Many organisations struggle to keeo control of mobile service costs. Mobilyser reduces these costs by effectively managing the cost of mobile phone plans.</p>
+      <div class="splashContent col-lg-6">
+        <h2>Save time and money!</h2>
+        <p>By simply tagging your calls into work and personal categories Mobilyser can analyse your monthly bills, providing you with an accurate figure that you can claim as an expense.  
+Mobilyser makes record keeping a breeze and empowers the user with exact figures come tax time. It is a great tool for both employers and employees.</p>
       </div>
-      <div class="col-lg-6 col-lg-offset-1">
+      <div class="col-lg-6 col-lg-offset">
         <div class="row" style="">
           <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-mobile-hp.png" border="0" /> </div>
           <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-tracking-hp.png" border="0" /> </div>
