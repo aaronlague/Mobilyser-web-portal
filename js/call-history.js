@@ -4,8 +4,16 @@ $("#returnToList").click(function(){
 		$('#call-logs').fadeOut().fadeIn(500);
 	});
 
-	$("#update-primary").click(function(event){
+	$("#ctype_0, #ctype_A, #ctype_P, #ctype_W, #ctype_U").click(function(event){
 	      console.log("saving...");
+          if($('#calltype-only').val() == 'P'){
+             $('#tag-icon').attr('src', 'images/image-personal-tag-hp.png');
+          }else if($('#calltype-only').val() == 'W'){
+             $('#tag-icon').attr('src', 'images/image-work-tag-hp.png');
+          }else{
+             $('#tag-icon').attr('src', 'images/image-untagged-tag-hp.png');      
+          }
+         
           $.post( 
              "ajax-calls/tag-contacts.php",
              {
