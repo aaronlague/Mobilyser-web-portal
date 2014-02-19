@@ -17,9 +17,9 @@ String.prototype.repeat = function(num) {
         };
         $(this).prepend(output);
       } else {
-        var segmentGap = 100 / (amount - 1) + "%"
+        var segmentGap = 79 / (amount - 1) + "%"
           , segment = '<div class="ui-slider-segment" id="ui-segment" style="margin-left: ' + segmentGap + ';"></div>';
-        $(this).prepend(segment.repeat(amount - 2));
+        $(this).prepend(segment.repeat(amount - 1));
       }
     });
   };
