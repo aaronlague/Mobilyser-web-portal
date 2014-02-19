@@ -80,8 +80,13 @@ if(isset($_POST['btn-login'])){
   <div class="splashColumn container">
     <div class="row">
       <div class="splashContent col-lg-5">
-        <h2>Save time and money!</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.</p>
+        <h2>Why use Mobilyser</h2>
+		<h6>Tax</h6>
+        <p>Call related data collected by Mobilyser can be used at the ends of the tax year to support your tax return. Mobilyser reduces your tax liability, whilst providing vital evidence should your tax affairs be audited by the Australian Tax Office.</p>
+		<h6>Expenses</h6>
+        <p>Mobilyser provides an accuratre way of capturing the exact amount you spend each month on work related calls. You can use this data to submit a valid expense claim to your employer.</p>
+		<h6>Costs</h6>
+        <p>Many organisations struggle to keeo control of mobile service costs. Mobilyser reduces these costs by effectively managing the cost of mobile phone plans.</p>
       </div>
       <div class="col-lg-6 col-lg-offset-1">
         <div class="row" style="">

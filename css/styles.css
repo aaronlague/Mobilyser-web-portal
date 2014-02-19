@@ -13,7 +13,9 @@ nav .container .row .submitContainer .btn-login { background-color:#2fac66!impor
 .topContent .container h1 { font-size:40px; font-weight:normal!important; margin-bottom:35px!important; }
 .topContent .btn-primary, .userSection .btn-primary, .callListSection a.btn-primary { background-color: #2fac66!important; }
 
-.splashColumn .row .splashContent h2 { font-size:39px; font-weight:normal!important; text-align:left;  }
+.splashColumn .row .splashContent h2 { font-size:39px; font-weight:normal!important; text-align:left; margin-bottom:25px!important; }
+.splashContent h6 { font-size:17px; margin-bottom:10px!important; font-weight:bold; }
+.splashContent p { font-size: 14px!important; }
 
 .bottomContent { background-color:#ecf0f1; border-bottom:1px solid #dee1e4; padding-bottom:25px; }
 .bottomContent .bottomContentContainer .row h2, .bottomContent .bottomContentContainer .row h3  { font-weight:normal; }

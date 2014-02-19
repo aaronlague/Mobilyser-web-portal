@@ -45,13 +45,9 @@ $bill_upload_data = $lookupmodel->getBills($_SESSION['account_num'], $connect);
 			<li><a href="#calls" data-toggle="tab" id="calltabs">Calls</a></li>
 			<li><a href="#contacts" data-toggle="tab">Contacts</a></li>
 			<li><a href="#reports" data-toggle="tab">Reports</a></li>
-			<!--<li><a href="#generator" data-toggle="tab">Generator</a></li>-->
 		</ul>
 	</div>
 	<div class="tab-content">
-		<!--<div class="tab-pane" id="generator">
-        	<?php //include ('view/generator.php'); ?>
-    	</div>-->
 		<div class="tab-pane active" id="bills">
         	<?php include ('view/bills-framed.php'); ?>
       	</div>
@@ -73,15 +69,9 @@ $bill_upload_data = $lookupmodel->getBills($_SESSION['account_num'], $connect);
 <script src="js/bill-history.js"></script>
 <script>
 $(document).ready(function () {
-console.log("Bills tab active");
-$("ul li.active").click(function () { console.log("Bills tab active") });
-$("ul li #calltabs").click(function () { console.log(" calls tab active") });
-
-
 $("#iframeContainer").load(function(){
-		console.log("iframe loaded...");
+		console.log("parser loaded...");
 		loadbills();
 	});
-
 });
 </script>

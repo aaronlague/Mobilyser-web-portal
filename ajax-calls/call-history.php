@@ -84,6 +84,7 @@ echo $historymodel->getHistory($_GET['phoneNumberCellValue'], $_SESSION['account
 echo '</table>';
 
 ?>
+<script src="js/call-history.js"></script>
 <script>
 $(document).ready(function(){
 	var rowCount = $('#dvData tr').length;
@@ -111,27 +112,6 @@ $(document).ready(function(){
 			"bInfo": false,
 			"bAutoWidth": false
     	} );
-	
 	}
-	
-	$("#returnToList").click(function(){
-		$("#tabSection").find("ul li #calltabs").trigger("click");
-		$('#call-logs').fadeOut().fadeIn(500);
-	});
-
-	$("#update-primary").click(function(event){
-	      console.log("saving...");
-          $.post( 
-             "ajax-calls/tag-contacts.php",
-             {
-              mobile: $('#contact-number').val(),
-              tag: $('#calltype-only').val()
-             },
-             function(data) {
-                $('#stage').html(data);
-             }
-          );
-      });
-
 });
 </script>
