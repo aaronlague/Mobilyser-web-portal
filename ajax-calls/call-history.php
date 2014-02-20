@@ -65,7 +65,7 @@ $calltype_data = array(
 <hr />
 <?php 
 echo '<h4>Call History</h4>';
-echo '<table class="table table-striped table-bordered calls-history-table" id="dvData">';
+echo '<table class="table table-striped table-bordered calls-history-table" id="callHistoryData">';
 echo '<thead>';
 echo '<tr>';
 echo '<th>Date</th>';
@@ -82,11 +82,8 @@ echo '</table>';
 <script src="js/call-history.js"></script>
 <script>
 $(document).ready(function(){
-	var rowCount = $('#dvData tr').length;
-	if (rowCount > 10) {
-		console.log("display pagination...");
-		 $('#dvData').dataTable( {
-		 	//"aaSorting": [[ 0, "desc" ], [ 1, "desc" ]],
+	 $('#callHistoryData').dataTable( {
+		 	"aaSorting": [[ 0, "desc" ], [ 1, "desc" ]],
 			"sPaginationType": "full_numbers",
 			"bPaginate": true,
 			"bLengthChange": true,
@@ -95,18 +92,5 @@ $(document).ready(function(){
 			"bInfo": true,
 			"bAutoWidth": true
     	} );
-		
-	} else if (rowCount < 10){
-		$('#dvData').dataTable( {
-			//"aaSorting": [[ 0, "desc" ], [ 1, "desc" ]],
-			"sPaginationType": "full_numbers",
-			"bPaginate": false,
-			"bLengthChange": false,
-			"bFilter": false,
-			"bSort": false,
-			"bInfo": false,
-			"bAutoWidth": false
-    	} );
-	}
 });
 </script>

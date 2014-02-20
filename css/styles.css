@@ -16,15 +16,25 @@ nav .container .row .submitContainer .btn-login { background-color:#2fac66!impor
 .splashContent p { font-size: 19px!important; }
 
 .bottomContent { background-color:#ecf0f1; border-bottom:1px solid #dee1e4; padding-bottom:25px; }
+.bottomContent .bottomContentContainer .row h2 { font-size:39px; }
 .bottomContent .bottomContentContainer .row h2, .bottomContent .bottomContentContainer .row h3  { font-weight:normal; }
 .bottomContent .bottomContentContainer .row h3  { color:#2bb673; }
 
 .bottomContent .range-slider-slides { list-style:none; list-style: none; margin-top:25px; margin-left: -40px; list-style-position: outside; }
 
-.ui-slider-range { /*background-color:#2fac66!important;*/ background-color:#299f5d!important; opacity: 0.8;}
+.bottomContent .bottomContentContainer .row .slideNavigationWrapper { position: absolute; min-width: 248px; top: 210px; left: 266px; }
+.bottomContent .bottomContentContainer .row .slideNavigationWrapper .slideNavigationContainer { padding-left:0px!important; padding-right:5px!important; }
+
+.ui-slider-range { background-color:#299f5d!important; opacity: 0.9;}
 .ui-slider-handle { background-color: #26905d!important; }
-.ui-slider-segment { background-color: #26905d!important; }
-.ui-slider { background: #d9d6d6!important; }
+.ui-slider-segment { background-color: #cdcdcd!important; }
+.ui-slider { background: #fff!important; }
+
+span.fui-arrow-right{ float:right; padding:0!important; color:#b3c0cb; }
+span.fui-arrow-right:hover { color:#26905d!important; cursor: pointer; }
+
+span.fui-arrow-left { float:left; padding:0!important; color:#b3c0cb; }
+span.fui-arrow-left:hover { color:#26905d!important; cursor: pointer; }
 
 .footerSection .container .footerContainer { padding-right:0!important; padding-left:0!important; margin-bottom:20px; }
 .footerSection .container .footerContainer footer { margin-top:20px!important; color:#c0c5ca; }

@@ -52,7 +52,6 @@ $(document).ready(function() {
 	if (rowCount > 10) {
 		 console.log("display pagination...");
 		 $('#dvData').dataTable( {
-		 	//"aaSorting": [[ 1, "desc" ], [ 2, "desc" ]],
 			"sPaginationType": "full_numbers",
 			"bPaginate": true,
 			"bLengthChange": true,
@@ -65,7 +64,6 @@ $(document).ready(function() {
 	} else if (rowCount < 10) {
 		console.log("disable pagination...");
 		$('#dvData').dataTable( {
-			//"aaSorting": [[ 1, "desc" ], [ 2, "desc" ]],
 			"sPaginationType": "full_numbers",
 			"bPaginate": false,
 			"bLengthChange": false,

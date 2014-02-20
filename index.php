@@ -105,6 +105,14 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
         <br />
         <div id="slider" class="ui-slider"></div>
         <input type="hidden" id="amount" style="border:0;" />
+		<div class="row">
+			<div id="slideNavs" class="slideNavigationWrapper">
+				<div class="slideNavigationContainer">
+				<span class="fui-arrow-left" id="leftNav"></span>
+				<span class="fui-arrow-right" id="rightNav"></span>
+				</div>
+			</div>
+		</div>
         <ul class="range-slider-slides" id="imageHolder" style="">
           <li style="display:block;" class="active">
             <div>
@@ -154,12 +162,12 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
     <div class="footerContainer col-lg-10 col-lg-push-1">
       <footer>
         <div class="copyrightNote col-lg-5"> <span>&copy; Copyright 2014 Mobilyser.  All rights reserved.</span> </div>
-        <div class="footerNavs col-lg-1"> <img src="images/image-footer-logo-hp.png" border="0"> </div>
+        <div class="footerNavs col-lg-3 col-lg-offset-1" style="padding-left:0!important; margin-left:7.333333%!important;"> <img src="images/image-footer-logo-hp.png" border="0"> </div>
         <div class="footerNavs col-lg-1"> <a href="#">Home</a> </div>
         <div class="footerNavs col-lg-1"> <a href="#">Privacy</a> </div>
         <div class="footerNavs col-lg-1"> <a href="#">Terms</a> </div>
-        <div class="footerNavs col-lg-2"> <a href="#">Follow Us</a> </div>
-        <div class="footerNavs col-lg-1"> <span class="fui-facebook"></span> <span class="fui-twitter"></span> </div>
+        <!--<div class="footerNavs col-lg-2"> <a href="#">Follow Us</a> </div>
+        <div class="footerNavs col-lg-1"> <span class="fui-facebook"></span> <span class="fui-twitter"></span> </div>-->
       </footer>
     </div>
   </div>
@@ -172,5 +180,7 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
 <script src="js/bootstrap-switch.js"></script>
 <script src="js/application.js"></script>
 <script src="js/hp-range-slides.js"></script>
+<script>
+</script>
 </body>
 </html>
