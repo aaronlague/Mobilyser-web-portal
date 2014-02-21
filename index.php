@@ -53,16 +53,16 @@ if(isset($_POST['btn-login'])){
 <nav class="navbar navbar-inverse" role="navigation">
 <div class="container">
 <div class="row">
-  <div class="navbar-header col-lg-5"><a href="index.php"><img src="images/image-logo.png" border="0" /></a></div>
+  <div class="navbar-header col-lg-5 col-xs-8"><a href="index.php"><img src="images/image-logo.png" border="0" /></a></div>
   <!--login form goes here-->
-  <div class="loginSection col-lg-3 col-lg-offset-3">
+  <div class="loginSection col-lg-3 col-lg-offset-3 col-xs-3">
   <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection')); ?>
   <fieldset>
   <div class="form-group <?php echo $emailFlag['class'] ?> "><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Username','class'=>'form-control input-sm '.$emailFlag['class'].'', 'value'=>$email)); ?> <span class="input-icon fui-user"></span> </div>
   <div class="form-group <?php echo $pwordFlag['class'] ?>"><?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'')); ?> <span class="input-icon fui-lock"></span> </div>
   <?php if(isset($_POST['btn-login'])){ echo $indexController->indexPage($email, $password, $activationcodeURL, $connect); } ?>
   </div>
-  <div class="submitContainer col-lg-1">
+  <div class="submitContainer col-lg-1 col-xs-1">
     <p><a href="forgotpassword.php">Lost your password?</a></p>
     <?php echo $formelem->button(array('id'=>'btn-login','name'=>'btn-login','class'=>'btn btn-sm btn-primary btn-login', 'value'=>'Login')); ?> </div>
   </fieldset>

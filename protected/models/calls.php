@@ -67,24 +67,37 @@ class CallsModel {
 
     }
 	
-	public function generateCSVData($accountNum, $connect)
+	public function generateCSVData($filterFields, $accountNum, $connect)
     {
     	
     	$db = new db_config();
 		$data = '';	
     	
-    	$sql = $db->mquery("EXEC dbo.getCalls @caller_tag = 'A', @account_number = '". $accountNum ."'" ,$connect);
+    	$sql = $db->mquery("EXEC dbo.getCalls @caller_tag = '".$filterFields."', @account_number = '". $accountNum ."'" ,$connect);
 		$num = $db->numrows($sql);
 		
-		$HeadingsArray = array('id', 'Date', 'Time', 'Phone number', 'Duration', 'Estimated cost', 'Actual cost', 'Caller tag', 'Bill issued', 'Contact name');
+		$HeadingsArray = array('Caller tag', 'Date', 'Time', 'Contact Name', 'Phone number', 'Duration', 'Estimated cost', 'Actual cost', 'Bill issued');
 		$csvContent	   = implode(",",$HeadingsArray)."\n";
 				
 		while($row = $db->fetchobject($sql))
 		{
 			
-			foreach($row as $name => $value){
-				$valuesArray[]=$value;
-			}
+			//foreach($row as $name => $value){
+				//$valuesArray[]=$value;
+			//}
+			
+			$valuesArray['caller_tag'] = $db->strip($row->caller_tag);
+			$call_date = $db->strip($row->call_date);
+			$valuesArray['call_date_format'] = date('d M', strtotime($call_date));
+			$valuesArray['time'] = $db->strip($row->time);
+			$valuesArray['contact_name'] = $db->strip($row->contact_name);
+			$valuesArray['phone_number'] = $db->strip($row->phone_number);
+			$date = new DateTime('2000-01-01');
+			$date->add(new DateInterval('P0Y0M0DT0H0M'.$row->duration.'S'));
+			$valuesArray['duration'] = $date->format('i\m s\s');
+			$valuesArray['estimated_cost'] = $db->strip($row->estimated_cost);
+			$valuesArray['actual_cost'] = $db->strip($row->actual_cost);
+			$valuesArray['bill_issued'] = $db->strip($row->bill_issued);
 			
 			$csvContent .= implode(",", $valuesArray) ."\r\n";
 			unset($valuesArray);

@@ -25,6 +25,8 @@ if($data != ''){
 }else{
 	$filterFields = '';
 }
+$_SESSION['call_type'] = $_GET['ctype'];
+
 echo '<h4>Call List</h4>';
 echo '<table class="table table-striped table-bordered calls-table dataTable" id="dvData">';
 echo '<thead>';

@@ -83,7 +83,7 @@ echo '</table>';
 <script>
 $(document).ready(function(){
 	 $('#callHistoryData').dataTable( {
-		 	"aaSorting": [[ 0, "desc" ], [ 1, "desc" ]],
+		 	//"aaSorting": [[ 0, "desc" ], [ 1, "desc" ]],
 			"sPaginationType": "full_numbers",
 			"bPaginate": true,
 			"bLengthChange": true,
