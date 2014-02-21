@@ -90,10 +90,9 @@ $(document).ready(function(){
 				$("#amount").val($slider.slider("value"));
 				slidingImages();
 			}
-			console.log(counter);
+			//console.log(counter);
 		});
 		
-		$("#leftNav").hover();
 		$("#leftNav").on('click', function () {						
 			if (counter > 10) {
 				counter -= 10;
@@ -101,10 +100,7 @@ $(document).ready(function(){
 				$("#amount").val($slider.slider("value"));
 				slidingImages();
 			}
-			console.log(counter);
+			//console.log(counter);
     	});
-		
 	}); 
-	
-	
 });
