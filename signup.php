@@ -86,52 +86,59 @@ $plantype_data = array(
 ?>
 <?php include 'components/header.php'; ?>
 
-<div class="signUpContainer container">
-  <div class="row">
-    <div class="headLine col-lg-12">
-      <h2>Create your account</h2>
-      <sup><i class="fa fa-asterisk"></i></sup> <span><strong> - Mandatory Field</strong></span>
+<div class="section" style="background-color:#34495e; color:#FFFFFF;">
+<div class="formHeadLine container">
+	<div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <h3 style="font-size:36px; font-weight:normal; margin-top:15px;">Create your account</h3>
 	</div>
   </div>
-  <hr />
-  <div class="row">
-    <div class="signUpSections col-lg-8 col-lg-push-2">
-      <h3>Personal Details</h3>
+</div>
+</div>
+<div class="container">
+<div class="row">
+    <div class="signUpSections col-lg-10 col-lg-offset-1">
+      <h4>Personal Details</h4>
       <p>To start the registration process please provide some basic personal information so that we can verify your identity and create your account. You can update your contact details within your profile.</p>
+	  <div class="row">
+	  	<div class="noteTxt">
+			<span><strong>Mandatory field</strong></span><sup><i class="fa fa-asterisk"></i></sup>
+		</div>
+	  </div>
       <?php echo $formelem->create(array('method'=>'post','class'=>'signUpFormSection form-horizontal')); ?>
       <fieldset>
         <!-- Text input-->
         <div class="form-group">
           <?php	echo $fnameFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?><span class="required">*</span></div>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?></div>
         </div>
         <!-- Text input-->
         <div class="form-group">
           <?php	echo $lnameFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?><span class="required">*</span></div>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?></div>
         </div>
         <!-- Text input-->
         <div class="form-group"> <?php echo $emailFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'emailaddress','name'=>'emailaddress','placeholder'=>'Email','class'=>'form-control input-md '.$emailaddressFlag['class'].'', 'value'=>$email)); ?><span class="required">*</span></div>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'emailaddress','name'=>'emailaddress','placeholder'=>'Email','class'=>'form-control input-md '.$emailaddressFlag['class'].'', 'value'=>$email)); ?></div>
         </div>
         <!-- Text input-->
         <div class="form-group"> <?php echo $acctNoFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'accountNumber','name'=>'accountNumber','placeholder'=>'Account number','class'=>'form-control input-md '.$acctNoFlag['class'].'', 'value'=>$acctNo));?><span class="required">*</span></div>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'accountNumber','name'=>'accountNumber','placeholder'=>'Account number','class'=>'form-control input-md '.$acctNoFlag['class'].'', 'value'=>$acctNo));?></div>
         </div>
 		<!-- Select Basic -->
         <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'telco','name'=>'telco','class'=>'form-control','data'=>$telco)); ?><span class="required">*</span></div>
+          <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'telco','name'=>'telco','class'=>'form-control','data'=>$telco)); ?></div>
         </div>
         <!-- Text input-->
         <div class="form-group"> <?php echo $mobileFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'mobileNumber','name'=>'mobileNumber','placeholder'=>'Mobile number','class'=>'form-control input-md '.$mobileFlag['class'].'', 'value'=>$mobile)); ?><span class="required">*</span></div>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'mobileNumber','name'=>'mobileNumber','placeholder'=>'Mobile number','class'=>'form-control input-md '.$mobileFlag['class'].'', 'value'=>$mobile)); ?></div>
         </div>
         <!-- Select Basic -->
         <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'country','name'=>'country','class'=>'form-control','data'=>$country_data)); ?><span class="required">*</span></div>
+          <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'country','name'=>'country','class'=>'form-control','data'=>$country_data)); ?></div>
         </div>
         <hr / >
-        <h3>Telecom Provider Information</h3>
+        <h4>Telecom Provider Information</h4>
         <p>Please provide some basic information about your telco plan. We use this information to calculate estimated costs for each call you make. You can provide this information later through your profile.<br />
           <br />
           Most telcos provide call cost information on their websites. Call costs vary between different mobile plans, with the same provider.</p>
@@ -154,6 +161,7 @@ $plantype_data = array(
       </fieldset>
       <?php echo $formelem->close(); ?> </div>
   </div>
+</div>
 </div>
 </div>
 <!-- /.container -->

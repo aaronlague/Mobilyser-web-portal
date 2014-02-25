@@ -82,15 +82,15 @@ echo '</table>';
 <script src="js/call-history.js"></script>
 <script>
 $(document).ready(function(){
+	
 	 $('#callHistoryData').dataTable( {
-		 	//"aaSorting": [[ 0, "desc" ], [ 1, "desc" ]],
 			"sPaginationType": "full_numbers",
 			"bPaginate": true,
 			"bLengthChange": true,
 			"bFilter": true,
-			"bSort": true,
+			"bSort": false,
 			"bInfo": true,
-			"bAutoWidth": true
+			"bAutoWidth": true,
     	} );
 });
 </script>

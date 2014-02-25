@@ -60,8 +60,11 @@ $(document).ready(function() {
 			"bFilter": true,
 			"bSort": true,
 			"bInfo": true,
-			"bAutoWidth": true
+			"bAutoWidth": true,
+			"bDestroy" : true
     	} );
+		
+		
 		
 	} else if (rowCount < 10) {
 		console.log("disable pagination...");
@@ -72,8 +75,11 @@ $(document).ready(function() {
 			"bFilter": false,
 			"bSort": false,
 			"bInfo": false,
-			"bAutoWidth": false
+			"bAutoWidth": false,
+			"bDestroy" : true
     	} );
+		
+		
 	}
 } );
 </script>

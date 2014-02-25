@@ -70,28 +70,28 @@ if(isset($_POST['btn-register'])){
   <div class="row">
     <div class="registerSections col-lg-10 col-lg-offset-1">
       <h4>Personal Details</h4>
+      <p>To start the registration process please provide some basic personal information so that we can verify your identity and create your account. You can update your contact details within your profile.</p>
 	  <div class="row">
-	  	<div class="col-lg-2 col-lg-offset-5" style="font-size:16px;">
+	  	<div class="noteTxt">
 			<span><strong>Mandatory field</strong></span><sup><i class="fa fa-asterisk"></i></sup>
 		</div>
 	  </div>
-      <p>To start the registration process please provide some basic personal information so that we can verify your identity and create your account. You can update your contact details within your profile.</p>
       <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal regFormSection')); ?>
       <fieldset>
         <!-- Text input-->
         <div class="form-group">
           <?php	echo $fnameFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?><span class="required">*</span></div>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?></div>
         </div>
         <!-- Text input-->
         <div class="form-group">
 		  <?php echo $lnameFlag['message']; ?>
-          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?><span class="required">*</span></div>
+          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?></div>
         </div>
         <!-- Text input-->
         <div class="form-group">
 		  <?php echo $emailFlag['message']; ?>
-          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'', 'value'=>$email)); ?><span class="required">*</span></div>
+          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'', 'value'=>$email)); ?></div>
         </div>
         <!-- Button -->
         <div class="submitContainer form-group">
