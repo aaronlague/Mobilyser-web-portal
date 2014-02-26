@@ -1,5 +1,5 @@
 <!--login form goes here-->
-<div class="loginSection col-lg-3 col-lg-offset-3">
+<div class="loginSection col-lg-3 col-lg-offset-3 col-xs-3">
 <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection')); ?>
 <fieldset>
   <div class="form-group <?php echo $emailFlag['class'] ?> "><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Username','class'=>'form-control input-sm '.$emailFlag['class'].'', 'value'=>$email)); ?> <span class="input-icon fui-user"></span> </div>

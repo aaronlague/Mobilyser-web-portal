@@ -20,7 +20,7 @@
 <nav class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="row">
-      <div class="navbar-header col-lg-5"><a href="index.php"><img src="images/image-logo.png" border="0" /></a></div>
+      <div class="navbar-header col-lg-5 col-xs-8"><a href="index.php"><img src="images/image-logo.png" border="0" /></a></div>
         <?php  
         if(!isset($_SESSION['sess_user_id'])) { 
           include 'components/header-public.php';

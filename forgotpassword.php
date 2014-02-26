@@ -46,18 +46,25 @@ $country_data = $lookupmodel->getCountry($connect);
 
 ?>
 <?php include 'components/header.php'; ?>
-
+<div class="section formHeadLine">
+<div class="container">
+	<div class="row">
+    <div>
+      <h3>Forgot your password?</h3>
+	</div>
+  </div>
+</div>
+</div>
 <div class="forgotPasswordContainer container">
   <div class="row">
-    <div class="forgotPasswordSection col-lg-8 col-lg-push-2">
-	<h2>Forgot your password?</h2>
+    <div class="forgotPasswordSection col-lg-10 col-lg-offset-1">
 	<p>Please enter your email address below to recieve a password reset message</p>
 	<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal forgotPasswordFormSection')); ?>
       <fieldset>
         <!-- Text input-->
         <div class="form-group">
 		  <?php echo $emailFlag['message']; ?>	
-          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'')); ?><span class="required">*</span></div>
+          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'')); ?></div>
         </div>
 		<!-- Button -->
         <div class="submitContainer form-group">

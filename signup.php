@@ -86,11 +86,11 @@ $plantype_data = array(
 ?>
 <?php include 'components/header.php'; ?>
 
-<div class="section" style="background-color:#34495e; color:#FFFFFF;">
-<div class="formHeadLine container">
+<div class="section formHeadLine">
+<div class="container">
 	<div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
-      <h3 style="font-size:36px; font-weight:normal; margin-top:15px;">Create your account</h3>
+    <div>
+      <h3>Create your account</h3>
 	</div>
   </div>
 </div>
@@ -108,21 +108,22 @@ $plantype_data = array(
       <?php echo $formelem->create(array('method'=>'post','class'=>'signUpFormSection form-horizontal')); ?>
       <fieldset>
         <!-- Text input-->
-        <div class="form-group">
+        <div class="form-group <?php echo $fnameFlag['class'] ?>">
           <?php	echo $fnameFlag['message']; ?>
           <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?></div>
         </div>
         <!-- Text input-->
-        <div class="form-group">
+        <div class="form-group <?php echo $lnameFlag['class'] ?>">
           <?php	echo $lnameFlag['message']; ?>
           <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?></div>
         </div>
         <!-- Text input-->
-        <div class="form-group"> <?php echo $emailFlag['message']; ?>
+        <div class="form-group <?php echo $emailaddressFlag['class'] ?> ">
+		  <?php echo $emailaddressFlag['message']; ?>
           <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'emailaddress','name'=>'emailaddress','placeholder'=>'Email','class'=>'form-control input-md '.$emailaddressFlag['class'].'', 'value'=>$email)); ?></div>
         </div>
         <!-- Text input-->
-        <div class="form-group"> <?php echo $acctNoFlag['message']; ?>
+        <div class="form-group <?php echo $acctNoFlag['class'] ?>"> <?php echo $acctNoFlag['message']; ?>
           <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'accountNumber','name'=>'accountNumber','placeholder'=>'Account number','class'=>'form-control input-md '.$acctNoFlag['class'].'', 'value'=>$acctNo));?></div>
         </div>
 		<!-- Select Basic -->
@@ -130,7 +131,7 @@ $plantype_data = array(
           <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'telco','name'=>'telco','class'=>'form-control','data'=>$telco)); ?></div>
         </div>
         <!-- Text input-->
-        <div class="form-group"> <?php echo $mobileFlag['message']; ?>
+        <div class="form-group <?php echo $mobileFlag['class']; ?>"> <?php echo $mobileFlag['message']; ?>
           <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'mobileNumber','name'=>'mobileNumber','placeholder'=>'Mobile number','class'=>'form-control input-md '.$mobileFlag['class'].'', 'value'=>$mobile)); ?></div>
         </div>
         <!-- Select Basic -->

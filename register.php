@@ -57,11 +57,11 @@ if(isset($_POST['btn-register'])){
 
 ?>
 <?php include 'components/header.php'; ?>
-<div class="section" style="background-color:#34495e; color:#FFFFFF;">
-<div class="formHeadLine container">
+<div class="section formHeadLine">
+<div class="container">
 	<div class="row">
-    <div class="col-lg-4 col-lg-offset-4">
-      <h3 style="font-size:36px; font-weight:normal; margin-top:15px;">Register your interest</h3>
+    <div>
+      <h3>Register your interest</h3>
 	</div>
   </div>
 </div>
