@@ -81,17 +81,17 @@ if(isset($_POST['btn-register'])){
         <!-- Text input-->
         <div class="form-group">
           <?php	echo $fnameFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?></div>
+          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name*','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?></div>
         </div>
         <!-- Text input-->
         <div class="form-group">
 		  <?php echo $lnameFlag['message']; ?>
-          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?></div>
+          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name*','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?></div>
         </div>
         <!-- Text input-->
         <div class="form-group">
 		  <?php echo $emailFlag['message']; ?>
-          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'', 'value'=>$email)); ?></div>
+          <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email*','class'=>'form-control input-md '.$emailFlag['class'].'', 'value'=>$email)); ?></div>
         </div>
         <!-- Button -->
         <div class="submitContainer form-group">
