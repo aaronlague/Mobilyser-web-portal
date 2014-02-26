@@ -69,7 +69,7 @@ if(isset($_POST['btn-register'])){
 <div class="registerContainer container">
   <div class="row">
     <div class="registerSections col-lg-10 col-lg-offset-1">
-      <h4>Personal Details</h4>
+      <h4>Personal details</h4>
       <p>To start the registration process please provide some basic personal information so that we can verify your identity and create your account. You can update your contact details within your profile.</p>
 	  <div class="row">
 	  	<div class="noteTxt">

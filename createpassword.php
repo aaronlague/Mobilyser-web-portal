@@ -64,7 +64,7 @@ if(isset($_POST['btn-create'])){
 <div class="createPasswordContainer container">
   <div class="row">
     <div class="createPasswordSection col-lg-10 col-lg-offset-1">
-      <h4>Password Details</h4>
+      <h4>Password details</h4>
       <p>To start the password creation process please provide the Activation code you received and your desired password.</p>
       <div class="row">
         <div class="col-lg-12 regFormSection"><?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal')); ?>

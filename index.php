@@ -47,22 +47,23 @@ if(isset($_POST['btn-login'])){
 <link href="css/modern-business.css" rel="stylesheet">
 <link href="css/flat-ui.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
+<link href="css/media-query.css" rel="stylesheet">
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-inverse" role="navigation">
 <div class="container">
 <div class="row">
-  <div class="navbar-header col-lg-5 col-xs-8"><a href="index.php"><img src="images/image-logo.png" border="0" /></a></div>
+  <div class="navbar-header col-lg-5 col-xs-8"><a href="index.php"><img class="img-responsive" src="images/image-logo.png" border="0" /></a></div>
   <!--login form goes here-->
-  <div class="loginSection col-lg-3 col-lg-offset-3 col-xs-3">
+  <div class="loginSection col-lg-3 col-lg-offset-3 col-xs-4">
   <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection')); ?>
   <fieldset>
   <div class="form-group <?php echo $emailFlag['class'] ?> "><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Username','class'=>'form-control input-sm '.$emailFlag['class'].'', 'value'=>$email)); ?> <span class="input-icon fui-user"></span> </div>
   <div class="form-group <?php echo $pwordFlag['class'] ?>"><?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'')); ?> <span class="input-icon fui-lock"></span> </div>
   <?php if(isset($_POST['btn-login'])){ echo $indexController->indexPage($email, $password, $activationcodeURL, $connect); } ?>
   </div>
-  <div class="submitContainer col-lg-1 col-xs-1">
+  <div class="submitContainer col-lg-1 col-xs-4">
     <p><a href="forgotpassword.php">Lost your password?</a></p>
     <?php echo $formelem->button(array('id'=>'btn-login','name'=>'btn-login','class'=>'btn btn-sm btn-primary btn-login', 'value'=>'Login')); ?> </div>
   </fieldset>
@@ -86,9 +87,9 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
       </div>
       <div class="col-lg-6 col-lg-offset">
         <div class="row" style="">
-          <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-mobile-hp.png" border="0" /> </div>
-          <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-tracking-hp.png" border="0" /> </div>
-          <div class="col-xs-4 col-md-2 col-lg-4" style=""><img src="images/image-analysis-hp.png" border="0" /> </div>
+          <div class="col-xs-4 col-md-2 col-lg-4" style=""><img class="img-responsive" src="images/image-mobile-hp.png" border="0" /> </div>
+          <div class="col-xs-4 col-md-2 col-lg-4" style=""><img class="img-responsive" src="images/image-tracking-hp.png" border="0" /> </div>
+          <div class="col-xs-4 col-md-2 col-lg-4" style=""><img class="img-responsive" src="images/image-analysis-hp.png" border="0" /> </div>
         </div>
       </div>
     </div>
@@ -161,11 +162,11 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
   <div class="container">
     <div class="footerContainer col-lg-10 col-lg-push-1">
       <footer>
-        <div class="copyrightNote col-lg-5"> <span>&copy; Copyright 2014 Mobilyser.  All rights reserved.</span> </div>
-        <div class="footerNavs col-lg-3 col-lg-offset-1" style="padding-left:0!important; margin-left:7.333333%!important;"> <img src="images/image-footer-logo-hp.png" border="0"> </div>
-        <div class="footerNavs col-lg-1"> <a href="#">Home</a> </div>
-        <div class="footerNavs col-lg-1"> <a href="#">Privacy</a> </div>
-        <div class="footerNavs col-lg-1"> <a href="#">Terms</a> </div>
+        <div class="copyrightNote col-lg-5 col-xs-5"> <span>&copy; Copyright 2014 Mobilyser.  All rights reserved.</span> </div>
+        <div class="footerNavs col-lg-3 col-xs-3 col-lg-offset-1" style="padding-left:0!important; margin-left:7.333333%!important;"> <img src="images/image-footer-logo-hp.png" border="0"> </div>
+        <div class="footerNavs col-lg-1 col-xs-1"> <a href="#">Home</a> </div>
+        <div class="footerNavs col-lg-1 col-xs-1"> <a href="#">Privacy</a> </div>
+        <div class="footerNavs col-lg-1 col-xs-1"> <a href="#">Terms</a> </div>
         <!--<div class="footerNavs col-lg-2"> <a href="#">Follow Us</a> </div>
         <div class="footerNavs col-lg-1"> <span class="fui-facebook"></span> <span class="fui-twitter"></span> </div>-->
       </footer>

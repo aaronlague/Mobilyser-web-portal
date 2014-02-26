@@ -1,9 +1,27 @@
-@media(max-width:767px){}
+@media(max-width:767px){
 
-@media(min-width:768px){}
-
-@media(min-width:992px){
+nav .container .row .submitContainer { margin-top:10px; padding:0; text-align:right; }
+nav .container .row .submitContainer .btn-login { width:50%; }
 
 }
 
-@media(min-width:1200px){}
+@media(min-width:768px) { /*normally this would look like min-width:768px; */
+
+nav .container .row .submitContainer { margin-top:10px; padding:0; text-align:right; }
+nav .container .row .submitContainer .btn-login { width:50%; }
+
+
+}
+
+@media(min-width:992px){
+
+	
+	
+}
+
+@media(min-width:1200px){
+
+nav .container .row .submitContainer { margin-top:45px; text-align:left; padding-left:15px; padding-right:15px; }
+nav .container .row .submitContainer .btn-login { width:100%;  }
+.bottomContent .bottomContentContainer .row .slideNavigationWrapper { position: absolute; min-width: 248px; top: 210px; left: 266px; }
+}
