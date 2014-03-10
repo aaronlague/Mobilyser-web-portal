@@ -100,6 +100,7 @@ class FormElem {
 		$elem .= (isset($params['style']))     ? " style='{$params['style']}'"                     : " style=''";
         $elem .= (isset($params['onclick']))   ? " onclick='{$params['onclick']}'"                 : '';
         $elem .= (isset($params['disabled']))  ? " disabled='{$params['disabled']}'"               : '';
+		$elem .= (isset($params['data-goggle']))   ? " data-toggle='{$params['data-toggle']}'"     : '';
         $elem .= ' />';
         $elem .= (isset($params['value']))     ? " {$params['value']}"                             : '';
         return $elem;

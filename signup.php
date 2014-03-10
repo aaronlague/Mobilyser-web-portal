@@ -122,39 +122,10 @@ $plantype_data = array(
 		  <?php echo $emailaddressFlag['message']; ?>
           <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'emailaddress','name'=>'emailaddress','placeholder'=>'Email*','class'=>'form-control input-md '.$emailaddressFlag['class'].'', 'value'=>$email)); ?></div>
         </div>
-        <!-- Text input-->
-        <div class="form-group <?php echo $acctNoFlag['class'] ?>"> <?php echo $acctNoFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'accountNumber','name'=>'accountNumber','placeholder'=>'Account number*','class'=>'form-control input-md '.$acctNoFlag['class'].'', 'value'=>$acctNo));?></div>
-        </div>
-		<!-- Select Basic -->
-        <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'telco','name'=>'telco','class'=>'form-control','data'=>$telco)); ?></div>
-        </div>
-        <!-- Text input-->
-        <div class="form-group <?php echo $mobileFlag['class']; ?>"> <?php echo $mobileFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'mobileNumber','name'=>'mobileNumber','placeholder'=>'Mobile number*','class'=>'form-control input-md '.$mobileFlag['class'].'', 'value'=>$mobile)); ?></div>
-        </div>
         <!-- Select Basic -->
         <div class="form-group">
           <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'country','name'=>'country','class'=>'form-control','data'=>$country_data)); ?></div>
         </div>
-        <hr / >
-        <h4>Telecom Provider Information</h4>
-        <p>Please provide some basic information about your telco plan. We use this information to calculate estimated costs for each call you make. You can provide this information later through your profile.<br />
-          <br />
-          Most telcos provide call cost information on their websites. Call costs vary between different mobile plans, with the same provider.</p>
-        <!-- Text input-->
-        <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'connectionfee','name'=>'connectionfee','placeholder'=>'Connection fee','class'=>'form-control input-md')); ?> </div>
-        </div>
-        <!-- Text input-->
-        <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'callcharge','name'=>'callcharge','placeholder'=>'60 Second call charge','class'=>'form-control input-md')); ?> </div>
-        </div>
-        <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'plancap','name'=>'plancap','placeholder'=>'Plan cap','class'=>'form-control input-md')); ?> </div>
-        </div>
-        <span class="note"><strong>Please note:</strong> Due to the complex billing arrangements most Telcos have in place for international calls we are unable to estimate the cost of these calls.</span>
         <!-- Button -->
         <div class="form-group">
           <div class="col-md-4 col-md-push-5"> <?php echo $formelem->button(array('id'=>'btn-signup','name'=>'btn-signup','class'=>'btn btn-primary registerBtn', 'value'=>'Create account')); ?> </div>

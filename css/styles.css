@@ -184,6 +184,10 @@ span.fui-arrow-left:hover {
     z-index: 1;
 }
 
+.container .tabContainer { 
+	z-index: 1;
+}
+
 .container .tabContainer .nav-tabs {
     background-color: #34495e;
     min-height: 53px;
@@ -481,4 +485,51 @@ span.fui-arrow-left:hover {
 
 .registerSections .row .noteTxt sup, .signUpSections .row .noteTxt sup, .createPasswordSection .row .noteTxt sup {
     color: #2fac66!important;
+}
+
+
+.modal-backdrop { position:relative;	}
+.modal-backdrop.in { opacity: 0.5!important }
+
+.modal-footer .btn-primary { background-color: #2fac66!important; }
+.modal-content .modal-footer { background-color: #34495e!important; }
+
+.sub-modal{
+    position: absolute;
+    top: 0;
+    left: 60%;
+    width: 80%;
+    border-top: none;
+    
+    -webkit-border-top-left-radius: 0;
+    -moz-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -webkit-border-top-right-radius: 0;
+    -moz-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    
+    background: -webkit-linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0) 4px);
+    background: -moz-linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0) 4px);
+    background: -ms-linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0) 4px);
+    background: -o-linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0) 4px);
+    background: linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0) 4px);
+    background-color: #fff;
+}
+.sub-modal .modal-header{
+    display: none;
+}
+.sub-modal-backdrop{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.modal-header{
+    border-color: #ccc;
+}
+@media (max-width:767px){
+    .sub-modal{
+        left: 10%;    
+    }
 }
