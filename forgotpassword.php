@@ -58,7 +58,7 @@ $country_data = $lookupmodel->getCountry($connect);
 <div class="forgotPasswordContainer container">
   <div class="row">
     <div class="forgotPasswordSection col-lg-10 col-lg-offset-1">
-	<p>Please enter your email address below to recieve a password reset message</p>
+	<p>Please enter your email address below. You will receive an email with further instructions on resetting your password. </p>
 	<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal forgotPasswordFormSection')); ?>
       <fieldset>
         <!-- Text input-->
@@ -68,7 +68,7 @@ $country_data = $lookupmodel->getCountry($connect);
         </div>
 		<!-- Button -->
         <div class="submitContainer form-group">
-          <div class="col-md-12"> <?php echo $formelem->button(array('id'=>'btn-sendPass','name'=>'btn-sendPass','class'=>'btn btn-primary registerBtn', 'value'=>'Email password')); ?> </div>
+          <div class="col-md-12"> <?php echo $formelem->button(array('id'=>'btn-sendPass','name'=>'btn-sendPass','class'=>'btn btn-primary registerBtn', 'value'=>'Submit')); ?> </div>
         </div>
       </fieldset>
       <?php echo $formelem->close(); ?> </div>

@@ -65,16 +65,12 @@ if(isset($_POST['btn-create'])){
   <div class="row">
     <div class="createPasswordSection col-lg-10 col-lg-offset-1">
       <h4>Password details</h4>
-      <p>To start the password creation process please provide the Activation code you received and your desired password.</p>
+      <p>Please choose a password containing more than 6 characters, including at least one number or special character. Example: eXpr3$$</p>
       <div class="row">
         <div class="noteTxt"> <span><strong>Mandatory field</strong></span><sup><i class="fa fa-asterisk"></i></sup> </div>
       </div>
       <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal')); ?>
       <fieldset>
-      <!-- Text input-->
-      <div class="form-group"> <?php echo $activationFlag['message']; ?>
-        <div class="col-md-12"><?php echo $formelem->text(array('id'=>'activationCode','name'=>'activationCode','placeholder'=>'Activation code*','class'=>'form-control input-md '.$activationFlag['class'].'', 'value'=>$activationCode)); ?></div>
-      </div>
       <!-- Text input-->
       <div class="form-group"> <?php echo $passwordFlag['message']; ?> <?php echo $checkPasswordFlag['message']; ?>
         <div class="col-md-12"><?php echo $formelem->text(array('id'=>'password','name'=>'lpassword','placeholder'=>'Password*','class'=>'form-control input-md '.$checkPasswordFlag['class'].'', 'value'=>$password)); ?></div>

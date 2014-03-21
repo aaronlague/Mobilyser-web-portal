@@ -305,10 +305,16 @@ span.fui-arrow-left:hover {
 
 .table-bordered {
     font-size: 13px!important;
+	border:none!important;
 }
 
 .table-bordered tr:nth-child(even) {
     background-color: #ccc;
+}
+
+.table-bordered > thead > tr th, .table-bordered > tbody > tr th, .table-bordered > tfoot > tr th, .table-bordered > thead > tr td, .table-bordered > tbody > tr td, .table-bordered > tfoot > tr td {
+	border-left:none!important;
+	border-right:none!important;
 }
 
 .callListSection .callList .callHistoryDetails {
@@ -402,9 +408,13 @@ span.fui-arrow-left:hover {
     text-align: center;
 }
 
-.regFormSection fieldset .submitContainer .btn-primary, .signUpFormSection fieldset .form-group .btn-primary, .forgotPasswordFormSection fieldset .form-group .btn-primary, .createPasswordSection fieldset .form-group .btn-primary {
+.signUpFormSection fieldset .form-group { margin-bottom:10px; }
+
+.regFormSection fieldset .submitContainer .btn-primary, .signUpFormSection fieldset .form-group .btn-primary, .forgotPasswordFormSection fieldset .form-group .btn-primary, .createPasswordSection fieldset .form-group .btn-primary, .container .termsContent .btn-back {
     background-color: #2fac66!important;
 }
+
+.signUpFormSection fieldset .control-label { text-align:left; padding-top:0px!important; padding-bottom:0px!important; }
 
 .loginFormSection fieldset .form-group:nth-of-type(2) {
     margin-bottom: 0px!important;
@@ -442,6 +452,27 @@ span.fui-arrow-left:hover {
     font-weight: normal;
     margin-top: 15px;
 }
+
+.termsHeadline {
+    background-color: #34495e;
+    color: #FFFFFF;
+	padding:20px 0!important;
+	margin-bottom:30px;
+}
+
+.termsHeadline .container .row div {
+    text-align: center;
+}
+
+.termsHeadline .container .row div h3 {
+    font-size: 36px;
+    font-weight: normal;
+    margin-top: 15px;
+}
+
+.container .termsContent p { text-align:justify; }
+
+.container .termsContent a.btn-back { float: right; }
 
 .signUpContainer .headLine, .registerContainer .headLine, .createPasswordContainer .headLine {
     text-align: center;
@@ -488,48 +519,71 @@ span.fui-arrow-left:hover {
 }
 
 
-.modal-backdrop { position:relative;	}
+/*.modal-backdrop { position:relative;	}
+.modal-backdrop.in { opacity: 0.5!important }*/
+
 .modal-backdrop.in { opacity: 0.5!important }
 
+.modal-body  .btn-primary { background-color: #2fac66!important; }
 .modal-footer .btn-primary { background-color: #2fac66!important; }
 .modal-content .modal-footer { background-color: #34495e!important; }
-
-.sub-modal{
-    position: absolute;
-    top: 0;
-    left: 60%;
-    width: 80%;
-    border-top: none;
-    
-    -webkit-border-top-left-radius: 0;
-    -moz-border-top-left-radius: 0;
-    border-top-left-radius: 0;
-    -webkit-border-top-right-radius: 0;
-    -moz-border-top-right-radius: 0;
-    border-top-right-radius: 0;
-    
-    background: -webkit-linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0) 4px);
-    background: -moz-linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0) 4px);
-    background: -ms-linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0) 4px);
-    background: -o-linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0) 4px);
-    background: linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0) 4px);
-    background-color: #fff;
-}
-.sub-modal .modal-header{
-    display: none;
-}
-.sub-modal-backdrop{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
 .modal-header{
     border-color: #ccc;
 }
+
+.modal-content .modal-body { max-height: 400px; overflow: scroll; overflow-x: hidden; }
+
+.modal-content .modal-footer a.btn-decline, .modal-content .modal-footer a.btn-cancel { color:#FFFFFF!important; float:left; text-decoration:underline; }
+.modal-content .modal-footer a.btn-decline:hover, .modal-content .modal-footer a.btn-cancel:hover { color:#16a085!important; text-decoration:none; }
+
+input[placeholder]::-webkit-input-placeholder { /* WebKit browsers */
+    color: #2fac66!important;
+}
+input[placeholder]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #2fac66!important;
+}
+input[placeholder]::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #2fac66!important;
+}
+input[placeholder]:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #2fac66!important;
+}
+
+
+select[name="contactsData_length"], select[name="dvData_length"] { border: 2px solid #2fac66!important; border-radius: 5px!important; color: #2fac66;
+font-weight: bold; font-size: 14px; }
+.form-control + .input-icon { color: #2fac66!important; } 
+
+select.form-control { color: #2fac66!important; text-indent:44%;}
+select.form-control option { text-align:center!important; text-indent:150px; }
+
+
+
 @media (max-width:767px){
     .sub-modal{
         left: 10%;    
     }
 }
+
+/*** 03/12/2014 ***/
+.form-group  {
+	position: relative;
+}
+.overlapped-asterisk {
+	position: absolute;
+	left: 54%;
+}
+.asterisk-hide {
+	display: none;
+}
+
+.overlapped-asterisk i {
+	font-size:50%!important;
+	color: #2fac66!important;
+}
+
+.dropdown > .dropdown-menu { margin-top:0px!important; /*position:relative;*/ left: 85px; background-color:#34495e!important; }
+.dropdown > .dropdown-menu > li { padding:5px 5px; }
+.dropdown > .dropdown-menu li > a { border-radius: 6px 6px 6px 6px!important; color:#fff; padding:3px 15px 0 15px!important; }
+.dropdown > .dropdown-menu li > a:hover { background-color: #2fac66!important; }
+

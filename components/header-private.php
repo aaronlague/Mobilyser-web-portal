@@ -1,9 +1,13 @@
-    <!--logged user goes here-->
       <div class="userSection col-lg-5 col-lg-offset-2">
-	  <!--<div class="container">-->
         <div class="row">
 			<div class="col-lg-7">
-			<p style="font-size:20px; padding-left:35px; padding-top:5px; color:#d8d8d8;"><strong style="color:#2fac66">Welcome</strong> <a href="#modalAccount" role="" class="" data-toggle="modal"><?php echo $_SESSION['full_name']; ?></a></p>
+				<div class="dropdown" style="font-size:20px;">
+				  Welcome <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $_SESSION['full_name']; ?><b class="caret"></b></a>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+					<li><a data-toggle="modal" href="#modalPersonal">Personal Information</a></li>
+					<li><a data-toggle="modal" href="#modalTelco">Telco Information</a></li>
+				  </ul>
+				</div>
 			</div>
 			<div class="col-lg-2" style="font-size:12px;">
 			<?php echo $formelem->create(array('method'=>'post', 'action'=>'logout.php')); ?>
@@ -11,6 +15,5 @@
 			<?php echo $formelem->close(); ?>
 			</div>
 		</div>
-	  <!--</div>-->
       </div>
-    <!--logged user ends here-->
+<script src="js/jquery-1.10.2.js"></script>

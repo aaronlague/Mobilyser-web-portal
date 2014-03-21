@@ -45,31 +45,23 @@ if(isset($_POST['btn-signup'])){
     $fnameFlag = $validationlib->isEmpty($_POST['firstname'], 'First name', 2);
     $lnameFlag = $validationlib->isEmpty($_POST['lastname'], 'Last name', 2);
     $emailaddressFlag = $validationlib->isEmail($_POST['emailaddress'], 'Email', 5, 'y');
-	  $acctNoFlag = $validationlib->isEmpty($_POST['accountNumber'], 'Account number', 5, 'y');
-    $mobileFlag = $validationlib->isEmpty($_POST['mobileNumber'], 'Mobile number', 5);
+	//$acctNoFlag = $validationlib->isEmpty($_POST['accountNumber'], 'Account number', 5, 'y');
+    //$mobileFlag = $validationlib->isEmpty($_POST['mobileNumber'], 'Mobile number', 5);
 	
 	$fname = $_POST['firstname'];
 	$lname = $_POST['lastname'];
 	$emailaddress = $_POST['emailaddress'];
-	$acctNo = $_POST['accountNumber'];
-	$mobile = $_POST['mobileNumber'];
 
-    if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailaddressFlag['message'] == "" and $mobileFlag['message'] == "" ){
+    if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailaddressFlag['message'] == ""){
 
-      $data['@password'] = '';
-      $data['@firstname'] = $_POST['firstname'];
-      $data['@lastname'] = $_POST['lastname'];
-      $data['@email'] = $_POST['emailaddress'];
-	    $data['@acct_no'] = $_POST['accountNumber'];
-      $data['@mobilephone'] = $_POST['mobileNumber'];
-	    $data['@country'] = $_POST['country'];
-	    $data['@company'] = '';
-	    $data['@telecom'] = '';
-      
-      $db->mquery_insert("dbo.createAccount", $data, $connect);
-	    //$emailmodel->signupMail($db->escape($_POST['email']), $db->escape($_POST['mobileNumber']));
-	  
-      header("Location: confirmation.php");
+		$data['@firstname'] = $_POST['firstname'];
+		$data['@lastname'] = $_POST['lastname'];
+		$data['@email'] = $_POST['emailaddress'];
+		$data['@username'] = $_POST['emailaddress'];
+		$data['@country'] = $_POST['country'];
+		$db->mquery_insert("dbo.createAccount", $data, $connect);
+		
+		header("Location: confirmation.php");
 
     }
 
@@ -110,17 +102,21 @@ $plantype_data = array(
         <!-- Text input-->
         <div class="form-group <?php echo $fnameFlag['class'] ?>">
           <?php	echo $fnameFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name*','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?></div>
+          <div class="col-md-12"> 
+            <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name*','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?>
+          </div>
         </div>
         <!-- Text input-->
         <div class="form-group <?php echo $lnameFlag['class'] ?>">
           <?php	echo $lnameFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name*','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?></div>
+          <div class="col-md-12">
+		  <?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name*','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?></div>
         </div>
         <!-- Text input-->
         <div class="form-group <?php echo $emailaddressFlag['class'] ?> ">
 		  <?php echo $emailaddressFlag['message']; ?>
-          <div class="col-md-12"> <?php echo $formelem->text(array('id'=>'emailaddress','name'=>'emailaddress','placeholder'=>'Email*','class'=>'form-control input-md '.$emailaddressFlag['class'].'', 'value'=>$email)); ?></div>
+          <div class="col-md-12">
+		  <?php echo $formelem->text(array('id'=>'emailaddress','name'=>'emailaddress','placeholder'=>'Email*','class'=>'form-control input-md '.$emailaddressFlag['class'].'', 'value'=>$email)); ?></div>
         </div>
         <!-- Select Basic -->
         <div class="form-group">

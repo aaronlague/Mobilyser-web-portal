@@ -34,17 +34,19 @@ if(isset($_POST['btn-login'])){
 
 ?>
 <?php include 'components/header.php'; ?>
-
+<div class="section formHeadLine">
+	<div class="container">
+	  <div class="row">
+		<div>
+		  <h3>Thank You</h3>
+		</div>
+	  </div>
+	</div>
+</div>
 <div class="container">
   <div class="row">
-    <div class="col-lg-12" style="text-align:center;">
-      <h2>Thank You</h2>
-    </div>
-  </div>
-  <hr />
-  <div class="row">
     <div class="col-lg-8 col-lg-push-2">
-      <h3 style="text-align:center">Account signup success!</h3>
+      <h4 style="text-align:center">Account signup success!</h4>
       <p style="background-color: #ccc; padding: 15px; margin-bottom: 20px;">We have sent you an email with a confirmation link to validate your registration</p>
   </div>
 </div>

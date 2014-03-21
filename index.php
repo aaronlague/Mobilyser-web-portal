@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 
 include 'protected/config/db_config.php';
@@ -28,10 +28,15 @@ if(isset($_POST['btn-login'])){
 	
     
 	if($emailFlag['message'] == "" and $pwordFlag['message'] == ""){
-      $indexController->indexPage($email, $password, $activationcodeURL, $connect);
+      $indexController->indexPage($email, $password, $activationcodeURL ,$connect);
 	}
-
 }
+
+if(isset($_POST['btn-accept'])){
+
+ 	$indexController->updateTermsPage($_POST['check_email'], $connect);  
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,17 +64,20 @@ if(isset($_POST['btn-login'])){
 			</div>
   <!--login form goes here-->
 			<div class="loginSection col-lg-3 col-lg-offset-3 col-xs-4">
-				<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection')); ?>
+				<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection', 'id'=>'loginForm')); ?>
 					<fieldset>
 						<div class="form-group <?php echo $emailFlag['class'] ?> ">
-							<?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Username','class'=>'form-control input-sm '.$emailFlag['class'].'', 'value'=>$email)); ?>
+							<?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Username','class'=>'form-control input-sm '.$emailFlag['class'].' emailField', 'value'=>$email)); ?>
 							<span class="input-icon fui-user"></span>
 						</div>
 						<div class="form-group <?php echo $pwordFlag['class'] ?>">
 							<?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'')); ?>
 							<span class="input-icon fui-lock"></span>
 						</div>
-				 <?php if(isset($_POST['btn-login'])){ echo $indexController->indexPage($email, $password, $activationcodeURL, $connect); } ?>
+				 <?php
+				 	if(isset($_POST['btn-login'])){ 
+				 		echo $indexController->indexPage($email, $password, $activationcodeURL, $connect);
+				 	} ?>
 			</div>
 			<div class="submitContainer col-lg-1 col-xs-4">
 				<p><a href="forgotpassword.php">Lost your password?</a></p>
@@ -80,40 +88,7 @@ if(isset($_POST['btn-login'])){
   		</div>
 	</div>
 </nav>
-<div class="modal" id="modalTerms">
-	<div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close fui-cross" data-dismiss="modal" aria-hidden="true"></button>
-          <h4 class="modal-title">Terms and Conditions</h4>
-        </div>
-        <div class="modal-body">
-          If you use this site, you are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer, and you agree to accept responsibility for all activities that occur under your account or password. Mobilyser and its associates reserve the right to refuse service, terminate accounts, remove or edit content, or cancel orders in their sole discretion. 
-        </div>
-        <div class="modal-footer">
-          <a href="#" data-dismiss="modal" class="btn btn-primary btn-decline">Decline</a>
-          <a href="#" class="btn btn-primary">Accept</a>
-        </div>
-      </div>
-    </div>
-</div>
-<div class="modal" id="modalDecline">
-	<div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close fui-cross" data-dismiss="modal" aria-hidden="true"></button>
-          <h4 class="modal-title">Terms of use</h4>
-        </div>
-        <div class="modal-body">
-			In order to use the Mobilyser service you are required to accept the terms of use. If you have any specific concerns about the terms of user for Mobilyser please contact <a href="mailto:support@mobilyser.net">support@mobilyser.net</a>
-        </div>
-        <!--<div class="modal-footer">
-          <a href="#" data-dismiss="modal" class="btn btn-primary">Decline</a>
-          <a href="#" class="btn btn-primary">Accept</a>
-        </div>-->
-      </div>
-    </div>
-</div>
+<?php include 'components/modal-terms.php'; ?>
 <div class="section topContent">
   <div class="container">
     <div class="col-lg-8 col-lg-offset-2">
@@ -217,6 +192,7 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
     </div>
   </div>
 </section>
+<div class="overlaySection"></div>
 <!-- /.container -->
 <!-- JavaScript -->
 <script src="js/jquery-1.10.2.js"></script>
@@ -227,21 +203,27 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
 <script src="js/hp-range-slides.js"></script>
 <script src="js/jquery.toggler.js"></script>
 <script type="text/javascript">
+function showModalTerms(){
+  $('#modalTerms').modal('show');
+}
 (function($) {
 	$(document).ready(function() {
-		$('#modalTerms').toggler();	
+		
+		$('.btn-decline').click(function(){
+			$('#modalTerms').modal();
+			$('#modalTerms').modal('hide');
+			$('#modalDecline').modal();
+			$('#modalDecline').modal('show');
+			setTimeout(function(){
+				$('#modalDecline').modal();
+    			$('#modalDecline').modal('hide');
+				window.location.reload(true);
+			}, 5000);
+		});
 	});
-	$('.fui-cross').click(function(){
-		$('#modalTerms').modal();
-		$('#modalTerms').modal('hide');	
-	});
-	$('.btn-decline').click(function(){
-		$('#modalTerms').modal();
-		$('#modalTerms').modal('hide');
-		$('#modalDecline').modal();
-		$('#modalDecline').modal('show');
-	});
+	
 })(jQuery);
 </script>
+<?php $indexController->indexPage($email, $password, $activationcodeURL ,$connect); ?>
 </body>
 </html>
