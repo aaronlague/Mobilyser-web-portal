@@ -77,6 +77,14 @@ class IndexController {
 		session_write_close();
 		header("Location: accounts.php");
 	}
+	
+	public function createUserPassword($emaiParam, $activationParam, $userPassword, $connect) {
+	
+		$db = new db_config();
+		
+		$db->mquery("EXEC dbo.createUserPassword @email = '".$emaiParam."', @activation_key = '".$activationParam."', @password ='".$userPassword."'", $connect);
+	
+	}
 }
 
 ?>

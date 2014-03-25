@@ -13,32 +13,13 @@ $indexController = new IndexController();
 
 $connect = $db->connect();
 
-$activationcodeURL = '';
-
-$emailFlag['class'] = '';
-$pwordFlag['class'] = '';
-
-if(isset($_POST['btn-login'])){
-
-    $email = $db->escape($_POST['email']);
-    $password = $db->escape($_POST['password']);
-    
-    $emailFlag = $validationlib->isEmail($email, '', 3, 'n');
-    $pwordFlag = $validationlib->isEmpty($password, '', 1);
-    if($emailFlag['message'] == "" and $pwordFlag['message'] == ""){
-      $indexController->indexPage($email, $password, $activationcodeURL, $connect);
-    }
-
-}
-
-
 ?>
 <?php include 'components/header.php'; ?>
 <div class="section formHeadLine">
 	<div class="container">
 	  <div class="row">
 		<div>
-		  <h3>Thank You</h3>
+		  <h3>Thank you for registering a new Mobilyser account</h3>
 		</div>
 	  </div>
 	</div>
@@ -46,8 +27,8 @@ if(isset($_POST['btn-login'])){
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-lg-push-2">
-      <h4 style="text-align:center">Account signup success!</h4>
-      <p style="background-color: #ccc; padding: 15px; margin-bottom: 20px;">We have sent you an email with a confirmation link to validate your registration</p>
+	<br />
+      <p style="background-color: #ccc; padding: 15px; margin-bottom: 20px; text-align:center;">In order to complete your registration we have sent you an email. Please click the confirmation link in the email to complete your registration.</p>
   </div>
 </div>
 <!-- /.container -->

@@ -1,6 +1,8 @@
 <?php
-define('DB_SERVER', 'FLEXIADMIN');
-define('DB_USERNAME', 'sa');
+//define('DB_SERVER', 'FLEXIADMIN');
+define('DB_SERVER', 'FLEXISOURCEIT\SQLEXPRESS');
+//define('DB_USERNAME', 'sa');
+define('DB_USERNAME', 'myodadmin');
 define('DB_PASSWORD', 'Pass1234');
 define('DB_DATABASE', 'MYOD');
 

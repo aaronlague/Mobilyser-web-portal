@@ -13,39 +13,18 @@ $indexController = new IndexController();
 
 $connect = $db->connect();
 
-$emailFlag['class'] = '';
-$pwordFlag['class'] = '';
-
-if(isset($_POST['btn-login'])){
-
-    $email = $db->escape($_POST['email']);
-    $password = $db->escape($_POST['password']);
-    
-    $emailFlag = $validationlib->isEmail($email, '', 3, 'n');
-    $pwordFlag = $validationlib->isEmpty($password, '', 1);
-    if($emailFlag['message'] == "" and $pwordFlag['message'] == ""){
-      $indexController->indexPage($email, $password, $activationcodeURL, $connect);
-    }
-
-}
-
 $activationFlag['class'] = '';
 $passwordFlag['class'] = '';
 $cpasswordFlag['class'] = '';
 
+$emailValue = $_GET['email'];
+$verificationCode = $_GET['verfication'];
+
+
+
 if(isset($_POST['btn-create'])){
-
-	$userIdFlag = $db->escape($_GET['userid']);
-    $activationFlag = $validationlib->isEmpty($_POST['activationCode'], 'Activation code', 2);
-	$checkPasswordFlag = $validationlib->isEmpty($_POST['lpassword'], 'Password', 2);
-	$reTypePasswordFlag = $validationlib->isEmpty($_POST['confirmPassword'], 'Password confirmation', 2);
-    $passwordFlag = $validationlib->isCompare($_POST['lpassword'], $_POST['confirmPassword'], 'Passwords', 3);
-
-    //if($activationFlag['message'] == "" and $passwordFlag['message'] == ""){
-//
-//      $indexController->indexPage($userIdFlag, $_POST['lpassword'], $_POST['activationCode'], $connect);
-//
-//    }
+	
+	$indexController->createUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
 
 }
 

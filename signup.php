@@ -59,6 +59,7 @@ if(isset($_POST['btn-signup'])){
 		$data['@email'] = $_POST['emailaddress'];
 		$data['@username'] = $_POST['emailaddress'];
 		$data['@country'] = $_POST['country'];
+		$data['@activation_key'] = mt_rand(0, 5000);
 		$db->mquery_insert("dbo.createAccount", $data, $connect);
 		
 		header("Location: confirmation.php");
