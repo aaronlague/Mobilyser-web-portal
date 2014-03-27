@@ -8,6 +8,11 @@ include 'protected/models/lookup.php';
 include 'protected/models/email.php';
 include 'protected/controllers/index.php';
 
+require("components/plugins/class.phpmailer.php");
+require("components/plugins/class.smtp.php");
+require("components/plugins/PHPMailerAutoload.php");
+require("components/plugins/mailer.setup.php");
+
 $db = new db_config();
 $formelem = new FormElem();
 $validationlib = new validationLibrary();
@@ -22,6 +27,7 @@ $activationcodeURL = '';
 $emailFlag['class'] = '';
 $pwordFlag['class'] = '';
 
+
 if(isset($_POST['btn-login'])){
 
     $email = $db->escape($_POST['email']);
@@ -32,21 +38,17 @@ if(isset($_POST['btn-login'])){
     if($emailFlag['message'] == "" and $pwordFlag['message'] == ""){
       $indexController->indexPage($email, $password, $activationcodeURL, $connect);
     }
-
 }
 
 $fnameFlag['class'] = '';
 $lnameFlag['class'] = '';
 $emailaddressFlag['class'] = '';
-$mobileFlag['class'] = '';
 
 if(isset($_POST['btn-signup'])){
 	
     $fnameFlag = $validationlib->isEmpty($_POST['firstname'], 'First name', 2);
     $lnameFlag = $validationlib->isEmpty($_POST['lastname'], 'Last name', 2);
     $emailaddressFlag = $validationlib->isEmail($_POST['emailaddress'], 'Email', 5, 'y');
-	//$acctNoFlag = $validationlib->isEmpty($_POST['accountNumber'], 'Account number', 5, 'y');
-    //$mobileFlag = $validationlib->isEmpty($_POST['mobileNumber'], 'Mobile number', 5);
 	
 	$fname = $_POST['firstname'];
 	$lname = $_POST['lastname'];
@@ -62,20 +64,25 @@ if(isset($_POST['btn-signup'])){
 		$data['@activation_key'] = mt_rand(0, 5000);
 		$db->mquery_insert("dbo.createAccount", $data, $connect);
 		
-		header("Location: confirmation.php");
-
+		$mail->Subject = "Mobilyser Email confirmation";
+		$mail->Body = "Dear " . $fname . ' ' . $lname . "," . $bodyText;
+		$mail->AddAddress($emailaddress);
+		
+		if ($mail->send()) {
+			
+			header("Location: confirmation.php");
+			
+		} else {
+			
+			//echo "Mailer Error: " . $mail->ErrorInfo;
+			
+		}
+		
     }
-
 }
 
 $country_data = $lookupmodel->getCountry($connect);
-$telco = $lookupmodel->getTelecoms($connect);
 
-$plantype_data = array(
-  '1'=>'Plan A',
-  '2'=>'Plan B',
-  '3'=>'Plan C'
-);
 ?>
 <?php include 'components/header.php'; ?>
 

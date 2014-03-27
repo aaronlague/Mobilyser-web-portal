@@ -18,7 +18,7 @@ $passwordFlag['class'] = '';
 $cpasswordFlag['class'] = '';
 
 $emailValue = $_GET['email'];
-$verificationCode = $_GET['verfication'];
+$verificationCode = $_GET['verification'];
 
 
 
