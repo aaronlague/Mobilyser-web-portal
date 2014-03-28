@@ -70,15 +70,24 @@ $bill_upload_data = $lookupmodel->getBills($_SESSION['account_num'], $connect);
 <script src="js/jquery.toggler.js"></script>
 <script src="js/bootstrap.submodal.js"></script>
 <script>
+var showTelco = function() {
+
+	$('#modalTelco').modal('show');
+
+}
+
 $(document).ready(function () {
 $("#iframeContainer").load(function(){
 		console.log("parser loaded...");
 		loadbills();
 	});
 });
-$('#telcoSetupModal').toggler();
-$('.fui-cross').click(function(){
-	$('#telcoSetupModal').modal();
-	$('#telcoSetupModal').modal('hide');	
-})
 </script>
+<?php 
+	
+if ($_GET['terms'] =='true') {
+	
+	echo '<script>showTelco();</script>';
+}
+
+?>

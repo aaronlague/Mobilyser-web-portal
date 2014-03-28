@@ -13,7 +13,6 @@ $indexController = new IndexController();
 
 $connect = $db->connect();
 
-$activationFlag['class'] = '';
 $passwordFlag['class'] = '';
 $cpasswordFlag['class'] = '';
 
@@ -21,16 +20,14 @@ $emailValue = $_GET['email'];
 $verificationCode = $_GET['verification'];
 
 
-
 if(isset($_POST['btn-create'])){
-	
-	$indexController->createUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
 
+	$indexController->createUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
 }
 
 ?>
 <?php include 'components/header.php'; ?>
-
+<?php include 'components/modal-success.php'; ?>
 <div class="section formHeadLine">
   <div class="container">
     <div class="row">
@@ -52,11 +49,11 @@ if(isset($_POST['btn-create'])){
       <fieldset>
       <!-- Text input-->
       <div class="form-group"> <?php echo $passwordFlag['message']; ?> <?php echo $checkPasswordFlag['message']; ?>
-        <div class="col-md-12"><?php echo $formelem->text(array('id'=>'password','name'=>'lpassword','placeholder'=>'Password*','class'=>'form-control input-md '.$checkPasswordFlag['class'].'', 'value'=>$password)); ?></div>
+        <div class="col-md-12"><?php echo $formelem->password(array('id'=>'password','name'=>'lpassword','placeholder'=>'Password*','class'=>'form-control input-md '.$checkPasswordFlag['class'].'', 'value'=>$password)); ?></div>
       </div>
       <!-- Text input-->
       <div class="form-group"> <?php echo $passwordFlag['message']; ?> <?php echo $reTypePasswordFlag['message']; ?>
-        <div class="col-md-12"><?php echo $formelem->text(array('id'=>'confirmPassword','name'=>'confirmPassword','placeholder'=>'Confirm password*','class'=>'form-control input-md '.$reTypePasswordFlag['class'].'', 'value'=>$rePassword)); ?></div>
+        <div class="col-md-12"><?php echo $formelem->password(array('id'=>'confirmPassword','name'=>'confirmPassword','placeholder'=>'Confirm password*','class'=>'form-control input-md '.$reTypePasswordFlag['class'].'', 'value'=>$rePassword)); ?></div>
       </div>
       <!-- Button -->
       <div class="submitContainer form-group">
@@ -69,3 +66,17 @@ if(isset($_POST['btn-create'])){
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
 <?php include 'components/footer.php'; ?>
+<script type="text/javascript">
+var showModalSuccess = function() {
+  $('#modalSuccess').modal('show');
+  setTimeout(function(){
+			$('#modalSuccess').modal();
+			$('#modalSuccess').modal('hide');
+			window.location.replace('index.php');
+		}, 5000);
+		
+}
+</script>
+<?php if ($_GET['success'] =='true'){
+	echo '<script>showModalSuccess();</script>';
+}?>

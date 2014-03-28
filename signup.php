@@ -5,7 +5,6 @@ include 'protected/config/db_config.php';
 include 'protected/config/html_config.php';
 include 'protected/library/validation_library.php';
 include 'protected/models/lookup.php';
-include 'protected/models/email.php';
 include 'protected/controllers/index.php';
 
 require("components/plugins/class.phpmailer.php");
@@ -18,7 +17,6 @@ $formelem = new FormElem();
 $validationlib = new validationLibrary();
 $indexController = new IndexController();
 $lookupmodel = new LookupModel();
-$emailmodel = new EmailModel();
 
 $connect = $db->connect();
 
@@ -64,8 +62,10 @@ if(isset($_POST['btn-signup'])){
 		$data['@activation_key'] = mt_rand(0, 5000);
 		$db->mquery_insert("dbo.createAccount", $data, $connect);
 		
+	 	$url = $indexController->createConfirmationLink($_POST['emailaddress'], $connect);
+		
 		$mail->Subject = "Mobilyser Email confirmation";
-		$mail->Body = "Dear " . $fname . ' ' . $lname . "," . $bodyText;
+		$mail->Body = "Dear " . $fname . ' ' . $lname . "," . $bodyTextHead . $url . $bodyTextFooter;
 		$mail->AddAddress($emailaddress);
 		
 		if ($mail->send()) {
@@ -85,7 +85,6 @@ $country_data = $lookupmodel->getCountry($connect);
 
 ?>
 <?php include 'components/header.php'; ?>
-
 <div class="section formHeadLine">
 <div class="container">
 	<div class="row">

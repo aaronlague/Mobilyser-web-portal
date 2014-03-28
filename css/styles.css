@@ -404,7 +404,7 @@ span.fui-arrow-left:hover {
     font-size: 25px;
 }
 
-.regFormSection fieldset input[type="text"], .signUpFormSection fieldset input[type="text"], .forgotPasswordSection fieldset input[type="text"], .createPasswordSection fieldset input[type="text"] {
+.regFormSection fieldset input[type="text"], .signUpFormSection fieldset input[type="text"], .forgotPasswordSection fieldset input[type="text"], .createPasswordSection fieldset input[type="password"] {
     text-align: center;
 }
 

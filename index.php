@@ -203,26 +203,22 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
 <script src="js/hp-range-slides.js"></script>
 <script src="js/jquery.toggler.js"></script>
 <script type="text/javascript">
-function showModalTerms(){
+var showModalTerms = function(){
   $('#modalTerms').modal('show');
 }
-(function($) {
-	$(document).ready(function() {
-		
-		$('.btn-decline').click(function(){
-			$('#modalTerms').modal();
-			$('#modalTerms').modal('hide');
+$(document).ready(function() {
+	$('.btn-decline').click(function(){
+		$('#modalTerms').modal();
+		$('#modalTerms').modal('hide');
+		$('#modalDecline').modal();
+		$('#modalDecline').modal('show');
+		setTimeout(function(){
 			$('#modalDecline').modal();
-			$('#modalDecline').modal('show');
-			setTimeout(function(){
-				$('#modalDecline').modal();
-    			$('#modalDecline').modal('hide');
-				window.location.reload(true);
-			}, 5000);
-		});
+			$('#modalDecline').modal('hide');
+			window.location.reload(true);
+		}, 5000);
 	});
-	
-})(jQuery);
+});
 </script>
 <?php $indexController->indexPage($email, $password, $activationcodeURL ,$connect); ?>
 </body>
