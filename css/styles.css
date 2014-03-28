@@ -429,7 +429,7 @@ span.fui-arrow-left:hover {
     border: 1px solid red;
 }
 
-.regFormSection fieldset .form-group span.errorMsg, .signUpFormSection fieldset .form-group span.errorMsg, .forgotPasswordFormSection fieldset .form-group span.errorMsg {
+.regFormSection fieldset .form-group span.errorMsg, .signUpFormSection fieldset .form-group span.errorMsg, .forgotPasswordFormSection fieldset .form-group span.errorMsg, .createPasswordSection fieldset .form-group span.errorMsg {
     padding-left: 15px;
     font-size: 11px!important;
 }

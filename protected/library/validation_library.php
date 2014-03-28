@@ -4,7 +4,7 @@ class validationLibrary {
 	# if empty
 	public function isEmpty($string, $message, $numlength){
 		if ($string == NULL){
-			$flag['message'] = '<span class="errorMsg">'.$message.' required.</span><br />';
+			$flag['message'] = '<span class="errorMsg">'.$message.' required.</span>';
 			$flag['class'] = 'has-error';
 		} else {
 			$isResult = $this->isLength($string, $message, $numlength);
@@ -38,7 +38,7 @@ class validationLibrary {
 			// start the validation for email validity.
 			if(!preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/', $string)){
 				$flag['message'] = '<span class="errorMsg">'.$message.' invalid.</span>';
-				$flag['class'] = 'error';
+				$flag['class'] = 'has-error';
 			}else{
 				if($isdatabase == 'y'){
 					 //check the email if already register

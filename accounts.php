@@ -69,13 +69,8 @@ $bill_upload_data = $lookupmodel->getBills($_SESSION['account_num'], $connect);
 <script src="js/bill-history.js"></script>
 <script src="js/jquery.toggler.js"></script>
 <script src="js/bootstrap.submodal.js"></script>
+<script src="js/modal-actions.js"></script>
 <script>
-var showTelco = function() {
-
-	$('#modalTelco').modal('show');
-
-}
-
 $(document).ready(function () {
 $("#iframeContainer").load(function(){
 		console.log("parser loaded...");
@@ -84,10 +79,7 @@ $("#iframeContainer").load(function(){
 });
 </script>
 <?php 
-	
 if ($_GET['terms'] =='true') {
-	
 	echo '<script>showTelco();</script>';
 }
-
 ?>

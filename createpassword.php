@@ -22,13 +22,21 @@ $verificationCode = $_GET['verification'];
 
 if(isset($_POST['btn-create'])){
 
-	$indexController->createUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
+$passwordFlag = $validationlib->isEmpty($_POST['lpassword'], 'Password', 2);
+$cpasswordFlag = $validationlib->isEmpty($_POST['confirmPassword'], 'Confirm password', 2);
+
+	if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
+	
+		$indexController->createUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
+	
+	}
+
 }
 
 ?>
 <?php include 'components/header.php'; ?>
 <?php include 'components/modal-success.php'; ?>
-<div class="section formHeadLine">
+<div class="section formHeadLine" data-page-name="createPasswordPage">
   <div class="container">
     <div class="row">
       <div>
@@ -44,20 +52,22 @@ if(isset($_POST['btn-create'])){
       <p>Please choose a password containing more than 6 characters, including at least one number or special character. Example: eXpr3$$</p>
       <div class="row">
         <div class="noteTxt"> <span><strong>Mandatory field</strong></span><sup><i class="fa fa-asterisk"></i></sup> </div>
+		
       </div>
+	  <div class="warningContainer"></div>
       <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal')); ?>
       <fieldset>
       <!-- Text input-->
-      <div class="form-group"> <?php echo $passwordFlag['message']; ?> <?php echo $checkPasswordFlag['message']; ?>
+      <div class="form-group <?php echo $passwordFlag['class'] ?>"> <?php echo $passwordFlag['message']; ?>
         <div class="col-md-12"><?php echo $formelem->password(array('id'=>'password','name'=>'lpassword','placeholder'=>'Password*','class'=>'form-control input-md '.$checkPasswordFlag['class'].'', 'value'=>$password)); ?></div>
       </div>
       <!-- Text input-->
-      <div class="form-group"> <?php echo $passwordFlag['message']; ?> <?php echo $reTypePasswordFlag['message']; ?>
+      <div class="form-group <?php echo $cpasswordFlag['class']; ?>"> <?php echo $cpasswordFlag['message']; ?>
         <div class="col-md-12"><?php echo $formelem->password(array('id'=>'confirmPassword','name'=>'confirmPassword','placeholder'=>'Confirm password*','class'=>'form-control input-md '.$reTypePasswordFlag['class'].'', 'value'=>$rePassword)); ?></div>
       </div>
       <!-- Button -->
       <div class="submitContainer form-group">
-        <div class="col-md-12"> <?php echo $formelem->button(array('id'=>'btn-create','name'=>'btn-create','class'=>'btn btn-primary registerBtn', 'value'=>'Create password')); ?> </div>
+        <div class="col-md-12"> <?php echo $formelem->button(array('id'=>'btn-create','name'=>'btn-create','class'=>'btn btn-primary btn-create', 'value'=>'Create password')); ?> </div>
       </div>
       </fieldset>
       <?php echo $formelem->close(); ?> </div>
@@ -66,16 +76,27 @@ if(isset($_POST['btn-create'])){
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
 <?php include 'components/footer.php'; ?>
-<script type="text/javascript">
-var showModalSuccess = function() {
-  $('#modalSuccess').modal('show');
-  setTimeout(function(){
-			$('#modalSuccess').modal();
-			$('#modalSuccess').modal('hide');
-			window.location.replace('index.php');
-		}, 5000);
-		
-}
+<script src="js/modal-actions.js"></script>
+<script src="js/field-validator.js"></script>
+<script src="js/core.js"></script>
+<script>
+$(document).ready(function(){
+
+		if($('.form-group').hasClass('has-error')){
+			
+			var alertMessage = '<a href="#" class="close" data-dismiss="alert">&times;</a><strong>Warning!</strong><span> Please check the errors below</span>';
+			
+			$('.createPasswordSection').find('.warningContainer').addClass('alert alert-error').append(alertMessage);
+			$('[data-dismiss]').on('click', function(){
+				$('.form-group').removeClass('has-error');
+				$('span.errorMsg').remove();
+			})
+			
+		} else {
+			
+		}
+
+});
 </script>
 <?php if ($_GET['success'] =='true'){
 	echo '<script>showModalSuccess();</script>';

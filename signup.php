@@ -85,7 +85,7 @@ $country_data = $lookupmodel->getCountry($connect);
 
 ?>
 <?php include 'components/header.php'; ?>
-<div class="section formHeadLine">
+<div class="section formHeadLine" data-page-name="signupPage">
 <div class="container">
 	<div class="row">
     <div>
@@ -143,4 +143,5 @@ $country_data = $lookupmodel->getCountry($connect);
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/field-validator.js"></script>
 <script src="js/core.js"></script>
+<script></script>
 <?php include 'components/footer.php'; ?>

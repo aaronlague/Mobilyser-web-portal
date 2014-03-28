@@ -202,24 +202,7 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
 <script src="js/application.js"></script>
 <script src="js/hp-range-slides.js"></script>
 <script src="js/jquery.toggler.js"></script>
-<script type="text/javascript">
-var showModalTerms = function(){
-  $('#modalTerms').modal('show');
-}
-$(document).ready(function() {
-	$('.btn-decline').click(function(){
-		$('#modalTerms').modal();
-		$('#modalTerms').modal('hide');
-		$('#modalDecline').modal();
-		$('#modalDecline').modal('show');
-		setTimeout(function(){
-			$('#modalDecline').modal();
-			$('#modalDecline').modal('hide');
-			window.location.reload(true);
-		}, 5000);
-	});
-});
-</script>
+<script src="js/modal-actions.js"></script>
 <?php $indexController->indexPage($email, $password, $activationcodeURL ,$connect); ?>
 </body>
 </html>
