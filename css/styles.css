@@ -587,3 +587,6 @@ select.form-control option { text-align:center!important; text-indent:150px; }
 .dropdown > .dropdown-menu li > a { border-radius: 6px 6px 6px 6px!important; color:#fff; padding:3px 15px 0 15px!important; }
 .dropdown > .dropdown-menu li > a:hover { background-color: #2fac66!important; }
 
+.hideSuccessAlert { display: none!important; }
+.showSuccessAlert { display: block; padding: 18px 45px 14px 25px; font-size:14px; color: #2fac66!important; }
+

@@ -92,6 +92,7 @@ if(isset($_POST['btn-accept'])){
 <div class="section topContent">
   <div class="container">
     <div class="col-lg-8 col-lg-offset-2">
+	<?php include 'components/modal-success.php'; ?>
       <h1>Analyse your mobile calls to claim an expense or prepare your tax return.</h1>
       <a class="btn btn-lg btn-primary" href="register.php">Sign up today</a> </div>
   </div>
@@ -186,8 +187,6 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
         <div class="footerNavs col-lg-1 col-xs-1"> <a href="#">Home</a> </div>
         <div class="footerNavs col-lg-1 col-xs-1"> <a href="#">Privacy</a> </div>
         <div class="footerNavs col-lg-1 col-xs-1"> <a href="#">Terms</a> </div>
-        <!--<div class="footerNavs col-lg-2"> <a href="#">Follow Us</a> </div>
-        <div class="footerNavs col-lg-1"> <span class="fui-facebook"></span> <span class="fui-twitter"></span> </div>-->
       </footer>
     </div>
   </div>
@@ -204,5 +203,9 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
 <script src="js/jquery.toggler.js"></script>
 <script src="js/modal-actions.js"></script>
 <?php $indexController->indexPage($email, $password, $activationcodeURL ,$connect); ?>
+</script>
+<?php if ($_GET['createpasswordsuccess'] =='true'){
+	echo '<script>showAlertSuccess();</script>';
+}?>
 </body>
 </html>

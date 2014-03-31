@@ -81,7 +81,7 @@ class IndexController {
 			$activation_key = $db->strip($row->activation_key);
 			$email = $db->strip($row->email);
 			
-			$data = "http://mobilyser.net/createpassword.php?email=".$email."&verification=".$activation_key."";
+			$data = "http://mobilyser.net/createpassword.php?email=".urlencode($email)."&verification=".urlencode($activation_key)."";
 		}
 		
 		return $data;
@@ -116,7 +116,8 @@ class IndexController {
 		
 			$db->mquery("EXEC dbo.createUserPassword @email = '".$emailParam."', @activation_key = '".$activationParam."', @password ='".$userPassword."'", $connect);
 			
-			header("Location: createpassword.php?success=true");
+			//header("Location: createpassword.php?success=true");
+			header("Location: index.php?createpasswordsuccess=true");
 			
 		
 		} else {
@@ -125,6 +126,26 @@ class IndexController {
 		
 		}
 	}
+	
+	public function forgotPasswordQuery($email, $connect) {
+	
+		$db = new db_config();
+		
+		$userQuery = $db->mquery("SELECT * FROM users WHERE email = '".$email."'", $connect);
+		
+		$num = $db->numhasrows($userQuery);
+		
+		while($row = $db->fetchobject($userQuery)){
+		
+			$userEmail = $db->strip($row->email);
+			$activation_key = $db->strip($row->activation_key);
+			
+			$data = $userEmail . ' ' . $activation_key;
+		
+		}
+
+	}
+	
 }
 
 ?>

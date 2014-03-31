@@ -1,4 +1,4 @@
-<div class="modal" id="modalSuccess">
+<!--<div class="modal" id="modalSuccess">
 	<div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -12,4 +12,7 @@
         </div>
       </div>
     </div>
+</div>-->
+<div class="alert alert-success hideSuccessAlert" id="alertSuccess">
+Your new password has been accepted. Please login now using your email address and the password you selected.
 </div>

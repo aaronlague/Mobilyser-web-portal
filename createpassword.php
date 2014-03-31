@@ -19,6 +19,7 @@ $cpasswordFlag['class'] = '';
 $emailValue = $_GET['email'];
 $verificationCode = $_GET['verification'];
 
+//echo $verificationCode;
 
 if(isset($_POST['btn-create'])){
 
@@ -98,6 +99,6 @@ $(document).ready(function(){
 
 });
 </script>
-<?php if ($_GET['success'] =='true'){
-	echo '<script>showModalSuccess();</script>';
-}?>
+<?php //if ($_GET['createpasswordsuccess'] =='true'){
+	//echo '<script>showModalSuccess();//<///script>';
+//}?>
