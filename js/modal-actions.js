@@ -12,21 +12,29 @@ var showModalSuccess = function() {
 }
 
 var showAlertSuccess = function() {
-	//$('.alert-success').removeClass('hideSuccessAlert');
-  	//$('.alert-success').addClass('showSuccessAlert');
-	  //setTimeout(function(){
-				//window.location.replace('index.php');
-			//}, 2000);
 	  
 	setTimeout(function(){
-			$('.alert-success').removeClass('hideSuccessAlert');
-			$('.alert-success').addClass('showSuccessAlert');
+			$('#alertSuccess').removeClass('hideSuccessAlert');
+			$('#alertSuccess').addClass('showSuccessAlert');
 				setTimeout(function(){ window.location.replace('index.php') }, 5000);
 			}, 2000);
 }
 
 var showTelco = function() {
 	$('#modalTelco').modal('show');
+}
+
+var passwordResetSuccess = function() {
+	
+	$('#resetSuccess').removeClass('hideSuccessAlert');
+	$('#resetSuccess').addClass('showSuccessAlert');
+				
+}
+
+var passwordResetFail = function() {
+	
+	$('#resetFail').removeClass('hideSuccessAlert');
+	$('#resetFail').addClass('showSuccessAlert');
 }
 
 

@@ -19,16 +19,26 @@ $cpasswordFlag['class'] = '';
 $emailValue = $_GET['email'];
 $verificationCode = $_GET['verification'];
 
-//echo $verificationCode;
-
 if(isset($_POST['btn-create'])){
 
 $passwordFlag = $validationlib->isEmpty($_POST['lpassword'], 'Password', 2);
 $cpasswordFlag = $validationlib->isEmpty($_POST['confirmPassword'], 'Confirm password', 2);
 
-	if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
+	if($_GET['reset'] == 'false') {
 	
-		$indexController->createUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
+		if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
+	
+			$indexController->createUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
+	
+		}
+	
+	} else if($_GET['reset'] == 'true') {
+		
+		if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
+	
+			$indexController->resetUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
+	
+		}
 	
 	}
 
@@ -94,11 +104,8 @@ $(document).ready(function(){
 			})
 			
 		} else {
-			
+			// do something
 		}
 
 });
 </script>
-<?php //if ($_GET['createpasswordsuccess'] =='true'){
-	//echo '<script>showModalSuccess();//<///script>';
-//}?>

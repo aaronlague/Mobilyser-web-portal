@@ -81,7 +81,7 @@ class IndexController {
 			$activation_key = $db->strip($row->activation_key);
 			$email = $db->strip($row->email);
 			
-			$data = "http://mobilyser.net/createpassword.php?email=".urlencode($email)."&verification=".urlencode($activation_key)."";
+			$data = "http://mobilyser.net/createpassword.php?reset=false&email=".urlencode($email)."&verification=".urlencode($activation_key)."";
 		}
 		
 		return $data;
@@ -116,34 +116,67 @@ class IndexController {
 		
 			$db->mquery("EXEC dbo.createUserPassword @email = '".$emailParam."', @activation_key = '".$activationParam."', @password ='".$userPassword."'", $connect);
 			
-			//header("Location: createpassword.php?success=true");
 			header("Location: index.php?createpasswordsuccess=true");
-			
 		
 		} else {
-		
-		
 		
 		}
 	}
 	
-	public function forgotPasswordQuery($email, $connect) {
+	public function createForgotPasswordLink($email, $connect) {
 	
 		$db = new db_config();
 		
 		$userQuery = $db->mquery("SELECT * FROM users WHERE email = '".$email."'", $connect);
 		
 		$num = $db->numhasrows($userQuery);
+		$row = $db->fetchobject($userQuery);
 		
-		while($row = $db->fetchobject($userQuery)){
+		if ($num == 0) {
+				
+			header("Location: forgotpassword.php?success=false");
 		
+		} else {
+			
 			$userEmail = $db->strip($row->email);
 			$activation_key = $db->strip($row->activation_key);
+			$firstname = $db->strip($row->firstname);
+			$lastname = $db->strip($row->lastname);
 			
-			$data = $userEmail . ' ' . $activation_key;
+			session_start();
+    		session_regenerate_id();
+			$_SESSION['userinfo'] = $firstname . ' ' . $lastname;
+			session_write_close();
+			$data = "http://mobilyser.net/createpassword.php?reset=true&email=".urlencode($userEmail)."&verification=".urlencode($activation_key)."";
+			header("Location: forgotpassword.php?success=true");
 		
 		}
+		
+		return $data;
 
+	}
+	
+	public function resetUserPassword($emailParam, $activationParam, $userPassword, $connect) {
+	
+		$db = new db_config();
+		$dbCheck = new db_config();
+		
+		$sqlCheck = $dbCheck->mquery("SELECT * FROM users WHERE email = '" . $emailParam . "'", $connect);
+		
+		$num = $dbCheck->numhasrows($sqlCheck);
+		$row = $dbCheck->fetchobject($sqlCheck);
+		$pass = $dbCheck->strip($row->password);
+		
+		if(strlen($pass) != 0){
+		
+			$db->mquery("EXEC dbo.createUserPassword @email = '".$emailParam."', @activation_key = '".$activationParam."', @password ='".$userPassword."'", $connect);
+			
+			header("Location: index.php?resetpassword=true");
+		
+		} else {
+		
+		}
+		
 	}
 	
 }

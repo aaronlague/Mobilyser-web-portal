@@ -13,6 +13,12 @@ $mail->SetFrom("support@mobilyser.net");
 
 $bodyTextHead = "<br /><br />Welcome to Mobilyser. To get started simply click the button below within 24 hours of receiving this email to ensure your details remain secure.<br /><br />
 		<b>Activation code</b><br /><br />";
+		
+$PasswordResetText = "<br /><br />Need to reset your password? Simply click the button below within 24 hours of receiving this email to ensure your details remain secure.<br /><br />
+		<b>Reset password</b><br /><br />";
+
+$PasswordResetNote = "<br /><br /><p>If you haven't successfully reset your password within 24 hours please click the http://mobilyser.net/forgotpassword.php link again.</p>";
+
 $bodyTextFooter = "		
 		<br /><br /><p>Please do not hesitate to contact us at support@mobilyser.net with any questions.</p>
 		<p>The Team at Mobllyser</p><br /><br />

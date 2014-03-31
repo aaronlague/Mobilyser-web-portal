@@ -16,3 +16,11 @@
 <div class="alert alert-success hideSuccessAlert" id="alertSuccess">
 Your new password has been accepted. Please login now using your email address and the password you selected.
 </div>
+
+<div class="alert alert-success hideSuccessAlert" id="resetSuccess">
+Please check your email for the reset password link.
+</div>
+
+<div class="alert alert-error hideSuccessAlert" id="resetFail">
+The email you entered does not exist!
+</div>

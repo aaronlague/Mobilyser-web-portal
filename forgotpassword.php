@@ -7,6 +7,11 @@ include 'protected/library/validation_library.php';
 include 'protected/models/lookup.php';
 include 'protected/controllers/index.php';
 
+require("components/plugins/class.phpmailer.php");
+require("components/plugins/class.smtp.php");
+require("components/plugins/PHPMailerAutoload.php");
+require("components/plugins/mailer.setup.php");
+
 $db = new db_config();
 $formelem = new FormElem();
 $validationlib = new validationLibrary();
@@ -19,9 +24,25 @@ $email = '';
 
 if(isset($_POST['btn-sendPass'])){
 	
-	$email = $_POST['email'];
-	$indexController->forgotPasswordQuery($email, $connect);
-
+	$indexController->createForgotPasswordLink($email, $connect);
+	
+	$username = $_POST['email'];
+	$url = $indexController->createForgotPasswordLink($username, $connect);
+	$userInfo = $_SESSION['userinfo'];
+	
+	$mail->Subject = "Mobilyser password reset";
+	$mail->Body = "Dear " .$userInfo. "," . $PasswordResetText . $url . $PasswordResetNote . $bodyTextFooter;
+	$mail->AddAddress($username);
+	
+	if ($mail->send()) {
+		
+		header("Location: forgotpassword.php?success=true");
+		
+	} else {
+		
+		//echo "Mailer Error: " . $mail->ErrorInfo;
+	}
+	
 }
 
 $country_data = $lookupmodel->getCountry($connect);
@@ -40,6 +61,7 @@ $country_data = $lookupmodel->getCountry($connect);
 <div class="forgotPasswordContainer container">
   <div class="row">
     <div class="forgotPasswordSection col-lg-10 col-lg-offset-1">
+	<?php include 'components/modal-success.php'; ?>
 	<p>Please enter your email address below. You will receive an email with further instructions on resetting your password. </p>
 	<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal forgotPasswordFormSection')); ?>
       <fieldset>
@@ -58,6 +80,14 @@ $country_data = $lookupmodel->getCountry($connect);
 </div>
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
+<script src="js/modal-actions.js"></script>
 <script src="js/field-validator.js"></script>
 <script src="js/core.js"></script>
+<?php 
+if ($_GET['success'] == 'true'){
+	echo '<script>passwordResetSuccess();</script>';
+} else if ($_GET['success'] == 'false') {
+	echo '<script>passwordResetFail();</script>';
+}
+?>
 <?php include 'components/footer.php'; ?>
