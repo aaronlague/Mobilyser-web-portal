@@ -19,6 +19,21 @@ $cpasswordFlag['class'] = '';
 $emailValue = $_GET['email'];
 $verificationCode = $_GET['verification'];
 
+$expiry = 86400;
+$date_registered = $indexController->checkLinkExpiry($_GET['email'], $connect);
+$curr_date = $_SERVER['REQUEST_TIME'];
+$elapsed = $curr_date - $date_registered;
+
+if ($curr_date - $date_registered > $expiry) {
+
+	echo "url has expired";
+
+} else {
+
+	echo "url still valid";
+
+}
+
 if(isset($_POST['btn-create'])){
 
 $passwordFlag = $validationlib->isEmpty($_POST['lpassword'], 'Password', 2);

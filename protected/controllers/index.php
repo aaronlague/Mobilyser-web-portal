@@ -84,8 +84,7 @@ class IndexController {
 			$data = "http://mobilyser.net/createpassword.php?reset=false&email=".urlencode($email)."&verification=".urlencode($activation_key)."";
 		}
 		
-		return $data;
-	
+		return $data;	
 	}
 	
     public function updateTermsPage($checkEmail, $connect) {
@@ -177,6 +176,34 @@ class IndexController {
 		
 		}
 		
+	}
+	
+	public function checkLinkExpiry($emailParam, $connect) {
+		
+		$db = new db_config();
+		$sql = $db->mquery("SELECT * FROM users WHERE email = '" . $emailParam . "'", $connect);
+		
+		$num = $db->numhasrows($sql);
+		$row = $db->fetchobject($sql);
+		$datetime = $row->timestamp;
+		
+		//echo "test";
+		
+		if ($num == 0) {
+			//$data = '';
+			//echo 'url does not exist';
+			header("Location: index.php?resetpassword=true");
+		
+		} else {
+		
+			$timestamp = strtotime($datetime->format("Y-m-d H:i:s"));
+			$data = '';
+			$data = $timestamp;
+		
+		}
+		
+		return $data;
+
 	}
 	
 }

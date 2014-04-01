@@ -25,7 +25,6 @@ $activationcodeURL = '';
 $emailFlag['class'] = '';
 $pwordFlag['class'] = '';
 
-
 if(isset($_POST['btn-login'])){
 
     $email = $db->escape($_POST['email']);
@@ -143,5 +142,4 @@ $country_data = $lookupmodel->getCountry($connect);
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/field-validator.js"></script>
 <script src="js/core.js"></script>
-<script></script>
 <?php include 'components/footer.php'; ?>
