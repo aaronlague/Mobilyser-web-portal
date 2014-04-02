@@ -4163,10 +4163,10 @@ a.list-group-item.active > .badge,
     margin-right: -15px;
   }
 }
-.alert-success {
+/*.alert-success {
   background-color: #eff7f3;
   border-color: #e1ebe9;
-}
+}*/
 .alert-success a {
   color: #16a085;
 }

@@ -21,6 +21,6 @@ Your new password has been accepted. Please login now using your email address a
 We have received your request to reset your password. Please check your email and follow the enclosed instructions.
 </div>
 
-<div class="alert alert-error hideSuccessAlert" id="resetFail">
+<div class="alert alert-danger hideSuccessAlert" id="resetFail">
 The email you entered does not exist!
 </div>

@@ -207,8 +207,15 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
 <script src="js/modal-actions.js"></script>
 <?php $indexController->indexPage($email, $password, $activationcodeURL ,$connect); ?>
 </script>
-<?php if ($_GET['createpasswordsuccess'] =='true'){
+<?php
+
+if ($_GET['createpasswordsuccess'] =='true') {
 	echo '<script>showAlertSuccess();</script>';
-}?>
+}
+
+if ($_GET['resetpassword'] =='true') {
+	echo '<script>showAlertSuccess();</script>';
+}
+?>
 </body>
 </html>
