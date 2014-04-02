@@ -92,10 +92,7 @@ if(isset($_POST['btn-accept'])){
 <div class="section topContent">
   <div class="container">
     <div class="col-lg-8 col-lg-offset-2">
-	<?php include 'components/modal-success.php'; ?>
-	<div class="alert alert-success hideSuccessAlert" id="resetSuccess">
-		We have received your request to reset your password. Please check your email and follow the enclosed instructions. 
-	</div>
+	<?php include 'components/modal-alerts.php'; ?>
       <h1>Analyse your mobile calls to claim an expense or prepare your tax return.</h1>
       <a class="btn btn-lg btn-primary" href="register.php">Sign up today</a> </div>
   </div>

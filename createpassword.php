@@ -61,7 +61,7 @@ if ($curr_date - $date_registered > $expiry) {
 
 ?>
 <?php include 'components/header.php'; ?>
-<?php include 'components/modal-success.php'; ?>
+<?php include 'components/modal-alerts.php'; ?>
 <div class="section formHeadLine" data-page-name="createPasswordPage">
   <div class="container">
     <div class="row">

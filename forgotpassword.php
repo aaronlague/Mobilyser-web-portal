@@ -53,7 +53,7 @@ $country_data = $lookupmodel->getCountry($connect);
 <div class="container">
 	<div class="row">
     <div class="col-lg-8 col-lg-offset-2">
-	  <?php include 'components/modal-success.php'; ?>
+	  <?php include 'components/modal-alerts.php'; ?>
       <h3>Forgot your password?</h3>
 	</div>
   </div>
