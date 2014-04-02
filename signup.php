@@ -59,6 +59,8 @@ if(isset($_POST['btn-signup'])){
 		$data['@username'] = $_POST['emailaddress'];
 		$data['@country'] = $_POST['country'];
 		$data['@activation_key'] = mt_rand(0, 5000);
+		$data['@token'] = sha1(uniqid($emailaddress, true));
+		$data['@time_token'] = $_SERVER['REQUEST_TIME']; 
 		$db->mquery_insert("dbo.createAccount", $data, $connect);
 		
 	 	$url = $indexController->createConfirmationLink($_POST['emailaddress'], $connect);

@@ -52,7 +52,8 @@ $country_data = $lookupmodel->getCountry($connect);
 <div class="section formHeadLine">
 <div class="container">
 	<div class="row">
-    <div>
+    <div class="col-lg-8 col-lg-offset-2">
+	  <?php include 'components/modal-success.php'; ?>
       <h3>Forgot your password?</h3>
 	</div>
   </div>
@@ -61,7 +62,6 @@ $country_data = $lookupmodel->getCountry($connect);
 <div class="forgotPasswordContainer container">
   <div class="row">
     <div class="forgotPasswordSection col-lg-10 col-lg-offset-1">
-	<?php include 'components/modal-success.php'; ?>
 	<p>Please enter your email address below. You will receive an email with further instructions on resetting your password. </p>
 	<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal forgotPasswordFormSection')); ?>
       <fieldset>

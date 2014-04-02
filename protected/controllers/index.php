@@ -80,8 +80,9 @@ class IndexController {
 		
 			$activation_key = $db->strip($row->activation_key);
 			$email = $db->strip($row->email);
+			$token = $db->strip($row->token);
 			
-			$data = "http://mobilyser.net/createpassword.php?reset=false&email=".urlencode($email)."&verification=".urlencode($activation_key)."";
+			$data = "http://mobilyser.net/createpassword.php?reset=false&email=".urlencode($email)."&verification=".urlencode($activation_key)."&token=".$token."";
 		}
 		
 		return $data;	
@@ -104,27 +105,37 @@ class IndexController {
 	
 		$db = new db_config();
 		$dbCheck = new db_config();
+		$dbRemoveToken = new db_config();
 		
 		$sqlCheck = $dbCheck->mquery("SELECT * FROM users WHERE email = '" . $emailParam . "'", $connect);
 		
 		$num = $dbCheck->numhasrows($sqlCheck);
 		$row = $dbCheck->fetchobject($sqlCheck);
+		
+		$username = $dbCheck->strip($row->username);
 		$pass = $dbCheck->strip($row->password);
+		$token = $dbCheck->strip($row->token);
+		$time_token = $dbCheck->strip($row->token);
 		
 		if(strlen($pass) == 0){
 		
 			$db->mquery("EXEC dbo.createUserPassword @email = '".$emailParam."', @activation_key = '".$activationParam."', @password ='".$userPassword."'", $connect);
 			
+			$sqlRemoveToken = $dbRemoveToken->mquery("UPDATE users SET token = NULL, time_token = NULL WHERE username='".$username."' AND token='".$token."'", $connect);
+			
 			header("Location: index.php?createpasswordsuccess=true");
 		
 		} else {
-		
+			
+			//this means we already have a password
+			
 		}
 	}
 	
 	public function createForgotPasswordLink($email, $connect) {
 	
 		$db = new db_config();
+		$dbCreateToken = new db_config();
 		
 		$userQuery = $db->mquery("SELECT * FROM users WHERE email = '".$email."'", $connect);
 		
@@ -136,17 +147,23 @@ class IndexController {
 			header("Location: forgotpassword.php?success=false");
 		
 		} else {
-			
+					
 			$userEmail = $db->strip($row->email);
 			$activation_key = $db->strip($row->activation_key);
 			$firstname = $db->strip($row->firstname);
 			$lastname = $db->strip($row->lastname);
 			
+			$token = sha1(uniqid($username, true));
+			$time_token = $_SERVER['REQUEST_TIME'];
+			
+			$sqlCreateToken = $dbCreateToken->mquery("UPDATE users SET token = '".$token."', time_token = '".$time_token."' WHERE username = '".$userEmail."' AND activation_key = '".$activation_key."'", $connect);
+			
 			session_start();
     		session_regenerate_id();
 			$_SESSION['userinfo'] = $firstname . ' ' . $lastname;
 			session_write_close();
-			$data = "http://mobilyser.net/createpassword.php?reset=true&email=".urlencode($userEmail)."&verification=".urlencode($activation_key)."";
+			
+			$data = "http://mobilyser.net/createpassword.php?reset=true&email=".urlencode($userEmail)."&verification=".urlencode($activation_key)."&token=".$token."";
 			header("Location: forgotpassword.php?success=true");
 		
 		}
@@ -159,47 +176,60 @@ class IndexController {
 	
 		$db = new db_config();
 		$dbCheck = new db_config();
+		$dbRemoveToken = new db_config();
 		
 		$sqlCheck = $dbCheck->mquery("SELECT * FROM users WHERE email = '" . $emailParam . "'", $connect);
 		
 		$num = $dbCheck->numhasrows($sqlCheck);
 		$row = $dbCheck->fetchobject($sqlCheck);
+		
+		$username = $dbCheck->strip($row->username);
 		$pass = $dbCheck->strip($row->password);
+		$token = $dbCheck->strip($row->token);
+		$time_token = $dbCheck->strip($row->token);
 		
 		if(strlen($pass) != 0){
 		
 			$db->mquery("EXEC dbo.createUserPassword @email = '".$emailParam."', @activation_key = '".$activationParam."', @password ='".$userPassword."'", $connect);
 			
+			$sqlRemoveToken = $dbRemoveToken->mquery("UPDATE users SET token = NULL, time_token = NULL WHERE username='".$username."' AND token='".$token."'", $connect);
+			
 			header("Location: index.php?resetpassword=true");
 		
 		} else {
+		
+			//this means we still don't have a password
 		
 		}
 		
 	}
 	
-	public function checkLinkExpiry($emailParam, $connect) {
+	public function checkLinkExpiry($emailParam, $tokenValue, $connect) {
 		
 		$db = new db_config();
-		$sql = $db->mquery("SELECT * FROM users WHERE email = '" . $emailParam . "'", $connect);
+		$sql = $db->mquery("SELECT * FROM users WHERE email = '" . $emailParam . "' AND token ='" . $tokenValue . "'", $connect);
 		
 		$num = $db->numhasrows($sql);
 		$row = $db->fetchobject($sql);
-		$datetime = $row->timestamp;
+		$token = $db->strip($row->token); //sha1 chars
+		$time_token = $db->strip($row->time_token); //UNIX timestamp used for expiry - generated during signup
+		$datetime = $row->timestamp; //date time object generated during signup
 		
-		//echo "test";
+		//$time_token and $datetime has different formats but has equal values
+		//use:
+		//date('Y-m-d H:i:s', $time_token) - to convert the unix time format to date time format
+		//strtotime($datetime->format("Y-m-d H:i:s")); - the date time format to unix time format
 		
 		if ($num == 0) {
-			//$data = '';
-			//echo 'url does not exist';
-			header("Location: index.php?resetpassword=true");
+		
+			$data = '';
+			header("Location: index.php?invalid_token=true");
 		
 		} else {
-		
-			$timestamp = strtotime($datetime->format("Y-m-d H:i:s"));
+			
+			$expiry_date = $time_token;
 			$data = '';
-			$data = $timestamp;
-		
+			$data = $expiry_date;
 		}
 		
 		return $data;
