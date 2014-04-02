@@ -211,7 +211,7 @@ if ($_GET['createpasswordsuccess'] =='true') {
 }
 
 if ($_GET['resetpassword'] =='true') {
-	echo '<script>showAlertSuccess();</script>';
+	echo '<script>passwordResetSuccess();</script>';
 }
 ?>
 </body>
