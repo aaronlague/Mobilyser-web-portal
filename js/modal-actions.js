@@ -14,10 +14,10 @@ var showModalSuccess = function() {
 var showAlertSuccess = function() {
 	  
 	setTimeout(function(){
-			$('#alertSuccess').removeClass('hideSuccessAlert');
-			$('#alertSuccess').addClass('showSuccessAlert');
-				setTimeout(function(){ window.location.replace('index.php') }, 5000);
-			}, 2000);
+		$('#alertSuccess').removeClass('hideSuccessAlert');
+		$('#alertSuccess').addClass('showSuccessAlert');
+		//setTimeout(function(){ window.location.replace('index.php') }, 5000);
+	}, 2000);
 }
 
 var showTelco = function() {
@@ -25,18 +25,45 @@ var showTelco = function() {
 }
 
 var passwordResetSuccess = function() {
+	
 	setTimeout(function(){
 		$('#resetSuccess').removeClass('hideSuccessAlert');
 		$('#resetSuccess').addClass('showSuccessAlert');
-	setTimeout(function(){ window.location.replace('index.php') }, 5000);
-			}, 2000);
-				
+		//setTimeout(function(){ window.location.replace('index.php') }, 5000);
+	}, 2000);
 }
 
 var passwordResetFail = function() {
 	
-	$('#resetFail').removeClass('hideSuccessAlert');
-	$('#resetFail').addClass('showSuccessAlert');
+	setTimeout(function(){
+		$('#resetFail').removeClass('hideSuccessAlert');
+		$('#resetFail').addClass('showSuccessAlert');
+	}, 2000);
+}
+
+
+var tokenExpiryCreate = function() {
+	
+	setTimeout(function(){
+		$('#tokenExpiredCreate').removeClass('hideSuccessAlert');
+		$('#tokenExpiredCreate').addClass('showSuccessAlert');
+	}, 2000);
+}
+
+var tokenExpiryReset = function() {
+	
+	setTimeout(function(){
+		$('#tokenExpiredReset').removeClass('hideSuccessAlert');
+		$('#tokenExpiredReset').addClass('showSuccessAlert');
+	}, 2000);
+}
+
+var tokenInvalid = function() {
+	
+	setTimeout(function(){
+		$('#tokenFail').removeClass('hideSuccessAlert');
+		$('#tokenFail').addClass('showSuccessAlert');
+	}, 2000);
 }
 
 

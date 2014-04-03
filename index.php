@@ -211,8 +211,22 @@ if ($_GET['createpasswordsuccess'] =='true') {
 }
 
 if ($_GET['resetpassword'] =='true') {
-	echo '<script>passwordResetSuccess();</script>';
+	echo '<script>showAlertSuccess();</script>';
 }
+
+if ($_GET['tokenexpired'] =='true' && $_GET['reset'] =='true') {
+
+	echo '<script>tokenExpiryReset();</script>';
+
+} else if ($_GET['tokenexpired'] =='true' && $_GET['reset'] =='false') {
+	
+	echo '<script>tokenExpiryCreate();</script>';
+}
+
+if ($_GET['invalidtoken'] =='true') {
+	echo '<script>tokenInvalid();</script>';
+}
+
 ?>
 </body>
 </html>

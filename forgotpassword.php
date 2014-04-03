@@ -23,8 +23,8 @@ $connect = $db->connect();
 $email = '';
 
 if(isset($_POST['btn-sendPass'])){
-	
-	$indexController->createForgotPasswordLink($email, $connect);
+
+	$indexController->createForgotPasswordLink($_POST['email'], $connect);
 	
 	$username = $_POST['email'];
 	$url = $indexController->createForgotPasswordLink($username, $connect);

@@ -24,33 +24,47 @@ $token = $_GET['token'];
 $curr_date = $_SERVER['REQUEST_TIME'];
 $date_registered = $indexController->checkLinkExpiry($_GET['email'], $token, $connect);
 
-if ($curr_date - $date_registered > $expiry) {
+if ($date_registered == NULL) { 
 
-	echo "url has expired";
-	//do something
+	header("Location: index.php?invalidtoken=true");
 
 } else {
 
-	//echo "url still valid";
-	if(isset($_POST['btn-create'])){
-
-	$passwordFlag = $validationlib->isEmpty($_POST['lpassword'], 'Password', 2);
-	$cpasswordFlag = $validationlib->isEmpty($_POST['confirmPassword'], 'Confirm password', 2);
+	if ($curr_date - $date_registered > $expiry) {
 	
-		if($_GET['reset'] == 'false') {
-		
-			if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
-		
-				$indexController->createUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
-		
-			}
-		
-		} else if($_GET['reset'] == 'true') {
+		if ($_GET['reset'] == 'false') {
 			
-			if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
+			header("Location: index.php?tokenexpired=true&reset=false");
+			
+		} else if ($_GET['reset'] == 'true'){
+			
+			header("Location: index.php?tokenexpired=true&reset=true");
+		}
+	
+	} else {
+	
+		//echo "url still valid";
+		if(isset($_POST['btn-create'])){
+	
+		$passwordFlag = $validationlib->isEmpty($_POST['lpassword'], 'Password', 2);
+		$cpasswordFlag = $validationlib->isEmpty($_POST['confirmPassword'], 'Confirm password', 2);
 		
-				$indexController->resetUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
-		
+			if($_GET['reset'] == 'false') {
+			
+				if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
+			
+					$indexController->createUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
+			
+				}
+			
+			} else if($_GET['reset'] == 'true') {
+				
+				if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
+			
+					$indexController->resetUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
+			
+				}
+			
 			}
 		
 		}

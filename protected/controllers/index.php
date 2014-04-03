@@ -45,7 +45,6 @@ class IndexController {
                     $_SESSION['full_name']     = $firstnameRec.' '.$lastnameRec;
     				$_SESSION['email']         = $emailRec;
                     $_SESSION['account_num']   = $accountNumRec;
-					//$_SESSION['isTerm']        = 0;
 					$_SESSION['terms_flag']	   = $terms_flag;
     				session_write_close();
                     echo '<script>showModalTerms();</script>';
@@ -96,7 +95,6 @@ class IndexController {
 		
 		session_start();
     	session_regenerate_id();
-		//$_SESSION['isTerm'] = 1;
 		session_write_close();
 		header("Location: accounts.php?terms=true");
 	}
@@ -223,7 +221,6 @@ class IndexController {
 		if ($num == 0) {
 		
 			$data = '';
-			header("Location: index.php?invalid_token=true");
 		
 		} else {
 			
