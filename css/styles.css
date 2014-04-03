@@ -623,3 +623,9 @@ select.form-control option { text-align:center!important; text-indent:150px; }
 .alert-danger a:hover {
 	text-decoration:none;
 }
+
+.createPasswordSection fieldset input[type="password"].alert, .createPasswordSection fieldset input[type="password"].alert-danger {
+    border:2px solid red;
+	background:none;
+	color:#000000;
+}

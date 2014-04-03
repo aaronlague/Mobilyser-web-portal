@@ -46,26 +46,26 @@ if ($date_registered == NULL) {
 		//echo "url still valid";
 		if(isset($_POST['btn-create'])){
 	
-		$passwordFlag = $validationlib->isEmpty($_POST['lpassword'], 'Password', 2);
-		$cpasswordFlag = $validationlib->isEmpty($_POST['confirmPassword'], 'Confirm password', 2);
-		
-			if($_GET['reset'] == 'false') {
-			
-				if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
-			
-					$indexController->createUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
-			
-				}
-			
-			} else if($_GET['reset'] == 'true') {
-				
-				if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
-			
-					$indexController->resetUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
-			
-				}
-			
-			}
+		//$passwordFlag = $validationlib->isEmpty($_POST['lpassword'], 'Password', 2);
+//		$cpasswordFlag = $validationlib->isEmpty($_POST['confirmPassword'], 'Confirm password', 2);
+//		
+//			if($_GET['reset'] == 'false') {
+//			
+//				if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
+//			
+//					$indexController->createUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
+//			
+//				}
+//			
+//			} else if($_GET['reset'] == 'true') {
+//				
+//				if($passwordFlag['message'] == "" and $cpasswordFlag['message'] == ""){
+//			
+//					$indexController->resetUserPassword($emailValue, $verificationCode, $_POST['lpassword'], $connect);
+//			
+//				}
+//			
+//			}
 		
 		}
 	
@@ -95,7 +95,8 @@ if ($date_registered == NULL) {
 		
       </div>
 	  <div class="warningContainer"></div>
-      <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal')); ?>
+	  <div id="errorMessages"></div>
+      <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal', 'id'=>'createPasswordForm')); ?>
       <fieldset>
       <!-- Text input-->
       <div class="form-group <?php echo $passwordFlag['class'] ?>"> <?php echo $passwordFlag['message']; ?>
@@ -115,26 +116,91 @@ if ($date_registered == NULL) {
 </div>
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery.validate.js"></script>
 <?php include 'components/footer.php'; ?>
 <script src="js/modal-actions.js"></script>
-<script src="js/field-validator.js"></script>
 <script src="js/core.js"></script>
 <script>
 $(document).ready(function(){
 
-		if($('.form-group').hasClass('has-error')){
-			
-			var alertMessage = '<a href="#" class="close" data-dismiss="alert">&times;</a><strong>Warning!</strong><span> Please check the errors below</span>';
-			
-			$('.createPasswordSection').find('.warningContainer').addClass('alert alert-error').append(alertMessage);
-			$('[data-dismiss]').on('click', function(){
-				$('.form-group').removeClass('has-error');
-				$('span.errorMsg').remove();
-			})
-			
-		} else {
-			// do something
-		}
+		//if($('.form-group').hasClass('has-error')){
+//			
+//			var alertMessage = '<a href="#" class="close" data-dismiss="alert">&times;</a><strong>Warning!</strong><span> Please check the errors below</span>';
+//			
+//			$('.createPasswordSection').find('.warningContainer').addClass('alert alert-error').append(alertMessage);
+//			$('[data-dismiss]').on('click', function(){
+//				$('.form-group').removeClass('has-error');
+//				$('span.errorMsg').remove();
+//			})
+//			
+//		} else {
+//			// do something
+//		}
+
+var alertMessage = '<a href="#" class="close" data-dismiss="alert">&times;</a><strong>Warning!</strong><span> Please check the errors below</span>';
+
+$('.btn-create').on('click', function() {
+	$('#errorMessages').find('div').addClass('check')
+});
+
+$.validator.addMethod("passwordRegex", function(value, element, regexpr) {
+        return regexpr.test(value);
+}, "Regex Message");
+
+$("#createPasswordForm").validate({
+		
+		errorLabelContainer: '#errorMessages',
+		//wrapper: 'li',
+		errorClass: "alert alert-danger",
+		errorElement: "div",
+		//errorPlacement: function(error, element) {
+        	//error.appendTo("div#errorMessages");
+        //},
+		
+		highlight: function(element, errorClass) {
+		
+			$(element).addClass(errorClass);
+			$(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+		
+		},
+		
+		unhighlight: function(element, errorClass) {
+		
+			 $(element).removeClass(errorClass);
+			 $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+			 
+		},
+		
+        // Specify the validation rules
+        rules: {
+            lpassword: {
+				required: true,
+				minlength: 6,
+				passwordRegex: /^(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]{1,2}).*$/
+			},
+            confirmPassword: {
+				required: true,
+				minlength: 6,
+				passwordRegex: /^(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]{1,2}).*$/
+			}
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            lpassword: {
+				required: "Please enter a password",
+				passwordRegex: "Please choose a password containing more than 6 characters, including at least one number or special character. Example: eXpr3$$"
+			},
+            confirmPassword: {
+				required: "Please confirm password",
+				passwordRegex: "Password confirmation should contain more than 6 characters, including at least one number or special character. Example: eXpr3$$"
+			}
+        },
+        
+        submitHandler: function(form) {
+            form.submit();
+        }
+	});
 
 });
 </script>
