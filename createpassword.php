@@ -94,8 +94,6 @@ if ($date_registered == NULL) {
         <div class="noteTxt"> <span><strong>Mandatory field</strong></span><sup><i class="fa fa-asterisk"></i></sup> </div>
 		
       </div>
-	  <div class="warningContainer"></div>
-	  
       <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal', 'id'=>'createPasswordForm')); ?>
 	  <div id="errorMessages"></div>
       <fieldset>

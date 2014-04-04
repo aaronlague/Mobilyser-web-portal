@@ -142,6 +142,5 @@ $country_data = $lookupmodel->getCountry($connect);
 </div>
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
-<script src="js/field-validator.js"></script>
 <script src="js/core.js"></script>
 <?php include 'components/footer.php'; ?>
