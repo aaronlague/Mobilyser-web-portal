@@ -24,25 +24,32 @@ $email = '';
 
 if(isset($_POST['btn-sendPass'])){
 
-	$indexController->createForgotPasswordLink($_POST['email'], $connect);
 	
 	$username = $_POST['email'];
 	$url = $indexController->createForgotPasswordLink($username, $connect);
-	$userInfo = $_SESSION['userinfo'];
 	
-	$mail->Subject = "Mobilyser password reset";
-	$mail->Body = "Dear " .$userInfo. "," . $PasswordResetText . $url . $PasswordResetNote . $bodyTextFooter;
-	$mail->AddAddress($username);
+	if ($url == NULL) {
 	
-	if ($mail->send()) {
-		
-		header("Location: forgotpassword.php?success=true");
-		
+		header("Location: forgotpassword.php?success=false");
+	
 	} else {
-		
-		//echo "Mailer Error: " . $mail->ErrorInfo;
-	}
 	
+		$userInfo = $_SESSION['userinfo'];
+		
+		$mail->Subject = "Mobilyser password reset";
+		$mail->Body = "Dear " .$userInfo. "," . $PasswordResetText . $url . $PasswordResetNote . $bodyTextFooter;
+		$mail->AddAddress($username);
+		
+		if ($mail->send()) {
+			
+			header("Location: forgotpassword.php?success=true");
+			
+		} else {
+			
+			//echo "Mailer Error: " . $mail->ErrorInfo;
+		}
+	
+	}
 }
 
 $country_data = $lookupmodel->getCountry($connect);
@@ -81,7 +88,6 @@ $country_data = $lookupmodel->getCountry($connect);
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/modal-actions.js"></script>
-<script src="js/field-validator.js"></script>
 <script src="js/core.js"></script>
 <?php 
 if ($_GET['success'] == 'true'){

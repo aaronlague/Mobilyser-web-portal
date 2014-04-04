@@ -1,3 +1,47 @@
+var createAccount = function() {
+	
+$('#signUpFormSection').validate({
+
+		errorClass: "alert alert-danger",
+		errorElement: "div",
+		errorPlacement: function(error, element) {
+        	error.appendTo("div#errorMessages");
+        },
+		
+		highlight: function(element, errorClass) {
+		
+			$(element).addClass(errorClass);
+			$(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+		
+		},
+		
+		unhighlight: function(element, errorClass) {
+		
+			 $(element).removeClass(errorClass);
+			 $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+			 
+		},
+		
+		rules: {
+			firstname: {},
+			lastname: {},
+			emailaddress: {}
+        },
+		
+		messages: {
+            firstname: {},
+			lastname: {},
+			emailaddress: {}
+        },
+		
+		submitHandler: function(form) {
+            form.submit();
+        }
+
+});
+
+}
+
 var createPassword = function() {
 	
 $.validator.addMethod("passwordRegex", function(value, element, regexpr) {
@@ -47,19 +91,19 @@ $("#createPasswordForm").validate({
             lpassword: {
 				required: "Please enter a password",
 				passwordRegex: "Please choose a password containing more than 6 characters, including at least one number or special character. Example: eXpr3$$",
-				equalTo: "Passwords should match"
+				equalTo: "The passwords you entered do not match. Please try entering your selected password again. "
 			},
             confirmPassword: {
 				required: "Please confirm password",
 				passwordRegex: "Password confirmation should contain more than 6 characters, including at least one number or special character. Example: eXpr3$$",
-				equalTo: "Passwords should match"
+				equalTo: "The passwords you entered do not match. Please try entering your selected password again. "
 			}
         },
         
         submitHandler: function(form) {
             form.submit();
         }
-	});
+});
 	
 }
 

@@ -142,7 +142,8 @@ class IndexController {
 		
 		if ($num == 0) {
 				
-			header("Location: forgotpassword.php?success=false");
+			//header("Location: forgotpassword.php?success=false");
+			$data = NULL;
 		
 		} else {
 					
