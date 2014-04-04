@@ -142,7 +142,7 @@ class IndexController {
 		
 		if ($num == 0) {
 				
-			//header("Location: forgotpassword.php?success=false");
+			//header("Location: index.php?emailvalid=true");
 			$data = NULL;
 		
 		} else {
@@ -163,7 +163,7 @@ class IndexController {
 			session_write_close();
 			
 			$data = "http://mobilyser.net/createpassword.php?reset=true&email=".urlencode($userEmail)."&verification=".urlencode($activation_key)."&token=".$token."";
-			header("Location: forgotpassword.php?success=true");
+			header("Location: index.php?emailvalid=true");
 		
 		}
 		

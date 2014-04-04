@@ -95,7 +95,7 @@ if ($date_registered == NULL) {
 		
       </div>
       <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal', 'id'=>'createPasswordForm')); ?>
-	  <div id="errorMessages"></div>
+	  <div id="errorMessages" class="errMsg"></div>
       <fieldset>
       <!-- Text input-->
       <div class="form-group <?php echo $passwordFlag['class'] ?>"> <?php echo $passwordFlag['message']; ?>

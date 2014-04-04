@@ -404,7 +404,7 @@ span.fui-arrow-left:hover {
     font-size: 25px;
 }
 
-.regFormSection fieldset input[type="text"], .signUpFormSection fieldset input[type="text"], .forgotPasswordSection fieldset input[type="text"], .createPasswordSection fieldset input[type="password"] {
+.regFormSection fieldset input[type="text"], .signUpFormSection fieldset input[type="text"], .forgotPasswordSection fieldset input[type="text"], .createPasswordSection fieldset input[type="text"], .createPasswordSection fieldset input[type="password"] {
     text-align: center;
 }
 
@@ -624,9 +624,14 @@ select.form-control option { text-align:center!important; text-indent:150px; }
 	text-decoration:none;
 }
 
-.createPasswordSection fieldset input[type="password"].alert, .createPasswordSection fieldset input[type="password"].alert-danger {
+.createPasswordSection fieldset input[type="password"].alert, .createPasswordSection fieldset input[type="password"].alert-danger, .createPasswordSection fieldset input[type="text"].alert, .createPasswordSection fieldset input[type="text"].alert-danger {
     border:2px solid red;
 	background:none;
 	color:#000000;
 	margin-bottom:0px!important;
+}
+
+.errMsg div {
+	text-align:center!important;
+	font-size:14px!important;
 }

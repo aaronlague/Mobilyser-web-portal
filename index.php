@@ -227,6 +227,16 @@ if ($_GET['invalidtoken'] =='true') {
 	echo '<script>tokenInvalid();</script>';
 }
 
+if ($_GET['emailvalid'] == 'true'){
+
+	echo '<script>passwordResetSuccess();</script>';
+
+} else if ($_GET['emailvalid'] == 'false') {
+
+	echo '<script>passwordResetFail();</script>';
+
+}
+
 ?>
 </body>
 </html>

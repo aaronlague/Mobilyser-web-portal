@@ -30,7 +30,7 @@ if(isset($_POST['btn-sendPass'])){
 	
 	if ($url == NULL) {
 	
-		header("Location: forgotpassword.php?success=false");
+		header("Location: index.php?emailvalid=false");
 	
 	} else {
 	
@@ -42,7 +42,7 @@ if(isset($_POST['btn-sendPass'])){
 		
 		if ($mail->send()) {
 			
-			header("Location: forgotpassword.php?success=true");
+			header("Location: index.php?emailvalid=true");
 			
 		} else {
 			
@@ -89,11 +89,4 @@ $country_data = $lookupmodel->getCountry($connect);
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/modal-actions.js"></script>
 <script src="js/core.js"></script>
-<?php 
-if ($_GET['success'] == 'true'){
-	echo '<script>passwordResetSuccess();</script>';
-} else if ($_GET['success'] == 'false') {
-	echo '<script>passwordResetFail();</script>';
-}
-?>
 <?php include 'components/footer.php'; ?>

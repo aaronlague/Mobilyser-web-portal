@@ -50,13 +50,22 @@ $.validator.addMethod("passwordRegex", function(value, element, regexpr) {
 
 $("#createPasswordForm").validate({
 		
-		//errorLabelContainer: '#errorMessages',
-		//wrapper: 'li',
+		onkeyup: false,
+	    onclick: false,
+	    onfocusout: false,
+		
 		errorClass: "alert alert-danger",
 		errorElement: "div",
 		errorPlacement: function(error, element) {
-			//error.append('<a href="#" class="close" data-dismiss="alert">&times;</a>');
+			
         	error.appendTo("div#errorMessages");
+			
+			if (element.attr("name") == "lpassword" || element.attr("name") == "confirmPassword" ) {
+			  error.appendTo("div#errorMessages");
+			} else {
+			  error.insertAfter(element);
+			}
+			
         },
 		
 		highlight: function(element, errorClass) {
@@ -73,6 +82,10 @@ $("#createPasswordForm").validate({
 			 
 		},
 		
+		groups: {
+			userpassword: "lpassword confirmPassword"
+		},
+		
         rules: {
             lpassword: {
 				required: true,
@@ -84,6 +97,7 @@ $("#createPasswordForm").validate({
 				required: true,
 				minlength: 6,
 				passwordRegex: /^(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]{1,2}).*$/
+				//,equalTo: "#password"
 			}
         },
         
@@ -91,12 +105,12 @@ $("#createPasswordForm").validate({
             lpassword: {
 				required: "Please enter a password",
 				passwordRegex: "Please choose a password containing more than 6 characters, including at least one number or special character. Example: eXpr3$$",
-				equalTo: "The passwords you entered do not match. Please try entering your selected password again. "
+				equalTo: "The passwords you entered do not match. Please try entering your selected password again."
 			},
             confirmPassword: {
 				required: "Please confirm password",
 				passwordRegex: "Password confirmation should contain more than 6 characters, including at least one number or special character. Example: eXpr3$$",
-				equalTo: "The passwords you entered do not match. Please try entering your selected password again. "
+				equalTo: "The passwords you entered do not match. Please try entering your selected password again."
 			}
         },
         
