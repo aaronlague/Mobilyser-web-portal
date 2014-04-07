@@ -89,7 +89,8 @@ $country_data = $lookupmodel->getCountry($connect);
 <div class="section formHeadLine" data-page-name="signupPage">
 <div class="container">
 	<div class="row">
-    <div>
+    <div class="col-lg-10 col-lg-offset-1">
+	<div id="errorMessages" class="errMsg"></div>
       <h3>Create your account</h3>
 	</div>
   </div>
@@ -105,26 +106,26 @@ $country_data = $lookupmodel->getCountry($connect);
 			<span><strong>Mandatory field</strong></span><sup><i class="fa fa-asterisk"></i></sup>
 		</div>
 	  </div>
-      <?php echo $formelem->create(array('method'=>'post','class'=>'signUpFormSection form-horizontal')); ?>
+      <?php echo $formelem->create(array('method'=>'post','class'=>'signUpFormSection form-horizontal', 'id'=>'signUpFormSection')); ?>
       <fieldset>
         <!-- Text input-->
         <div class="form-group <?php echo $fnameFlag['class'] ?>">
           <?php	echo $fnameFlag['message']; ?>
           <div class="col-md-12"> 
-            <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name*','class'=>'form-control input-md '.$fnameFlag['class'].'', 'value'=>$fname)); ?>
+            <?php echo $formelem->text(array('id'=>'firstname','name'=>'firstname','placeholder'=>'First name*','class'=>'form-control input-md'.$fnameFlag['class'].'', 'value'=>$fname)); ?>
           </div>
         </div>
         <!-- Text input-->
         <div class="form-group <?php echo $lnameFlag['class'] ?>">
           <?php	echo $lnameFlag['message']; ?>
           <div class="col-md-12">
-		  <?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name*','class'=>'form-control input-md '.$lnameFlag['class'].'', 'value'=>$lname)); ?></div>
+		  <?php echo $formelem->text(array('id'=>'lastname','name'=>'lastname','placeholder'=>'Last name*','class'=>'form-control input-md'.$lnameFlag['class'].'', 'value'=>$lname)); ?></div>
         </div>
         <!-- Text input-->
         <div class="form-group <?php echo $emailaddressFlag['class'] ?> ">
 		  <?php echo $emailaddressFlag['message']; ?>
           <div class="col-md-12">
-		  <?php echo $formelem->text(array('id'=>'emailaddress','name'=>'emailaddress','placeholder'=>'Email*','class'=>'form-control input-md '.$emailaddressFlag['class'].'', 'value'=>$email)); ?></div>
+		  <?php echo $formelem->text(array('id'=>'emailaddress','name'=>'emailaddress','placeholder'=>'Email*','class'=>'form-control input-md'.$emailaddressFlag['class'].'', 'value'=>$email)); ?></div>
         </div>
         <!-- Select Basic -->
         <div class="form-group">

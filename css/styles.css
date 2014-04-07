@@ -624,14 +624,15 @@ select.form-control option { text-align:center!important; text-indent:150px; }
 	text-decoration:none;
 }
 
-.createPasswordSection fieldset input[type="password"].alert, .createPasswordSection fieldset input[type="password"].alert-danger, .createPasswordSection fieldset input[type="text"].alert, .createPasswordSection fieldset input[type="text"].alert-danger {
-    border:2px solid red;
-	background:none;
-	color:#000000;
+.createPasswordSection fieldset .form-group input.error, .signUpFormSection fieldset .form-group input.error {
+    border:2px solid red!important;
+	background:none!important;
+	color:#000000!important;
 	margin-bottom:0px!important;
 }
 
 .errMsg div {
+	display:none;
 	text-align:center!important;
 	font-size:14px!important;
 }

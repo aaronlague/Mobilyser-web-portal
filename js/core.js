@@ -1,17 +1,19 @@
 var createAccount = function() {
-	
+	console.log("working...");
 $('#signUpFormSection').validate({
 
-		errorClass: "alert alert-danger",
+		onkeyup: false,
+	    onclick: false,
+	    onfocusout: false,
+		
 		errorElement: "div",
-		errorPlacement: function(error, element) {
-        	error.appendTo("div#errorMessages");
-        },
+		errorLabelContainer: "#errorMessages",
 		
 		highlight: function(element, errorClass) {
 		
 			$(element).addClass(errorClass);
 			$(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+			$("#errorMessages").css("display", "block").addClass("alert alert-danger");
 		
 		},
 		
@@ -19,19 +21,35 @@ $('#signUpFormSection').validate({
 		
 			 $(element).removeClass(errorClass);
 			 $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+			 $("#errorMessages").css("display", "block").addClass("alert alert-danger");
 			 
 		},
 		
 		rules: {
-			firstname: {},
-			lastname: {},
-			emailaddress: {}
+			firstname: {
+				required: true,
+				minlength: 2
+			},
+			lastname: {
+				required: true,
+				minlength: 2
+			},
+			emailaddress: {
+				required: true,
+				email: true
+			}
         },
 		
 		messages: {
-            firstname: {},
-			lastname: {},
-			emailaddress: {}
+            firstname: {
+				required: "First name field is required",
+				},
+			lastname: {
+				required: "Last name field is required",
+				},
+			emailaddress: {
+				required: "Please enter a valid email address",
+				}
         },
 		
 		submitHandler: function(form) {
@@ -43,35 +61,26 @@ $('#signUpFormSection').validate({
 }
 
 var createPassword = function() {
-	
+
 $.validator.addMethod("passwordRegex", function(value, element, regexpr) {
 	return regexpr.test(value);
 }, "Regex Message");
 
 $("#createPasswordForm").validate({
 		
+		
 		onkeyup: false,
 	    onclick: false,
 	    onfocusout: false,
 		
-		errorClass: "alert alert-danger",
 		errorElement: "div",
-		errorPlacement: function(error, element) {
-			
-        	error.appendTo("div#errorMessages");
-			
-			if (element.attr("name") == "lpassword" || element.attr("name") == "confirmPassword" ) {
-			  error.appendTo("div#errorMessages");
-			} else {
-			  error.insertAfter(element);
-			}
-			
-        },
+		errorLabelContainer: "#errorMessages",
 		
 		highlight: function(element, errorClass) {
 		
 			$(element).addClass(errorClass);
 			$(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+			$("#errorMessages").css("display", "block").addClass("alert alert-danger");
 		
 		},
 		
@@ -79,11 +88,9 @@ $("#createPasswordForm").validate({
 		
 			 $(element).removeClass(errorClass);
 			 $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+			 //$("#errorMessages").css("display", "none").removeClass("alert alert-danger");
+			 $("#errorMessages").css("display", "block").addClass("alert alert-danger");
 			 
-		},
-		
-		groups: {
-			userpassword: "lpassword confirmPassword"
 		},
 		
         rules: {
@@ -97,7 +104,6 @@ $("#createPasswordForm").validate({
 				required: true,
 				minlength: 6,
 				passwordRegex: /^(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]{1,2}).*$/
-				//,equalTo: "#password"
 			}
         },
         
@@ -118,12 +124,18 @@ $("#createPasswordForm").validate({
             form.submit();
         }
 });
+
+		$(".btn-create").on("click", function() {
+		
+		});
 	
 }
 
 $(document).ready(function () {
 							
 	if ($('div[data-page-name]').data("pageName") == "signupPage") {
+		
+		createAccount();
 		
 	}
 	

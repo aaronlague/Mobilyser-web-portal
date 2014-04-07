@@ -79,7 +79,8 @@ if ($date_registered == NULL) {
 <div class="section formHeadLine" data-page-name="createPasswordPage">
   <div class="container">
     <div class="row">
-      <div>
+      <div class="col-lg-10 col-lg-offset-1">
+	  	<div id="errorMessages" class="errMsg"></div>
         <h3>Create your password</h3>
       </div>
     </div>
@@ -92,18 +93,16 @@ if ($date_registered == NULL) {
       <p>Please choose a password containing more than 6 characters, including at least one number or special character. Example: eXpr3$$</p>
       <div class="row">
         <div class="noteTxt"> <span><strong>Mandatory field</strong></span><sup><i class="fa fa-asterisk"></i></sup> </div>
-		
       </div>
       <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal', 'id'=>'createPasswordForm')); ?>
-	  <div id="errorMessages" class="errMsg"></div>
       <fieldset>
       <!-- Text input-->
       <div class="form-group <?php echo $passwordFlag['class'] ?>"> <?php echo $passwordFlag['message']; ?>
-        <div class="col-md-12"><?php echo $formelem->password(array('id'=>'password','name'=>'lpassword','placeholder'=>'Password*','class'=>'form-control input-md '.$checkPasswordFlag['class'].'', 'value'=>$password)); ?></div>
+        <div class="col-md-12"><?php echo $formelem->password(array('id'=>'password','name'=>'lpassword','placeholder'=>'Password*','class'=>'form-control input-md'.$checkPasswordFlag['class'].'', 'value'=>$password)); ?></div>
       </div>
       <!-- Text input-->
       <div class="form-group <?php echo $cpasswordFlag['class']; ?>"> <?php echo $cpasswordFlag['message']; ?>
-        <div class="col-md-12"><?php echo $formelem->password(array('id'=>'confirmPassword','name'=>'confirmPassword','placeholder'=>'Confirm password*','class'=>'form-control input-md '.$reTypePasswordFlag['class'].'', 'value'=>$rePassword)); ?></div>
+        <div class="col-md-12"><?php echo $formelem->password(array('id'=>'confirmPassword','name'=>'confirmPassword','placeholder'=>'Confirm password*','class'=>'form-control input-md'.$reTypePasswordFlag['class'].'', 'value'=>$rePassword)); ?></div>
       </div>
       <!-- Button -->
       <div class="submitContainer form-group">
