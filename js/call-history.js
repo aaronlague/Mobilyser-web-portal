@@ -11,7 +11,7 @@ $("#returnToList").click(function(){
           }else if($('#calltype-only').val() == 'W'){
              $('#tag-icon').attr('src', 'images/image-work-tag-hp.png');
           }else{
-             $('#tag-icon').attr('src', 'images/image-untagged-tag-hp.png');      
+             $('#tag-icon').attr('src', 'images/image-untagged-tag-hp.png');     
           }
          
           $.post( 

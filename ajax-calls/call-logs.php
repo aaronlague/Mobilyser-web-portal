@@ -59,9 +59,29 @@ $('.switch').on('switch-change', function (e, data) {
         var $el = $(data.el)
           , value = data.value;
         if(value){//this is true if the switch is on
-           console.log('flip-x');
+           console.log('Changed to Work');
+		   $.post("ajax-calls/update-call-logs.php",
+             {
+              caller_tag: 'W',
+			  call_date: $(this).closest('tr').children('td.callDate').text(),
+  			  call_time: $(this).closest('tr').children('td.callTime').text()
+             },
+				 function(data) {
+					$('#stage').html(data);
+				 }
+          	);
         }else{
-           console.log('flip-y');
+           console.log('Changed to Personal');
+		   $.post("ajax-calls/update-call-logs.php",
+             {
+              caller_tag: 'P',
+			  call_date: $(this).closest('tr').children('td.callDate').text(),
+			  call_time: $(this).closest('tr').children('td.callTime').text()
+             },
+				 function(data) {
+					$('#stage').html(data);
+				 }
+          	);
         }
     });
 
