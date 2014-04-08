@@ -337,7 +337,7 @@ td.details {
 	margin: 0 3px;
 	cursor: pointer;
 	*cursor: hand;
-	color: #333 !important;
+	/*color: #333 !important;*/
 }
 
 .paging_full_numbers a.paginate_button {

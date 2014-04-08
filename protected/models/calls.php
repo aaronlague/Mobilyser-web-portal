@@ -26,11 +26,11 @@ class CallsModel {
 //					$caller_tag_image = 'images/untagged.png';
 //				}
 			if ($caller_tag == 'P') {
-					$caller_tag_image = '<input type="checkbox" name="callerToggle" data-toggle="switch"/>';
+					$caller_tag_image = '<input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch"/>';
 				} elseif ($caller_tag == 'W') {
-					$caller_tag_image = '<input type="checkbox" name="callerToggle" data-toggle="switch" checked/>';
+					$caller_tag_image = '<input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch" checked/>';
 				} else {
-					$caller_tag_image = '<input type="checkbox" name="callerToggle" data-toggle="switch" checked/>';
+					$caller_tag_image = '<input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch" checked/>';
 			}
 			
 			$call_date = $db->strip($row->call_date);

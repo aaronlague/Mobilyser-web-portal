@@ -115,7 +115,7 @@ $("#createPasswordForm").validate({
 			},
             confirmPassword: {
 				required: "Please confirm password",
-				passwordRegex: "Password confirmation should contain more than 6 characters, including at least one number or special character. Example: eXpr3$$",
+				passwordRegex: "Please choose a password containing more than 6 characters, including at least one number or special character. Example: eXpr3$$",
 				equalTo: "The passwords you entered do not match. Please try entering your selected password again."
 			}
         },

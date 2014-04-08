@@ -55,6 +55,16 @@ $(document).ready(function() {
 
 $("input:checkbox").bootstrapSwitch();
 
+$('.switch').on('switch-change', function (e, data) {
+        var $el = $(data.el)
+          , value = data.value;
+        if(value){//this is true if the switch is on
+           console.log('flip-x');
+        }else{
+           console.log('flip-y');
+        }
+    });
+
 	var rowCount = $('#dvData tr').length;
 	console.log (rowCount);
 	if (rowCount > 10) {

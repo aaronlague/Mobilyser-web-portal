@@ -1,7 +1,8 @@
 <div class="container" style="padding-left:30px;">
   <div class="row filterSection" id="filterControls">
     <div class="col-lg-2"><span>Filter Calls</span></div>
-    <div class="col-lg-2">
+    <!--<div>-->
+		<div class="col-lg-2" style="margin-left:-20px!important;">
   	  <div class="btn-group select select-block mbl">
   		<button class="btn dropdown-toggle clearfix btn-sm btn-warning" data-toggle="dropdown">
   		<span class="filter-option pull-left"><div id="ctype-selected">Select call type</div></span>&nbsp;<span class="caret"></span></button>
@@ -17,7 +18,7 @@
   	  </div>
       <?php //echo $formelem->select(array('id'=>'calltype','name'=>'calltype','class'=>'select-block mbl','data'=>$calltype_data)); ?>
 	</div>
-    <div class="col-lg-2">
+    <div class="col-lg-2" style="margin-left:-20px!important;">
         <div class="btn-group select select-block mbl">
         <button class="btn dropdown-toggle clearfix btn-sm btn-warning" data-toggle="dropdown">
         <span class="filter-option pull-left"><div id="btype-selected">Select</div></span>&nbsp;<span class="caret"></span></button>
@@ -28,6 +29,7 @@
         </ul>
         </div>
     </div>
+	<!--</div>-->
   </div>
   <hr style="margin-left:-15px;">
   <div class="row">

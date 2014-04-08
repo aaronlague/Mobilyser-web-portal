@@ -4,7 +4,7 @@
 
 .navbar-header {
     padding-top: 42px;
-    padding-left: 0px;
+    padding-left: 15px;
     padding-bottom: 28px;
 }
 
@@ -317,6 +317,14 @@ span.fui-arrow-left:hover {
 	border-right:none!important;
 }
 
+.table-striped > tbody > tr:nth-child(odd) > td {
+	background-color: #f9fafb!important;
+}
+
+.table-striped > tbody > tr:nth-child(even) > td {
+	background-color: #fff!important;
+}
+
 .callListSection .callList .callHistoryDetails {
     background-color: #f9fafb;
     border-radius: 6px 6px 6px 6px;
@@ -359,7 +367,7 @@ span.fui-arrow-left:hover {
     padding: 10px 15px!important;
     margin: 0px 0px!important;
     cursor: pointer;
-    color: #333 !important;
+    /*color: #333 !important;*/
     font-size: 14px!important;
     font-weight: bold!important;
     color: #FFFFFF;
@@ -391,6 +399,7 @@ span.fui-arrow-left:hover {
 
 .paging_full_numbers a.paginate_active {
     background-color: #2fac66!important;
+	color: #fff!important;
 }
 
 .regFormSection fieldset .form-group div span.required, .signUpFormSection fieldset .form-group div span.required, .forgotPasswordFormSection fieldset .form-group div span.required {
