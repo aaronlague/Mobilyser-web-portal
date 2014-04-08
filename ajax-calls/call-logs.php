@@ -47,8 +47,14 @@ echo '</tbody>';
 echo '</table>';
 ?>
 <script src="js/history-table.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/bootstrap-switch.js"></script>
+<script src="js/application.js"></script>
 <script>
 $(document).ready(function() {
+
+$("input:checkbox").bootstrapSwitch();
+
 	var rowCount = $('#dvData tr').length;
 	console.log (rowCount);
 	if (rowCount > 10) {
