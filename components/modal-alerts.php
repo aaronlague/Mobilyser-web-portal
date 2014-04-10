@@ -7,7 +7,7 @@ We have received your request to reset your password. Please check your email an
 </div>
 
 <div class="alert alert-danger hideSuccessAlert" id="resetFail">
-The email you entered does not exist!
+Sorry, the email address you entered does not exist in our system, please try typing the email address again or contact <a href="mailto:support@mobilyser.net">support@mobilyser.net</a>
 </div>
 
 <div class="alert alert-danger hideSuccessAlert" id="tokenExpiredCreate">
@@ -26,5 +26,5 @@ Please note that the link in the verification email expires after 24 hours.
 
 <div class="alert alert-danger hideSuccessAlert" id="tokenFail">
 <a href="#" class="close" data-dismiss="alert">&times;</a>
-Unfortunately, the link you entered is invalid.
+Sorry, the link within the password reset email has already been used. To receive another password reset email, click the 'Lost your password' link above.
 </div>
