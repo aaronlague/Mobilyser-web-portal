@@ -566,8 +566,6 @@ font-weight: bold; font-size: 14px; }
 select.form-control { color: #2fac66!important; text-indent:44%;}
 select.form-control option { text-align:center!important; text-indent:150px; }
 
-
-
 @media (max-width:767px){
     .sub-modal{
         left: 10%;    

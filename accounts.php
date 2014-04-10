@@ -41,20 +41,20 @@ $bill_upload_data = $lookupmodel->getBills($_SESSION['account_num'], $connect);
 <div id="errMsg"></div>
 	<div class="tabContainer col-lg-12" id="tabSection">
 		<ul class="nav nav-tabs" id="myTabs">
-			<li class="active"><a href="#bills" data-toggle="tab">Bills</a></li>
+			<li class="active"><a href="#contacts" data-toggle="tab">Contacts</a></li>
 			<li><a href="#calls" data-toggle="tab" id="calltabs">Calls</a></li>
-			<li><a href="#contacts" data-toggle="tab">Contacts</a></li>
+			<li><a href="#bills" data-toggle="tab">Bills</a></li>
 			<li><a href="#reports" data-toggle="tab">Reports</a></li>
 		</ul>
 	</div>
 	<div class="tab-content">
-		<div class="tab-pane active" id="bills">
+		<div class="tab-pane" id="bills">
         	<?php include ('view/bills-framed.php'); ?>
       	</div>
 		<div class="tab-pane" id="calls">
         	<?php include ('view/calls.php'); ?>
       	</div>
-		<div class="tab-pane" id="contacts">
+		<div class="tab-pane active" id="contacts">
         	<?php include ('view/contacts.php'); ?>
       	</div>
 		<div class="tab-pane" id="reports">

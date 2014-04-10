@@ -17,7 +17,10 @@ $(document).ready(function(){
 		});
 	});
 	// load first tab content
-	$('#bills').load($('.active a').attr("data-url"),function(result){
+	//$('#bills').load($('.active a').attr("data-url"),function(result){
+//	  $('.active a').tab('show');
+//	});
+	$('#contacts').load($('.active a').attr("data-url"),function(result){
 	  $('.active a').tab('show');
 	});
 	
