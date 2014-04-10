@@ -7,11 +7,18 @@ $db = new db_config();
 
 $connect = $db->connect();
 
-$data = '';
+$caller_tag = $db->escape($_POST['caller_tag']);
+$phone = $db->escape($_POST['phone']);
+$caller_date = $db->escape($_POST['call_date']);
+$caller_time = $db->escape($_POST['call_time']);
 
-//$mobile = $db->escape($_POST['mobile']);
-//$callerTag = $db->escape($_POST['tag']);
+$db->mquery("UPDATE call SET caller_tag = '".$caller_tag."' WHERE phone_number='".$phone."' and call_date='".$caller_date."' and time='".$caller_time."'", $connect);
+//header("location: ../accounts.php?updatecalls=true");
 
-	
-echo $_POST['caller_tag'];
+//check data values
+//echo $caller_tag;
+//echo $phone;
+//echo $caller_date;
+//echo $caller_time;
+
 ?>

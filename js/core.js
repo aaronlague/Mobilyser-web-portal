@@ -131,6 +131,58 @@ $("#createPasswordForm").validate({
 	
 }
 
+var callerTagToggle = function() {
+
+$("input:checkbox").bootstrapSwitch();
+$('.switch').on('switch-change', function (e, data) {
+        var $el = $(data.el)
+          , value = data.value;
+		  
+        if(value){//this is true if the switch is on
+           console.log('Changed to Work');
+			var phoneNumber = $(this).closest('tr').children('td.phoneNo').find("input").val();
+			$.ajax({
+			  url: "ajax-calls/update-call-logs.php",
+			  type: "POST",
+			  data: {
+				  caller_tag: 'W',
+				  call_date: $(this).closest('tr').children('td.callDate').find("input").val(),
+				  call_time: $(this).closest('tr').children('td.callTime').text(),
+				  phone: phoneNumber.replace(/\s+/g, '')
+			  },
+			  success: function(data){
+				   $("#stage").html(data);
+			  },
+			  error:function(){
+				  $("#stage").html('there is error while submit');
+			  }   
+			}); 
+			
+        }else{
+           console.log('Changed to Personal');
+			var phoneNumber = $(this).closest('tr').children('td.phoneNo').find("input").val();
+			$.ajax({
+			  url: "ajax-calls/update-call-logs.php",
+			  type: "POST",
+			  data: {
+				  caller_tag: 'P',
+				  call_date: $(this).closest('tr').children('td.callDate').find("input").val(),
+				  call_time: $(this).closest('tr').children('td.callTime').text(),
+				  phone: phoneNumber.replace(/\s+/g, '')
+			  },
+			  success: function(data){
+				   $("#stage").html(data);
+			  },
+			  error:function(){
+				  $("#stage").html('there is error while submit');
+			  }   
+			});
+			
+        }
+    });
+
+}
+
 $(document).ready(function () {
 							
 	if ($('div[data-page-name]').data("pageName") == "signupPage") {
@@ -143,6 +195,39 @@ $(document).ready(function () {
 		
 		createPassword();
 		
+	}
+	
+	if ($('div[data-page-name]').data("pageName") == "callLogsPage") {
+		
+		callerTagToggle();
+		
+		var rowCount = $('#dvData tr').length;
+		if (rowCount > 10) {
+			 console.log("display pagination...");
+			 $('#dvData').dataTable( {
+				"sPaginationType": "full_numbers",
+				"bPaginate": true,
+				"bLengthChange": true,
+				"bFilter": true,
+				"bSort": true,
+				"bInfo": true,
+				"bAutoWidth": true,
+				"bDestroy" : true
+			} );
+
+		} else if (rowCount < 10) {
+			console.log("disable pagination...");
+			$('#dvData').dataTable( {
+				"sPaginationType": "full_numbers",
+				"bPaginate": false,
+				"bLengthChange": false,
+				"bFilter": false,
+				"bSort": false,
+				"bInfo": false,
+				"bAutoWidth": false,
+				"bDestroy" : true
+			} );
+		}
 	}
 
 });

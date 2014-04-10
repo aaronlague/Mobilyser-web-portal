@@ -16,5 +16,4 @@ $ctags = $db->escape($_POST['tag']);
 $db->mquery("exec update_Tag @phone_number = '".$mobile."', 
 	@caller_tag = '".$ctags."'", $connect);
 	
-//echo $_POST['tag'];
 ?>

@@ -1,4 +1,4 @@
-<div class="container" style="padding-left:30px;">
+<div class="container" style="padding-left:30px;" data-page-name="callLogsPage">
   <div class="row filterSection" id="filterControls">
     <div class="col-lg-2"><span>Filter Calls</span></div>
     <!--<div>-->
