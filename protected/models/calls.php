@@ -28,9 +28,9 @@ class CallsModel {
 			if ($caller_tag == 'P') {
 					$caller_tag_image = '<img class="workLabel" src="images/image-work-gray.png" style="margin: 0 5px 0 5px; width: 25px; height: 25px;"><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch" checked/><img class="personalLabel" src="images/image-personal-colored.png" style="margin: 0 5px 0 5px; width: 25px; height: 25px;">';
 				} elseif ($caller_tag == 'W') {
-					$caller_tag_image = '<img class="workLabel" src="images/image-work-colored.png" style="margin: 0 5px 0 5px; width: 25px; height: 25px;"><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch"/><img src="images/image-personal-gray.png" style="margin: 0 5px 0 5px; width: 25px; height: 25px;">';
+					$caller_tag_image = '<img class="workLabel" src="images/image-work-colored.png" style="margin: 0 5px 0 5px; width: 25px; height: 25px;"><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch"/><img class="personalLabel" src="images/image-personal-gray.png" style="margin: 0 5px 0 5px; width: 25px; height: 25px;">';
 				} else {
-					$caller_tag_image = '<img src="images/image-work-colored.png" style="margin: 0 5px 0 5px; width: 25px; height: 25px;"><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch"/><img class="personalLabel" src="images/image-personal-gray.png" style="margin: 0 5px 0 5px; width: 25px; height: 25px;">';
+					$caller_tag_image = '<img src="images/image-work-colored.png" style="margin: 0 5px 0 5px; width: 25px; height: 25px;"><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch"/><img class="personalLabel" src="images/image-personal-colored.png" style="margin: 0 5px 0 5px; width: 25px; height: 25px;">';
 			}
 			
 			$call_date = $db->strip($row->call_date);
@@ -56,7 +56,7 @@ class CallsModel {
 			//$data .= '<td class="callTag"><img src="' . $caller_tag_image . '">' .$caller_tag_text. '</td>';
 			//$data .= "<td class='callTag'>" .$caller_tag_image. "</td>";
 			$data .= "<td class='callTag' style='
-    width: 145px;'>" .$caller_tag_image. "</td>";
+    width: 175px;'>" .$caller_tag_image. "</td>";
 			$data .= "<td class='callDate'>" .$call_date_format. "<input type=hidden id='defaultFormat' value=".$call_date.">" . "</td>";
 			$data .= "<td class='callTime'>" .$time. "</td>";
 			$data .= "<td class='phoneNo'><a href='#'>" . $procContactName . "</a></td>";

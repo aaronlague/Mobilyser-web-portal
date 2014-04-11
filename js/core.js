@@ -151,7 +151,8 @@ $('.switch').on('switch-change', function (e, data) {
 				  caller_tag: 'P',
 				  call_date: $(this).closest('tr').children('td.callDate').find("input").val(),
 				  call_time: $(this).closest('tr').children('td.callTime').text(),
-				  phone: phoneNumber.replace(/\s+/g, '')
+				  //phone: phoneNumber.replace(/\s+/g, '')
+				  phone: phoneNumber
 			  },
 			  success: function(data){
 				   $("#stage").html(data);
@@ -175,7 +176,8 @@ $('.switch').on('switch-change', function (e, data) {
 				  caller_tag: 'W',
 				  call_date: $(this).closest('tr').children('td.callDate').find("input").val(),
 				  call_time: $(this).closest('tr').children('td.callTime').text(),
-				  phone: phoneNumber.replace(/\s+/g, '')
+				  //phone: phoneNumber.replace(/\s+/g, '')
+				  phone: phoneNumber
 			  },
 			  success: function(data){
 				   $("#stage").html(data);
