@@ -349,6 +349,9 @@ span.fui-arrow-left:hover {
 
 .callList table tbody tr td.callTag {
     text-align: center;
+	padding-left: 0px;
+	padding-right: 0px;
+	width:110px!important;
 }
 
 .callList table tbody tr td.callDate {

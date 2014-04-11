@@ -12,7 +12,7 @@ $phone = $db->escape($_POST['phone']);
 $caller_date = $db->escape($_POST['call_date']);
 $caller_time = $db->escape($_POST['call_time']);
 
-$db->mquery("UPDATE call SET caller_tag = '".$caller_tag."' WHERE phone_number='".$phone."' and call_date='".$caller_date."' and time='".$caller_time."'", $connect);
+$db->mquery("UPDATE call SET caller_tag = '".$caller_tag."' WHERE  REPLACE(phone_number, ' ', '')='".$phone."' and call_date='".$caller_date."' and time='".$caller_time."'", $connect);
 //header("location: ../accounts.php?updatecalls=true");
 
 //check data values

@@ -56,7 +56,7 @@ class CallsModel {
 			//$data .= '<td class="callTag"><img src="' . $caller_tag_image . '">' .$caller_tag_text. '</td>';
 			//$data .= "<td class='callTag'>" .$caller_tag_image. "</td>";
 			$data .= "<td class='callTag' style='
-    width: 175px;'>" .$caller_tag_image. "</td>";
+    width:auto;'>" .$caller_tag_image. "</td>";
 			$data .= "<td class='callDate'>" .$call_date_format. "<input type=hidden id='defaultFormat' value=".$call_date.">" . "</td>";
 			$data .= "<td class='callTime'>" .$time. "</td>";
 			$data .= "<td class='phoneNo'><a href='#'>" . $procContactName . "</a></td>";
