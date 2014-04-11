@@ -88,7 +88,6 @@ $("#createPasswordForm").validate({
 		
 			 $(element).removeClass(errorClass);
 			 $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
-			 //$("#errorMessages").css("display", "none").removeClass("alert alert-danger");
 			 $("#errorMessages").css("display", "block").addClass("alert alert-danger");
 			 
 		},
@@ -139,13 +138,17 @@ $('.switch').on('switch-change', function (e, data) {
           , value = data.value;
 		  
         if(value){//this is true if the switch is on
-           console.log('Changed to Work');
+           console.log('Changed to Personal');
+		   $(this).closest('tr').children('td.callTag').find('img.personalLabel').attr('src','images/image-personal-colored.png');
+		   $(this).closest('tr').children('td.callTag').find('img.workLabel').attr('src','images/image-work-gray.png');
+		   //event.preventdefault();
+		   
 			var phoneNumber = $(this).closest('tr').children('td.phoneNo').find("input").val();
 			$.ajax({
 			  url: "ajax-calls/update-call-logs.php",
 			  type: "POST",
 			  data: {
-				  caller_tag: 'W',
+				  caller_tag: 'P',
 				  call_date: $(this).closest('tr').children('td.callDate').find("input").val(),
 				  call_time: $(this).closest('tr').children('td.callTime').text(),
 				  phone: phoneNumber.replace(/\s+/g, '')
@@ -159,13 +162,17 @@ $('.switch').on('switch-change', function (e, data) {
 			}); 
 			
         }else{
-           console.log('Changed to Personal');
+           console.log('Changed to Work');
+		   $(this).closest('tr').children('td.callTag').find('img.personalLabel').attr('src','images/image-personal-gray.png');
+		   $(this).closest('tr').children('td.callTag').find('img.workLabel').attr('src','images/image-work-colored.png');
+		   //event.preventdefault();
+		   
 			var phoneNumber = $(this).closest('tr').children('td.phoneNo').find("input").val();
 			$.ajax({
 			  url: "ajax-calls/update-call-logs.php",
 			  type: "POST",
 			  data: {
-				  caller_tag: 'P',
+				  caller_tag: 'W',
 				  call_date: $(this).closest('tr').children('td.callDate').find("input").val(),
 				  call_time: $(this).closest('tr').children('td.callTime').text(),
 				  phone: phoneNumber.replace(/\s+/g, '')

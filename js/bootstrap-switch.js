@@ -24,8 +24,8 @@
               , moving
               //, onLabel = "ON"
               //, offLabel = "OFF"
-			  , workLabel = "W"
-              , personalLabel = "P"
+			  , personalLabel = ""
+              , workLabel = ""
               , icon = false;
 
             //$.each(['switch-mini', 'switch-small', 'switch-large'], function (i, el) {
@@ -39,10 +39,10 @@
               color = "switch-" + $element.data('on');
 
             if ($element.data('on-label') !== undefined)
-              workLabel = $element.data('on-label');
+              personalLabel = $element.data('on-label');
 
             if ($element.data('off-label') !== undefined)
-              personalLabel = $element.data('off-label');
+              workLabel = $element.data('off-label');
 
             if ($element.data('icon') !== undefined)
               icon = $element.data('icon');
@@ -51,7 +51,7 @@
               .addClass("switch-left")
               .addClass(myClasses)
               .addClass(color)
-              .html(workLabel);
+              .html(personalLabel);
 
             color = '';
             if ($element.data('off') !== undefined)
@@ -61,7 +61,7 @@
               .addClass("switch-right")
               .addClass(myClasses)
               .addClass(color)
-              .html(personalLabel);
+              .html(workLabel);
 
             $label = $('<label>')
               .html("&nbsp;")

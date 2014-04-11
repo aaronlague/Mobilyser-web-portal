@@ -344,7 +344,7 @@ span.fui-arrow-left:hover {
 
 .callList table th.callDate {
     width: 125px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .callList table tbody tr td.callTag {
@@ -352,7 +352,7 @@ span.fui-arrow-left:hover {
 }
 
 .callList table tbody tr td.callDate {
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .paging_full_numbers a.paginate_button:hover {
