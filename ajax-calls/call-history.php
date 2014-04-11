@@ -37,7 +37,7 @@ $calltype_data = array(
               <li id="ctype_0" onClick="" rel="A" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Select call type</span></a></li>
               <li id="ctype_P" onClick="ctype_data_only('P', 'Personal');" rel="P" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Personal</span></a></li>
               <li id="ctype_W" onClick="ctype_data_only('W', 'Work');" rel="W" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Work</span></a></li>
-              <li id="ctype_U" onClick="ctype_data_only('U', 'Untagged');" rel="U" class="ctype"><a tabindex="-1" href="#" class="opt "><span class="pull-left">Untagged</span></a></li>
+              <!--<li id="ctype_U" onClick="ctype_data_only('U', 'Untagged');" rel="U" class="ctype"><a tabindex="-1" href="#" class="opt "><span class="pull-left">Untagged</span></a></li>-->
             </ul>
           </div>
         </div>

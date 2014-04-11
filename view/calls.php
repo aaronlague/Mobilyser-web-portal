@@ -13,7 +13,7 @@
   		  <li id="ctype_A" onclick="ctype_data('A', 'All calls');" rel="A" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">All calls</span></a></li>
   		  <li id="ctype_P" onclick="ctype_data('P', 'Personal');" rel="P" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Personal</span></a></li>
   		  <li id="ctype_W" onclick="ctype_data('W', 'Work');" rel="W" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Work</span></a></li>
-  		  <li id="ctype_U" onclick="ctype_data('U', 'Untagged');" rel="U" class="ctype"><a tabindex="-1" href="#" class="opt "><span class="pull-left">Untagged</span></a></li>
+  		  <!--<li id="ctype_U" onclick="ctype_data('U', 'Untagged');" rel="U" class="ctype"><a tabindex="-1" href="#" class="opt "><span class="pull-left">Untagged</span></a></li>-->
   		</ul>
   	  </div>
       <?php //echo $formelem->select(array('id'=>'calltype','name'=>'calltype','class'=>'select-block mbl','data'=>$calltype_data)); ?>
