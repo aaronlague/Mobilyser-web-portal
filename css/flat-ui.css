@@ -6009,7 +6009,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
 }
 .carousel-inner > .item.active > img,
 .carousel-inner > .item.active > a > img {
-  border-radius: 6px;
+  /*border-radius: 6px;*/
 }
 @media (max-width: 767px) {
   .carousel-inner > .item.active > img {

@@ -80,7 +80,7 @@ if(isset($_POST['btn-accept'])){
 				 	} ?>
 			</div>
 			<div class="submitContainer col-lg-1 col-xs-4">
-				<p><a href="forgotpassword.php">Lost your password?</a></p>
+				<p><a href="forgotpassword">Lost your password?</a></p>
 				<?php echo $formelem->button(array('id'=>'btn-login','name'=>'btn-login','class'=>'btn btn-sm btn-primary btn-login', 'value'=>'Login')); ?>
 			</div>
   					</fieldset>
@@ -94,7 +94,7 @@ if(isset($_POST['btn-accept'])){
     <div class="col-lg-8 col-lg-offset-2">
 	<?php include 'components/modal-alerts.php'; ?>
       <h1>Analyse your mobile calls to claim an expense or prepare your tax return.</h1>
-      <a class="btn btn-lg btn-primary" href="register.php">Sign up today</a> </div>
+      <a class="btn btn-lg btn-primary" href="register">Sign up today</a> </div>
   </div>
 </div>
 <div class="section">
