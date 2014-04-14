@@ -47,6 +47,7 @@ nav .container .row .submitContainer .btn-login {
     font-size: 40px;
     font-weight: normal!important;
     margin-bottom: 35px!important;
+	font-weight:300!important;
 }
 
 .topContent .btn-primary, .userSection .btn-primary, .callListSection a.btn-primary {
@@ -344,6 +345,11 @@ span.fui-arrow-left:hover {
 
 .callList table th.callDate {
     width: 125px;
+    /*text-align: center;*/
+}
+
+.callList table th.contact {
+    width: 155px!important;
     /*text-align: center;*/
 }
 
@@ -646,3 +652,22 @@ select.form-control option { text-align:center!important; text-indent:150px; }
 	text-align:center!important;
 	font-size:14px!important;
 }
+
+
+.slideShowBlurb { margin-bottom:25px; }
+.slideShowBlurb > h1 { font-family:lato; font-weight:300; font-size:40px; }
+.slideShowBlurb > p { font-family:lato; font-weight:300; font-size:24px; padding: 0 10px 0 10px; }
+
+.carousel-inner > .item > .itemText {
+	height:265px; background-color:#232b32; text-align:center; padding-top:25px; padding-left:30px; padding-right:30px;
+}
+
+.carousel-inner > .item > .itemText h1 {
+	padding: 0; margin: 0; font-family:lato; font-size:30px; font-weight:bold; color: #2fac66;
+}
+
+.carousel-inner > .item > .itemText p {
+	margin:0!important; font-family:lato; font-weight:300; font-size:18px; 
+}
+
+.callList img.workLabel, .callList img.personalLabel { margin: 0 5px 0 5px; width: 25px; height: 25px;  }

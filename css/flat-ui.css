@@ -6024,7 +6024,8 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
 }
 .carousel-control {
   position: absolute;
-  top: 45%;
+  /*top: 45%;*/
+  top: 0;
   font-size: 20px;
   line-height: 32px;
   color: #ffffff;
@@ -6053,7 +6054,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   right: 15px;
 }
 .carousel-indicators {
-  bottom: auto;
+  /*bottom: auto;
   left: auto;
   margin: 0;
   right: 16px;
@@ -6064,7 +6065,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
-  user-select: none;
+  user-select: none;*/
 }
 .carousel-indicators li {
   vertical-align: top;
@@ -6072,11 +6073,13 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   width: 8px;
   height: 8px;
   margin: 0 0 0 6px;
-  background-color: #2c3e50;
-  background-color: rgba(44, 62, 80, 0.5);
+  /*background-color: #2c3e50;
+  background-color: rgba(44, 62, 80, 0.5);*/
+  background-color: #9aa4af!important;
 }
 .carousel-indicators li.active {
-  background-color: #fff;
+  /*background-color: #fff;*/
+  background-color: #2fad66!important;
   width: 8px;
   height: 8px;
   margin: 0 0 0 6px;

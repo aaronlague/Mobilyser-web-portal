@@ -6379,6 +6379,7 @@ button.close {
   position: relative;
   width: 100%;
   overflow: hidden;
+  border-radius:6px!important;
 }
 
 .carousel-inner > .item {
@@ -6515,6 +6516,7 @@ button.close {
 
 .carousel-indicators {
   position: absolute;
+  top:0;
   bottom: 10px;
   left: 50%;
   z-index: 15;

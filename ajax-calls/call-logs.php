@@ -34,7 +34,7 @@ echo '<tr>';
 echo '<th class="callerTag"><img src="images/mobilyser-logo.png"></th>';
 echo '<th class="callDate">Date</th>';
 echo '<th>Time</th>';
-echo '<th>Contact</th>';
+echo '<th class="contact">Contact</th>';
 echo '<th>Duration</th>';
 echo '<th>Est. cost</th>';
 echo '<th>Act. cost</th>';
