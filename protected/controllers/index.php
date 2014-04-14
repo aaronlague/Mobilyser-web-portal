@@ -59,7 +59,7 @@ class IndexController {
     				$_SESSION['email']         = $emailRec;
                     $_SESSION['account_num']   = $accountNumRec;
     				session_write_close();
-    				header("Location: accounts.php");
+    				header("Location: accounts");
                 }
             }
 
@@ -81,7 +81,7 @@ class IndexController {
 			$email = $db->strip($row->email);
 			$token = $db->strip($row->token);
 			
-			$data = "http://mobilyser.net/createpassword.php?reset=false&email=".urlencode($email)."&verification=".urlencode($activation_key)."&token=".$token."";
+			$data = "http://mobilyser.net/createpassword?reset=false&email=".urlencode($email)."&verification=".urlencode($activation_key)."&token=".$token."";
 		}
 		
 		return $data;	
@@ -96,7 +96,7 @@ class IndexController {
 		session_start();
     	session_regenerate_id();
 		session_write_close();
-		header("Location: accounts.php?terms=true");
+		header("Location: accounts?terms=true");
 	}
 	
 	public function createUserPassword($emailParam, $activationParam, $userPassword, $connect) {
@@ -142,7 +142,6 @@ class IndexController {
 		
 		if ($num == 0) {
 				
-			//header("Location: index.php?emailvalid=true");
 			$data = NULL;
 		
 		} else {
@@ -162,7 +161,7 @@ class IndexController {
 			$_SESSION['userinfo'] = $firstname . ' ' . $lastname;
 			session_write_close();
 			
-			$data = "http://mobilyser.net/createpassword.php?reset=true&email=".urlencode($userEmail)."&verification=".urlencode($activation_key)."&token=".$token."";
+			$data = "http://mobilyser.net/createpassword?reset=true&email=".urlencode($userEmail)."&verification=".urlencode($activation_key)."&token=".$token."";
 			header("Location: index.php?emailvalid=true");
 		
 		}
