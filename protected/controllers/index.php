@@ -124,7 +124,7 @@ class IndexController {
 			header("Location: index.php?createpasswordsuccess=true");
 		
 		} else {
-			
+		
 			//this means we already have a password
 			
 		}
@@ -233,9 +233,26 @@ class IndexController {
 
 	}
 	
-	public function registerInterest ($connect) {
+	public function registerInterest ($data, $connect) {
 	
+		$db = new db_config();
+		$dbCheck = new db_config();
+		$email_data = $data['@email'];
 		
+		$sqlCheck = $dbCheck->mquery("SELECT * FROM register_interest WHERE email = '" . $email_data . "'", $connect);
+		$num = $dbCheck->numhasrows($sqlCheck);
+		$row = $dbCheck->fetchobject($sqlCheck);
+		
+		if ($num == 0) {
+		
+			$sql = $db->mquery_insert("dbo.registerInterest", $data, $connect);
+			header ("location: confirmation");
+		
+		} else {
+			
+			header ("location: index.php?emailcheck=true");
+		
+		}
 	
 	}
 	

@@ -41,17 +41,20 @@ if(isset($_POST['btn-register'])){
     
     $fnameFlag = $validationlib->isEmpty($_POST['firstname'], 'First name', 2);
     $lnameFlag = $validationlib->isEmpty($_POST['lastname'], 'Last name', 2);
-    $emailFlag = $validationlib->isEmail($_POST['email'], 'Email entered is', 5, 'y');
+    $emailFlag = $validationlib->isEmail($_POST['email'], 'Email', 5, 'y');
 	
 	$fname = $_POST['firstname'];
 	$lname = $_POST['lastname'];
 	$email = $_POST['email'];
 
-    //if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
+    if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == ""){
 	
-      //header("Location: confirmation.php");
+      $data['@firstname'] = $_POST['firstname'];
+	  $data['@lastname'] = $_POST['lastname'];
+	  $data['@email'] = $_POST['email'];
+ 	  $indexController->registerInterest($data, $connect);
 
-    //}
+    }
 
 }
 
@@ -104,6 +107,5 @@ if(isset($_POST['btn-register'])){
 </div>
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
-<script src="js/field-validator.js"></script>
 <script src="js/core.js"></script>
 <?php include 'components/footer.php'; ?>
