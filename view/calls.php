@@ -1,7 +1,6 @@
 <div class="container" style="padding-left:30px;" data-page-name="callLogsPage">
   <div class="row filterSection" id="filterControls">
     <div class="col-lg-2"><span>Filter Calls</span></div>
-    <!--<div>-->
 		<div class="col-lg-2" style="margin-left:-20px!important;">
   	  <div class="btn-group select select-block mbl">
   		<button class="btn dropdown-toggle clearfix btn-sm btn-warning" data-toggle="dropdown">
@@ -13,10 +12,8 @@
   		  <li id="ctype_A" onclick="ctype_data('A', 'All calls');" rel="A" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">All calls</span></a></li>
   		  <li id="ctype_P" onclick="ctype_data('P', 'Personal');" rel="P" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Personal</span></a></li>
   		  <li id="ctype_W" onclick="ctype_data('W', 'Work');" rel="W" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Work</span></a></li>
-  		  <!--<li id="ctype_U" onclick="ctype_data('U', 'Untagged');" rel="U" class="ctype"><a tabindex="-1" href="#" class="opt "><span class="pull-left">Untagged</span></a></li>-->
   		</ul>
   	  </div>
-      <?php //echo $formelem->select(array('id'=>'calltype','name'=>'calltype','class'=>'select-block mbl','data'=>$calltype_data)); ?>
 	</div>
     <div class="col-lg-2" style="margin-left:-20px!important;">
         <div class="btn-group select select-block mbl">
@@ -29,7 +26,6 @@
         </ul>
         </div>
     </div>
-	<!--</div>-->
   </div>
   <hr style="margin-left:-15px;">
   <div class="row">

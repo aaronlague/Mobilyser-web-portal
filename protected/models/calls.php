@@ -19,11 +19,11 @@ class CallsModel {
 			$caller_tag = $db->strip($row->caller_tag);
 			
 			if ($caller_tag == 'P') {
-					$caller_tag_image = '<img class="workLabel" src="images/image-work-gray.png"><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch" checked/><img class="personalLabel" src="images/image-personal-colored.png">';
+					$caller_tag_image = 'images/personal.png';
 				} elseif ($caller_tag == 'W') {
-					$caller_tag_image = '<img class="workLabel" src="images/image-work-colored.png"><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch"/><img class="personalLabel" src="images/image-personal-gray.png">';
+					$caller_tag_image = 'images/work.png';
 				} else {
-					$caller_tag_image = '<img class="workLabel" src="images/image-work-colored.png"><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch"/><img class="personalLabel" src="images/image-personal-colored.png">';
+					$caller_tag_image = 'images/work.png';
 			}
 			
 			$call_date = $db->strip($row->call_date);
@@ -46,7 +46,7 @@ class CallsModel {
 			}
 
 	        $data .= "<tr>";
-			$data .= "<td class='callTag' style='width:auto;'>" .$caller_tag_image. "</td>";
+			$data .= "<td class='callTag'><img src=". $caller_tag_image ." alt=".$caller_tag."></td>";
 			$data .= "<td class='callDate'>" .$call_date_format. "<input type=hidden id='defaultFormat' value=".$call_date.">" . "</td>";
 			$data .= "<td class='callTime'>" .$time. "</td>";
 			$data .= "<td class='phoneNo'><a href='#'>" . $procContactName . "</a></td>";

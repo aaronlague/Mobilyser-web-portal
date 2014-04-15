@@ -141,7 +141,6 @@ $('.switch').on('switch-change', function (e, data) {
            console.log('Changed to Personal');
 		   $(this).closest('tr').children('td.callTag').find('img.personalLabel').attr('src','images/image-personal-colored.png');
 		   $(this).closest('tr').children('td.callTag').find('img.workLabel').attr('src','images/image-work-gray.png');
-		   //event.preventdefault();
 		   
 			var phoneNumber = $(this).closest('tr').children('td.phoneNo').find("input").val();
 			$.ajax({
@@ -152,7 +151,6 @@ $('.switch').on('switch-change', function (e, data) {
 				  call_date: $(this).closest('tr').children('td.callDate').find("input").val(),
 				  call_time: $(this).closest('tr').children('td.callTime').text(),
 				  phone: phoneNumber.replace(/\s+/g, '')
-				  //phone: phoneNumber
 			  },
 			  success: function(data){
 				   $("#stage").html(data);
@@ -166,7 +164,6 @@ $('.switch').on('switch-change', function (e, data) {
            console.log('Changed to Work');
 		   $(this).closest('tr').children('td.callTag').find('img.personalLabel').attr('src','images/image-personal-gray.png');
 		   $(this).closest('tr').children('td.callTag').find('img.workLabel').attr('src','images/image-work-colored.png');
-		   //event.preventdefault();
 		   
 			var phoneNumber = $(this).closest('tr').children('td.phoneNo').find("input").val();
 			$.ajax({
@@ -177,7 +174,6 @@ $('.switch').on('switch-change', function (e, data) {
 				  call_date: $(this).closest('tr').children('td.callDate').find("input").val(),
 				  call_time: $(this).closest('tr').children('td.callTime').text(),
 				  phone: phoneNumber.replace(/\s+/g, '')
-				  //phone: phoneNumber
 			  },
 			  success: function(data){
 				   $("#stage").html(data);
@@ -208,7 +204,7 @@ $(document).ready(function () {
 	
 	if ($('div[data-page-name]').data("pageName") == "callLogsPage") {
 		
-		callerTagToggle();
+		//callerTagToggle();
 		
 		var rowCount = $('#dvData tr').length;
 		if (rowCount > 10) {
