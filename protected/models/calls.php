@@ -53,7 +53,7 @@ class CallsModel {
 			$data .= "<td>" . $duration . "</td>";
 			$data .= "<td>" . "$" . number_format($estimated_cost, 2) . "</td>";
 			$data .= "<td>". "$" .  number_format($actual_cost, 2) . "</td>";
-			$data .= "<td>" . $bill_issued ."</td>";
+			//$data .= "<td>" . $bill_issued ."</td>";
 			$data .= "</tr>";
 			
 			$totalCount = $counter++;

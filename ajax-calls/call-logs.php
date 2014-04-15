@@ -38,7 +38,7 @@ echo '<th class="contact">Contact</th>';
 echo '<th>Duration</th>';
 echo '<th>Est. cost</th>';
 echo '<th>Act. cost</th>';
-echo '<th>Bill date</th>';
+//echo '<th>Bill date</th>';
 echo '</tr>';
 echo '</thead>';
 echo '<tbody>';
