@@ -31,7 +31,7 @@ echo '<h4>Call List</h4>';
 echo '<table class="table table-striped table-bordered calls-table dataTable" id="dvData">';
 echo '<thead>';
 echo '<tr>';
-echo '<th class="callerTag"><img src="images/mobilyser-logo.png"></th>';
+echo '<th class="callerTag">Tag</th>';
 echo '<th class="callDate">Date</th>';
 echo '<th>Time</th>';
 echo '<th class="contact">Contact</th>';
