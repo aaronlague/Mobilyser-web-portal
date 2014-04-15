@@ -233,6 +233,12 @@ class IndexController {
 
 	}
 	
+	public function registerInterest ($connect) {
+	
+		
+	
+	}
+	
 }
 
 ?>

@@ -47,11 +47,11 @@ if(isset($_POST['btn-register'])){
 	$lname = $_POST['lastname'];
 	$email = $_POST['email'];
 
-    if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
+    //if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == "" and $mobileFlag['message']){
 	
-      header("Location: confirmation.php");
+      //header("Location: confirmation.php");
 
-    }
+    //}
 
 }
 

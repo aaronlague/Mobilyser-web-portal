@@ -217,7 +217,10 @@ $(document).ready(function () {
 				"bSort": true,
 				"bInfo": true,
 				"bAutoWidth": true,
-				"bDestroy" : true
+				"bDestroy" : true,
+				"aoColumnDefs": [
+				  { "bSortable": false, "aTargets": [ 0 ] }
+				]
 			} );
 
 		} else if (rowCount < 10) {
@@ -230,7 +233,10 @@ $(document).ready(function () {
 				"bSort": false,
 				"bInfo": false,
 				"bAutoWidth": false,
-				"bDestroy" : true
+				"bDestroy" : true,
+				"aoColumnDefs": [
+				  { "bSortable": false, "aTargets": [ 0 ] }
+				]
 			} );
 		}
 	}
