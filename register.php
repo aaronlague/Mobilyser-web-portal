@@ -73,7 +73,7 @@ if(isset($_POST['btn-register'])){
 		
 		if ($mail->send()) {
 			
-			header("Location: confirmation");
+			header("Location: confirmation?register_success=true");
 			
 		} else {
 			

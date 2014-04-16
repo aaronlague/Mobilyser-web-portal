@@ -71,7 +71,7 @@ if(isset($_POST['btn-signup'])){
 		
 		if ($mail->send()) {
 			
-			header("Location: confirmation.php");
+			header("Location: confirmation?signup_success=true");
 			
 		} else {
 			

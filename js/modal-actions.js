@@ -66,6 +66,18 @@ var tokenInvalid = function() {
 	}, 2000);
 }
 
+var registerInterest = function() {
+	
+		$('#registerSuccess').removeClass('hideSuccessAlert');
+		$('#registerSuccess').addClass('showSuccessAlert');
+}
+
+var accountSignup = function() {
+	
+		$('#signupSuccess').removeClass('hideSuccessAlert');
+		$('#signupSuccess').addClass('showSuccessAlert');
+}
+
 
 $(document).ready(function() {
 	$('.btn-decline').click(function(){

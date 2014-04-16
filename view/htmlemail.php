@@ -65,7 +65,7 @@ a { color: #2fac66; text-decoration:none; font-weight:bold; }
 					<tr>
                         <td style="text-align:center;"><br />
 						<br />
-						<a href="http://mobilyser.net/portal" class="btn btn-hg btn-block btn-primary" style="text-align:center;">View Mobilyser portal</a></td>
+						<a href="http://mobilyser.net/portal" style="text-align:center;"><img src="http://mobilyser.net/images/img-mobilyser-btn.png" border="0" /></a></td>
                     </tr>
 					<tr>
                         <td style="padding-left:50px; padding-right:50px;"><br />

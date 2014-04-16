@@ -246,13 +246,13 @@ class IndexController {
 		if ($num == 0) {
 		
 			$sql = $db->mquery_insert("dbo.registerInterest", $data, $connect);
-			header ("location: confirmation");
+			header ("location: confirmation?register_success=true");
 		
 		} else {
 			
 			
 			$sql = $db->mquery_insert("dbo.registerInterest", $data, $connect);
-			header ("location: confirmation");
+			header ("location: confirmation?register_success=true");
 			
 			//note: for the meantime duplicates are okay
 			//header ("location: index.php?emailcheck=true");
