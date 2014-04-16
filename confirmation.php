@@ -36,15 +36,4 @@ $connect = $db->connect();
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/modal-actions.js"></script>
 <?php include 'components/footer.php'; ?>
-<?php
-
-if ($_GET['register_success'] == "true") {
-	echo '<script>registerInterest();</script>';
-}
-
-if($_GET['signup_success'] == "true") {
-	echo '<script>accountSignup();</script>';
-}
-
-
-?>
+<?php include 'components/alert-scripts.php'; ?>

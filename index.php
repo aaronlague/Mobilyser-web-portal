@@ -203,40 +203,6 @@ Mobilyser makes record keeping a breeze and empowers the user with exact figures
 <script src="js/jquery.toggler.js"></script>
 <script src="js/modal-actions.js"></script>
 <?php $indexController->indexPage($email, $password, $activationcodeURL ,$connect); ?>
-</script>
-<?php
-
-if ($_GET['createpasswordsuccess'] =='true') {
-	echo '<script>showAlertSuccess();</script>';
-}
-
-if ($_GET['resetpassword'] =='true') {
-	echo '<script>showAlertSuccess();</script>';
-}
-
-if ($_GET['tokenexpired'] =='true' && $_GET['reset'] =='true') {
-
-	echo '<script>tokenExpiryReset();</script>';
-
-} else if ($_GET['tokenexpired'] =='true' && $_GET['reset'] =='false') {
-	
-	echo '<script>tokenExpiryCreate();</script>';
-}
-
-if ($_GET['invalidtoken'] =='true') {
-	echo '<script>tokenInvalid();</script>';
-}
-
-if ($_GET['emailvalid'] == 'true'){
-
-	echo '<script>passwordResetSuccess();</script>';
-
-} else if ($_GET['emailvalid'] == 'false') {
-
-	echo '<script>passwordResetFail();</script>';
-
-}
-
-?>
+<?php include 'components/alert-scripts.php'; ?>
 </body>
 </html>
