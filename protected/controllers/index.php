@@ -250,7 +250,12 @@ class IndexController {
 		
 		} else {
 			
-			header ("location: index.php?emailcheck=true");
+			
+			$sql = $db->mquery_insert("dbo.registerInterest", $data, $connect);
+			header ("location: confirmation");
+			
+			//note: for the meantime duplicates are okay
+			//header ("location: index.php?emailcheck=true");
 		
 		}
 	

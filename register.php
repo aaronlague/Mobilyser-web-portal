@@ -7,6 +7,11 @@ include 'protected/library/validation_library.php';
 include 'protected/models/lookup.php';
 include 'protected/controllers/index.php';
 
+require("components/plugins/class.phpmailer.php");
+require("components/plugins/class.smtp.php");
+require("components/plugins/PHPMailerAutoload.php");
+require("components/plugins/mailer.setup.template.php");
+
 $db = new db_config();
 $formelem = new FormElem();
 $validationlib = new validationLibrary();
@@ -49,10 +54,32 @@ if(isset($_POST['btn-register'])){
 
     if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailFlag['message'] == ""){
 	
-      $data['@firstname'] = $_POST['firstname'];
-	  $data['@lastname'] = $_POST['lastname'];
-	  $data['@email'] = $_POST['email'];
- 	  $indexController->registerInterest($data, $connect);
+		$data['@firstname'] = $_POST['firstname'];
+		$data['@lastname'] = $_POST['lastname'];
+		$data['@email'] = $_POST['email'];
+		$indexController->registerInterest($data, $connect);
+		
+		ob_start();
+		$email_val = $email;
+		$firstname_val = $fname;
+		$lastname_val = $lname;
+		require 'view/htmlemail.php';
+		$body = ob_get_contents();
+		ob_end_clean();
+		
+		$mail->Subject = "Mobilyser Email confirmation";
+		$mail->Body = $body;
+		$mail->AddAddress($email);
+		
+		if ($mail->send()) {
+			
+			header("Location: confirmation");
+			
+		} else {
+			
+			//echo "Mailer Error: " . $mail->ErrorInfo;
+			
+		}
 
     }
 
