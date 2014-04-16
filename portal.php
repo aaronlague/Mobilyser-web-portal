@@ -44,7 +44,7 @@ $connect = $db->connect();
 			<div class="item active">
 			<div class="itemText">
 				<h1>Bills</h1>
-				<p>Mobilyser allows you to create bill cycles and upload bills from your Telco to provide actual costs for each call. Bill cycles can span any time period, providing greater flexibility in data reporting. Mobilyser accepts Telco bills in either PDF or .CSV format. </p>
+				<p>Mobilyser allows you to create flexible report cycles, based on data from your regular telco bill. You can also upload actual billing data from your Telco to provide the actual costs for voice calls. Report cycles are designed to be aligned with your telco billing cycle, but can span any time period, providing greater flexibility in data reporting. Mobilyser accepts Telco bills in either PDF or .CSV format. </p>
 			</div>
 			<img src="images/carousel/image-slide-bill.png" border="0" alt="">
 			</div>
@@ -52,7 +52,8 @@ $connect = $db->connect();
 			<div class="item">
 			<div class="itemText">
 				<h1>Calls</h1>
-				<p>The calls section of the Mobilyser portal provides a complete list of voice calls, along with the capability to 'tag' each call. An estimated cost is calculated for all numbers dialled within Australia. Actual costs for each call are obtained by uploading your Telco bill, either in PDF or .CSV format.  You can sort, filter, search and export your calls to an Excel file for further analysis. </p>
+				<p>The calls section of the Mobilyser portal provides a complete list of voice calls and allows the user to allocate a tag to each number under work <img src="images/work.png" border="0" /> or personal <img src="images/personal.png" border="0" />. Within your profile you can choose to default to <img src="images/work.png" border="0" /> (all work numbers) and only change those that are personal <img src="images/personal.png" border="0" /> or vice versa, to save time tagging each number.
+An estimated cost is calculated for all numbers dialled within Australia. Actual costs for each call are obtained by uploading your Telco bill, either in PDF or .CSV format.  You can sort, filter, search and export your calls to an Excel file for further analysis. </p>
 			</div>
 			<img src="images/carousel/image-slide-call-1.png" border="0" alt="">
 			</div>
@@ -68,8 +69,7 @@ $connect = $db->connect();
 			<div class="item">
 			<div class="itemText">
 				<h1>Contacts</h1>
-				<p>Mobilyser synchronises the contact list from your phone, allowing you to review the default 'tag' assigned to each of your contacts and update the 'tag' where required. Mobilyser assigns a default 'tag' to each of your contacts, based on your settings, when your contact directory is first synchronised via the Mobilyser app. Numbers dialled outside your contact directory are also stored by 'Mobilyser', along with the associated 'tag', ensuring that if you dial this number again, you will not be prompted to review the assigned 'tag'. 
-</p>
+				<p>Mobilyser synchronises the contact list from your Android phone, allowing you to review and update the default tag assigned to each of your contacts. When Mobilyser first synchronises with your contact directory a default tag of either <img src="images/personal.png" border="0" /> indicating a personal contact, or <img src="images/work.png" border="0" /> to indicate a work contact is assigned to the each of your contacts. Numbers dialled outside your contact directory are also stored by Mobilyser, along with the associated default tag.</p>
 			</div>
 			<img src="images/carousel/image-slide-contacts.png" border="0" alt="">
 			</div>
@@ -77,7 +77,8 @@ $connect = $db->connect();
 			<div class="item">
 			<div class="itemText">
 				<h1>Reports</h1>
-				<p>The reports section of the Mobilyser portal provides a flexible solution for aggregating data about your device usage in order to generate a claim amount for either a tax return or an expense claim. Reports are organised by 'bill cycle'. Bill cycles are created and managed within the 'Bills' tab of the Mobilyser portal. There are multiple methods for calculating the cost of your mobile device usage. Mobilyser supports calculations based on duration, count and actual cost of voice calls. You can easily switch between calculation methods within the reports screen, maximising your potential claim amount. You can also account for SMS and Data separately, allowing you to assign a higher percentage of work usage to these items, over and above the percentage of work calls calculated by Mobilyser. </p>
+				<p>The reports section of the Mobilyser portal provides a flexible solution for aggregating data about your device usage in order to generate a claim amount for either a tax return or an expense claim. Reports are organised by 'bill cycle'. Bill cycles are created and managed within the 'Bills' tab of the Mobilyser portal. There are multiple methods for calculating the cost of your mobile device usage. 
+Mobilyser supports calculations based on call duration, call numbers and the actual cost of voice calls as per the Australian Tax Office (ATO) guidelines. You can easily switch between calculation methods within the reports screen, maximising your potential claim amount. You can also account for SMS and Data separately, allowing you to assign a higher percentage of work usage to these items, over and above the percentage of work calls calculated by Mobilyser.</p>
 			</div>
 			<img src="images/carousel/image-slide-reports.png" border="0" alt="">
 			</div>
