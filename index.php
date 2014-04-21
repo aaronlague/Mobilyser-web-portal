@@ -94,7 +94,7 @@ if(isset($_POST['btn-accept'])){
     <div class="col-lg-8 col-lg-offset-2">
 	<?php include 'components/modal-alerts.php'; ?>
       <h1>Analyse your mobile calls to claim an expense or prepare your tax return.</h1>
-      <a class="btn btn-lg btn-primary" href="register">Sign up today</a> </div>
+      <a class="btn btn-lg btn-primary" href="register">Register your interest</a> </div>
   </div>
 </div>
 <div class="section">

@@ -333,8 +333,8 @@ span.fui-arrow-left:hover {
     padding-bottom: 10px;
     padding-top: 10px;
     padding-left: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+    /*margin-left: 15px;
+    margin-right: 15px;*/
     min-height: 65px;
 }
 
@@ -640,7 +640,7 @@ select.form-control option { text-align:center!important; text-indent:150px; }
 	text-decoration:none;
 }
 
-.createPasswordSection fieldset .form-group input.error, .signUpFormSection fieldset .form-group input.error {
+.createPasswordSection fieldset .form-group input.error, .signUpFormSection fieldset .form-group input.error, .regFormSection fieldset .form-group input.error {
     border:2px solid red!important;
 	background:none!important;
 	color:#000000!important;

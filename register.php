@@ -87,10 +87,11 @@ if(isset($_POST['btn-register'])){
 
 ?>
 <?php include 'components/header.php'; ?>
-<div class="section formHeadLine">
+<div class="section formHeadLine" data-page-name="registerYourInterestPage">
 <div class="container">
 	<div class="row">
     <div>
+	<div id="errorMessages" class="errMsg"></div>
       <h3>Register your interest</h3>
 	</div>
   </div>
@@ -106,7 +107,7 @@ if(isset($_POST['btn-register'])){
 			<span><strong>Mandatory field</strong></span><sup><i class="fa fa-asterisk"></i></sup>
 		</div>
 	  </div>
-      <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal regFormSection')); ?>
+      <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal regFormSection', 'id'=>'regFormSection')); ?>
       <fieldset>
         <!-- Text input-->
         <div class="form-group">
@@ -134,5 +135,6 @@ if(isset($_POST['btn-register'])){
 </div>
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
+<script src="js/jquery.validate.js"></script>
 <script src="js/core.js"></script>
 <?php include 'components/footer.php'; ?>

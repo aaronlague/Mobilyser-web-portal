@@ -123,10 +123,6 @@ $("#createPasswordForm").validate({
             form.submit();
         }
 });
-
-		$(".btn-create").on("click", function() {
-		
-		});
 	
 }
 
@@ -188,6 +184,68 @@ $('.switch').on('switch-change', function (e, data) {
 
 }
 
+var registerInterest = function() {
+	console.log("working...");
+$('#regFormSection').validate({
+
+		onkeyup: false,
+	    onclick: false,
+	    onfocusout: false,
+		
+		errorElement: "div",
+		errorLabelContainer: "#errorMessages",
+		
+		highlight: function(element, errorClass) {
+		
+			$(element).addClass(errorClass);
+			$(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+			$("#errorMessages").css("display", "block").addClass("alert alert-danger");
+		
+		},
+		
+		unhighlight: function(element, errorClass) {
+		
+			 $(element).removeClass(errorClass);
+			 $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+			 $("#errorMessages").css("display", "block").addClass("alert alert-danger");
+			 
+		},
+		
+		rules: {
+			firstname: {
+				required: true,
+				minlength: 2
+			},
+			lastname: {
+				required: true,
+				minlength: 2
+			},
+			email: {
+				required: true,
+				email: true
+			}
+        },
+		
+		messages: {
+            firstname: {
+				required: "First name field is required",
+				},
+			lastname: {
+				required: "Last name field is required",
+				},
+			email: {
+				required: "Please enter a valid email address",
+				}
+        },
+		
+		submitHandler: function(form) {
+            form.submit();
+        }
+
+});
+
+}
+
 $(document).ready(function () {
 							
 	if ($('div[data-page-name]').data("pageName") == "signupPage") {
@@ -239,6 +297,12 @@ $(document).ready(function () {
 				]
 			} );
 		}
+	}
+	
+	if ($('div[data-page-name]').data("pageName") == "registerYourInterestPage") {
+		
+		registerInterest();
+		
 	}
 
 });
