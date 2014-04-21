@@ -90,7 +90,7 @@ if(isset($_POST['btn-register'])){
 <div class="section formHeadLine" data-page-name="registerYourInterestPage">
 <div class="container">
 	<div class="row">
-    <div>
+    <div class="col-lg-10 col-lg-offset-1">
 	<div id="errorMessages" class="errMsg"></div>
       <h3>Register your interest</h3>
 	</div>
