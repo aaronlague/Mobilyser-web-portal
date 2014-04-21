@@ -15,8 +15,7 @@ while($row = $db->fetchobject($sql)){
     <div class="col-lg-12">
 	  <h4>Upload new bill</h4>      
 	  <hr />
-	  <!--<iframe id="iframeContainer" seamless="true" src="/byodparser/?MyBill.AccountNumber=<?php //echo $_SESSION['account_num']; ?>&MyBill.Telco=<?php //cho $telco; ?>" width="1250" height="800" style="border:0px;"></iframe>-->
-	  <iframe id="iframeContainer" seamless="true" src="/mobilyser-parser/?MyBill.AccountNumber=<?php echo $_SESSION['account_num']; ?>&MyBill.Telco=<?php echo $telco; ?>" width="1250" height="800" style="border:0px;"></iframe>
+	  <iframe id="iframeContainer" seamless="true" src="/byodparser/?MyBill.AccountNumber=<?php echo $_SESSION['account_num']; ?>&MyBill.Telco=<?php echo $telco; ?>" width="1250" height="800" style="border:0px;"></iframe>
 	  </div>
   </div>
 </div>
