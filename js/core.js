@@ -1,5 +1,4 @@
 var createAccount = function() {
-	console.log("working...");
 $('#signUpFormSection').validate({
 
 		onkeyup: false,

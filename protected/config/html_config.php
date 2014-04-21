@@ -77,8 +77,10 @@ class FormElem {
         $elem .= (isset($params['onclick']))   ? " onclick='{$params['onclick']}'"                 : '';
         $elem .= (isset($params['width']))     ? " style='width:{$params['width']}px;'"            : '';
         $elem .= (isset($params['disabled']))  ? " disabled='{$params['disabled']}'"               : '';
+		$elem .= (isset($params['data-width']))? " data-width='{$params['data-width']}'"           : '';
+		$elem .= (isset($params['title']))     ? " title='{$params['title']}'"               	   : '';
         $elem .= '>';
-        $elem .= '<option value="0">Select</option>';
+        $elem .= '<option value="0">Select country</option>';
         if (isset($params['data']) && is_array($params['data'])) {
             foreach ($params['data'] as $k => $v) {
                 if (isset($params['value']) && $params['value'] == $k) {

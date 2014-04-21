@@ -428,6 +428,14 @@ span.fui-arrow-left:hover {
 
 .signUpFormSection fieldset .form-group { margin-bottom:10px; }
 
+.signUpFormSection fieldset .form-group div .btn-group .dropdown-toggle, .signUpFormSection fieldset .form-group div .btn-group .dropdown-menu { width:100%!important; border-radius:6px!important; }
+
+.signUpFormSection fieldset .form-group div .btn-group .btn-inverse { background-color:#FFFFFF!important; color:#2fac66!important; border: 2px solid #bdc3c7; }
+
+.signUpFormSection fieldset .form-group div .select .caret { border-bottom-color: #2fac66!important; border-top-color: #2fac66!important; }
+
+.signUpFormSection fieldset .dropdown-menu li.selected > a { background-color:#2fac66!important; }
+
 .regFormSection fieldset .submitContainer .btn-primary, .signUpFormSection fieldset .form-group .btn-primary, .forgotPasswordFormSection fieldset .form-group .btn-primary, .createPasswordSection fieldset .form-group .btn-primary, .container .termsContent .btn-back {
     background-color: #2fac66!important;
 }

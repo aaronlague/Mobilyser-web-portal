@@ -129,7 +129,7 @@ $country_data = $lookupmodel->getCountry($connect);
         </div>
         <!-- Select Basic -->
         <div class="form-group">
-          <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'country','name'=>'country','class'=>'form-control','data'=>$country_data)); ?></div>
+          <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'country','name'=>'country','class'=>'selectpicker','data'=>$country_data, 'data-width'=>'100%', 'title'=>'Select country')); ?></div>
         </div>
         <!-- Button -->
         <div class="form-group">
@@ -145,4 +145,11 @@ $country_data = $lookupmodel->getCountry($connect);
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/jquery.validate.js"></script>
 <script src="js/core.js"></script>
+
 <?php include 'components/footer.php'; ?>
+<script src="js/bootstrap-select.js"></script>
+<script>
+	$('.selectpicker').selectpicker({
+		style: 'btn-inverse'
+	});
+</script>
