@@ -55,8 +55,8 @@ $calltype_data = array(
       </div>
       <div class="col-lg-6 col-lg-pull-1" style="padding-top:5px;">
         <ul style="padding-left:0px!important; list-style:none; font-size:14px;">
-          <li><strong>Total Actual Cost:</strong></li>
-          <li><strong>Total Estimated Cost:</strong></li>
+          <li><strong>Total actual cost:</strong></li>
+          <li><strong>Total estimated cost:</strong></li>
         </ul>
       </div>
     </div>
@@ -71,9 +71,9 @@ echo '<tr>';
 echo '<th>Date</th>';
 echo '<th>Time</th>';
 echo '<th>Duration</th>';
-echo '<th>Estimated Cost</th>';
-echo '<th>Actual Cost</th>';
-echo '<th>Bill Date</th>';
+echo '<th>Estimated cost</th>';
+echo '<th>Actual cost</th>';
+echo '<th>Bill date</th>';
 echo '</tr>';
 echo '</thead>';
 echo $historymodel->getHistory($_GET['phoneNumberCellValue'], $_SESSION['account_num'], $connect);
