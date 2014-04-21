@@ -101,7 +101,7 @@ if(isset($_POST['btn-register'])){
   <div class="row">
     <div class="registerSections col-lg-10 col-lg-offset-1">
       <h4>Personal details</h4>
-      <p>To start the registration process please provide some basic personal information so that we can verify your identity and create your account. You can update your contact details within your profile.</p>
+      <p>Mobilyser is still being developed, we expect the site to go-live around the end of the current tax year. To keep up-to-date with progress during the development phase please complete the form below.</p>
 	  <div class="row">
 	  	<div class="noteTxt">
 			<span><strong>Mandatory field</strong></span><sup><i class="fa fa-asterisk"></i></sup>
