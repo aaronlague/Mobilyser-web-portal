@@ -12,6 +12,7 @@
 <link href="css/modern-business.css" rel="stylesheet">
 <link href="css/flat-ui.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
+<link href="css/media-query.css" rel="stylesheet">
 <link href="css/demo_table.css" rel="stylesheet">
 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
