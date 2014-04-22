@@ -22,9 +22,10 @@ $connect = $db->connect();
 
 $email = '';
 
+include 'protected/config/login_config.php';
+
 if(isset($_POST['btn-sendPass'])){
 
-	
 	$username = $_POST['email'];
 	$url = $indexController->createForgotPasswordLink($username, $connect);
 	
@@ -74,8 +75,7 @@ $country_data = $lookupmodel->getCountry($connect);
 	<div id="errorMessages" class="errMsg"><ul></ul></div>
       <fieldset>
         <!-- Text input-->
-        <div class="form-group">
-		  <?php echo $emailFlag['message']; ?>	
+        <div class="form-group">	
           <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email','class'=>'form-control input-md '.$emailFlag['class'].'')); ?></div>
         </div>
 		<!-- Button -->

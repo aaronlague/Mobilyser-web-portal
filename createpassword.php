@@ -13,6 +13,8 @@ $indexController = new IndexController();
 
 $connect = $db->connect();
 
+include 'protected/config/login_config.php';
+
 $passwordFlag['class'] = '';
 $cpasswordFlag['class'] = '';
 

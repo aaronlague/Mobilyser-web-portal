@@ -22,31 +22,17 @@ $connect = $db->connect();
 
 $activationcodeURL = '';
 
-$emailFlag['class'] = '';
-$pwordFlag['class'] = '';
-
-if(isset($_POST['btn-login'])){
-
-    $email = $db->escape($_POST['email']);
-    $password = $db->escape($_POST['password']);
-    
-    $emailFlag = $validationlib->isEmail($email, '', 3, 'n');
-    $pwordFlag = $validationlib->isEmpty($password, '', 1);
-    if($emailFlag['message'] == "" and $pwordFlag['message'] == ""){
-      $indexController->indexPage($email, $password, $activationcodeURL, $connect);
-    }
-
-}
+include 'protected/config/login_config.php';
 
 $fnameFlag['class'] = '';
 $lnameFlag['class'] = '';
-$emailFlag['class'] = '';
+$emailaddressFlag['class'] = '';
 
 if(isset($_POST['btn-register'])){
     
     $fnameFlag = $validationlib->isEmpty($_POST['firstname'], 'First name', 2);
     $lnameFlag = $validationlib->isEmpty($_POST['lastname'], 'Last name', 2);
-    $emailFlag = $validationlib->isEmail($_POST['email'], 'Email', 5, 'y');
+    $emailaddressFlag = $validationlib->isEmail($_POST['email'], 'Email', 5, 'y');
 	
 	$fname = $_POST['firstname'];
 	$lname = $_POST['lastname'];
@@ -121,7 +107,7 @@ if(isset($_POST['btn-register'])){
         </div>
         <!-- Text input-->
         <div class="form-group">
-		  <?php echo $emailFlag['message']; ?>
+		  <?php echo $emailaddressFlag['class'] ?>
           <div class="col-md-12"><?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Email*','class'=>'form-control input-md '.$emailFlag['class'].'', 'value'=>$email)); ?></div>
         </div>
         <!-- Button -->

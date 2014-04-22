@@ -14,6 +14,8 @@ $indexController = new IndexController();
 
 $connect = $db->connect();
 
+include 'protected/config/login_config.php';
+
 ?>
 <?php include 'components/header.php'; ?>
 <div class="section formHeadLine">
