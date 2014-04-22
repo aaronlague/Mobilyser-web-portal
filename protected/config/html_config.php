@@ -80,7 +80,7 @@ class FormElem {
 		$elem .= (isset($params['data-width']))? " data-width='{$params['data-width']}'"           : '';
 		$elem .= (isset($params['title']))     ? " title='{$params['title']}'"               	   : '';
         $elem .= '>';
-        $elem .= '<option value="0">Select country</option>';
+        $elem .= '<option value="">Select country</option>';
         if (isset($params['data']) && is_array($params['data'])) {
             foreach ($params['data'] as $k => $v) {
                 if (isset($params['value']) && $params['value'] == $k) {

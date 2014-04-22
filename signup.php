@@ -90,7 +90,6 @@ $country_data = $lookupmodel->getCountry($connect);
 <div class="container">
 	<div class="row">
     <div class="col-lg-10 col-lg-offset-1">
-	<div id="errorMessages" class="errMsg"></div>
       <h3>Create your account</h3>
 	</div>
   </div>
@@ -107,6 +106,7 @@ $country_data = $lookupmodel->getCountry($connect);
 		</div>
 	  </div>
       <?php echo $formelem->create(array('method'=>'post','class'=>'signUpFormSection form-horizontal', 'id'=>'signUpFormSection')); ?>
+	  <div id="errorMessages" class="errMsg"><ul></ul></div>
       <fieldset>
         <!-- Text input-->
         <div class="form-group <?php echo $fnameFlag['class'] ?>">

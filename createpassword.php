@@ -80,7 +80,6 @@ if ($date_registered == NULL) {
   <div class="container">
     <div class="row">
       <div class="col-lg-10 col-lg-offset-1">
-	  	<div id="errorMessages" class="errMsg"></div>
         <h3>Create your password</h3>
       </div>
     </div>
@@ -95,6 +94,7 @@ if ($date_registered == NULL) {
         <div class="noteTxt"> <span><strong>Mandatory field</strong></span><sup><i class="fa fa-asterisk"></i></sup> </div>
       </div>
       <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal', 'id'=>'createPasswordForm')); ?>
+	  <div id="errorMessages" class="errMsg"><ul></ul></div>
       <fieldset>
       <!-- Text input-->
       <div class="form-group <?php echo $passwordFlag['class'] ?>"> <?php echo $passwordFlag['message']; ?>

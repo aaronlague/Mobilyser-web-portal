@@ -91,10 +91,6 @@ if(isset($_POST['btn-register'])){
 <div class="container">
 	<div class="row">
     <div class="col-lg-10 col-lg-offset-1">
-<<<<<<< HEAD
-	<div id="errorMessages" class="errMsg"></div>
-=======
->>>>>>> validation-placement
       <h3>Register your interest</h3>
 	</div>
   </div>
@@ -111,7 +107,7 @@ if(isset($_POST['btn-register'])){
 		</div>
 	  </div>
       <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal regFormSection', 'id'=>'regFormSection')); ?>
-	  <div id="errorMessages" class="errMsg"></div>
+	  <div id="errorMessages" class="errMsg"><ul></ul></div>
       <fieldset>
         <!-- Text input-->
         <div class="form-group">

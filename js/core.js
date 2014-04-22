@@ -1,18 +1,23 @@
 var createAccount = function() {
+
+$.validator.addMethod('selectcheck', function (value) {	return (value != '0');
+}, "Country required");
+
 $('#signUpFormSection').validate({
 
 		onkeyup: false,
 	    onclick: false,
 	    onfocusout: false,
 		
-		errorElement: "div",
-		errorLabelContainer: "#errorMessages",
+		errorElement: "li",
+		errorLabelContainer: "#errorMessages ul",
 		
 		highlight: function(element, errorClass) {
 		
 			$(element).addClass(errorClass);
 			$(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
-			$("#errorMessages").css("display", "block").addClass("alert alert-danger");
+			$("#errorMessages ul").css("display", "block").addClass("alert alert-danger");
+			$(".btn-inverse").addClass("error");
 		
 		},
 		
@@ -20,9 +25,12 @@ $('#signUpFormSection').validate({
 		
 			 $(element).removeClass(errorClass);
 			 $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
-			 $("#errorMessages").css("display", "block").addClass("alert alert-danger");
+			 $("#errorMessages ul").css("display", "block").addClass("alert alert-danger");
+			 $(".btn-inverse").removeClass("error");
 			 
 		},
+		
+		ignore: [], //bootstrap select validation override 
 		
 		rules: {
 			firstname: {
@@ -36,6 +44,9 @@ $('#signUpFormSection').validate({
 			emailaddress: {
 				required: true,
 				email: true
+			},
+			country: {
+				required: true
 			}
         },
 		
@@ -48,6 +59,9 @@ $('#signUpFormSection').validate({
 				},
 			emailaddress: {
 				required: "Please enter a valid email address",
+				},
+			country: {
+				required: "Please select a country"
 				}
         },
 		
@@ -72,14 +86,14 @@ $("#createPasswordForm").validate({
 	    onclick: false,
 	    onfocusout: false,
 		
-		errorElement: "div",
-		errorLabelContainer: "#errorMessages",
+		errorElement: "li",
+		errorLabelContainer: "#errorMessages ul",
 		
 		highlight: function(element, errorClass) {
 		
 			$(element).addClass(errorClass);
 			$(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
-			$("#errorMessages").css("display", "block").addClass("alert alert-danger");
+			$("#errorMessages ul").css("display", "block").addClass("alert alert-danger");
 		
 		},
 		
@@ -87,7 +101,7 @@ $("#createPasswordForm").validate({
 		
 			 $(element).removeClass(errorClass);
 			 $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
-			 $("#errorMessages").css("display", "block").addClass("alert alert-danger");
+			 $("#errorMessages ul").css("display", "block").addClass("alert alert-danger");
 			 
 		},
 		
@@ -191,14 +205,14 @@ $('#regFormSection').validate({
 	    onclick: false,
 	    onfocusout: false,
 		
-		errorElement: "div",
-		errorLabelContainer: "#errorMessages",
+		errorElement: "li",
+		errorLabelContainer: "#errorMessages ul",
 		
 		highlight: function(element, errorClass) {
 		
 			$(element).addClass(errorClass);
 			$(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
-			$("#errorMessages").css("display", "block").addClass("alert alert-danger");
+			$("#errorMessages ul").css("display", "block").addClass("alert alert-danger");
 		
 		},
 		
@@ -206,7 +220,7 @@ $('#regFormSection').validate({
 		
 			 $(element).removeClass(errorClass);
 			 $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
-			 $("#errorMessages").css("display", "block").addClass("alert alert-danger");
+			 $("#errorMessages ul").css("display", "block").addClass("alert alert-danger");
 			 
 		},
 		
@@ -244,6 +258,55 @@ $('#regFormSection').validate({
 });
 
 }
+
+var forgotPassword = function() {
+	
+$('#forgotPasswordFormSection').validate({
+
+		onkeyup: false,
+	    onclick: false,
+	    onfocusout: false,
+		
+		errorElement: "li",
+		errorLabelContainer: "#errorMessages ul",
+		
+		highlight: function(element, errorClass) {
+		
+			$(element).addClass(errorClass);
+			$(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+			$("#errorMessages ul").css("display", "block").addClass("alert alert-danger");
+		
+		},
+		
+		unhighlight: function(element, errorClass) {
+		
+			 $(element).removeClass(errorClass);
+			 $(element.form).find("label[for=" + element.id + "]").removeClass(errorClass);
+			 $("#errorMessages ul").css("display", "block").addClass("alert alert-danger");
+			 
+		},
+		
+		rules: {
+			email: {
+				required: true,
+				email: true
+			}
+        },
+		
+		messages: {
+			email: {
+				required: "Please enter a valid email address"
+			}
+        },
+		
+		submitHandler: function(form) {
+            form.submit();
+        }
+
+});
+
+}
+
 
 $(document).ready(function () {
 							
@@ -301,6 +364,12 @@ $(document).ready(function () {
 	if ($('div[data-page-name]').data("pageName") == "registerYourInterestPage") {
 		
 		registerInterest();
+		
+	}
+	
+	if ($('div[data-page-name]').data("pageName") == "forgotPasswordPage") {
+		
+		forgotPassword();
 		
 	}
 

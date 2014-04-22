@@ -436,6 +436,9 @@ span.fui-arrow-left:hover {
 
 .signUpFormSection fieldset .dropdown-menu li.selected > a { background-color:#2fac66!important; }
 
+.select .btn .filter-option { left: 0; right:0;	 text-align:center; }
+.select .pull-left { float:none!important; }
+
 .regFormSection fieldset .submitContainer .btn-primary, .signUpFormSection fieldset .form-group .btn-primary, .forgotPasswordFormSection fieldset .form-group .btn-primary, .createPasswordSection fieldset .form-group .btn-primary, .container .termsContent .btn-back {
     background-color: #2fac66!important;
 }
@@ -648,14 +651,14 @@ select.form-control option { text-align:center!important; text-indent:150px; }
 	text-decoration:none;
 }
 
-.createPasswordSection fieldset .form-group input.error, .signUpFormSection fieldset .form-group input.error, .regFormSection fieldset .form-group input.error {
+.createPasswordSection fieldset .form-group input.error, .signUpFormSection fieldset .form-group input.error, .regFormSection fieldset .form-group input.error, .forgotPasswordSection fieldset .form-group input.error, button.error {
     border:2px solid red!important;
 	background:none!important;
 	color:#000000!important;
 	margin-bottom:0px!important;
 }
 
-.errMsg div {
+.errMsg ul li {
 	display:none;
 	text-align:left!important;
 	font-size:14px!important;

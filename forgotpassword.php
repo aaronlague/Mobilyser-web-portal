@@ -56,10 +56,10 @@ $country_data = $lookupmodel->getCountry($connect);
 
 ?>
 <?php include 'components/header.php'; ?>
-<div class="section formHeadLine">
+<div class="section formHeadLine" data-page-name="forgotPasswordPage">
 <div class="container">
 	<div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
+    <div class="col-lg-10 col-lg-offset-1">
 	  <?php include 'components/modal-alerts.php'; ?>
       <h3>Forgot your password?</h3>
 	</div>
@@ -70,7 +70,8 @@ $country_data = $lookupmodel->getCountry($connect);
   <div class="row">
     <div class="forgotPasswordSection col-lg-10 col-lg-offset-1">
 	<p>Please enter your email address below. You will receive an email with further instructions on resetting your password. </p>
-	<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal forgotPasswordFormSection')); ?>
+	<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal forgotPasswordFormSection', 'id'=>'forgotPasswordFormSection')); ?>
+	<div id="errorMessages" class="errMsg"><ul></ul></div>
       <fieldset>
         <!-- Text input-->
         <div class="form-group">
@@ -88,5 +89,6 @@ $country_data = $lookupmodel->getCountry($connect);
 <!-- /.container -->
 <script src="js/jquery-1.10.2.js"></script>
 <script src="js/modal-actions.js"></script>
+<script src="js/jquery.validate.js"></script>
 <script src="js/core.js"></script>
 <?php include 'components/footer.php'; ?>
