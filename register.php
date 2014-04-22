@@ -85,7 +85,7 @@ if(isset($_POST['btn-register'])){
 <div class="registerContainer container">
   <div class="row">
     <div class="registerSections col-lg-10 col-lg-offset-1">
-      <h4>Personal details</h4>
+	<br />
       <p>Mobilyser is still being developed, we expect the site to go-live around the end of the current tax year. To keep up-to-date with progress during the development phase please complete the form below.</p>
 	  <div class="row">
 	  	<div class="noteTxt">
