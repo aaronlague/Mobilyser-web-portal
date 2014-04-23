@@ -47,8 +47,7 @@ if(isset($_POST['btn-accept'])){
   			<div class="navbar-header col-lg-5 col-xs-8">
 				<a href="index.php"><img class="img-responsive" src="images/image-logo.png" border="0" /></a>
 			</div>
-  <!--login form goes here-->
-			<div class="loginSection col-lg-3 col-lg-offset-3 col-xs-4">
+			<div class="loginSection col-lg-3 col-lg-offset-3 col-md-4 col-sm-4 col-xs-8">
 				<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection', 'id'=>'loginForm')); ?>
 					<fieldset>
 						<div class="form-group <?php echo $emailFlag['class'] ?> ">
@@ -64,7 +63,7 @@ if(isset($_POST['btn-accept'])){
 				 		echo $indexController->indexPage($email, $password, $activationcodeURL, $connect);
 				 	} ?>
 			</div>
-			<div class="submitContainer col-lg-1 col-xs-4">
+			<div class="submitContainer col-lg-1 col-md-4 col-sm-4 col-xs-8">
 				<p><a href="forgotpassword">Lost your password?</a></p>
 				<?php echo $formelem->button(array('id'=>'btn-login','name'=>'btn-login','class'=>'btn btn-sm btn-primary btn-login', 'value'=>'Login')); ?>
 			</div>

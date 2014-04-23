@@ -119,8 +119,8 @@ $country_data = $lookupmodel->getCountry($connect);
           <div class="col-md-12"> <?php echo $formelem->select(array('id'=>'country','name'=>'country','class'=>'selectpicker','data'=>$country_data, 'data-width'=>'100%', 'title'=>'Select country')); ?></div>
         </div>
         <!-- Button -->
-        <div class="form-group">
-          <div class="col-md-4 col-md-push-5"> <?php echo $formelem->button(array('id'=>'btn-signup','name'=>'btn-signup','class'=>'btn btn-primary registerBtn', 'value'=>'Create account')); ?> </div>
+        <div class="submitContainer form-group">
+          <div class="col-md-12"> <?php echo $formelem->button(array('id'=>'btn-signup','name'=>'btn-signup','class'=>'btn btn-primary registerBtn', 'value'=>'Create account')); ?> </div>
         </div>
       </fieldset>
       <?php echo $formelem->close(); ?> </div>

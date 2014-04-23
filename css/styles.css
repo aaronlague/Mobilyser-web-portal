@@ -35,6 +35,7 @@ nav .container .row .submitContainer p {
 
 nav .container .row .submitContainer .btn-login {
     background-color: #2fac66!important;
+	width:100%;
 }
 
 .topContent {
