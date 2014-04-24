@@ -5,11 +5,11 @@
 .navbar-header {
     padding-top: 42px;
     padding-left: 15px;
-    padding-bottom: 28px;
+    /*padding-bottom: 28px;*/;
 }
 
 nav .container .row .loginSection {
-    padding-top: 45px;
+    /*padding-top: 45px;*/;
 }
 
 nav .container .row .userSection {
@@ -25,7 +25,7 @@ nav .container .row .loginSection .form-group input[type=text], nav .container .
 }
 
 nav .container .row .submitContainer {
-    margin-top: 45px;
+    /*margin-top: 45px;*/;
 }
 
 nav .container .row .submitContainer p {
@@ -35,7 +35,28 @@ nav .container .row .submitContainer p {
 
 nav .container .row .submitContainer .btn-login {
     background-color: #2fac66!important;
-	width:100%;
+    width: 100%;
+}
+
+.navbar-toggle {
+    background-color: #2fac66!important;
+    border: none;
+    color: #34495e;
+    margin: 0 0 0 21px;
+    padding: 0 10px;
+    height: 50px;
+    line-height: 54px;
+}
+
+.navbar-inverse .navbar-toggle:hover:before, .navbar-inverse .navbar-toggle:focus:before {
+    color: #fff!important;
+}
+
+.navbar-inverse .navbar-collapse {
+ /*border-color: #2fac66!important;*/
+    border-color: #fff!important;
+    border-width: 2px;
+    padding-top: 45px;
 }
 
 .topContent {
@@ -48,7 +69,7 @@ nav .container .row .submitContainer .btn-login {
     font-size: 40px;
     font-weight: normal!important;
     margin-bottom: 35px!important;
-	font-weight:300!important;
+    font-weight: 300!important;
 }
 
 .topContent .btn-primary, .userSection .btn-primary, .callListSection a.btn-primary {
@@ -186,8 +207,8 @@ span.fui-arrow-left:hover {
     z-index: 1;
 }
 
-.container .tabContainer { 
-	z-index: 1;
+.container .tabContainer {
+    z-index: 1;
 }
 
 .container .tabContainer .nav-tabs {
@@ -307,7 +328,7 @@ span.fui-arrow-left:hover {
 
 .table-bordered {
     font-size: 13px!important;
-	border:none!important;
+    border: none!important;
 }
 
 .table-bordered tr:nth-child(even) {
@@ -315,16 +336,16 @@ span.fui-arrow-left:hover {
 }
 
 .table-bordered > thead > tr th, .table-bordered > tbody > tr th, .table-bordered > tfoot > tr th, .table-bordered > thead > tr td, .table-bordered > tbody > tr td, .table-bordered > tfoot > tr td {
-	border-left:none!important;
-	border-right:none!important;
+    border-left: none!important;
+    border-right: none!important;
 }
 
 .table-striped > tbody > tr:nth-child(odd) > td {
-	background-color: #f9fafb!important;
+    background-color: #f9fafb!important;
 }
 
 .table-striped > tbody > tr:nth-child(even) > td {
-	background-color: #fff!important;
+    background-color: #fff!important;
 }
 
 .callListSection .callList .callHistoryDetails {
@@ -346,23 +367,23 @@ span.fui-arrow-left:hover {
 
 .callList table th.callDate {
     width: 125px;
-    /*text-align: center;*/
+    /*text-align: center;*/;
 }
 
 .callList table th.contact {
     width: 155px!important;
-    /*text-align: center;*/
+    /*text-align: center;*/;
 }
 
 .callList table tbody tr td.callTag {
     text-align: center;
-	padding-left: 0px;
-	padding-right: 0px;
-	width:110px!important;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 110px!important;
 }
 
 .callList table tbody tr td.callDate {
-    /*text-align: center;*/
+    /*text-align: center;*/;
 }
 
 .paging_full_numbers a.paginate_button:hover {
@@ -409,7 +430,7 @@ span.fui-arrow-left:hover {
 
 .paging_full_numbers a.paginate_active {
     background-color: #2fac66!important;
-	color: #fff!important;
+    color: #fff!important;
 }
 
 .regFormSection fieldset .form-group div span.required, .signUpFormSection fieldset .form-group div span.required, .forgotPasswordFormSection fieldset .form-group div span.required {
@@ -427,24 +448,49 @@ span.fui-arrow-left:hover {
     text-align: center;
 }
 
-.signUpFormSection fieldset .form-group { margin-bottom:10px; }
+.signUpFormSection fieldset .form-group {
+    margin-bottom: 10px;
+}
 
-.signUpFormSection fieldset .form-group div .btn-group .dropdown-toggle, .signUpFormSection fieldset .form-group div .btn-group .dropdown-menu { width:100%!important; border-radius:6px!important; }
+.signUpFormSection fieldset .form-group div .btn-group .dropdown-toggle, .signUpFormSection fieldset .form-group div .btn-group .dropdown-menu {
+    width: 100%!important;
+    border-radius: 6px!important;
+}
 
-.signUpFormSection fieldset .form-group div .btn-group .btn-inverse { background-color:#FFFFFF!important; color:#2fac66!important; border: 2px solid #bdc3c7; }
+.signUpFormSection fieldset .form-group div .btn-group .btn-inverse {
+    background-color: #FFFFFF!important;
+    color: #2fac66!important;
+    border: 2px solid #bdc3c7;
+}
 
-.signUpFormSection fieldset .form-group div .select .caret { border-bottom-color: #2fac66!important; border-top-color: #2fac66!important; }
+.signUpFormSection fieldset .form-group div .select .caret {
+    border-bottom-color: #2fac66!important;
+    border-top-color: #2fac66!important;
+}
 
-.signUpFormSection fieldset .dropdown-menu li.selected > a { background-color:#2fac66!important; }
+.signUpFormSection fieldset .dropdown-menu li.selected > a {
+    background-color: #2fac66!important;
+}
 
-.select .btn .filter-option { left: 0; right:0;	 text-align:center; }
-.select .pull-left { float:none!important; }
+.select .btn .filter-option {
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.select .pull-left {
+    float: none!important;
+}
 
 .regFormSection fieldset .submitContainer .btn-primary, .signUpFormSection fieldset .form-group .btn-primary, .forgotPasswordFormSection fieldset .form-group .btn-primary, .createPasswordSection fieldset .form-group .btn-primary, .container .termsContent .btn-back {
     background-color: #2fac66!important;
 }
 
-.signUpFormSection fieldset .control-label { text-align:left; padding-top:0px!important; padding-bottom:0px!important; }
+.signUpFormSection fieldset .control-label {
+    text-align: left;
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+}
 
 .loginFormSection fieldset .form-group:nth-of-type(2) {
     margin-bottom: 0px!important;
@@ -486,8 +532,8 @@ span.fui-arrow-left:hover {
 .termsHeadline {
     background-color: #34495e;
     color: #FFFFFF;
-	padding:20px 0!important;
-	margin-bottom:30px;
+    padding: 20px 0!important;
+    margin-bottom: 30px;
 }
 
 .termsHeadline .container .row div {
@@ -500,9 +546,13 @@ span.fui-arrow-left:hover {
     margin-top: 15px;
 }
 
-.container .termsContent p { text-align:justify; }
+.container .termsContent p {
+    text-align: justify;
+}
 
-.container .termsContent a.btn-back { float: right; }
+.container .termsContent a.btn-back {
+    float: right;
+}
 
 .signUpContainer .headLine, .registerContainer .headLine, .createPasswordContainer .headLine {
     text-align: center;
@@ -552,135 +602,234 @@ span.fui-arrow-left:hover {
 /*.modal-backdrop { position:relative;	}
 .modal-backdrop.in { opacity: 0.5!important }*/
 
-.modal-backdrop.in { opacity: 0.5!important }
+.modal-backdrop.in {
+    opacity: 0.5!important;
+}
 
-.modal-body  .btn-primary { background-color: #2fac66!important; }
-.modal-footer .btn-primary { background-color: #2fac66!important; }
-.modal-content .modal-footer { background-color: #34495e!important; }
-.modal-header{
+.modal-body  .btn-primary {
+    background-color: #2fac66!important;
+}
+
+.modal-footer .btn-primary {
+    background-color: #2fac66!important;
+}
+
+.modal-content .modal-footer {
+    background-color: #34495e!important;
+}
+
+.modal-header {
     border-color: #ccc;
 }
 
-.modal-content .modal-body { max-height: 400px; overflow: scroll; overflow-x: hidden; }
-
-.modal-content .modal-footer a.btn-decline, .modal-content .modal-footer a.btn-cancel { color:#FFFFFF!important; float:left; text-decoration:underline; }
-.modal-content .modal-footer a.btn-decline:hover, .modal-content .modal-footer a.btn-cancel:hover { color:#16a085!important; text-decoration:none; }
-
-input[placeholder]::-webkit-input-placeholder { /* WebKit browsers */
-    color: #2fac66!important;
-}
-input[placeholder]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #2fac66!important;
-}
-input[placeholder]::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #2fac66!important;
-}
-input[placeholder]:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color: #2fac66!important;
+.modal-content .modal-body {
+    max-height: 400px;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
+.modal-content .modal-footer a.btn-decline, .modal-content .modal-footer a.btn-cancel {
+    color: #FFFFFF!important;
+    float: left;
+    text-decoration: underline;
+}
 
-select[name="contactsData_length"], select[name="dvData_length"] { border: 2px solid #2fac66!important; border-radius: 5px!important; color: #2fac66;
-font-weight: bold; font-size: 14px; }
-.form-control + .input-icon { color: #2fac66!important; } 
+.modal-content .modal-footer a.btn-decline:hover, .modal-content .modal-footer a.btn-cancel:hover {
+    color: #16a085!important;
+    text-decoration: none;
+}
 
-select.form-control { color: #2fac66!important; text-indent:44%;}
-select.form-control option { text-align:center!important; text-indent:150px; }
+input[placeholder]::-webkit-input-placeholder {
+ /* WebKit browsers */
+    color: #2fac66!important;
+}
 
-@media (max-width:767px){
-    .sub-modal{
-        left: 10%;    
+input[placeholder]:-moz-placeholder {
+ /* Mozilla Firefox 4 to 18 */
+    color: #2fac66!important;
+}
+
+input[placeholder]::-moz-placeholder {
+ /* Mozilla Firefox 19+ */
+    color: #2fac66!important;
+}
+
+input[placeholder]:-ms-input-placeholder {
+ /* Internet Explorer 10+ */
+    color: #2fac66!important;
+}
+
+select[name="contactsData_length"], select[name="dvData_length"] {
+    border: 2px solid #2fac66!important;
+    border-radius: 5px!important;
+    color: #2fac66;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-control + .input-icon {
+    color: #2fac66!important;
+}
+
+select.form-control {
+    color: #2fac66!important;
+    text-indent: 44%;
+}
+
+select.form-control option {
+    text-align: center!important;
+    text-indent: 150px;
+}
+
+@media (max-width:767px) {
+    .sub-modal {
+        left: 10%;
     }
 }
 
 /*** 03/12/2014 ***/
-.form-group  {
-	position: relative;
+.form-group {
+    position: relative;
 }
+
 .overlapped-asterisk {
-	position: absolute;
-	left: 54%;
+    position: absolute;
+    left: 54%;
 }
+
 .asterisk-hide {
-	display: none;
+    display: none;
 }
 
 .overlapped-asterisk i {
-	font-size:50%!important;
-	color: #2fac66!important;
+    font-size: 50%!important;
+    color: #2fac66!important;
 }
 
-.dropdown > .dropdown-menu { margin-top:0px!important; /*position:relative;*/ left: 85px; background-color:#34495e!important; }
-.dropdown > .dropdown-menu > li { padding:5px 5px; }
-.dropdown > .dropdown-menu li > a { border-radius: 6px 6px 6px 6px!important; color:#fff; padding:3px 15px 0 15px!important; }
-.dropdown > .dropdown-menu li > a:hover { background-color: #2fac66!important; }
+.dropdown > .dropdown-menu {
+    margin-top: 0px!important;
+ /*position:relative;*/
+    left: 85px;
+    background-color: #34495e!important;
+}
 
-.hideSuccessAlert { display: none!important; }
-.showSuccessAlert { display: block; padding: 18px 45px 14px 25px; font-size:14px; /*color: #2fac66!important;*/ }
+.dropdown > .dropdown-menu > li {
+    padding: 5px 5px;
+}
+
+.dropdown > .dropdown-menu li > a {
+    border-radius: 6px 6px 6px 6px!important;
+    color: #fff;
+    padding: 3px 15px 0 15px!important;
+}
+
+.dropdown > .dropdown-menu li > a:hover {
+    background-color: #2fac66!important;
+}
+
+.hideSuccessAlert {
+    display: none!important;
+}
+
+.showSuccessAlert {
+    display: block;
+    padding: 18px 45px 14px 25px;
+    font-size: 14px;
+ /*color: #2fac66!important;*/;
+}
 
 
 /*---------------*/
 
 .alert-success {
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#dff0d8), to(#c8e5bc));
-  background-image: -webkit-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
-  background-image: -moz-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
-  background-image: linear-gradient(to bottom, #dff0d8 0%, #c8e5bc 100%);
-  background-repeat: repeat-x;
-  border-color: #b2dba1;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);
-  color: #468847;
+    background-image: -webkit-gradient(linear, left 0%, left 100%, from(#dff0d8), to(#c8e5bc));
+    background-image: -webkit-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
+    background-image: -moz-linear-gradient(top, #dff0d8 0%, #c8e5bc 100%);
+    background-image: linear-gradient(to bottom, #dff0d8 0%, #c8e5bc 100%);
+    background-repeat: repeat-x;
+    border-color: #b2dba1;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);
+    color: #468847;
 }
 
 .alert-danger {
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#f2dede), to(#e7c3c3));
-  background-image: -webkit-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
-  background-image: -moz-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
-  background-image: linear-gradient(to bottom, #f2dede 0%, #e7c3c3 100%);
-  background-repeat: repeat-x;
-  border-color: #dca7a7;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffe7c3c3', GradientType=0);
-  color: #b94a48;
+    background-image: -webkit-gradient(linear, left 0%, left 100%, from(#f2dede), to(#e7c3c3));
+    background-image: -webkit-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
+    background-image: -moz-linear-gradient(top, #f2dede 0%, #e7c3c3 100%);
+    background-image: linear-gradient(to bottom, #f2dede 0%, #e7c3c3 100%);
+    background-repeat: repeat-x;
+    border-color: #dca7a7;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffe7c3c3', GradientType=0);
+    color: #b94a48;
 }
 
 .alert-danger a {
-	color: #b94a48!important;
-	text-decoration:underline;
+    color: #b94a48!important;
+    text-decoration: underline;
 }
 
 .alert-danger a:hover {
-	text-decoration:none;
+    text-decoration: none;
 }
 
 .createPasswordSection fieldset .form-group input.error, .signUpFormSection fieldset .form-group input.error, .regFormSection fieldset .form-group input.error, .forgotPasswordSection fieldset .form-group input.error, button.error {
-    border:2px solid red!important;
-	background:none!important;
-	color:#000000!important;
-	margin-bottom:0px!important;
+    border: 2px solid red!important;
+    background: none!important;
+    color: #000000!important;
+    margin-bottom: 0px!important;
 }
 
 .errMsg ul li {
-	display:none;
-	text-align:left!important;
-	font-size:14px!important;
-	font-weight:bold;
+    display: none;
+    text-align: left!important;
+    font-size: 14px!important;
+    font-weight: bold;
 }
 
+.slideShowBlurb {
+    margin-bottom: 25px;
+}
 
-.slideShowBlurb { margin-bottom:25px; }
-.slideShowBlurb > h1 { font-family:lato; font-weight:300; font-size:40px; }
-.slideShowBlurb > p { font-family:lato; font-weight:300; font-size:24px; padding: 0 10px 0 10px; }
+.slideShowBlurb > h1 {
+    font-family: lato;
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.slideShowBlurb > p {
+    font-family: lato;
+    font-weight: 300;
+    font-size: 24px;
+    padding: 0 10px 0 10px;
+}
 
 .carousel-inner > .item > .itemText {
-	height:265px; background-color:#232b32; text-align:center; padding-top:25px; padding-left:30px; padding-right:30px;
+    height: 265px;
+    background-color: #232b32;
+    text-align: center;
+    padding-top: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .carousel-inner > .item > .itemText h1 {
-	padding: 0; margin: 0; font-family:lato; font-size:30px; font-weight:bold; color: #2fac66;
+    padding: 0;
+    margin: 0;
+    font-family: lato;
+    font-size: 30px;
+    font-weight: bold;
+    color: #2fac66;
 }
 
 .carousel-inner > .item > .itemText p {
-	margin:0!important; font-family:lato; font-weight:300; font-size:18px; 
+    margin: 0!important;
+    font-family: lato;
+    font-weight: 300;
+    font-size: 18px;
 }
 
-.callList img.workLabel, .callList img.personalLabel { margin: 0 5px 0 5px; width: 25px; height: 25px;  }
+.callList img.workLabel, .callList img.personalLabel {
+    margin: 0 5px 0 5px;
+    width: 25px;
+    height: 25px;
+}

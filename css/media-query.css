@@ -1,51 +1,124 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
-body:before { content: "1200px"}
+    body:before {
+        /*content: "1200px";*/
+    }
 
-nav .container .row .loginSection  { padding-right:15px; }
-nav .container .row .submitContainer { margin-top:15px; text-align:left; padding-left:0px!important; padding-right:0px!important; }
-.bottomContent .bottomContentContainer .row .slideNavigationWrapper { position: absolute; min-width: 248px; top: 210px; left: 266px; }
-.footerSection { padding-bottom:20px; }
+    nav .container .row .loginSection {
+    }
 
+    nav .container .row .submitContainer {
+        margin-top: 15px;
+        text-align: left;
+        padding-left: 0px!important;
+        padding-right: 0px!important;
+        margin-left: -15px!important;
+        margin-right: 0px!important;
+        width: 26%;
+    }
+
+    .bottomContent .bottomContentContainer .row .slideNavigationWrapper {
+        position: absolute;
+        min-width: 248px;
+        top: 210px;
+        left: 266px;
+    }
+
+    .footerSection {
+        padding-bottom: 20px;
+    }
 }
 
 @media only screen and (max-width : 1024px) {
-body:before { content: "1024px"}
-
+    body:before {
+        /*content: "1024px";*/
+    }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-body:before { content: "992px"}
-
+    body:before {
+        /*content: "992px";*/
+    }
+	
+	nav .container .row .submitContainer {
+		
+		float:right;
+		
+	}
 }
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-body:before { content: "768px"}
+    body:before {
+        /*content: "768px";*/
+    }
 
+    nav .container .row .loginSection {
+        margin-right: 9px;
+        margin-left: 10px;
+    }
 
+    nav .container .row .submitContainer {
+        width: 97%;
+        margin-left: 10px!important;
+		float:left;
+		
+    }
 
+    .navbar-inverse .navbar-collapse {
+        padding-top: 25px;
+    }
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
-body:before { content: "480px"}
-
+    body:before {
+        /*content: "480px";*/
+    }
+	
+	nav .container .row .submitContainer {
+        padding-right: 10px!important;
+    }
+	
 }
 
 /* Custom, iPhone Retina */ 
 @media only screen and (max-width : 320px) {
-body:before { content: "320px"}
+    body:before {
+        /*content: "320px";*/
+    }
 
-	nav .container .row .loginSection  { padding-top:0px; padding-left:30px; padding-right:30px; width:100%; }
-	nav .container .row .submitContainer  {padding-left:20px!important; padding-right:20px!important; width:100%; }
+    nav .container .row .loginSection {
+        padding-top: 0px;
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 100%;
+    }
+
+    nav .container .row .submitContainer {
+        padding-left: 20px!important;
+        padding-right: 20px!important;
+        width: 100%;
+    }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width:1280px) {
 
-	nav .container .row .loginSection  { padding-top:0px; padding-left:30px; padding-right:30px; width:100%; }
-	nav .container .row .submitContainer  {padding-left:20px!important; padding-right:20px!important; width:100%; }
 
+/*-----------*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width:2560px) {
+
+
+
+}
+
+@media only screen (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+	
+    nav .container .row .submitContainer {
+        width: 26.3333%;
+        float: right;
+        margin-left: -20px!important;
+        padding-right: 10px!important;
+    }
 }

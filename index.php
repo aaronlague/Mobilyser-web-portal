@@ -44,31 +44,42 @@ if(isset($_POST['btn-accept'])){
 <nav class="navbar navbar-inverse" role="navigation">
 	<div class="container">
 		<div class="row">
-  			<div class="navbar-header col-lg-5 col-xs-8">
+  			<div class="navbar-header col-lg-5 col-sm-9">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				 </button>
 				<a href="index.php"><img class="img-responsive" src="images/image-logo.png" border="0" /></a>
 			</div>
-			<div class="loginSection col-lg-3 col-lg-offset-3 col-md-4 col-sm-4 col-xs-8">
-				<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection', 'id'=>'loginForm')); ?>
-					<fieldset>
-						<div class="form-group <?php echo $emailFlag['class'] ?> ">
-							<?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Username','class'=>'form-control input-sm '.$emailFlag['class'].' emailField', 'value'=>$email)); ?>
-							<span class="input-icon fui-user"></span>
-						</div>
-						<div class="form-group <?php echo $pwordFlag['class'] ?>">
-							<?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'')); ?>
-							<span class="input-icon fui-lock"></span>
-						</div>
-				 <?php
-				 	if(isset($_POST['btn-login'])){ 
-				 		echo $indexController->indexPage($email, $password, $activationcodeURL, $connect);
-				 	} ?>
+			<div class="collapse navbar-collapse navbar-ex1-collapse" style="">
+				<div class="row">
+					<div class="loginSection col-lg-3 col-lg-offset-3">
+										<?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection', 'id'=>'loginForm')); ?>
+											<fieldset>
+												<div class="form-group <?php echo $emailFlag['class'] ?> ">
+													<?php echo $formelem->text(array('id'=>'email','name'=>'email','placeholder'=>'Username','class'=>'form-control input-sm '.$emailFlag['class'].' emailField', 'value'=>$email)); ?>
+													<span class="input-icon fui-user"></span>
+												</div>
+												<div class="form-group <?php echo $pwordFlag['class'] ?>">
+													<?php echo $formelem->password(array('id'=>'password','name'=>'password','placeholder'=>'Password','class'=>'form-control input-sm '.$pwordFlag['class'].'')); ?>
+													<span class="input-icon fui-lock"></span>
+												</div>
+										 <?php
+											if(isset($_POST['btn-login'])){ 
+												echo $indexController->indexPage($email, $password, $activationcodeURL, $connect);
+											} ?>
+									</div>
+									<div class="submitContainer col-lg-1 col-md-6" style="">
+										<p><a href="forgotpassword">Lost your password?</a></p>
+										<?php echo $formelem->button(array('id'=>'btn-login','name'=>'btn-login','class'=>'btn btn-sm btn-primary btn-login', 'value'=>'Login')); ?>
+									</div>
+										</fieldset>
+									<?php echo $formelem->close(); ?>
+				</div>
 			</div>
-			<div class="submitContainer col-lg-1 col-md-4 col-sm-4 col-xs-8">
-				<p><a href="forgotpassword">Lost your password?</a></p>
-				<?php echo $formelem->button(array('id'=>'btn-login','name'=>'btn-login','class'=>'btn btn-sm btn-primary btn-login', 'value'=>'Login')); ?>
-			</div>
-  					</fieldset>
-  				<?php echo $formelem->close(); ?>
+			<!-- /.navbar-collapse -->
   		</div>
 	</div>
 </nav>

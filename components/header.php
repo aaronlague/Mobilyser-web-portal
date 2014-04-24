@@ -20,7 +20,13 @@
 <nav class="navbar navbar-inverse" role="navigation">
   <div class="container">
     <div class="row">
-      <div class="navbar-header col-lg-5 col-xs-8">
+      <div class="navbar-header col-lg-5 col-sm-9">
+	  	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		 </button>
 	  	<a href="index.php"><img class="img-responsive" src="images/image-logo.png" border="0" /></a>
 	  </div>
         <?php  

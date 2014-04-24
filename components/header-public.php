@@ -1,5 +1,7 @@
 <!--login form goes here-->
-<div class="loginSection col-lg-3 col-lg-offset-3 col-md-4 col-sm-4 col-xs-8">
+<div class="collapse navbar-collapse navbar-ex1-collapse" style="">
+				<div class="row">
+<div class="loginSection col-lg-3 col-lg-offset-3">
   <?php echo $formelem->create(array('method'=>'post','class'=>'form-horizontal loginFormSection')); ?>
     <fieldset>
       <div class="form-group <?php echo $emailFlag['class'] ?> ">
@@ -15,9 +17,11 @@
     		echo $indexController->indexPage($email, $password, $activationcodeURL, $connect);
     	} ?>
     </div>
-    <div class="submitContainer col-lg-1 col-md-4 col-sm-4 col-xs-8">
+    <div class="submitContainer col-lg-1 col-md-6">
       <p><a href="forgotpassword">Lost your password?</a></p>
       <?php echo $formelem->button(array('id'=>'btn-login','name'=>'btn-login','class'=>'btn btn-sm btn-primary btn-login', 'value'=>'Login')); ?>
     </div>
     </fieldset>
   <?php echo $formelem->close(); ?>
+  </div>
+  </div>

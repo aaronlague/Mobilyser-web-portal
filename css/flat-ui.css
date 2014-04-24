@@ -5125,7 +5125,7 @@ select[multiple].navbar-form .btn {
 }
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-  background-color: transparent;
+  /*background-color: transparent;*/
 }
 .navbar-inverse .navbar-toggle:hover:before,
 .navbar-inverse .navbar-toggle:focus:before {
