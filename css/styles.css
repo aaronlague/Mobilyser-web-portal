@@ -164,6 +164,15 @@ span.fui-arrow-left:hover {
     cursor: pointer;
 }
 
+
+footer { margin-top:20px!important; }
+
+.footerSection {
+
+	margin-bottom:20px;
+
+}
+
 .footerSection .container .footerContainer {
     padding-right: 0!important;
     padding-left: 0!important;
@@ -172,21 +181,23 @@ span.fui-arrow-left:hover {
 
 .footerSection .container .footerContainer footer {
     margin-top: 20px!important;
+}
+
+.footerSection .container /*.footerContainer*/ footer .copyrightNote span {
+    font-size: 12px;
+	color: #c0c5ca;
+}
+
+.footerSection .container /*.footerContainer*/ footer .footerNavs a {
+    font-size: 12px;
     color: #c0c5ca;
 }
 
-.footerSection .container .footerContainer footer .copyrightNote span {
-    font-size: 12px;
-}
-
-.footerSection .container .footerContainer footer .footerNavs a {
-    font-size: 12px;
-    color: #c0c5ca;
-}
-
-.footerSection .container .footerContainer footer .footerNavs span:nth-of-type(1) {
+.footerSection .container /*.footerContainer*/ footer .footerNavs span:nth-of-type(1) {
     padding-right: 10px;
 }
+
+.footerSection .container footer .footerIcon { padding-left:0!important; margin-left: -10px; }
 
 .container .accountsTab #errMsg i {
     font-size: 1.35em;

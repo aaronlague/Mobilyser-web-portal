@@ -1,8 +1,8 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
-    body:before {
-        /*content: "1200px";*/
-    }
+    /*body:before {
+        content: "1200px";
+    }*/
 
     nav .container .row .loginSection {
     }
@@ -17,12 +17,12 @@
         width: 26%;
     }
 
-    .bottomContent .bottomContentContainer .row .slideNavigationWrapper {
+    /*.bottomContent .bottomContentContainer .row .slideNavigationWrapper {
         position: absolute;
         min-width: 248px;
         top: 210px;
         left: 266px;
-    }
+    }*/
 
     .footerSection {
         padding-bottom: 20px;
@@ -30,16 +30,24 @@
 }
 
 @media only screen and (max-width : 1024px) {
-    body:before {
-        /*content: "1024px";*/
+    /*body:before {
+        content: "1024px";
+    }*/
+	
+	.bottomContent .bottomContentContainer .row .slideNavigationWrapper {
+		position: absolute;
+		min-width: 248px;
+		top: 190px;
+		left: 355px;
     }
+	
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
-    body:before {
-        /*content: "992px";*/
-    }
+    /*body:before {
+        content: "992px";
+    }*/
 	
 	nav .container .row .submitContainer {
 		
@@ -51,9 +59,9 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
-    body:before {
-        /*content: "768px";*/
-    }
+    /*body:before {
+        content: "768px";
+    }*/
 
     nav .container .row .loginSection {
         margin-right: 9px;
@@ -70,17 +78,45 @@
     .navbar-inverse .navbar-collapse {
         padding-top: 25px;
     }
+	
+	.bottomContent .bottomContentContainer .row .slideNavigationWrapper {
+		/*position: absolute;
+		min-width: 248px;
+		top: 190px;
+		left: 250px;*/
+		display:none;
+    }
+	
+	.footerSection {
+		
+		text-align:center;
+	
+	}
+	
+	.footerSection .container footer .footerIcon {
+		
+		padding-left: 15px!important; margin-left:0px!important;
+		
+	}
 }
 
 /* Extra Small Devices, Phones */ 
-@media only screen and (max-width : 480px) {
-    body:before {
-        /*content: "480px";*/
-    }
+@media only screen and (max-width: 480px) {
+    /*body:before {
+        content: "480px";
+    }*/
 	
 	nav .container .row .submitContainer {
         padding-right: 10px!important;
     }
+	
+	.bottomContent .bottomContentContainer .row .slideNavigationWrapper {
+		/*position: absolute;
+		min-width: 248px;
+		top: 180px;
+		left: 105px;*/
+		display:none;
+	}
 	
 }
 
@@ -120,5 +156,13 @@
         float: right;
         margin-left: -20px!important;
         padding-right: 10px!important;
+    }
+	
+	.bottomContent .bottomContentContainer .row .slideNavigationWrapper {
+		position: absolute;
+		min-width: 248px;
+		top: 190px;
+		left: 250px;
+		display:block!important;
     }
 }
