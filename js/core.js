@@ -140,7 +140,7 @@ $("#createPasswordForm").validate({
 }
 
 var callerTagToggle = function() {
-console.log('toggle ready');
+	
 $("input:checkbox").bootstrapSwitch();
 $('.switch').on('switch-change', function (e, data) {
         var $el = $(data.el)
@@ -150,50 +150,43 @@ $('.switch').on('switch-change', function (e, data) {
            console.log('Changed to Personal');
 		   $('.toggleContainer').find('img.personalLabel').attr('src','images/personal.png');
 		   $('.toggleContainer').find('img.workLabel').attr('src','images/work-grayscale.png');
-		   //$(this).closest('tr').children('td.callTag').find('img.workLabel').attr('src','images/image-work-gray.png');
 		   
 			var phoneNumber = $('.callerInfoContainer').find("input").val();
-//			$.ajax({
-//			  url: "ajax-calls/update-call-logs.php",
-//			  type: "POST",
-//			  data: {
-//				  caller_tag: 'P',
-//				  call_date: $(this).closest('tr').children('td.callDate').find("input").val(),
-//				  call_time: $(this).closest('tr').children('td.callTime').text(),
-//				  phone: phoneNumber.replace(/\s+/g, '')
-//			  },
-//			  success: function(data){
-//				   $("#stage").html(data);
-//			  },
-//			  error:function(){
-//				  $("#stage").html('there is error while submit');
-//			  }   
-//			}); 
+			$.ajax({
+			  url: "ajax-calls/update-call-logs.php",
+			  type: "POST",
+			  data: {
+				  caller_tag: 'P',
+				  phone: phoneNumber.replace(/\s+/g, '')
+			  },
+			  success: function(data){
+				   $("#stage").html(data);
+			  },
+			  error:function(){
+				  $("#stage").html('there is error while submit');
+			  }   
+			}); 
 			
         }else{
            console.log('Changed to Work');
 		   $('.toggleContainer').find('img.personalLabel').attr('src','images/personal-grayscale.png');
 		   $('.toggleContainer').find('img.workLabel').attr('src','images/work.png');
-//		   $(this).closest('tr').children('td.callTag').find('img.personalLabel').attr('src','images/image-personal-gray.png');
-//		   $(this).closest('tr').children('td.callTag').find('img.workLabel').attr('src','images/image-work-colored.png');
-//		   
-//			var phoneNumber = $(this).closest('tr').children('td.phoneNo').find("input").val();
-//			$.ajax({
-//			  url: "ajax-calls/update-call-logs.php",
-//			  type: "POST",
-//			  data: {
-//				  caller_tag: 'W',
-//				  call_date: $(this).closest('tr').children('td.callDate').find("input").val(),
-//				  call_time: $(this).closest('tr').children('td.callTime').text(),
-//				  phone: phoneNumber.replace(/\s+/g, '')
-//			  },
-//			  success: function(data){
-//				   $("#stage").html(data);
-//			  },
-//			  error:function(){
-//				  $("#stage").html('there is error while submit');
-//			  }   
-//			});
+		   
+			var phoneNumber = $('.callerInfoContainer').find("input").val();
+			$.ajax({
+			  url: "ajax-calls/update-call-logs.php",
+			  type: "POST",
+			  data: {
+				  caller_tag: 'W',
+				  phone: phoneNumber.replace(/\s+/g, '')
+			  },
+			  success: function(data){
+				   $("#stage").html(data);
+			  },
+			  error:function(){
+				  $("#stage").html('there is error while submit');
+			  }   
+			});
 			
         }
     });

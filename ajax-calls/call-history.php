@@ -17,7 +17,6 @@ $calltype_data = array(
   'U'=>'Untagged'
 );
 ?>
-
 <div class="row">
   <div class="col-lg-12">
     <div class="col-lg-12 callHistoryDetails">
@@ -79,23 +78,9 @@ echo '</thead>';
 echo $historymodel->getHistory($_GET['phoneNumberCellValue'], $_SESSION['account_num'], $connect);
 echo '</table>';
 ?>
-<script src="js/call-history.js"></script>
+
 <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="js/bootstrap-switch.js"></script>
 <script src="js/application.js"></script>
 <script src="js/core.js"></script>
-<script>
-$(document).ready(function(){
-callerTagToggle();
-	 $('#callHistoryData').dataTable( {
-			"sPaginationType": "full_numbers",
-			"bPaginate": true,
-			"bLengthChange": true,
-			"bFilter": true,
-			"bSort": false,
-			"bInfo": true,
-			"bAutoWidth": true,
-    	} );
-		
-});
-</script>
+<script src="js/call-history.js"></script>

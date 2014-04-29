@@ -19,7 +19,7 @@ class ContactHistoryModel {
 			} else if ($caller_tag == 'W') {
 				$caller_tag_image = '<span><img class="workLabel" src="images/work.png" width="33"><span><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch"/><span><img class="personalLabel" src="images/personal-grayscale.png" width="33"></span>';
 			} else {
-				$caller_tag_image = 'images/image-untagged-tag-hp.png';
+				$caller_tag_image = '<span><img class="workLabel" src="images/work.png" width="33"><span><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch"/><span><img class="personalLabel" src="images/personal-grayscale.png" width="33"></span>';
 			}
 			
 			$data = $name;
