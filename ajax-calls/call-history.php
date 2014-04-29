@@ -26,11 +26,13 @@ $calltype_data = array(
           <tbody>
             <tr>
               <td colspan="2">
-			  	  <a id="returnToList"><span class="fui-arrow-left"></span></a>
-				  <span class="contactName">
-				  	<?php echo $contacthistory->getContactHistory($_GET['phoneNumberCellValue'], 'n', $connect); ?>
-				  </span>
-				  <input type="hidden" name="contact-number" id="contact-number" value="<?php echo $_GET['phoneNumberCellValue']; ?>" />
+			  	  <div class="callerInfoContainer">
+				  	  <a id="returnToList"><span class="fui-arrow-left"></span></a>
+					  <span class="contactName">
+						<?php echo $contacthistory->getContactHistory($_GET['phoneNumberCellValue'], 'n', $connect); ?>
+					  </span>
+					  <input type="hidden" name="contact-number" id="contact-number" value="<?php echo $_GET['phoneNumberCellValue']; ?>" />
+				  </div>
 			  </td>
               <td colspan="2">
 				  <div class="toggleContainer">
@@ -79,12 +81,12 @@ echo '</table>';
 ?>
 <script src="js/call-history.js"></script>
 <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
-`
 <script src="js/bootstrap-switch.js"></script>
 <script src="js/application.js"></script>
+<script src="js/core.js"></script>
 <script>
 $(document).ready(function(){
-$("input:checkbox").bootstrapSwitch();
+callerTagToggle();
 	 $('#callHistoryData').dataTable( {
 			"sPaginationType": "full_numbers",
 			"bPaginate": true,
