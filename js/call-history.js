@@ -5,11 +5,10 @@ $("#returnToList").click(function(){
 });
 
 	$("#ctype_0, #ctype_A, #ctype_P, #ctype_W, #ctype_U").click(function(event){
-	      console.log("saving...");
           if($('#calltype-only').val() == 'P'){
-             $('#tag-icon').attr('src', 'images/image-personal-tag-hp.png');
+             $('#tag-icon').attr('src', 'images/personal.png');
           }else if($('#calltype-only').val() == 'W'){
-             $('#tag-icon').attr('src', 'images/image-work-tag-hp.png');
+             $('#tag-icon').attr('src', 'images/work.png');
           }else{
              $('#tag-icon').attr('src', 'images/image-untagged-tag-hp.png');     
           }

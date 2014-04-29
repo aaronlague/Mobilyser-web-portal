@@ -15,9 +15,9 @@ class ContactHistoryModel {
 			$caller_tag = $db->strip($row->Caller_Tag);
 			
 			if ($caller_tag == 'P') {
-				$caller_tag_image = 'images/image-personal-tag-hp.png';
+				$caller_tag_image = '<span><img class="workLabel" src="images/work-grayscale.png" width="33"></span><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch" checked/><span><img class="personalLabel" src="images/personal.png" width="33"></span>';
 			} else if ($caller_tag == 'W') {
-				$caller_tag_image = 'images/image-work-tag-hp.png';
+				$caller_tag_image = '<span><img class="workLabel" src="images/work.png" width="33"><span><input type=hidden id="tagContainer" value="'.$caller_tag.'"><input type="checkbox" name="callerToggle" data-toggle="switch"/><span><img class="personalLabel" src="images/personal-grayscale.png" width="33"></span>';
 			} else {
 				$caller_tag_image = 'images/image-untagged-tag-hp.png';
 			}

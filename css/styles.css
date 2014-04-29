@@ -5,11 +5,13 @@
 .navbar-header {
     padding-top: 42px;
     padding-left: 15px;
-    /*padding-bottom: 28px;*/;
+    /*padding-bottom: 28px;*/
+    ;
 }
 
 nav .container .row .loginSection {
-    /*padding-top: 45px;*/;
+    /*padding-top: 45px;*/
+    ;
 }
 
 nav .container .row .userSection {
@@ -25,7 +27,8 @@ nav .container .row .loginSection .form-group input[type=text], nav .container .
 }
 
 nav .container .row .submitContainer {
-    /*margin-top: 45px;*/;
+    /*margin-top: 45px;*/
+    ;
 }
 
 nav .container .row .submitContainer p {
@@ -164,13 +167,12 @@ span.fui-arrow-left:hover {
     cursor: pointer;
 }
 
-
-footer { margin-top:20px!important; }
+footer {
+    margin-top: 20px!important;
+}
 
 .footerSection {
-
-	margin-bottom:20px;
-
+    margin-bottom: 20px;
 }
 
 .footerSection .container .footerContainer {
@@ -185,7 +187,7 @@ footer { margin-top:20px!important; }
 
 .footerSection .container /*.footerContainer*/ footer .copyrightNote span {
     font-size: 12px;
-	color: #c0c5ca;
+    color: #c0c5ca;
 }
 
 .footerSection .container /*.footerContainer*/ footer .footerNavs a {
@@ -197,7 +199,10 @@ footer { margin-top:20px!important; }
     padding-right: 10px;
 }
 
-.footerSection .container footer .footerIcon { padding-left:0!important; margin-left: -10px; }
+.footerSection .container footer .footerIcon {
+    padding-left: 0!important;
+    margin-left: -10px;
+}
 
 .container .accountsTab #errMsg i {
     font-size: 1.35em;
@@ -363,13 +368,15 @@ footer { margin-top:20px!important; }
     background-color: #f9fafb;
     border-radius: 6px 6px 6px 6px;
     border: 2px #edf1f2 solid;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
     padding-top: 10px;
     padding-left: 15px;
     /*margin-left: 15px;
     margin-right: 15px;*/
     min-height: 65px;
 }
+
+.callList h4 { font-size:24px!important; margin-top: 50px;}
 
 .callList table th.callerTag {
     width: 70px;
@@ -378,12 +385,14 @@ footer { margin-top:20px!important; }
 
 .callList table th.callDate {
     width: 125px;
-    /*text-align: center;*/;
+    /*text-align: center;*/
+    ;
 }
 
 .callList table th.contact {
     width: 155px!important;
-    /*text-align: center;*/;
+    /*text-align: center;*/
+    ;
 }
 
 .callList table tbody tr td.callTag {
@@ -393,8 +402,14 @@ footer { margin-top:20px!important; }
     width: 110px!important;
 }
 
+.callList table tbody tr td.callTag img {
+    height: 25px;
+    width: 25px;
+}
+
 .callList table tbody tr td.callDate {
-    /*text-align: center;*/;
+    /*text-align: center;*/
+    ;
 }
 
 .paging_full_numbers a.paginate_button:hover {
@@ -746,7 +761,8 @@ select.form-control option {
     display: block;
     padding: 18px 45px 14px 25px;
     font-size: 14px;
- /*color: #2fac66!important;*/;
+ /*color: #2fac66!important;*/
+    ;
 }
 
 
@@ -840,7 +856,126 @@ select.form-control option {
 }
 
 .callList img.workLabel, .callList img.personalLabel {
-    margin: 0 5px 0 5px;
+    /*margin: 0 5px 0 5px;
     width: 25px;
-    height: 25px;
+    height: 25px;*/
+}
+
+.callHistoryInfo {
+    margin-bottom: 0px!important;
+}
+
+.callHistoryInfo > tbody > tr:nth-of-type(2) { background-color: #fff!important; border-top: 2px #edf1f2 solid; }
+
+.callHistoryInfo > tbody > tr > td {
+    border-top: none!important;
+}
+
+
+.has-switch {
+    margin-left: 11px;
+    margin-right: 11px;
+}
+
+.toggleContainer {
+    float: right;
+}
+
+.callHistoryInfo span.contactName {
+    font-family: helvetica;
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+.callHistoryInfo span.fui-arrow-left {
+    margin-top: 0px!important;
+}
+
+select[name="callHistoryData_length"] {
+    border: 2px solid #2fac66!important;
+    border-radius: 5px!important;
+    color: #2fac66;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.financialYearColumn {
+    border-bottom-left-radius: 6px;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: #2fac66;
+    width: 245px;
+    text-transform: uppercase;
+    border-right: 2px #edf1f2 solid;
+}
+
+.totalCallsColumn {
+    width: 180px;
+}
+
+.totalDurationColumn {
+    width: 370px;
+}
+
+.totalCostColumn {
+	font-size: 15px;
+    font-weight: 700;
+    border-bottom-right-radius: 6px;
+}
+
+.totalCallsColumn, .totalDurationColumn {
+    font-size: 15px;
+    font-weight: 700;
+    border-right: 2px #edf1f2 solid;
+}
+
+.totalCallsColumn .totalCallsLabel {
+    margin-top: 13px;
+    float: left;
+    margin-right: 0!important;
+    padding-right: 0!important;
+    position: relative;
+    width: 100%;
+}
+
+.totalDurationColumn .totalDurationLabel {
+    margin-top: 13px;
+    float: left;
+    margin-right: 0!important;
+    padding-right: 0!important;
+    position: relative;
+    width: 100%;
+}
+
+.totalCostColumn .totalCostLabel {
+    margin-top: 13px;
+    float: left;
+    margin-right: 0!important;
+    padding-right: 0!important;
+    position: relative;
+    width: 90%;
+}
+
+.totalCallsColumn .totalCallsLabel .totalCallsValue {
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    top: -10px;
+    color: #2fac66;
+}
+
+.totalDurationColumn .totalDurationLabel .totalDurationValue {
+    font-size: 30px;
+    position: absolute;
+    right: 40px;
+    top: -10px;
+    color: #2fac66;
+}
+
+.totalCostColumn .totalCostLabel .totalCostValue {
+    font-size: 30px;
+    position: absolute;
+    right: 40px;
+    top: -10px;
+    color: #2fac66;
 }

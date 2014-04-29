@@ -10,9 +10,7 @@ var loadHistory = function(phoneNumberCellValue){
 
 $(document).ready(function () {
 	$("td.phoneNo a").on('click', function() { 
-		console.log ("History Data Active");
 		var strCheck = $(this).children('input#valueContainer').val().replace(/[_\s]/g, '');
-		console.log (strCheck);
 		var phoneNumberCellValue = strCheck;
 		loadHistory(phoneNumberCellValue);
 		

@@ -38,7 +38,6 @@ echo '<th class="contact">Contact</th>';
 echo '<th>Duration</th>';
 echo '<th>Est. cost</th>';
 echo '<th>Act. cost</th>';
-//echo '<th>Bill date</th>';
 echo '</tr>';
 echo '</thead>';
 echo '<tbody>';
@@ -47,7 +46,4 @@ echo '</tbody>';
 echo '</table>';
 ?>
 <script src="js/history-table.js"></script>
-<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
-<script src="js/bootstrap-switch.js"></script>
-<script src="js/application.js"></script>
 <script src="js/core.js"></script>

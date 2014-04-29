@@ -640,6 +640,7 @@ dd {
 }
 abbr[title],
 abbr[data-original-title] {
+
   border-bottom: 1px dotted #bdc3c7;
 }
 blockquote {
@@ -5052,6 +5053,7 @@ select[multiple].navbar-form .btn {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     color: #1abc9c;
+
     background-color: transparent;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
@@ -5885,8 +5887,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   position: relative;
   text-align: left;
   /*width: 80px;*/
-  height:33px;
-  width: 66px;
+  width: 50px;
   /*-webkit-mask: url('../images/switch/mask.png') 0 0 no-repeat;
   mask: url('../images/switch/mask.png') 0 0 no-repeat;*/
   -webkit-user-select: none;
@@ -5905,8 +5906,8 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   cursor: default !important;
 }
 .has-switch > div {
-  width: 130px;
-  /*width: 100px;*/
+  /*width: 130px;*/
+  width: 100px;
   position: relative;
   top: 0;
 }
@@ -5915,8 +5916,8 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   transition: left 0.25s ease-out;
 }
 .has-switch > div.switch-off {
-  left: -50px;
-  /*left: -35px;*/
+  /*left: -50px;*/
+  left: -35px;
 }
 .has-switch > div.switch-off label {
   background-color: #7f8c9a;
@@ -5926,7 +5927,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
 }
 .has-switch > div.switch-on {
   /*left: 0;*/
-  left: -13px;
+  left: -10px;
 }
 .has-switch > div.switch-on label {
   /*background-color: #1abc9c;*/
@@ -5940,8 +5941,7 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   font-size: 15px;
   font-weight: 700;
   float: left;
-  height: 33px;
-  /*height: 25px;*/
+  height: 25px;
   line-height: 19px;
   margin: 0;
   padding-bottom: 6px;
@@ -5974,13 +5974,12 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   border: 4px solid #bdc3c7;
   border-radius: 50%;
   float: left;
-  height: 29px;
-  /*height: 25px;*/
-  margin: 2px -15px;
+  height: 25px;
+  margin: 0 -15px;
   padding: 0;
   position: relative;
   vertical-align: middle;
-  width: 29px;
+  width: 25px;
   z-index: 100;
   -webkit-transition: 0.25s ease-out;
   transition: 0.25s ease-out;
