@@ -379,27 +379,39 @@ footer {
 .callList h4 { font-size:24px!important; margin-top: 50px;}
 
 .callList table th.callerTag {
-    width: 70px;
     text-align: center;
+	width:65px!important;
 }
 
 .callList table th.callDate {
-    width: 125px;
-    /*text-align: center;*/
-    ;
+	width:120px!important;
+}
+
+.callList table th.callTime {
+	width:125px!important;
 }
 
 .callList table th.contact {
-    width: 155px!important;
-    /*text-align: center;*/
-    ;
+	width:190px!important;
+}
+
+.callList table th.duration {
+	width:165px!important;
+}
+
+.callList table th.estCost {
+	width:165px!important;
+}
+
+.callList table th.actCost {
+	width:175px!important;
 }
 
 .callList table tbody tr td.callTag {
     text-align: center;
     padding-left: 0px;
     padding-right: 0px;
-    width: 110px!important;
+    /*width: 60px!important;*/
 }
 
 .callList table tbody tr td.callTag img {
@@ -409,7 +421,6 @@ footer {
 
 .callList table tbody tr td.callDate {
     /*text-align: center;*/
-    ;
 }
 
 .paging_full_numbers a.paginate_button:hover {
