@@ -39,6 +39,68 @@ class HistoryModel {
 		
 		return $data;
 	}
+	
+	public function getHistoryTotals ($phoneNum, $connect) {
+		
+		$db = new db_config();
+		$data = '';
+		
+		$sql = $db->mquery("SELECT COUNT (*) AS 'total_calls' FROM call WHERE REPLACE(REPLACE(phone_number, ' ', ''),'+','') = '" . $phoneNum . "'", $connect);
+		$num = $db->numrows($sql);
+		$row = $db->fetchobject($sql);
+		
+		$totalCalls = $db->strip($row->total_calls);
+		
+		$data = $totalCalls;
+		
+		return $data;
+		
+	
+	}
+	
+	public function getDurationTotals ($phoneNum, $connect) {
+		
+		$db = new db_config();
+		$data = '';
+		
+		$sql = $db->mquery("SELECT SUM (CAST (duration AS int)) AS 'total_call_duration' FROM Call WHERE REPLACE(REPLACE(phone_number, ' ', ''),'+','') = '" . $phoneNum . "'", $connect);
+		$num = $db->numrows($sql);
+		
+		while($row = $db->fetchobject($sql)) {
+		
+		$date = new DateTime('2000-01-01');
+		$date->add(new DateInterval('P0Y0M0DT0H0M'.$row->total_call_duration.'S'));
+		$totalCallDuration = $date->format('H\h' . ' | ' . 'i\m' . ' | ' . 's\s');
+		$data = $totalCallDuration;
+		
+		}
+		
+		return $data;
+		
+	
+	}
+	
+	public function getTotalCost ($phoneNum, $connect) {
+	
+		$db = new db_config();
+		$data = '';
+		
+		$sql = $db->mquery("SELECT SUM (actual_cost) AS 'total_actual' FROM Call WHERE REPLACE(REPLACE(phone_number, ' ', ''),'+','') = '" . $phoneNum . "'", $connect);
+		$num = $db->numrows($sql);
+		
+		while($row = $db->fetchobject($sql)) {
+		
+		$totalActualCost = $db->strip($row->total_actual);
+		
+		
+		$data = "$" .  number_format($totalActualCost, 2);
+		
+		}
+		
+		return $data;
+
+	
+	}
 
 }
 ?>

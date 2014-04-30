@@ -43,16 +43,16 @@ $calltype_data = array(
               <td class="financialYearColumn">Financial <br />
                 Year to date:</td>
               <td class="totalCallsColumn"><div class="totalCallsLabel">Total calls:
-                  <div class="totalCallsValue">58</div>
+                  <div class="totalCallsValue"><?php echo $historymodel->getHistoryTotals($_GET['phoneNumberCellValue'], $connect); ?></div>
                 </div></td>
               <td class="totalDurationColumn">
 			  	<div class="totalDurationLabel">Total duration:
-                  <div class="totalDurationValue">1h | 53m | 5s</div>
+                  <div class="totalDurationValue"><?php echo $historymodel->getDurationTotals($_GET['phoneNumberCellValue'], $connect); ?></div>
                 </div>
 			  </td>
               <td class="totalCostColumn">
 			  	<div class="totalCostLabel">Total actual cost:
-                  <div class="totalCostValue">$47.30</div>
+                  <div class="totalCostValue"><?php echo $historymodel->getTotalCost($_GET['phoneNumberCellValue'], $connect); ?></div>
                 </div>
 			  </td>
             </tr>
