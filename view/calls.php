@@ -1,30 +1,11 @@
 <div class="container" style="padding-left:30px;" data-page-name="callLogsPage">
   <div class="row filterSection" id="filterControls">
     <div class="col-lg-2"><span>Filter Calls</span></div>
-		<div class="col-lg-2" style="margin-left:-20px!important;">
-  	  <div class="btn-group select select-block mbl">
-  		<button class="btn dropdown-toggle clearfix btn-sm btn-warning" data-toggle="dropdown">
-  		<span class="filter-option pull-left"><div id="ctype-selected">Select call type</div></span>&nbsp;<span class="caret"></span></button>
-  		<span class="dropdown-arrow"></span>
-      <input type="hidden" name="calltype" id="calltype" value="A" />
-  		<ul class="dropdown-menu" role="menu" style="max-height: 200px; overflow-y: auto; min-height: 108px;">
-  		  <li id="ctype_0" onclick="ctype_data(0, 'Select call type');" rel="A" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Select call type</span></a></li>
-  		  <li id="ctype_A" onclick="ctype_data('A', 'All calls');" rel="A" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">All calls</span></a></li>
-  		  <li id="ctype_P" onclick="ctype_data('P', 'Personal');" rel="P" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Personal</span></a></li>
-  		  <li id="ctype_W" onclick="ctype_data('W', 'Work');" rel="W" class="ctype"><a tabindex="-1" href="#" class="opt"><span class="pull-left">Work</span></a></li>
-  		</ul>
-  	  </div>
+	<div class="col-lg-2" style="margin-left:-20px!important;">
+  	  <?php echo $formelem->select(array('id'=>'calltype','name'=>'calltype','class'=>'selectpicker callTypeSelect','data'=>$calltype_data, 'data-width'=>'100%', 'title'=>'Select call type')); ?>
 	</div>
-    <div class="col-lg-2" style="margin-left:-20px!important;">
-        <div class="btn-group select select-block mbl">
-        <button class="btn dropdown-toggle clearfix btn-sm btn-warning" data-toggle="dropdown">
-        <span class="filter-option pull-left"><div id="btype-selected">Select</div></span>&nbsp;<span class="caret"></span></button>
-        <span class="dropdown-arrow"></span>
-        <input type="hidden" name="billtype" id="billtype" value="0" />
-        <ul class="dropdown-menu" role="menu" style="max-height: 200px; overflow-y: auto; min-height: 108px;">
-          <?php echo $bill_upload_data; ?>
-        </ul>
-        </div>
+    <div class="col-lg-2">
+        <?php echo $formelem->select(array('id'=>'billtype','name'=>'billtype','class'=>'selectpicker billTypeSelect','data'=>'', 'data-width'=>'100%', 'title'=>'Select bill')); ?>
     </div>
   </div>
   <hr style="margin-left:-15px;">
@@ -40,3 +21,10 @@
 <script src="js/bootstrap-select.js"></script>
 <script src="js/jquery.dataTables.js"></script>
 <script src="js/calls.js"></script>
+<script>
+	$('.selectpicker').selectpicker({
+		style: 'btn-inverse',
+	});
+	$('#calltype').prepend('<option value="A" selected="selected">Select call type</option>');
+	$('#billtype').prepend('<option value="" selected="selected">Select bill</option>');
+</script>

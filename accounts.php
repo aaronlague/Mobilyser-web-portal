@@ -20,8 +20,7 @@ $connect = $db->connect();
 $calltype_data = array(
   'A'=>'All Calls',
   'W'=>'Work',
-  'P'=>'Personal',
-  'U'=>'Untagged'
+  'P'=>'Personal'
 );
 # bills filter
 $billtype_data = array(

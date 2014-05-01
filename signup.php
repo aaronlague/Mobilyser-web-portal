@@ -139,4 +139,5 @@ $country_data = $lookupmodel->getCountry($connect);
 	$('.selectpicker').selectpicker({
 		style: 'btn-inverse'
 	});
+	$('#country').prepend('<option value="" selected="selected">Select country</option>');
 </script>
