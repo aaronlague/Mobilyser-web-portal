@@ -28,7 +28,7 @@ $calltype_data = array(
 			  	  <div class="callerInfoContainer">
 				  	  <a id="returnToList"><span class="fui-arrow-left"></span></a>
 					  <span class="contactName">
-						<?php echo $contacthistory->getContactHistory($_GET['phoneNumberCellValue'], 'n', $connect); ?>
+						<?php echo $contacthistory->getContactHistory($_GET['phoneNumberCellValue'], 'n', $connect); ?> | <?php echo $_GET['phoneNumberCellValue']; ?>
 					  </span>
 					  <input type="hidden" name="contact-number" id="contact-number" value="<?php echo $_GET['phoneNumberCellValue']; ?>" />
 				  </div>
