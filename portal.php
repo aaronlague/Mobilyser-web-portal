@@ -55,7 +55,7 @@ include 'protected/config/login_config.php';
 			<div class="item">
 			<div class="itemText">
 				<h1>Calls</h1>
-				<p>The calls section of the Mobilyser portal provides a complete list of voice calls and allows the user to allocate a tag to each number under work <img src="images/work.png" border="0" /> or personal <img src="images/personal.png" border="0" />. Within your profile you can choose to default to <img src="images/work.png" border="0" /> (all work numbers) and only change those that are personal <img src="images/personal.png" border="0" /> or vice versa, to save time tagging each number.
+				<p>The calls section of the Mobilyser portal provides a complete list of voice calls and allows the user to allocate a tag to each number under work <img src="images/work.png" border="0" width="30" /> or personal <img src="images/personal.png" border="0" width="30" />. Within your profile you can choose to default to <img src="images/work.png" border="0" width="30"/> (all work numbers) and only change those that are personal <img src="images/personal.png" border="0" width="30" /> or vice versa, to save time tagging each number.
 An estimated cost is calculated for all numbers dialled within Australia. Actual costs for each call are obtained by uploading your Telco bill, either in PDF or .CSV format.  You can sort, filter, search and export your calls to an Excel file for further analysis. </p>
 			</div>
 			<img src="images/carousel/image-slide-call-1.png" border="0" alt="">
@@ -72,7 +72,7 @@ An estimated cost is calculated for all numbers dialled within Australia. Actual
 			<div class="item">
 			<div class="itemText">
 				<h1>Contacts</h1>
-				<p>Mobilyser synchronises the contact list from your Android phone, allowing you to review and update the default tag assigned to each of your contacts. When Mobilyser first synchronises with your contact directory a default tag of either <img src="images/personal.png" border="0" /> indicating a personal contact, or <img src="images/work.png" border="0" /> to indicate a work contact is assigned to the each of your contacts. Numbers dialled outside your contact directory are also stored by Mobilyser, along with the associated default tag.</p>
+				<p>Mobilyser synchronises the contact list from your Android phone, allowing you to review and update the default tag assigned to each of your contacts. When Mobilyser first synchronises with your contact directory a default tag of either <img src="images/personal.png" border="0" width="30" /> indicating a personal contact, or <img src="images/work.png" border="0" width="30" /> to indicate a work contact is assigned to the each of your contacts. Numbers dialled outside your contact directory are also stored by Mobilyser, along with the associated default tag.</p>
 			</div>
 			<img src="images/carousel/image-slide-contacts.png" border="0" alt="">
 			</div>
