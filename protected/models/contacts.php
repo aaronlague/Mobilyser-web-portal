@@ -17,10 +17,25 @@ class ContactsModel {
 			$name = $db->strip($row->Name);
 			$caller_tag = $db->strip($row->Caller_tag);
 			
+			//if ($caller_tag == 'P') {
+//			
+//				$caller_tag_image = '<span><img class="personalLabel" src="images/personal.png" width="33"></span><input type="checkbox" name="callerToggle" data-toggle="switch" checked/><span><img class="personalLabel" src="images/personal.png" width="33"></span>';
+//			
+//			} else if ($caller_tag == 'W') {
+//			
+//				$caller_tag_image = '<span><img class="workLabel" src="images/work.png" width="33"></span><input type="checkbox" name="callerToggle" data-toggle="switch"/><span><img class="personalLabel" src="images/personal-grayscale.png" width="33"></span>';
+//			
+//			} else {
+//			
+//				$caller_tag_image = '<span><img class="workLabel" src="images/work.png" width="33"></span><input type="checkbox" name="callerToggle" data-toggle="switch"/><span><img class="personalLabel" src="images/personal-grayscale.png" width="33"></span>';
+//			
+//			}
+			
 			$data .= "<tr>";
-			$data .= "<td>" . $phone_number . "</td>";
-			$data .= "<td>" . $name . "</td>";
+			//$data .= "<td>" . $caller_tag_image . "</td>";
 			$data .= "<td>" . $caller_tag . "</td>";
+			$data .= "<td>" . $name . "</td>";
+			$data .= "<td>" . $phone_number . "</td>";
 			$data .= "</tr>";
 			
 			$totalContacts = $counter++;

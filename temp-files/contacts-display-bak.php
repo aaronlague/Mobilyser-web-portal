@@ -10,9 +10,9 @@ $contactsModel = new ContactsModel();
 echo '<table class="table table-striped table-bordered" id="contactsData">';
 echo '<thead>';
 echo '<tr>';
-echo '<th>Caller tag</th>';
-echo '<th>Contact name</th>';
 echo '<th>Phone number</th>';
+echo '<th>Contact name</th>';
+echo '<th>Caller tag</th>';
 echo '</tr>';
 echo '</thead>';
 echo '<tbody>';
@@ -21,19 +21,19 @@ echo '</tbody>';
 echo '</table>';
 
 ?>
-<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
-<script src="js/bootstrap-switch.js"></script>
-<script src="js/application.js"></script>
+
 <script>
-$(document).ready(function(){
-$('#contactsData').dataTable( {
-	"sPaginationType": "full_numbers",
-	"bPaginate": true,
-	"bLengthChange": true,
-	"bFilter": true,
-	"bSort": true,
-	"bInfo": true,
-	"bAutoWidth": true
-});
-});
+$(document).ready(function() {
+	var rowCount = $('#dvData tr').length;
+    $('#contactsData').dataTable( {
+		"sPaginationType": "full_numbers",
+        "bPaginate": true,
+        "bLengthChange": true,
+        "bFilter": true,
+        "bSort": true,
+        "bInfo": true,
+        "bAutoWidth": true
+    } );
+	
+} );
 </script>
