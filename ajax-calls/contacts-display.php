@@ -10,7 +10,7 @@ $contactsModel = new ContactsModel();
 echo '<table class="table table-striped table-bordered" id="contactsData">';
 echo '<thead>';
 echo '<tr>';
-echo '<th>Caller tag</th>';
+echo '<th>Tag</th>';
 echo '<th>Contact name</th>';
 echo '<th>Phone number</th>';
 echo '<th>Contact origin</th>';
