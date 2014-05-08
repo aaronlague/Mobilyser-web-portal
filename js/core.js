@@ -157,7 +157,7 @@ $('.switch').on('switch-change', function (e, data) {
 			  type: "POST",
 			  data: {
 				  caller_tag: 'P',
-				  phone: phoneNumber.replace(/\s+/g, '')
+				  phone: phoneNumber.replace(/[\s+\+]/g, '')
 			  },
 			  success: function(data){
 				   $("#stage").html(data);
@@ -178,7 +178,7 @@ $('.switch').on('switch-change', function (e, data) {
 			  type: "POST",
 			  data: {
 				  caller_tag: 'W',
-				  phone: phoneNumber.replace(/\s+/g, '')
+				  phone: phoneNumber.replace(/[\s+\+]/g, '')
 			  },
 			  success: function(data){
 				   $("#stage").html(data);
