@@ -74,6 +74,8 @@ $('#signUpFormSection').validate({
 }
 
 var createPassword = function() {
+	
+$("#btn-create").one("click", function() {
 
 $.validator.addMethod("passwordRegex", function(value, element, regexpr) {
 	return regexpr.test(value);
@@ -109,13 +111,13 @@ $("#createPasswordForm").validate({
             lpassword: {
 				required: true,
 				minlength: 6,
-				passwordRegex: /^(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]{1,2}).*$/,
+				passwordRegex: /^.*(?=.{6,})(?=.*\d)(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*[\W_]+).*$/g,
 				equalTo: "#confirmPassword"
 			},
             confirmPassword: {
 				required: true,
 				minlength: 6,
-				passwordRegex: /^(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]{1,2}).*$/
+				passwordRegex: /^.*(?=.{6,})(?=.*\d)(?=.*[a-z]+)(?=.*[A-Z]+)(?=.*[\W_]+).*$/g
 			}
         },
         
@@ -135,6 +137,8 @@ $("#createPasswordForm").validate({
         submitHandler: function(form) {
             form.submit();
         }
+});
+
 });
 	
 }

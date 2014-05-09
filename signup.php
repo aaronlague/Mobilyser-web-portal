@@ -1,45 +1,34 @@
 <?php
 session_start();
-
 include 'protected/config/db_config.php';
 include 'protected/config/html_config.php';
 include 'protected/library/validation_library.php';
 include 'protected/models/lookup.php';
 include 'protected/controllers/index.php';
-
 require("components/plugins/class.phpmailer.php");
 require("components/plugins/class.smtp.php");
 require("components/plugins/PHPMailerAutoload.php");
 require("components/plugins/mailer.setup.php");
-
 $db = new db_config();
 $formelem = new FormElem();
 $validationlib = new validationLibrary();
 $indexController = new IndexController();
 $lookupmodel = new LookupModel();
-
 $connect = $db->connect();
-
 $activationcodeURL = '';
-
 include 'protected/config/login_config.php';
-
 $fnameFlag['class'] = '';
 $lnameFlag['class'] = '';
 $emailaddressFlag['class'] = '';
 
 if(isset($_POST['btn-signup'])){
-	
     $fnameFlag = $validationlib->isEmpty($_POST['firstname'], 'First name', 2);
     $lnameFlag = $validationlib->isEmpty($_POST['lastname'], 'Last name', 2);
     $emailaddressFlag = $validationlib->isEmail($_POST['emailaddress'], 'Email', 5, 'y');
-	
 	$fname = $_POST['firstname'];
 	$lname = $_POST['lastname'];
 	$emailaddress = $_POST['emailaddress'];
-
     if($fnameFlag['message'] == "" and $lnameFlag['message'] == "" and $emailaddressFlag['message'] == ""){
-
 		$data['@firstname'] = $_POST['firstname'];
 		$data['@lastname'] = $_POST['lastname'];
 		$data['@email'] = $_POST['emailaddress'];
@@ -50,30 +39,18 @@ if(isset($_POST['btn-signup'])){
 		$data['@token'] = sha1(uniqid($emailaddress, true));
 		$data['@time_token'] = $_SERVER['REQUEST_TIME']; 
 		$db->mquery_insert("dbo.createAccount", $data, $connect);
-		
 	 	$url = $indexController->createConfirmationLink($_POST['emailaddress'], $connect);
-		
 		$mail->Subject = "Mobilyser Email confirmation";
 		$mail->Body = "Dear " . $fname . ' ' . $lname . "," . $bodyTextHead . "<a href='".$url ."'>" . $url . "<a/>" . $bodyTextFooter;
 		$mail->AddAddress($emailaddress);
-		
 		if ($mail->send()) {
-			
 			header("Location: confirmation?signup_success=true");
-			
 		} else {
-			
-			//echo "Mailer Error: " . $mail->ErrorInfo;
-			
-		}
-		
+		}		
     }
 }
-
 $country_data = $lookupmodel->getCountry($connect);
-
-?>
-<?php include 'components/header.php'; ?>
+include 'components/header.php'; ?>
 <div class="section formHeadLine" data-page-name="signupPage">
 <div class="container">
 	<div class="row">
