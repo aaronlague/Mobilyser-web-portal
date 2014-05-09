@@ -54,7 +54,7 @@ if(isset($_POST['btn-signup'])){
 	 	$url = $indexController->createConfirmationLink($_POST['emailaddress'], $connect);
 		
 		$mail->Subject = "Mobilyser Email confirmation";
-		$mail->Body = "Dear " . $fname . ' ' . $lname . "," . $bodyTextHead . $url . $bodyTextFooter;
+		$mail->Body = "Dear " . $fname . ' ' . $lname . "," . $bodyTextHead . "<a href='".$url ."'>" . $url . "<a/>" . $bodyTextFooter;
 		$mail->AddAddress($emailaddress);
 		
 		if ($mail->send()) {

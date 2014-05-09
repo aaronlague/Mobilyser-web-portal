@@ -38,7 +38,7 @@ if(isset($_POST['btn-sendPass'])){
 		$userInfo = $_SESSION['userinfo'];
 		
 		$mail->Subject = "Mobilyser password reset";
-		$mail->Body = "Dear " .$userInfo. "," . $PasswordResetText . $url . $PasswordResetNote . $bodyTextFooter;
+		$mail->Body = "Dear " .$userInfo. "," . $PasswordResetText . "<a href='".$url ."'>" . $url . "<a/>" . $PasswordResetNote . $bodyTextFooter;
 		$mail->AddAddress($username);
 		
 		if ($mail->send()) {
