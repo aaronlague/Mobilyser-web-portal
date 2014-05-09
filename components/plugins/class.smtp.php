@@ -175,7 +175,7 @@ class SMTP
                 break;
             case 'echo':
             default:
-                echo gmdate('Y-m-d H:i:s')."\t".trim($str)."\n";
+                //echo gmdate('Y-m-d H:i:s')."\t".trim($str)."\n";
         }
     }
 
