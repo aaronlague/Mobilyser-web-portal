@@ -46,7 +46,7 @@ $('#signUpFormSection').validate({
 				email: true
 			},
 			country: {
-				required: false
+				required: true
 			}
         },
 		
@@ -59,10 +59,10 @@ $('#signUpFormSection').validate({
 				},
 			emailaddress: {
 				required: "Please enter a valid email address",
-				}//,
-//			country: {
-//				required: "Please select a country"
-//				}
+				},
+			country: {
+				required: "Please select a country"
+				}
         },
 		
 		submitHandler: function(form) {

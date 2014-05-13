@@ -33,7 +33,7 @@ if(isset($_POST['btn-signup'])){
 		$data['@lastname'] = $_POST['lastname'];
 		$data['@email'] = $_POST['emailaddress'];
 		$data['@username'] = $_POST['emailaddress'];
-		$data['@country'] = ''; //$_POST['country'];
+		$data['@country'] = $_POST['country'];
 		$data['@activation_key'] = mt_rand(0, 5000);
 		$data['@acct_no'] = mt_rand(0, 8000); //this was a required field before
 		$data['@token'] = sha1(uniqid($emailaddress, true));
