@@ -488,7 +488,7 @@ footer {
     font-size: 25px;
 }
 
-.regFormSection fieldset input[type="text"], .signUpFormSection fieldset input[type="text"], .forgotPasswordSection fieldset input[type="text"], .createPasswordSection fieldset input[type="text"], .createPasswordSection fieldset input[type="password"] {
+.regFormSection fieldset input[type="text"], .signUpFormSection fieldset input[type="text"], .forgotPasswordSection fieldset input[type="text"], .createPasswordSection fieldset input[type="text"], .createPasswordSection fieldset input[type="password"], .telcoProviderForm fieldset input[type="text"] {
     text-align: center;
 }
 
@@ -516,6 +516,11 @@ footer {
     background-color: #2fac66!important;
 }
 
+.signUpFormSection fieldset .form-group label span.required, .telcoProviderForm fieldset .form-group label span.required {
+	color:#2fac66!important;
+}
+
+
 .select .btn .filter-option {
     left: 0;
     right: 0;
@@ -530,7 +535,7 @@ footer {
     background-color: #2fac66!important;
 }
 
-.signUpFormSection fieldset .control-label {
+.signUpFormSection fieldset .control-label, .telcoProviderForm fieldset .control-label  {
     text-align: left;
     padding-top: 0px!important;
     padding-bottom: 0px!important;
@@ -545,7 +550,7 @@ footer {
     color: red;
 }
 
-.regFormSection fieldset .form-group .error, .signUpFormSection fieldset .form-group .error, .forgotPasswordFormSection fieldset .form-group .error {
+.regFormSection fieldset .form-group .error, .signUpFormSection fieldset .form-group .error, .forgotPasswordFormSection fieldset .form-group .error, .telcoProviderForm fieldset .form-group .error {
     border: 1px solid red;
 }
 
@@ -817,7 +822,7 @@ select.form-control option {
     text-decoration: none;
 }
 
-.createPasswordSection fieldset .form-group input.error, .signUpFormSection fieldset .form-group input.error, .regFormSection fieldset .form-group input.error, .forgotPasswordSection fieldset .form-group input.error, button.error {
+.createPasswordSection fieldset .form-group input.error, .signUpFormSection fieldset .form-group input.error, .regFormSection fieldset .form-group input.error, .forgotPasswordSection fieldset .form-group input.error, button.error, .telcoProviderForm fieldset .form-group input.error {
     border: 2px solid red!important;
     background: none!important;
     color: #000000!important;

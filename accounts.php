@@ -64,6 +64,7 @@ $bill_upload_data = $lookupmodel->getBills($_SESSION['account_num'], $connect);
 </div>
 <!-- /.container -->
 <?php include 'components/footer.php'; ?>
+<script src="js/jquery.validate.js"></script>
 <script src="js/accounts.js"></script>
 <script src="js/bill-history.js"></script>
 <script src="js/modal-actions.js"></script>
@@ -72,6 +73,9 @@ $(document).ready(function () {
 $("#iframeContainer").load(function(){
 		loadbills();
 	});
+	
+
+
 });
 </script>
 <?php 
