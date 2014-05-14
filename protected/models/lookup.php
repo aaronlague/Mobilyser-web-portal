@@ -13,7 +13,7 @@ class LookupModel {
 			$country_id = $db->strip($row->Country_ID);
 			$name = $db->strip($row->Name);
 
-			$data[] .= $name;
+			$data[$name] = $name;
 
 		}
 		return $data;
